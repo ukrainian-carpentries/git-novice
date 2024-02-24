@@ -1,54 +1,47 @@
 ---
-title: Setup
+title: Gitのインストール
 ---
 
-## Installing Git
+## Gitのインストール
 
-Since several Carpentries lessons rely on Git, please see
-[this section of the workshop template][workshop-setup] for
-instructions on installing Git for various operating systems.
+いくつかのCarpentriesのレッスンはGitに依存しているので、
+[ワークショップテンプレートのこのセクション][workshop-setup] を参照してください。
+様々なオペレーティングシステムにGitをインストールする手順があります。
 
-- [Git installation on Windows][workshop-setup]
-- [Git installation on MacOS][workshop-setup]
-- [Git installation on Linux][workshop-setup]
+- [Windows でのGit のインストール][workshop-setup]
+- [MacOS でのGit のインストール][workshop-setup]
+- [Linux でのGit のインストール][workshop-setup]
 
-## Creating a GitHub Account
+## GitHub アカウントの作成
 
-You will need an account for [GitHub](https://github.com) to follow episodes 7 & 8 in this lesson.
+このレッスンのエピソード7と8には、 [GitHub](https://github.com)のアカウントが必要です。
 
-1. Go to https\://github.com and follow the "Sign up" link at the top-right of the window.
-2. Follow the instructions to create an account.
-3. Verify your email address with GitHub.
-4. Configure multifactor authentication (see below).
+1. https\://github.com にアクセスし、ウィンドウの右上にある「Sign Up」のリンクに従ってください。
+2. 指示に従ってアカウントを作成してください。
+3. GitHub でメールアドレスを確認する。
+4. 多要素認証を設定する（下記参照）。
 
-### Multi-factor Authentication
+### 多要素認証
 
-In 2023, GitHub introduced a requirement for
-all accounts to have
-[multi-factor authentication (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication)
-configured for extra security.
-Several options exist for setting up 2FA, which are summarised here:
+2023年にGitHubは 、セキュリティを強化するためすべてのアカウントに [多要素認証(2FA)](https://docs.github.com/ja/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication)の設定を行うという要件を導入した。
+2FAを設定するためにいくつかのオプションがあります。
 
-1. If you already use an authenticator app,
-   like [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en\&co=GENIE.Platform%3DiOS\&oco=0)
-   or [Duo Mobile](https://duo.com/product/multi-factor-authentication-mfa/duo-mobile-app) on your smartphone for example,
-   [add GitHub to that app](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-a-totp-mobile-app).
-2. If you have access to a smartphone but do not already use an authenticator app, install one and
-   [add GitHub to the app](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-a-totp-mobile-app).
-3. If you do not have access to a smartphone or do not want to install an authenticator app, you have two options:
-   1. [set up 2FA via text message](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)
-      ([list of countries where authentication by SMS is supported](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/countries-where-sms-authentication-is-supported)), or
-   2. [use a hardware security key](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-a-security-key)
-      like [YubiKey](https://www.yubico.com/products/yubikey-5-overview/)
-      or the [Google Titan key](https://store.google.com/us/product/titan_security_key?hl=en-US\&pli=1).
+1. [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en\&co=GENIE.Platform%3DiOS\&oco=0)や [Duo Mobile](https://duo.com/ja-jp) のような認証アプリを既に使っている場合は、 [そのアプリにGitHub を追加](https://docs.github.com/ja/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication) してください。
+2. スマートフォンにアクセスできるが、まだ認証アプリを使っていない場合は、認証アプリをインストールし、 [アプリにGitHubを追加](https://docs.github.com/ja/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication)してください。
+3. スマートフォンにアクセスできない場合、または認証アプリをインストールしたくない場合は、2つの選択肢があります：
+   1. [テキストメッセージによる2FAの設定](https://docs.github.com/ja/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication)
+      ([SMSによる認証がサポートされている国のリスト](https://docs.github.com/ja/authentication/securing-your-account-with-two-factor-authentication-2fa/countries-where-sms-authentication-is-supported))、または
+   2. [ハードウェアセキュリティキーを使用する](https://docs.github.com/ja/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication)
+      [YubiKey](https://www.yubico.com/?lang=ja)
+      のように、または[Google Titanキー](https://store.google.com/jp/product/titan_security_key?hl=ja)を使用してください。
 
-The GitHub documentation provides [more details about configuring 2FA](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication).
+GitHubのドキュメンテーションに[2FAの設定に関する詳細](https://docs.github.com/ja/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication)があります。
 
 ***
 
-## Preparing Your Working Directory
+## 作業ディレクトリの準備
 
-We'll do our work in the `Desktop` folder so make sure you change your working directory to it with:
+`Desktop`フォルダーで作業を行うので、作業ディレクトリーを`Desktop`フォルダーに変更してください：
 
 ```bash
 $ cd
