@@ -6,38 +6,37 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Create a local Git repository.
-- Describe the purpose of the `.git` directory.
+- ローカルのGitリポジトリを作成する。
+- `.git` ディレクトリの目的を説明する。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- Where does Git store information?
+- Gitはどこに情報を格納しますか?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Once Git is configured,
-we can start using it.
+Gitの設定ができたら、
+それを使い始めることができます。
 
-We will continue with the story of Wolfman and Dracula who are investigating if it
-is possible to send a planetary lander to Mars.
+火星に惑星着陸船を送ることが可能かどうかを調査しているウルフマンとドラキュラの話に戻りましょう。
 
 ![](fig/motivatingexample.png){alt='motivatingexample'}
-[Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
+[ウルフマン対ドラキュラ](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
 by [b-maze](https://www.deviantart.com/b-maze) / [Deviant Art](https://www.deviantart.com/).
-[Mars](https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg) by European Space Agency /
+[火星](https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg) by European Space Agency /
 [CC-BY-SA 3.0 IGO](https://creativecommons.org/licenses/by/3.0/deed.en).
-[Pluto](https://commons.wikimedia.org/wiki/File:PIA19873-Pluto-NewHorizons-FlyingPastImage-20150714-transparent.png) /
+[冥王星](https://commons.wikimedia.org/wiki/File:PIA19873-Pluto-NewHorizons-FlyingPastImage-20150714-transparent.png) /
 Courtesy NASA/JPL-Caltech.
-[Mummy](https://commons.wikimedia.org/wiki/File:Mummy_icon_-_Noun_Project_4070.svg)
+[ミイラ](https://commons.wikimedia.org/wiki/File:Mummy_icon_-_Noun_Project_4070.svg)
 © Gilad Fried / [The Noun Project](https://thenounproject.com/) /
 [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/deed.en).
-[Moon](https://commons.wikimedia.org/wiki/File:Lune_ico.png)
+[月](https://commons.wikimedia.org/wiki/File:Lune_ico.png)
 © Luc Viatour / [https://lucnix.be](https://lucnix.be/) /
 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
 
-First, let's create a new directory in the `Desktop` folder for our work and then change the current working directory to the newly created one:
+まず、`Desktop`フォルダーに作業用のディレクトリを作成し、そのディレクトリに移動しましょう:
 
 ```bash
 $ cd ~/Desktop
@@ -45,29 +44,22 @@ $ mkdir planets
 $ cd planets
 ```
 
-Then we tell Git to make `planets` a [repository](../learners/reference.md#repository)
-\-- a place where Git can store versions of our files:
+次に、Gitに`planets`を[リポジトリ](../learners/reference.md#repository)（Gitがファイルのバージョンを保存できる場所）にするように伝えます。
 
 ```bash
 $ git init
 ```
 
-It is important to note that `git init` will create a repository that
-can include subdirectories and their files---there is no need to create
-separate repositories nested within the `planets` repository, whether
-subdirectories are present from the beginning or added later. Also, note
-that the creation of the `planets` directory and its initialization as a
-repository are completely separate processes.
+重要なのは、`git init` はサブディレクトリとそのファイルを含むことができるリポジトリを作成するということです。サブディレクトリが最初から存在する場合でも、後から追加された場合でも、`planets` リポジトリの中に入れ子になった別のリポジトリを作成する必要はありません。 また、 `planets`ディレクトリの作成と、リポジトリとしての初期化はまったく別の処理であることに注意してください。
 
-If we use `ls` to show the directory's contents,
-it appears that nothing has changed:
+`ls` を使ってディレクトリの内容を表示すると、
+何も変更されていないように見えます:
 
 ```bash
 $ ls
 ```
 
-But if we add the `-a` flag to show everything,
-we can see that Git has created a hidden directory within `planets` called `.git`:
+ですが `-a` フラグを追加してすべてを表示すると、Git が `.git`という隠しディレクトリを `planets` の中に作ったことがわかります:
 
 ```bash
 $ ls -a
@@ -77,15 +69,12 @@ $ ls -a
 .	..	.git
 ```
 
-Git uses this special subdirectory to store all the information about the project,
-including the tracked files and sub-directories located within the project's directory.
-If we ever delete the `.git` subdirectory,
-we will lose the project's history.
+Git はプロジェクトのディレクトリ内にあるすべてのファイルとサブディレクトリを含む、プロジェクトに関するすべての情報を格納するためにこの特別なサブディレクトリを使用します。
+`.git` サブディレクトリを削除すると、プロジェクトの履歴を失うことになります。
 
-Next, we will change the default branch to be called `main`.
-This might be the default branch depending on your settings and version
-of git.
-See the [setup episode](02-setup.md#default-git-branch-naming) for more information on this change.
+次に、デフォルトのブランチを `main` という名前に変更します。
+あなたの設定やgitのバージョンによっては、これが既にデフォルトになっているかもしれません。
+この変更の詳細については、[「セットアップ」](02-setup.md#default-git-branch-naming) を参照してください。
 
 ```bash
 $ git checkout -b main
@@ -95,8 +84,7 @@ $ git checkout -b main
 Switched to a new branch 'main'
 ```
 
-We can check that everything is set up correctly
-by asking Git to tell us the status of our project:
+プロジェクトのステータスをGitに問うことで、すべてが正しく設定されていることを確認できます:
 
 ```bash
 $ git status
@@ -110,48 +98,34 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-If you are using a different version of `git`, the exact
-wording of the output might be slightly different.
+使用している`git`のバージョンによって、出力の表現が少し異なるかもしれません。
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Places to Create Git Repositories
+## Git リポジトリを作る場所
 
-Along with tracking information about planets (the project we have already created),
-Dracula would also like to track information about moons.
-Despite Wolfman's concerns, Dracula creates a `moons` project inside his `planets`
-project with the following sequence of commands:
+`planets` （すでに作成したプロジェクト）についての情報を追跡すると共に、 ドラキュラは moons についての情報も追跡したいと考えています。
+ウルフマンの心配にもかかわらず、ドラキュラは次の一連のコマンドを使って、彼の `planets`プロジェクト内に `moons` プロジェクトを作ります:
 
 ```bash
-$ cd ~/Desktop   # return to Desktop directory
-$ cd planets     # go into planets directory, which is already a Git repository
-$ ls -a          # ensure the .git subdirectory is still present in the planets directory
-$ mkdir moons    # make a subdirectory planets/moons
-$ cd moons       # go into moons subdirectory
-$ git init       # make the moons subdirectory a Git repository
-$ ls -a          # ensure the .git subdirectory is present indicating we have created a new Git repository
+$ cd ~/Desktop   # Desktop ディレクトリに戻る
+$ cd planets     # すでに Git リポジトリである planets ディレクトリに移動する
+$ ls -a          # .git サブディレクトリがまだ planets ディレクトリに存在することを確認する
+$ mkdir moons    # サブディレクトリ planets/moons を作る
+$ cd moons       # moons サブディレクトリに移動する
+$ git init       # moons サブディレクトリをGitリポジトリにする
+$ ls -a          # .git サブディレクトリが存在し新しいGitリポジトリが作られたと示していることを確認する
 ```
 
-Is the `git init` command, run inside the `moons` subdirectory, required for
-tracking files stored in the `moons` subdirectory?
+`git init` コマンドは、`moons` サブディレクトリ内で実行され、`moons` サブディレクトリに保存されているファイルを追跡するために必要でしょうか?
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
-No. Dracula does not need to make the `moons` subdirectory a Git repository
-because the `planets` repository can track any files, sub-directories, and
-subdirectory files under the `planets` directory.  Thus, in order to track
-all information about moons, Dracula only needed to add the `moons` subdirectory
-to the `planets` directory.
+いいえ。 ドラキュラは `moons` サブディレクトリを Git リポジトリにする必要はありません。`planets` リポジトリは、`planets` ディレクトリの下のすべてのファイル、サブディレクトリ、およびサブディレクトリファイルを追跡するからです。  従って、`moons` についてのすべての情報を追跡するのは、ドラキュラが `moons` サブディレクトリを`planets` ディレクトリに追加するだけで済みます。
 
-Additionally, Git repositories can interfere with each other if they are "nested":
-the outer repository will try to version-control
-the inner repository. Therefore, it's best to create each new Git
-repository in a separate directory. To be sure that there is no conflicting
-repository in the directory, check the output of `git status`. If it looks
-like the following, you are good to go to create a new repository as shown
-above:
+それと、Git リポジトリが「入れ子」にされている場合、Gitリポジトリは互いに干渉する可能性があります：外側のリポジトリは内側のリポジトリのバージョン管理をしようとします。 したがって、新しいGitリポジトリはそれぞれ別のディレクトリに作るのがベストです。 ディレクトリに競合するリポジトリががないことを確認するには、`git status`の出力を確認します。 次のような場合は、上の方で示したように新しいリポジトリを作ることをお勧めします：
 
 ```bash
 $ git status
@@ -163,43 +137,36 @@ fatal: Not a git repository (or any of the parent directories): .git
 
 :::::::::::::::::::::::::
 
-## Correcting `git init` Mistakes
+## `git init` の間違いを修正する
 
-Wolfman explains to Dracula how a nested repository is redundant and may cause confusion
-down the road. Dracula would like to remove the nested repository. How can Dracula undo
-his last `git init` in the `moons` subdirectory?
+ウルフマンはドラキュラに、「入れ子」状態になっているリポジトリがいかに冗長で、混乱を引き起こす可能性があるかを説明しました。 説明を聞いて、ドラキュラは「入れ子」状態のリポジトリを削除したいと思いました。 `moons`サブディレクトリの最後の`git init`を、ドラキュラはどうやって、元に戻すことができるのでしょうか？
 
 :::::::::::::::  solution
 
-## Solution -- USE WITH CAUTION!
+## 解決策 （要注意！）
 
-### Background
+### 背景
 
-Removing files from a Git repository needs to be done with caution. But we have not learned
-yet how to tell Git to track a particular file; we will learn this in the next episode. Files
-that are not tracked by Git can easily be removed like any other "ordinary" files with
+Gitリポジトリからのファイルの削除は、慎重に行う必要があります。 しかし、特定のファイルを追跡するようにGitに指示する方法については、まだ学んでいません（次のエピソードで学びます）。 Gitによって追跡されていないファイルは、他の「普通の」ファイルと同じように、次のようにして簡単に削除できます：
 
 ```bash
 $ rm filename
 ```
 
-Similarly a directory can be removed using `rm -r dirname` or `rm -rf dirname`.
-If the files or folder being removed in this fashion are tracked by Git, then their removal
-becomes another change that we will need to track, as we will see in the next episode.
+同様に、`rm -r dirname` または `rm -rf dirname` を使ってディレクトリを削除することができます。
+この方法で削除されるファイルやフォルダがGitによって追跡されているなら、次のエピソードで見られるように、それらの削除が、追跡する必要がある別の変更になります。
 
-### Solution
+### 解答
 
-Git keeps all of its files in the `.git` directory.
-To recover from this little mistake, Dracula can just remove the `.git`
-folder in the moons subdirectory by running the following command from inside the `planets` directory:
+Gitはすべてのファイルを`.git`ディレクトリに保存します。
+この小さなミスから立ち直るには、ドラキュラは`planets`ディレクトリの中から次のコマンドを実行して、moonsサブディレクトリの中の`.git`フォルダを削除すれば良い：
 
 ```bash
 $ rm -rf moons/.git
 ```
 
-But be careful! Running this command in the wrong directory will remove
-the entire Git history of a project you might want to keep.
-Therefore, always check your current directory using the command `pwd`.
+しかし、気をつけてください！ 間違ったディレクトリでこのコマンドを実行すると、残しておきたいプロジェクトのGit履歴がすべて削除されてしまいます。
+したがって、常に `pwd` コマンドを使用してカレントディレクトリを確認してください。
 
 :::::::::::::::::::::::::
 
@@ -207,7 +174,7 @@ Therefore, always check your current directory using the command `pwd`.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git init` initializes a repository.
-- Git stores all of its repository data in the `.git` directory.
+- `git init` はリポジトリを初期化する。
+- Gitはリポジトリデータのすべてを`.git`ディレクトリに格納する。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
