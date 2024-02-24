@@ -1,116 +1,77 @@
 ---
-title: Automated Version Control
+title: 自動的なバージョン管理
 teaching: 5
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Understand the benefits of an automated version control system.
-- Understand the basics of how automated version control systems work.
+- 自動バージョン管理システムの利点を理解しましょう。
+- 自動バージョン管理システムの仕組みの基本を理解しましょう。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What is version control and why should I use it?
+- バージョン管理とは何で、なぜそれを使うべきなのでしょうか?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-We'll start by exploring how version control can be used
-to keep track of what one person did and when.
-Even if you aren't collaborating with other people,
-automated version control is much better than this situation:
+それではまず、どのようにしてバージョン管理システムが 「いつ」、「何」を、「誰」が編集したのかを記録・管理しているかを見ていきましょう。
+他の人と共同作業をしていなくても、 以下の状況に陥るより、自動的なバージョン管理を使うほうが大分良いはずです：
 
-!["notFinal.doc" by Jorge Cham, https://www.phdcomics.com](fig/phd101212s.png){alt='Comic: a PhD student sends "FINAL.doc" to their supervisor, but after several increasingly intense and frustrating rounds of comments and revisions they end up with a file named "FINAL_rev.22.comments49.corrections.10.#@$%WHYDIDCOMETOGRADSCHOOL????.doc"'}
+!["notFinal.doc" by Jorge Cham, https://www.phdcomics.com](fig/phd101212s.png){alt='漫画：ある博士課程の学生が「FINAL.doc」を指導教員に送ったが、どんどん増えていくコメントや修正を何度も直した挙句、「FINAL_rev.22.comments49.correction.10.#@$%何故大学院に入ったのか分からない？.doc」というファイルで終わる。'}
 
-We've all been in this situation before: it seems unnecessary to have
-multiple nearly-identical versions of the same document. Some word
-processors let us deal with this a little better, such as Microsoft
-Word's
-[Track Changes](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a),
-Google Docs' [version history](https://support.google.com/docs/answer/190843?hl=en), or
-LibreOffice's [Recording and Displaying Changes](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
+皆さんもこんな経験をされたことがあるはずです。複数の、（それもほとんど 内容が同じの）文書のコピーを保存しておくのは馬鹿げたことです。 文書作成ソフトの中には、例えばMicrosoft Wordの[変更履歴](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a)、Google Docsの[バージョン履歴](https://support.google.com/docs/answer/190843?hl=en)、LibreOfficeの[変更の記録・表示](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes)、こういった状況にある程度うまく対応できるものもあります。
 
-Version control systems start with a base version of the document and
-then record changes you make each step of the way. You can
-think of it as a recording of your progress: you can rewind to start at the base
-document and play back each change you made, eventually arriving at your
-more recent version.
+バージョン管理システムは、基礎となるドキュメントを元に、 加えられた全ての変更点を記録していきます。 バージョン管理システムは、基礎となるドキュメントを元に、
+加えられた全ての変更点を記録していきます。ドキュメントの
+進歩を記録していると考えてもらって構いません。変更点を最初の状況まで
+戻してから、最新版になるまでの変更を一つずつ再現していくことができます。
 
-![](fig/play-changes.svg){alt='Changes Are Saved Sequentially'}
+![](fig/play-changes.svg){alt='変更は連続して保存されます'}
 
-Once you think of changes as separate from the document itself, you
-can then think about "playing back" different sets of changes on the base document, ultimately
-resulting in different versions of that document. For example, two users can make independent
-sets of changes on the same document.
+「変更点」と「ドキュメント」を別々の物として考えてみると、基礎となるドキュメントに
+異なる変更点を「再現」する事によって、結果的に違ったバージョンのドキュメントを
+作る事が可能だという事が分かります。 例えば、下の図のように二人のユーザーが同じドキュメントに違った編集を加えた場合です。
 
-![](fig/versions.svg){alt='Different Versions Can be Saved'}
+![](fig/versions.svg){alt='異なるバージョンの保存ができます'}
 
-Unless multiple users make changes to the same section of the document - a
-[conflict](../learners/reference.md#conflict) - you can
-incorporate two sets of changes into the same base document.
+変更点の衝突（[コンフリクト](../learners/reference.md#conflict)）が無ければ、二つ以上の違った変更点を基礎ドキュメントに加えることさえできます。
 
-![](fig/merge.svg){alt='Multiple Versions Can be Merged'}
+![](fig/merge.svg){alt='複数のバージョンをマージできます'}
 
-A version control system is a tool that keeps track of these changes for us,
-effectively creating different versions of our files. It allows us to decide
-which changes will be made to the next version (each record of these changes is
-called a [commit](../learners/reference.md#commit)), and keeps useful metadata
-about them. The complete history of commits for a particular project and their
-metadata make up a [repository](../learners/reference.md#repository).
-Repositories can be kept in sync across different computers, facilitating
-collaboration among different people.
+バージョン管理システムは、ユーザーがドキュメントに加えた変更点を記録するツールであり、 結果的にドキュメントの違ったバージョンを作成する事ができます。 このツールを活用 する事によって、次のバージョンに加える変更点（個々の変更点は 「[commit（コミット）](../learners/reference.md#commit)」と呼びます）を決める事ができ、変更点に関するメタデータも一緒に保存する事ができます。 特定のプロジェクトのコミット履歴とそれに関するメタデータを総じて 「[repository（リポジトリ）](\(../learners/reference.md#repository\))」と呼びます。
+リポジトリは 別々のコンピュータと同期させる事が出来るので、他人との共同作業を潤滑に進めることが可能になります。
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## The Long History of Version Control Systems
+## バージョン管理システムの長い歴史
 
-Automated version control systems are nothing new.
-Tools like [RCS](https://en.wikipedia.org/wiki/Revision_Control_System), [CVS](https://en.wikipedia.org/wiki/Concurrent_Versions_System), or [Subversion](https://en.wikipedia.org/wiki/Apache_Subversion) have been around since the early 1980s and are used by
-many large companies.
-However, many of these are now considered legacy systems (i.e., outdated) due to various
-limitations in their capabilities.
-More modern systems, such as Git and [Mercurial](https://swcarpentry.github.io/hg-novice/),
-are _distributed_, meaning that they do not need a centralized server to host the repository.
-These modern systems also include powerful merging tools that make it possible for
-multiple authors to work on
-the same files concurrently.
+自動化されたバージョン管理システムは最近発明されたものではありません。
+[RCS](https://ja.wikipedia.org/wiki/Revision_Control_System)、[CVS](https://ja.wikipedia.org/wiki/Concurrent_Versions_System)、[Subversion](https://ja.wikipedia.org/wiki/Apache_Subversion)などのツールは1980年前半から存在しており、多くの会社に使われていました。
+しかし、これらのツールでは出来る事に制限があり、多くはもう時代遅れとされています。
+現代使われているシステム、例えばGitや[Mercurial](https://swcarpentry.github.io/hg-novice/)、は _分散_されています。というのは、特定のサーバーを必要とせずにシステムをホストする事が出来るという事です。
+現代のシステムには大変便利で効果的な「merge（マージ）」機能が備われており、同じファイルを 複数人で作業する事が可能になりました。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Paper Writing
+## 論文を書くにあたって
 
-- Imagine you drafted an excellent paragraph for a paper you are writing, but later ruin
-  it. How would you retrieve the _excellent_ version of your conclusion? Is it even possible?
+- 例えば、論文のために数百行書いたとします。しばらくして、間違えてその文章を編集してしまいます。 どうしたら以前書いた文章を取り戻すことができるのでしょう？ そもそも、可能なのでしょうか？
 
-- Imagine you have 5 co-authors. How would you manage the changes and comments
-  they make to your paper?  If you use LibreOffice Writer or Microsoft Word, what happens if
-  you accept changes made using the `Track Changes` option? Do you have a
-  history of those changes?
+- 五人の共著者がいるとします。 どうやって全員の変更やコメントを管理すれば良いのでしょう？  LibreOffice WriterやMicrosoft Wordの場合、こういった変更やコメントを変更履歴機能で受け入れると どうなるのでしょう？ 変更点は記録されるのでしょうか？
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
-- Recovering the excellent version is only possible if you created a copy
-  of the old version of the paper. The danger of losing good versions
-  often leads to the problematic workflow illustrated in the PhD Comics
-  cartoon at the top of this page.
+- 以前書いた数百行の回復は、古いバージョンの論文のコピーを作成した場合にのみ可能です。 前に書いた文章を失う危険性は、このページの上にある漫画に描かれているような問題のあるワークフローになることが多いです。
 
-- Collaborative writing with traditional word processors is cumbersome.
-  Either every collaborator has to work on a document sequentially
-  (slowing down the process of writing), or you have to send out a
-  version to all collaborators and manually merge their comments into
-  your document. The 'track changes' or 'record changes' option can
-  highlight changes for you and simplifies merging, but as soon as you
-  accept changes you will lose their history. You will then no longer
-  know who suggested that change, why it was suggested, or when it was
-  merged into the rest of the document. Even online word processors like
-  Google Docs or Microsoft Office Online do not fully resolve these
-  problems.
+- 従来のワープロを使った共同執筆は面倒です。
+  すべての共同作業者が文書に順番に書く（執筆のプロセスを遅らせる）か、一つのバージョンをすべての全員に送り、手作業で彼らのコメントをあなたの文書にマージしなければなりません。 「変更の追跡」または「変更の記録」オプションは、変更をハイライトし、マージを簡略化することができますが、変更を受け入れるとすぐにその履歴が失われます。 そうなると、誰がその変更を提案したのか、なぜそれが提案されたのか、いつ文書にマージされたのか、わからなくなります。 Google DocsやMicrosoft Office Onlineのようなオンライン・ワープロでさえ、こうした問題を完全に解決することはできません。
 
 :::::::::::::::::::::::::
 
@@ -118,7 +79,7 @@ the same files concurrently.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Version control is like an unlimited 'undo'.
-- Version control also allows many people to work in parallel.
+- バージョン管理とは、制限無く「元に戻す」ことができる機能。
+- バージョン管理を使えば、複数の人と同時進行で作業をする事ができます。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
