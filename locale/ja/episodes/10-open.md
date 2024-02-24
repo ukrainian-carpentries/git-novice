@@ -1,135 +1,88 @@
 ---
-title: Open Science
+title: オープン サイエンス
 teaching: 5
 exercises: 5
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how a version control system can be leveraged as an electronic lab notebook for computational work.
+- バージョン管理システムを計算実験用の電子実験ノートとしてどのように活用できるか説明しましょう。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can version control help me make my work more open?
+- バージョン管理は、私の研究をよりオープンにするのにどのように役立ちますか?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-> The opposite of "open" isn't "closed".
-> The opposite of "open" is "broken".
+> "open" の反対は "closed" ではありません。
+> "open" の反対は "broken" です。
 >
 > \--- John Wilbanks
 
-Free sharing of information might be the ideal in science,
-but the reality is often more complicated.
-Normal practice today looks something like this:
+科学では情報を自由に共有することが理想的かもしれませんが、現実はもっと複雑なことがよくあります。
+最近のよくあるやり方は次のようになります。
 
-- A scientist collects some data and stores it on a machine
-  that is occasionally backed up by their department.
-- They then write or modify a few small programs
-  (which also reside on the machine)
-  to analyze that data.
-- Once they have some results,
-  they write them up and submit a paper.
-  The scientist might include their data -- a growing number of journals require this -- but
-  they probably don't include the code.
-- Time passes.
-- The journal sends the scientist reviews written anonymously by a handful of other people in their field.
-  The scientist revises the paper to satisfy the reviewers,
-  during which time they might also modify the scripts they wrote earlier,
-  and resubmits.
-- More time passes.
-- The paper is eventually published.
-  It might include a link to an online copy of the data,
-  but the paper itself will be behind a paywall:
-  only people who have personal or institutional access
-  will be able to read it.
+- 科学者は何らかのデータを収集し、それを自分の部門によって時折バックアップされるマシンに保存します。
+- 次に、科学者はそのデータを分析するために、いくつかの小さなプログラム（これもその科学者のマシンにあります）を作成または変更します。
+- 結果が出たら、それを書き留めて論文を提出します。
+  科学者は自分のデータを含めるかもしれません -- ますます多くのジャーナルがこれを必要としています -- しかし科学者はおそらく自分のコードを含めていません。
+- 時間が経過します。
+- ジャーナルは、科学者の分野の他の少数の人々によって匿名で書かれたレビューを科学者に送信します。
+  科学者はレビューした人を納得させるために自分の論文を改訂し、その間に科学者は以前に書いたスクリプトを修正し、論文を再提出するかもしれません。
+- さらに時間が経過します。
+- ついに論文が出版されます。
+  科学者のデータのオンラインコピーへのリンクが含まれている可能性がありますが、論文自体はペイウォールの背後にあるでしょう：個人的または組織的なアクセス権を持つ人だけがそれを読むことができるでしょう。
 
-For a growing number of scientists,
-though,
-the process looks like this:
+しかし、ますます多くの科学者にとって、そのプロセスは次のようになります:
 
-- The data that the scientist collects is stored in an open access repository
-  like [figshare](https://figshare.com/) or
-  [Zenodo](https://zenodo.org), possibly as soon as it's collected,
-  and given its own
-  [Digital Object Identifier](https://en.wikipedia.org/wiki/Digital_object_identifier) (DOI).
-  Or the data was already published and is stored in
-  [Dryad](https://datadryad.org/).
-- The scientist creates a new repository on GitHub to hold their work.
-- During analysis,
-  they push changes to their scripts
-  (and possibly some output files)
-  to that repository.
-  The scientist also uses the repository for their paper;
-  that repository is then the hub for collaboration with colleagues.
-- When they are happy with the state of the paper,
-  the scientist posts a version to [arXiv](https://arxiv.org/)
-  or some other preprint server
-  to invite feedback from peers.
-- Based on that feedback,
-  they may post several revisions
-  before finally submitting the paper to a journal.
-- The published paper includes links to the preprint
-  and to the code and data repositories,
-  which  makes it much easier for other scientists
-  to use their work as starting point for their own research.
+- [figshare](https://figshare.com/)や[Zenodo](https://zenodo.org)などのオープンアクセスリポジトリに保存され、独自の[デジタルオブジェクト識別子](https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E8%AD%98%E5%88%A5%E5%AD%90) (DOI) が与えられます。
+  または、データはすでに公開されており、[Dryad](https://datadryad.org/) に保存されています。
+- 科学者は、自分の研究を保持するためにGitHubに新しいリポジトリを作成します。
+- 科学者は分析を行うときに、スクリプト (場合によってはいくつかの出力ファイルも) への変更をそのリポジトリにプッシュします。
+  科学者はまた、自分の論文用にそのリポジトリを使用します；そしてそのリポジトリは、同僚とのコラボレーションのハブになります。
+- 論文の状態に満足したら、[arXiv](https://arxiv.org/)またはその他のプレプリントサーバーに版を投稿し、仲間からのフィードバックを求めます。
+- そのフィードバックに基づいて、科学者は最終的に論文をジャーナルに投稿する前に、いくつかの改訂を投稿する可能性があります。
+- 公開された論文には、科学者のプレプリントとコードそしてデータリポジトリへのリンクが含まれているため、他の科学者が論文の研究を自分の研究の出発点として使用するのがはるかに簡単になります。
 
-This open model accelerates discovery:
-the more open work is,
-[the more widely it is cited and re-used](https://doi.org/10.1371/journal.pone.0000308).
-However,
-people who want to work this way need to make some decisions
-about what exactly "open" means and how to do it. You can find more on the different aspects of Open Science in [this book](https://link.springer.com/book/10.1007/978-3-319-00026-8).
+このオープンモデルは発見を加速します：研究結果がオープンになっていればなっているほど、
+[広く引用され、再利用されます](https://doi.org/10.1371/journal.pone.0000308)。
+ただし、このように作業したい人は、正確に "オープン" が何を意味し、それをどのように行うかについて、いくつかの決定を下す必要があります。 [この本](https://link.springer.com/book/10.1007/978-3-319-00026-8)では、オープンサイエンスのさまざまな側面について詳しく知ることができます。
 
-This is one of the (many) reasons we teach version control.
-When used diligently,
-it answers the "how" question
-by acting as a shareable electronic lab notebook for computational work:
+これは、バージョン管理を教える (多くの) 理由の1つです。
+コツコツと使うと、計算作業のための共有可能な電子ラボノートとして機能することによって、
+バージョン管理は "どのように" の質問に答えてくれます：
 
-- The conceptual stages of your work are documented, including who did
-  what and when. Every step is stamped with an identifier (the commit ID)
-  that is for most intents and purposes unique.
-- You can tie documentation of rationale, ideas, and other
-  intellectual work directly to the changes that spring from them.
-- You can refer to what you used in your research to obtain your
-  computational results in a way that is unique and recoverable.
-- With a version control system such as Git,
-  the entire history of the repository is easy to archive for perpetuity.
+- 誰がいつ何をしたかなど、作業の概念的な段階が文書化されています。 すべてのステップには、（ほとんどの場合）固有の識別子 (コミットID) がスタンプされています。
+- 理論的根拠、アイデア、およびその他の知的作業の文書化を、それらから生じる変化に直接結び付けることができます。
+- 独自の回復可能な方法で計算結果を取得するために、研究で使用したものを参照できるようになります。
+- Gitなどのバージョン管理システムを使用すると、リポジトリの履歴全体を簡単にアーカイブして永続化できます。
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Making Code Citable
+## コードを引用可能にすること
 
-Anything that is hosted in a version control repository (data, code, papers,
-etc.) can be turned into a citable object. You'll learn how to do this in
-[the later episode on Citation](12-citation.md).
+バージョン管理リポジトリでホストされているもの（データ、コード、論文など）はすべて、 引用可能なオブジェクトに変換できます。これを行う方法は、 これを行う方法は、[レッスン 12: 引用](12-citation.md)で学習します。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## How Reproducible Is My Work?
+## 私の仕事はどれくらい再現可能ですか？
 
-Ask one of your labmates to reproduce a result you recently obtained
-using only what they can find in your papers or on the web.
-Try to do the same for one of their results,
-then try to do it for a result from a lab you work with.
+ラボメイトの1人に、あなたの論文やウェブで見つけることができるものだけを使用して、あなたが最近得た結果を再現するように依頼してみましょう。
+ラボメイトの結果の1つに対して同じことを行ってみてから、あなたの研究室由来の結果にそれを行ってみてください。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## How to Find an Appropriate Data Repository?
+## 適切なデータリポジトリを見つける方法は?
 
-Surf the internet for a couple of minutes and check out the data repositories
-mentioned above: [Figshare](https://figshare.com/), [Zenodo](https://zenodo.org),
-[Dryad](https://datadryad.org/). Depending on your field of research, you might
-find community-recognized repositories that are well-known in your field.
-You might also find useful [these data repositories recommended by Nature](https://www.nature.com/sdata/data-policies/repositories).
-Discuss with your neighbor which data repository you might want to
-approach for your current project and explain why.
+数分間インターネットサーフィンして、次のデータリポジトリをチェックしてみましょう：[Figshare](https://figshare.com/), [Zenodo](https://zenodo.org)、[Dryad](https://datadryad.org/)。 研究分野によっては、その分野でよく知られたコミュニティで認められたリポジトリが見つかるかもしれません。
+[Natureが推奨するこれらのデータリポジトリ](https://www.nature.com/sdata/data-policies/repositories)も便利かもしれません。
+現在のプロジェクト用にどのデータリポジトリにアプローチしたいかを隣人と議論し、その理由を説明してみましょう。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -150,6 +103,6 @@ repository and describe what they see when they access that large file.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Open scientific work is more useful and more highly cited than closed.
+- オープンな科学的研究は、クローズドよりも有用であり、引用数が多い。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
