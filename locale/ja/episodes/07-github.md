@@ -1,58 +1,48 @@
 ---
-title: Remotes in GitHub
+title: GitHub におけるリモート
 teaching: 45
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain what remote repositories are and why they are useful.
-- Push to or pull from a remote repository.
+- リモートリポジトリとは何なのか、そしてなぜそれが役立つのかを説明します。
+- リモートリポジトリへのプッシュまたはリモートリポジトリからのプル。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How do I share my changes with others on the web?
+- 自分の変更をウェブ上で他の人と共有するにはどうすればよいですか？
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Version control really comes into its own when we begin to collaborate with
-other people.  We already have most of the machinery we need to do this; the
-only thing missing is to copy changes from one repository to another.
+バージョン管理が真価を発揮するのは、他の人々と共同作業を始めるときです。  これを行うために必要な機構のほとんどはすでに揃っています。
+唯一欠けているのは、あるリポジトリから別のリポジトリに変更をコピーすることです。
 
-Systems like Git allow us to move work between any two repositories.  In
-practice, though, it's easiest to use one copy as a central hub, and to keep it
-on the web rather than on someone's laptop.  Most programmers use hosting
-services like [GitHub](https://github.com), [Bitbucket](https://bitbucket.org) or
-[GitLab](https://gitlab.com/) to hold those main copies; we'll explore the pros
-and cons of this in a [later episode](13-hosting.md).
+Git のようなシステムを使用すると、任意の 2 つのリポジトリ間で作業結果を動かすことができます。  ただし、実際には、1 つのコピーを中央ハブとして使用し、それを誰かのラップトップではなくウェブ上に
+保管するのが最も簡単です。  ほとんどのプログラマーは、[GitHub](https://github.com) や [Bitbucket](https://bitbucket.org)、あるいは [GitLab](https://gitlab.com/) のようなホスティングサービス
+に、これらのメインコピーを保持しています。この長所と短所については、[後のエピソード](13-hosting.md) で探ります。
 
-Let's start by sharing the changes we've made to our current project with the
-world. To this end we are going to create a _remote_ repository that will be linked to our _local_ repository.
+まずは、現在のプロジェクトに加えた変更を世界と共有することから始めましょう。 この目的のために、_ローカル_ リポジトリにリンクされる _リモート_ リポジトリを作成します。
 
-## 1. Create a remote repository
+## 1. リモートリポジトリを作成する。
 
-Log in to [GitHub](https://github.com), then click on the icon in the top right corner to
-create a new repository called `planets`:
+[GitHub](https://github.com) にログインし、右上隅のアイコンをクリックして `planets` という名前の新しいリポジトリを作成してみましょう：
 
 ![](fig/github-create-repo-01.png){alt='Creating a Repository on GitHub (Step 1)'}
 
-Name your repository "planets" and then click "Create Repository".
+リポジトリに「planets」という名前を付けて、「Create Repository」をクリックします。
 
-Note: Since this repository will be connected to a local repository, it needs to be empty. Leave
-"Initialize this repository with a README" unchecked, and keep "None" as options for both "Add
-.gitignore" and "Add a license." See the "GitHub License and README files" exercise below for a full
-explanation of why the repository needs to be empty.
+注: このリポジトリはローカルのリポジトリに接続されるため、空にしておく必要があります。 「Initialize this repository with a README」のチェックを外したままにし、「Add .gitignore」と「Add a license.」の両方のオプションを「None」のままにします。 リポジトリを空にしておく必要がある理由の完全な説明については、以下の「GitHub ライセンスと README ファイル」の演習を参照してください。
 
 ![](fig/github-create-repo-02.png){alt='Creating a Repository on GitHub (Step 2)'}
 
-As soon as the repository is created, GitHub displays a page with a URL and some
-information on how to configure your local repository:
+リポジトリが作成されるとすぐに、GitHub には ある URL と、ローカルのリポジトリの構成方法に関する情報が記載されたページが表示されます。
 
 ![](fig/github-create-repo-03.png){alt='Creating a Repository on GitHub (Step 3)'}
 
-This effectively does the following on GitHub's servers:
+これにより、GitHub のサーバー上で次のことが効果的に行われます。
 
 ```bash
 $ mkdir planets
@@ -60,9 +50,8 @@ $ cd planets
 $ git init
 ```
 
-If you remember back to the earlier [episode](04-changes.md) where we added and
-committed our earlier work on `mars.txt`, we had a diagram of the local repository
-which looked like this:
+もしあなたが以前の [エピソード](04-changes.md) を覚えていれば、私達は `mars.txt` に以前の作業を追加してコミットしました。
+ローカルリポジトリのダイアグラムは次のようになります：
 
 ![](fig/git-staging-area.svg){alt='The Local Repository with Git Staging Area'}
 
@@ -312,7 +301,7 @@ To https://github.com/vlad/planets.git
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Proxy
+## プロキシ
 
 If the network you are connected to uses a proxy, there is a chance that your
 last command failed with "Could not resolve hostname" as the error message. To
@@ -401,7 +390,7 @@ How would you get that same information in the shell?
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 The left-most button (with the picture of a clipboard) copies the full identifier of the commit
 to the clipboard. In the shell, `git log` will show you the full commit identifier for each
@@ -447,7 +436,7 @@ record times, and why?
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 GitHub displays timestamps in a human readable relative format (i.e. "22 hours ago" or "three
 weeks ago"). However, if you hover over the timestamp, you can see the exact time at which the
@@ -466,7 +455,7 @@ How is "git push" different from "git commit"?
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 When we push changes, we're interacting with a remote repository to update it with the changes
 we've made locally (often this corresponds to sharing the changes we've made with others).
@@ -486,7 +475,7 @@ would have happened when you tried to link your local and remote repositories?
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 In this case, we'd see a merge conflict due to unrelated histories. When GitHub creates a
 README.md file, it performs a commit in the remote repository. When you try to pull the remote
