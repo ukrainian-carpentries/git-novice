@@ -1,81 +1,67 @@
 ---
-title: Setting Up Git
+title: Gitの設定
 teaching: 5
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Configure `git` the first time it is used on a computer.
-- Understand the meaning of the `--global` configuration flag.
+- コンピュータで初めて `git` を使うための設定が出来るようになりましょう。
+- `--global` 設定フラグの意味を理解しましょう。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How do I get set up to use Git?
+- Git を使うために必要な設定は何ですか？
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-When we use Git on a new computer for the first time,
-we need to configure a few things. Below are a few examples
-of configurations we will set as we get started with Git:
+Git を新しいパソコンで初めて使う場合、いくつかの設定を変更しなければなりません。 Git を始めるにあたって、私達が変更する設定をいくつか表記します：
 
-- our name and email address,
-- what our preferred text editor is,
-- and that we want to use these settings globally (i.e. for every project).
+- 名前とメールアドレス、
+- 使用したいテキストエディタ、
+- 以上の設定をグローバル設定として使う（つまり、全てのプロジェクトに反映させる）。
 
-On a command line, Git commands are written as `git verb options`,
-where `verb` is what we actually want to do and `options` is additional optional information which may be needed for the `verb`. So here is how
-Dracula sets up his new laptop:
+コマンドラインでは、Git コマンドは `git <動詞> <オプション>` と入力します。ここでの「動詞」は、Git に何をさせたいのかを表し、「オプション」はその動詞にとって必要とされる追加の情報です。 ドラキュラが新しいユーザーの場合、以下のようにコンピュータを設定します：
 
 ```bash
-$ git config --global user.name "Vlad Dracula"
-$ git config --global user.email "vlad@tran.sylvan.ia"
+Vim の終了の仕方
 ```
 
-Please use your own name and email address instead of Dracula's. This user name and email will be associated with your subsequent Git activity,
-which means that any changes pushed to
-[GitHub](https://github.com/),
-[BitBucket](https://bitbucket.org/),
-[GitLab](https://gitlab.com/) or
-another Git host server
-after this lesson will include this information.
+ここでは、ドラキュラの代わりに自分の名前とメールアドレスを使いましょう。 ここで入力した名前とメールアドレスは、これから行う Git での作業に関わってきます。というのも、これからのレッスンで[GitHub](https://github.com/)、[BitBucket](https://bitbucket.org/)、[GitLab](https://gitlab.com/)、またはその他のGit をホストするサーバーに変更箇所を「プシュ」した（送った）際に、これらの情報が使われるからです。
 
-For this lesson, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy].
+これらのレッスンでは、[GitHub](https://github.com/) に接続するので、GitHub アカウントと同じメールアドレスに設定してください。 プライバシーについて気になる方は、[GitHub のメールアドレスをプライベートにするための説明][git-privacy] を参照してください。
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Keeping your email private
+## 電子メールの非公開
 
-If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one.
+GitHub でプライベートのメールアドレスを使う場合は、同じメールアドレスを `user.email` の値に設定してください（例：`username@users.noreply.github.com`）。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Line Endings
+## 改行コード
 
-As with other keys, when you hit <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd> on your keyboard,
-your computer encodes this input as a character.
-Different operating systems use different character(s) to represent the end of a line.
-(You may also hear these referred to as newlines or line breaks.)
-Because Git uses these characters to compare files,
-it may cause unexpected issues when editing a file on different machines.
-Though it is beyond the scope of this lesson, you can read more about this issue
-[in the Pro Git book](https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf).
+他のキーと同様に、キーボードで <kbd>Enter</kbd> または <kbd>↵</kbd> （またはMacでは <kbd>Return</kbd>）を押すと、コンピュータはそれを文字として入力します。
+話が長くなるので詳しい説明は省きますが、行末に使われる文字はオペレーティングシステム（OS）よって違います。
+（行末に使われる文字を「改行コード」と呼びます。）
+Git は、改行コードを使ってファイルの違いを確かめるため、違うパソコンでファイルを編集した時に思わぬ問題が起こるかもしれません。
+このレッスンの範囲外ですが、この問題については
+[Pro Git book](https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf) を読んでください。
 
-You can change the way Git recognizes and encodes line endings
-using the `core.autocrlf` command to `git config`.
-The following settings are recommended:
+Git がどのように改行コードを理解・変換するかは、 `git config` の `core.autocrlf` コマンドを使って変更できます。
+以下の設定をおすすめします：
 
-On macOS and Linux:
+macOS および Linux:
 
 ```bash
 $ git config --global core.autocrlf input
 ```
 
-And on Windows:
+またはWindowsの場合:
 
 ```bash
 $ git config --global core.autocrlf true
@@ -83,41 +69,38 @@ $ git config --global core.autocrlf true
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Dracula also has to set his favorite text editor, following this table:
+以下の表を参考に、ドラキュラはテキストエディタも設定しました：
 
-| Editor                                                   | Configuration command                                                                                                            |
-| :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| Atom                                                     | `$ git config --global core.editor "atom --wait"`                                                                                |
-| nano                                                     | `$ git config --global core.editor "nano -w"`                                                                                    |
-| BBEdit (Mac, with command line tools) | `$ git config --global core.editor "bbedit -w"`                                                                                  |
-| Sublime Text (Mac)                    | `$ git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w"`                      |
-| Sublime Text (Win, 32-bit install)    | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"`                                |
-| Sublime Text (Win, 64-bit install)    | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"`                                      |
-| Notepad (Win)                         | `$ git config --global core.editor "c:/Windows/System32/notepad.exe"`                                                            |
-| Notepad++ (Win, 32-bit install)       | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"` |
-| Notepad++ (Win, 64-bit install)       | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`       |
-| Kate (Linux)                          | `$ git config --global core.editor "kate"`                                                                                       |
-| Gedit (Linux)                         | `$ git config --global core.editor "gedit --wait --new-window"`                                                                  |
-| Scratch (Linux)                       | `$ git config --global core.editor "scratch-text-editor"`                                                                        |
-| Emacs                                                    | `$ git config --global core.editor "emacs"`                                                                                      |
-| Vim                                                      | `$ git config --global core.editor "vim"`                                                                                        |
-| VS Code                                                  | `$ git config --global core.editor "code --wait"`                                                                                |
+| エディタ                                              | 設定コマンド                                                                                                                           |
+| :------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------- |
+| Atom                                              | `$ git config --global core.editor "atom --wait"`                                                                                |
+| nano                                              | `$ git config --global core.editor "nano -w"`                                                                                    |
+| BBEdit（Mac、コマンドラインツール付き）                          | `$ git config --global core.editor "bbedit -w"`                                                                                  |
+| Sublime Text (Mac)             | `$ git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w"`                      |
+| Sublime Text (Win、32ビットインストール) | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"`                                |
+| Sublime Text (Win、64ビットインストール) | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"`                                      |
+| メモ帳（Win）                                          | `$ git config --global core.editor "c:/Windows/System32/notepad.exe"`                                                            |
+| Notepad++ (Win、 32 ビットインストール)  | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"` |
+| Notepad++ (Win、 64 ビットインストール)  | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`       |
+| Kate (Linux)                   | `$ git config --global core.editor "kate"`                                                                                       |
+| Gedit (Linux)                  | `$ git config --global core.editor "gedit --wait --new-window"`                                                                  |
+| Scratch (Linux)                | `$ git config --global core.editor "scratch-text-editor"`                                                                        |
+| Emacs                                             | `$ git config --global core.editor "emacs"`                                                                                      |
+| Vim                                               | `$ git config --global core.editor "vim"`                                                                                        |
+| VS Code                                           | `$ git config --global core.editor "code --wait"`                                                                                |
 
-It is possible to reconfigure the text editor for Git whenever you want to change it.
+設定したテキストエディタもいつでも変更することができます。
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Exiting Vim
+## Vim の終了の仕方
 
-Note that Vim is the default editor for many programs. If you haven't used Vim before and wish to exit a session without saving
-your changes, press <kbd>Esc</kbd> then type `:q!` and hit <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
-If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and hit <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
+多くのソフトの初期設定では、Vim がデフォルトのテキストエディタに設定されています。 保存せずに Vim を終了するには、<kbd>Esc</kbd>を押した後に `:q!` と入力してから<kbd>Enter</kbd>または<kbd>↵</kbd>（Macの場合は<kbd>Return</kbd>）を押してください。
+保存してから終了するには、<kbd>Esc</kbd>を押してから `:wq` と入力して<kbd>Enter</kbd>または<kbd>↵</kbd>（Mac の場合は <kbd>Return</kbd>）を押してください。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Git (2.28+) allows configuration of the name of the branch created when you
-initialize any new repository.  Dracula decides to use that feature to set it to `main` so
-it matches the cloud service he will eventually use.
+Git (2.28以上) では、新しいリポジトリを初期化したときに作成されるブランチの名前を設定できます。  ドラキュラはその機能を使って、最終的に使うクラウドサービスと一致するように`main`に設定することにします。
 
 ```bash
 $ git config --global init.defaultBranch main
@@ -125,61 +108,54 @@ $ git config --global init.defaultBranch main
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Default Git branch naming
+## Gitブランチ名の設定
 
-Source file changes are associated with a "branch."
-For new learners in this lesson, it's enough to know that branches exist, and this lesson uses one branch.\
-By default, Git will create a branch called `master`
-when you create a new repository with `git init` (as explained in the next Episode). This term evokes
-the racist practice of human slavery and the
-[software development community](https://github.com/github/renaming)  has moved to adopt
-more inclusive language.
+ソースファイルのどんな変更でも、ある「ブランチ」に属しています。
+このレッスンの新しい学習者にとっては、ブランチが存在し、このレッスンでは1つのブランチを使うことを知っていれば十分です。\
+デフォルトでは、`git init` で新しいリポジトリを作成すると、Git が`master`
+というブランチを作成します (次のエピソードで説明します)。 この用語は、
+人身売買という人種差別的慣習を想起させ、
+[ソフトウェア開発コミュニティ](https://github.com/github/renaming) は、
+より包括的な言葉を採用するように動いています。
 
-In 2020, most Git code hosting services transitioned to using `main` as the default
-branch. As an example, any new repository that is opened in GitHub and GitLab default
-to `main`.  However, Git has not yet made the same change.  As a result, local repositories
-must be manually configured have the same main branch name as most cloud services.
+2020年には、ほとんどのGit ホスティングサービスは、`main`をデフォルトの
+ブランチとして使うように移行しました。 例として、GitHub やGitLab で新規に開いたリポジトリのデフォルトは
+`main`です。  しかし、Gitはまだ同じ変更を行っていません。  その結果、ローカル・リポジトリは、ほとんどのクラウド・サービスと同じブランチ名を手動で設定する必要があります。
 
-For versions of Git prior to 2.28, the change can be made on an individual repository level.  The
-command for this is in the next episode.  Note that if this value is unset in your local Git
-configuration, the `init.defaultBranch` value defaults to `master`.
+2.28より前のバージョンのGitでは、個々のリポジトリで変更が可能です。  そのためのコマンドは次回のエピソードで紹介します。  ローカルのGit の設定でこの値が設定されていない場合、`init.defaultBranch` のデフォルト値は `master` になることに注意しましょう。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The five commands we just ran above only need to be run once: the flag `--global` tells Git
-to use the settings for every project, in your user account, on this computer.
+上記の5つのコマンドは、一度実行するだけで十分です。`--global` フラグは Git に、
+今使っているパソコン内にある自分のアカウントに関連する全てのプロジェクトに同じ設定をするように指示しています。
 
-Let's review those settings and test our `core.editor` right away:
+さっそくこれらの設定を確認し、`core.editor`をテストしてみましょう：
 
 ```bash
 $ git config --global --edit
 ```
 
-Let's close the file without making any additional changes.  Remember, since typos in the config file will cause
-issues, it's safer to view the configuration with:
+追加の変更を加えずにファイルを閉じましょう。  設定ファイルのタイプミスは問題を引き起こすため、以下のように設定を表示する方が安全です。
 
 ```bash
 $ git config --list
 ```
 
-And if necessary, change your configuration using the
-same commands to choose another editor or update your email address.
-This can be done as many times as you want.
+また、必要であれば、同じコマンドを使えば、違うエディタやメールアドレスに変えることができます。
+これは何度でもできます。
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Proxy
+## プロキシ
 
-In some networks you need to use a
-[proxy](https://en.wikipedia.org/wiki/Proxy_server). If this is the case, you
-may also need to tell Git about the proxy:
+ネットワーク環境によっては[プロキシ](https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7) を使わなければならないかもしれません。 この場合、プロキシの設定が必要です：
 
 ```bash
 $ git config --global http.proxy proxy-url
 $ git config --global https.proxy proxy-url
 ```
 
-To disable the proxy, use
+プロキシを無効にするには：
 
 ```bash
 $ git config --global --unset http.proxy
@@ -190,20 +166,18 @@ $ git config --global --unset https.proxy
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Git Help and Manual
+## Git のヘルプとマニュアル
 
-Always remember that if you forget the subcommands or options of a `git` command, you can access the
-relevant list of options typing `git <command> -h` or access the corresponding Git manual by typing
-`git <command> --help`, e.g.:
+`git` のコマンドを忘れた時は、`-h` を使えばコマンドの一覧を、`--help` を使えばマニュアルを見ることができます：ある `git` コマンドのサブコマンドやオプションを忘れてしまった場合は、 `git <command> -h` とタイプすることによって関連するオプションのリストを見るか、`git <command> --help` とタイプすることによって対応する Git マニュアルを見ることができます：
 
 ```bash
 $ git config -h
 $ git config --help
 ```
 
-While viewing the manual, remember the `:` is a prompt waiting for commands and you can press <kbd>Q</kbd> to exit the manual.
+マニュアルを見ている間、`:`はコマンドを待っているプロンプトであり、 <kbd>Q</kbd> を押してマニュアルを終了できることを覚えておいてください。
 
-More generally, you can get the list of available `git` commands and further resources of the Git manual typing:
+より一般的には、利用可能な `git` コマンドのリストや、Git マニュアルを入手することができます：
 
 ```bash
 $ git help
@@ -211,10 +185,10 @@ $ git help
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-[git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
+[git-privacy]: https://docs.github.com/ja/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Use `git config` with the `--global` option to configure a user name, email address, editor, and other preferences once per machine.
+- `git config` と `--global` オプションを使い、ユーザー名、メールアドレス、エディタ、その他の設定を行う。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
