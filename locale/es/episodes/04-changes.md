@@ -616,26 +616,19 @@ Which command(s) below would save the changes of `myfile.txt`
 to my local Git repository?
 
 1. ```bash
+   $ git commit -m "my recent changes"
    ```
-
-$ git commit -m "my recent changes"
-
-````
 2. ```bash
-$ git init myfile.txt
-$ git commit -m "my recent changes"
-````
-
-3. ```bash
+   $ git init myfile.txt
+   $ git commit -m "my recent changes"
    ```
-
-$ git add myfile.txt
-$ git commit -m "my recent changes"
-
-````
+3. ```bash
+   $ git add myfile.txt
+   $ git commit -m "my recent changes"
+   ```
 4. ```bash
-$ git commit -m myfile.txt "my recent changes"
-````
+   $ git commit -m myfile.txt "my recent changes"
+   ```
 
 :::::::::::::::  solution
 
