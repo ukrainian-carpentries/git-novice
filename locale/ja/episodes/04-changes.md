@@ -528,26 +528,19 @@ $ git commit -m "Add some initial thoughts on spaceships"
 以下の内、`myfile.txt` を Git リポジトリに保存するためのコマンドはどれでしょう？
 
 1. ```bash
+   $ git commit -m "my recent changes"
    ```
-
-$ git commit -m "my recent changes"
-
-````
 2. ```bash
-$ git init myfile.txt
-$ git commit -m "my recent changes"
-````
-
-3. ```bash
+   $ git init myfile.txt
+   $ git commit -m "my recent changes"
    ```
-
-$ git add myfile.txt
-$ git commit -m "my recent changes"
-
-````
+3. ```bash
+   $ git add myfile.txt
+   $ git commit -m "my recent changes"
+   ```
 4. ```bash
-$ git commit -m myfile.txt "my recent changes"
-````
+   $ git commit -m myfile.txt "my recent changes"
+   ```
 
 :::::::::::::::  solution
 
@@ -571,9 +564,12 @@ $ git commit -m myfile.txt "my recent changes"
 
 一つのコミットに対し、ステージングエリアは複数のファイルの変更点を保持する事ができます。
 
-1. `mars.txt` に、火星ではなく金星に基地を作ることにしたという文章を加えましょう。
-2. 新しく `venus.txt` というファイルを作り、金星に基地を置く決断についての感想を書きましょう。
-3. 二つのファイルの変更内容をステージングエリアに加えて、コミットしましょう。
+1. Add some text to `mars.txt` noting your decision
+   to consider Venus as a base
+2. Create a new file `venus.txt` with your initial thoughts
+   about Venus as a base for you and your friends
+3. Add changes from both files to the staging area,
+   and commit those changes.
 
 :::::::::::::::  solution
 
