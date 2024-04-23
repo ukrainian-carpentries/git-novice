@@ -31,7 +31,7 @@ and cons of this in a [later episode](13-hosting.md).
 Let's start by sharing the changes we've made to our current project with the
 world. To this end we are going to create a _remote_ repository that will be linked to our _local_ repository.
 
-## 1. Create a remote repository
+## 1\. Create a remote repository
 
 Log in to [GitHub](https://github.com), then click on the icon in the top right corner to
 create a new repository called `planets`:
@@ -73,7 +73,7 @@ Now that we have two repositories, we need a diagram like this:
 Note that our local repository still contains our earlier work on `mars.txt`, but the
 remote repository on GitHub appears empty as it doesn't contain any files yet.
 
-## 2. Connect local to remote repository
+## 2\. Connect local to remote repository
 
 Now we connect the two repositories.  We do this by making the
 GitHub repository a [remote](../learners/reference.md#remote) for the local repository.
@@ -124,7 +124,7 @@ origin   git@github.com:vlad/planets.git (push)
 We'll discuss remotes in more detail in the next episode, while
 talking about how they might be used for collaboration.
 
-## 3. SSH Background and Setup
+## 3\. SSH Background and Setup
 
 Before Dracula can connect to a remote repository, he needs to set up a way for his computer to authenticate with GitHub so it knows it's him trying to connect to his remote repository.
 
@@ -173,7 +173,7 @@ ls: cannot access '/c/Users/Vlad Dracula/.ssh': No such file or directory
 If SSH has been set up on the computer you're using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up.\
 Since they don't exist on Dracula's computer, he uses this command to create them.
 
-### 3.1 Create an SSH key pair
+### 3\.1 Create an SSH key pair
 
 To create an SSH key pair Vlad uses this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key (here, Vlad's email):
 
@@ -239,7 +239,7 @@ drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
 -rw-r--r-- 1 Vlad Dracula 197121 106 Jul 16 14:48 id_ed25519.pub
 ```
 
-### 3.2 Copy the public key to GitHub
+### 3\.2 Copy the public key to GitHub
 
 Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.
 
@@ -286,7 +286,7 @@ Hi Vlad! You've successfully authenticated, but GitHub does not provide shell ac
 
 Good! This output confirms that the SSH key works as intended. We are now ready to push our work to the remote repository.
 
-## 4. Push local changes to a remote
+## 4\. Push local changes to a remote
 
 Now that authentication is setup, we can return to the remote.  This command will push the changes from
 our local repository to the repository on GitHub:
