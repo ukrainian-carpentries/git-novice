@@ -62,7 +62,7 @@ index b36abfd..0848c8d 100644
 which is the same as what you would get if you leave out `HEAD` (try it).  The
 real goodness in all this is when you can refer to previous commits.  We do
 that by adding `~1`
-(where "\~" is "tilde", pronounced [**til**-d_uh_])
+(where "~" is "tilde", pronounced [**til**\-d_uh_])
 to refer to the commit one before `HEAD`.
 
 ```bash
