@@ -8,7 +8,6 @@ Please see [https://swcarpentry.github.io/git-novice/](https://swcarpentry.githu
 More info to follow.
 
 [create_slack_svg]: https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg
-
 [slack_invite]: https://slack-invite.carpentries.org/
 
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://slack-invite.carpentries.org/)
