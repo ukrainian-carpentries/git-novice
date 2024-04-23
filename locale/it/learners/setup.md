@@ -16,7 +16,7 @@ instructions on installing Git for various operating systems.
 
 You will need an account for [GitHub](https://github.com) to follow episodes 7 & 8 in this lesson.
 
-1. Go to https\://github.com and follow the "Sign up" link at the top-right of the window.
+1. Go to https://github.com and follow the "Sign up" link at the top-right of the window.
 2. Follow the instructions to create an account.
 3. Verify your email address with GitHub.
 4. Configure multifactor authentication (see below).
@@ -44,7 +44,7 @@ Several options exist for setting up 2FA, which are summarised here:
 
 The GitHub documentation provides [more details about configuring 2FA](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication).
 
-***
+----------------
 
 ## Preparing Your Working Directory
 
