@@ -1,44 +1,39 @@
 ---
-title: Automated Version Control
+title: Controllo di versione automatico
 teaching: 5
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Understand the benefits of an automated version control system.
-- Understand the basics of how automated version control systems work.
+- Comprendere i vantaggi di un sistema automatizzato di controllo delle versioni.
+- Comprendere le basi di come funzionano i sistemi di controllo automatico delle versioni.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What is version control and why should I use it?
+- Che cos'è il controllo di versione e perché dovrei usarlo?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-We'll start by exploring how version control can be used
-to keep track of what one person did and when.
-Even if you aren't collaborating with other people,
-automated version control is much better than this situation:
+Inizieremo esplorando come il controllo di versione può essere utilizzato
+per tenere traccia di ciò che qualcuno ha fatto e quando.
+Anche se non stai collaborando con altre persone, il controllo automatico di versione
+è molto meglio di questa situazione:
 
-!["notFinal.doc" by Jorge Cham, https://www.phdcomics.com](fig/phd101212s.png){alt='Comic: a PhD student sends "FINAL.doc" to their supervisor, but after several increasingly intense and frustrating rounds of comments and revisions they end up with a file named "FINAL_rev.22.comments49.corrections.10.#@$%WHYDIDCOMETOGRADSCHOOL????.doc"'}
+!["notFinal.doc" di Jorge Cham, https://www.phdcomics.com](fig/phd101212s.png){alt='Comic: un dottorando invia "FINAL.doc" al loro supervisore, ma dopo diversi turni sempre più intensi e frustranti di commenti e revisioni finiscono con un file chiamato "FINAL_rev.22.comments49.corrections.10.#@$%PERCHEHOFATTOILDOTTORATO????.doc"'}
 
-We've all been in this situation before: it seems unnecessary to have
-multiple nearly-identical versions of the same document. Some word
-processors let us deal with this a little better, such as Microsoft
-Word's
-[Track Changes](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a),
-Google Docs' [version history](https://support.google.com/docs/answer/190843?hl=en), or
-LibreOffice's [Recording and Displaying Changes](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
+Ci siamo trovati tutti in questa situazione: sembra inutile avere
+versioni multiple quasi identiche dello stesso documento. Alcuni editor di testo ci permettono di affrontare questo problema un po' meglio, come il
+[rilevamento modifiche](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a) di Microsoft Word,
+la [cronologia versioni](https://support.google.com/docs/answer/190843?hl=it) di Google Docs,
+la [Registrazione e visualizzazione delle modifiche](https://help.libreoffice.org/latest/it/text/shared/guide/redlining.html) di LibreOffice.
 
-Version control systems start with a base version of the document and
-then record changes you make each step of the way. You can
-think of it as a recording of your progress: you can rewind to start at the base
-document and play back each change you made, eventually arriving at your
-more recent version.
+I sistemi di controllo delle versioni iniziano con una versione base del documento e
+quindi registrano le modifiche apportate a ogni passo. Puoi immaginarlo come un salvataggio dei tuoi progressi: puoi tornare indietro al documento iniziale e riprodurre ogni cambiamento che hai fatto, fino alla tua versione più recente.
 
-![](fig/play-changes.svg){alt='Changes Are Saved Sequentially'}
+![](fig/play-changes.svg){alt='Le modifiche sono salvate in sequenza'}
 
 Once you think of changes as separate from the document itself, you
 can then think about "playing back" different sets of changes on the base document, ultimately
