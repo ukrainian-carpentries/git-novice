@@ -299,29 +299,16 @@ only choice. It's always interesting to mention the options to have
 web-hosted private repositories.
 
 [github]: https://github.com/
-
 [drawings]: https://marklodato.github.io/visual-git-guide/index-en.html
-
 [github-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
-
 [github-line-endings]: https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings
-
 [github-line-endings-refresh]: https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings#refreshing-a-repository-after-changing-line-endings
-
 [github-gui]: https://git-scm.com/downloads/guis
-
 [diffmerge]: https://sourcegear.com/diffmerge/
-
 [git-it]: https://github.com/jlord/git-it
-
 [git-it-electron]: https://github.com/jlord/git-it-electron
-
 [code-school]: https://www.codeschool.com/
-
 [try-git]: https://try.github.io
-
 [git-parable]: https://tom.preston-werner.com/2009/05/19/the-git-parable.html
-
 [repos-in-repos]: https://github.com/swcarpentry/git-novice/issues/272
-
 [cc-faq-software]: https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software
