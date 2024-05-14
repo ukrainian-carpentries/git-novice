@@ -679,7 +679,6 @@ $ git diff me.txt
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 [commit-messages]: https://chris.beams.io/posts/git-commit/
-
 [git-references]: https://git-scm.com/book/ja/v2/Git%E3%81%AE%E5%86%85%E5%81%B4-Git%E3%81%AE%E5%8F%82%E7%85%A7
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
