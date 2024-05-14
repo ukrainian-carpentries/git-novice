@@ -76,7 +76,7 @@ $ git config --global core.autocrlf true
 | Atom                                              | `$ git config --global core.editor "atom --wait"`                                                                                |
 | nano                                              | `$ git config --global core.editor "nano -w"`                                                                                    |
 | BBEdit（Mac、コマンドラインツール付き）                          | `$ git config --global core.editor "bbedit -w"`                                                                                  |
-| Sublime Text (Mac)             | `$ git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w"`                      |
+| Sublime Text (Mac)             | `$ git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w"`                     |
 | Sublime Text (Win、32ビットインストール) | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"`                                |
 | Sublime Text (Win、64ビットインストール) | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"`                                      |
 | メモ帳（Win）                                          | `$ git config --global core.editor "c:/Windows/System32/notepad.exe"`                                                            |
