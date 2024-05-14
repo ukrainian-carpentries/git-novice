@@ -16,7 +16,7 @@ title: Gitのインストール
 
 このレッスンのエピソード7と8には、 [GitHub](https://github.com)のアカウントが必要です。
 
-1. https\://github.com にアクセスし、ウィンドウの右上にある「Sign Up」のリンクに従ってください。
+1. https://github.com にアクセスし、ウィンドウの右上にある「Sign Up」のリンクに従ってください。
 2. 指示に従ってアカウントを作成してください。
 3. GitHub でメールアドレスを確認する。
 4. 多要素認証を設定する（下記参照）。
@@ -37,7 +37,7 @@ title: Gitのインストール
 
 GitHubのドキュメンテーションに[2FAの設定に関する詳細](https://docs.github.com/ja/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication)があります。
 
-***
+----------------
 
 ## 作業ディレクトリの準備
 
