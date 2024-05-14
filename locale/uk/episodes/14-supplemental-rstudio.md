@@ -175,7 +175,6 @@ There are many more features in the RStudio Git menu, but these should be
 enough to get you started!
 
 [rstudio]: https://www.rstudio.com/
-
 [rstudio-projects]: https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
