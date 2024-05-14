@@ -102,39 +102,21 @@ media, slack, newsletters, and email lists. You can also [reach us by
 email][contact].
 
 [repo]: https://github.com/swcarpentry/git-novice
-
 [repo-issues]: https://github.com/swcarpentry/git-novice/issues
-
 [contact]: mailto:team@carpentries.org
-
 [cp-site]: https://carpentries.org/
-
 [dc-issues]: https://github.com/issues?q=user%3Adatacarpentry
-
 [dc-lessons]: https://datacarpentry.org/lessons/
-
 [dc-site]: https://datacarpentry.org/
-
 [discuss-list]: https://lists.software-carpentry.org/listinfo/discuss
-
 [github]: https://github.com
-
 [github-flow]: https://guides.github.com/introduction/flow/
-
 [github-join]: https://github.com/join
-
 [how-contribute]: https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github
-
 [issues]: https://carpentries.org/help-wanted-issues/
-
 [lc-issues]: https://github.com/issues?q=user%3ALibraryCarpentry
-
 [swc-issues]: https://github.com/issues?q=user%3Aswcarpentry
-
 [swc-lessons]: https://software-carpentry.org/lessons/
-
 [swc-site]: https://software-carpentry.org/
-
 [lc-site]: https://librarycarpentry.org/
-
 [template-doc]: https://carpentries.github.io/workbench/
