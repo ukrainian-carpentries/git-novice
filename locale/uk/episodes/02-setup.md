@@ -1,81 +1,67 @@
 ---
-title: Setting Up Git
+title: Налаштування Git
 teaching: 5
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Configure `git` the first time it is used on a computer.
-- Understand the meaning of the `--global` configuration flag.
+- Налаштувати `git` під час його першого використання на комп’ютері.
+- Зрозуміти значення опції конфігурації `--global`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How do I get set up to use Git?
+- Як треба налаштувати Git для його використання?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-When we use Git on a new computer for the first time,
-we need to configure a few things. Below are a few examples
-of configurations we will set as we get started with Git:
+Коли ми користуємося Git на новому комп'ютері вперше, нам потрібно налаштувати декілька речей. Нижче наведено кілька прикладів з налаштувань, які ми зробимо, коли почнемо працювати з Git:
 
-- our name and email address,
-- what our preferred text editor is,
-- and that we want to use these settings globally (i.e. for every project).
+- ваше ім'я та адреса електронної пошти,
+- ваш бажаний текстовий редактор,
+- а також те, що ми хочемо використовувати ці параметри глобально (тобто для кожного проєкту).
 
-On a command line, Git commands are written as `git verb options`,
-where `verb` is what we actually want to do and `options` is additional optional information which may be needed for the `verb`. So here is how
-Dracula sets up his new laptop:
+В командному рядку (command line), команди Git виглядають як `git verb options`, де `verb` - це те що ми фактично хочемо зробити, та `options` - це додаткова інформація, яка може бути потрібна для `verb`. Отже, ось як Dracula налаштовує свій новий ноутбук:
 
 ```bash
-$ git config --global user.name "Vlad Dracula"
-$ git config --global user.email "vlad@tran.sylvan.ia"
+Вихід з Vim
 ```
 
-Please use your own name and email address instead of Dracula's. This user name and email will be associated with your subsequent Git activity,
-which means that any changes pushed to
-[GitHub](https://github.com/),
-[BitBucket](https://bitbucket.org/),
-[GitLab](https://gitlab.com/) or
-another Git host server
-after this lesson will include this information.
+Будь ласка, використовуйте своє власне ім'я та електронну пошту замість "Dracula". Ці ім'я користувача та електронна пошта будуть асоційовані з вашою подальшою діяльністю Git, а це означає, що будь-які зміни надіслані в [GitHub](https://github.com/), [BitBucket](https://bitbucket.org/), [GitLab](https://gitlab.com/) або інший хост-сервер Git після цього уроку будуть містити цю інформацію.
 
-For this lesson, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy].
+У цьому уроці ми будемо працювати з [GitHub](https://github.com/), тож використовувана електронна пошта повинна бути такою ж, як і та, яка використовується для налаштування вашого облікового запису GitHub. Якщо вас турбує конфіденційність, перегляньте [інструкції GitHub щодо збереження вашої електронної адреси конфіденційною][git-privacy].
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Keeping your email private
+## Збереження конфіденційності вашої електронної адреси
 
-If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one.
+Збереження конфіденційності вашої електронної адреси: якщо ви вирішили приховати власну електронну адресу на GitHub, то використовуйте для `user.email` електронну адресу у вигляді `username@users.noreply.github.com`, замінивши `username` вашим ім'ям користувача GitHub.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Line Endings
+## Закінчення рядків
 
-As with other keys, when you hit <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd> on your keyboard,
-your computer encodes this input as a character.
-Different operating systems use different character(s) to represent the end of a line.
-(You may also hear these referred to as newlines or line breaks.)
-Because Git uses these characters to compare files,
-it may cause unexpected issues when editing a file on different machines.
-Though it is beyond the scope of this lesson, you can read more about this issue
-[in the Pro Git book](https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf).
+Як і з іншими клавішами, коли ви натискаєте на клавіатурі <kbd>Enter</kbd> або <kbd>↵</kbd> (або <kbd>Return</kbd> на комп’ютері Mac), ваш комп’ютер кодує це як символ.
+Різні операційні системи використовують різні символи для позначення кінця рядка.
+(Ви також можете почути, що їх називають новими рядками або розривами рядків.)
+Оскільки Git використовує ці символи для порівняння файлів,
+це може спричинити несподівані проблеми під час редагування файлу на різних машинах.
+Хоча це поза межами цього уроку, ви можете більше прочитати про це питання [у книзі "Pro Git"](https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf).
 
-You can change the way Git recognizes and encodes line endings
-using the `core.autocrlf` command to `git config`.
-The following settings are recommended:
+Ви можете змінити спосіб, у який Git розпізнає та кодує закінчення рядків, використовуючи `git config` з аргументом `core.autocrlf`.
+Рекомендуються наступні налаштування:
 
-On macOS and Linux:
+Для macOS і Linux:
 
 ```bash
 $ git config --global core.autocrlf input
 ```
 
-And on Windows:
+Для Windows:
 
 ```bash
 $ git config --global core.autocrlf true
@@ -83,41 +69,39 @@ $ git config --global core.autocrlf true
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Dracula also has to set his favorite text editor, following this table:
+Dracula також повинен налаштувати для використання з Git свій улюблений текстовий редактор, як наведено в таблиці нижче:
 
-| Editor                                                   | Configuration command                                                                                                            |
-| :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| Atom                                                     | `$ git config --global core.editor "atom --wait"`                                                                                |
-| nano                                                     | `$ git config --global core.editor "nano -w"`                                                                                    |
-| BBEdit (Mac, with command line tools) | `$ git config --global core.editor "bbedit -w"`                                                                                  |
-| Sublime Text (Mac)                    | `$ git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w"`                     |
-| Sublime Text (Win, 32-bit install)    | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"`                                |
-| Sublime Text (Win, 64-bit install)    | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"`                                      |
-| Notepad (Win)                         | `$ git config --global core.editor "c:/Windows/System32/notepad.exe"`                                                            |
-| Notepad++ (Win, 32-bit install)       | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"` |
-| Notepad++ (Win, 64-bit install)       | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`       |
-| Kate (Linux)                          | `$ git config --global core.editor "kate"`                                                                                       |
-| Gedit (Linux)                         | `$ git config --global core.editor "gedit --wait --new-window"`                                                                  |
-| Scratch (Linux)                       | `$ git config --global core.editor "scratch-text-editor"`                                                                        |
-| Emacs                                                    | `$ git config --global core.editor "emacs"`                                                                                      |
-| Vim                                                      | `$ git config --global core.editor "vim"`                                                                                        |
-| VS Code                                                  | `$ git config --global core.editor "code --wait"`                                                                                |
+| Редактор                                                          | Команда конфігурації                                                                                                             |
+| :---------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| Atom                                                              | `$ git config --global core.editor "atom --wait"`                                                                                |
+| nano                                                              | `$ git config --global core.editor "nano -w"`                                                                                    |
+| BBEdit (Mac, з інструментами командного рядка) | `$ git config --global core.editor "bbedit -w"`                                                                                  |
+| Sublime Text (Mac)                             | `$ git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w"`                     |
+| Sublime Text (Windows, 32-бітна інсталяція)    | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"`                                |
+| Sublime Text (Windows, 64-бітна інсталяція)    | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"`                                      |
+| Notepad (Windows)                              | `$ git config --global core.editor "c:/Windows/System32/notepad.exe"`                                                            |
+| Notepad++ (Windows, 32-бітна інсталяція)       | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"` |
+| Notepad++ (Windows, 64-бітна інсталяція)       | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`       |
+| Kate (Linux)                                   | `$ git config --global core.editor "kate"`                                                                                       |
+| Gedit (Linux)                                  | `$ git config --global core.editor "gedit --wait --new-window"`                                                                  |
+| Scratch (Linux)                                | `$ git config --global core.editor "scratch-text-editor"`                                                                        |
+| Emacs                                                             | `$ git config --global core.editor "emacs"`                                                                                      |
+| Vim                                                               | `$ git config --global core.editor "vim"`                                                                                        |
+| VS Code                                                           | `$ git config --global core.editor "code --wait"`                                                                                |
 
-It is possible to reconfigure the text editor for Git whenever you want to change it.
+Ви зможете переналаштувати текстовий редактор для Git у будь-який момент, якщо забажаєте пізніше його змінити.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Exiting Vim
+## Вихід з Vim
 
-Note that Vim is the default editor for many programs. If you haven't used Vim before and wish to exit a session without saving
-your changes, press <kbd>Esc</kbd> then type `:q!` and hit <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
-If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and hit <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
+Зауважте, що Vim є редактором за замовчуванням для багатьох програм. Якщо ви раніше не користувалися Vim і бажаєте вийти із сеансу без збереження
+змін, натисніть <kbd>Esc</kbd>, потім введіть `:q!` і натисніть <kbd>Enter</kbd> або <kbd>↵</kbd> (або <kbd>Return</kbd> на Mac).
+Якщо ви хочете зберегти зміни та вийти, натисніть <kbd>Esc</kbd>, потім введіть `:wq` і натисніть <kbd>Enter</kbd> або <kbd>↵</kbd> (або <kbd>Return</kbd> на Mac).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Git (2.28+) allows configuration of the name of the branch created when you
-initialize any new repository.  Dracula decides to use that feature to set it to `main` so
-it matches the cloud service he will eventually use.
+Git (2.28+) дозволяє конфігурувати назву гілки, яка створюється під час ініціалізації будь-якого нового репозиторію.  Dracula вирішив використати цю можливість, щоб назвати її `main`, щоб це відповідало налаштуванням у хмарному сервісі, який він зрештою використовуватиме.
 
 ```bash
 $ git config --global init.defaultBranch main
@@ -125,61 +109,53 @@ $ git config --global init.defaultBranch main
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Default Git branch naming
+## Назва гілки Git за замовчуванням
 
-Source file changes are associated with a "branch."
-For new learners in this lesson, it's enough to know that branches exist, and this lesson uses one branch.\
-By default, Git will create a branch called `master`
-when you create a new repository with `git init` (as explained in the next Episode). This term evokes
-the racist practice of human slavery and the
-[software development community](https://github.com/github/renaming)  has moved to adopt
-more inclusive language.
+Зміни у змісті репозиторію пов’язані з "гілкою".
+Для початківців у цьому уроці буде достатньо знати, що гілки існують, і що в цьому уроці використовується тільки одна гілка.\
+За замовчуванням, коли ви створюєте новий репозиторій за допомогою `git init`, Git створить гілку під назвою `master` (як пояснюється в наступному епізоді). Цей термін нагадує про расистську практику людського рабства, і тому спільнота розробників програмного забезпечення [перейшла до більш інклюзивної мови](https://github.com/github/renaming).
 
-In 2020, most Git code hosting services transitioned to using `main` as the default
-branch. As an example, any new repository that is opened in GitHub and GitLab default
-to `main`.  However, Git has not yet made the same change.  As a result, local repositories
-must be manually configured have the same main branch name as most cloud services.
+В 2020, більшість сервісів хостингу репозиторіїв Git перейшли до використання `main` як стандартної гілки. Наприклад, будь-який новий репозиторій, створений у GitHub і GitLab, за замовчуванням
+буде використовувати гілку `main`.  Проте Git ще не зробив таких самих змін.  Як наслідок, локальні репозиторії
+повинні бути налаштовані вручну, щоб мати ту саму назву головної гілки, що й більшість хмарних сервісів.
 
-For versions of Git prior to 2.28, the change can be made on an individual repository level.  The
-command for this is in the next episode.  Note that if this value is unset in your local Git
-configuration, the `init.defaultBranch` value defaults to `master`.
+При використанні попередніх версій Git (до 2.28), зміни можуть бути внесені на рівні окремого репозиторію.  Команда
+для цього знаходиться в наступному епізоді.  Зауважте, що якщо це значення не встановлено у вашій локальній конфігурації Git, то `init.defaultBranch` за замовчуванням має значення `master`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The five commands we just ran above only need to be run once: the flag `--global` tells Git
-to use the settings for every project, in your user account, on this computer.
+П'ять команд, які ми щойно запустили вище, потрібно виконати лише один раз: параметр `--global` повідомляє Git про налаштування для кожного проєкту у вашому обліковому записі користувача на цьому комп'ютері.
 
-Let's review those settings and test our `core.editor` right away:
+Погляньмо на ці налаштування і протестуємо `core.editor` прямо зараз:
 
 ```bash
 $ git config --global --edit
 ```
 
-Let's close the file without making any additional changes.  Remember, since typos in the config file will cause
-issues, it's safer to view the configuration with:
+Закриймо відкритий файл без внесення додаткових змін.  Пам’ятайте, оскільки помилки у файлі конфігурації спричинять
+проблеми, безпечніше переглядати конфігурацію за допомогою
 
 ```bash
 $ git config --list
 ```
 
-And if necessary, change your configuration using the
-same commands to choose another editor or update your email address.
-This can be done as many times as you want.
+Якщо необхідно, змініть свою конфігурацію за допомогою
+тих самих команд, щоб вибрати інший редактор або оновити адресу електронної пошти.
+Це можна робити скільки завгодно разів.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Proxy
+## Проксі-сервер
 
-In some networks you need to use a
-[proxy](https://en.wikipedia.org/wiki/Proxy_server). If this is the case, you
-may also need to tell Git about the proxy:
+У деяких мережах потрібно використовувати [проксі-сервер](https://en.wikipedia.org/wiki/Proxy_server). Якщо це так, вам
+також може знадобитися повідомити про це Git:
 
 ```bash
 $ git config --global http.proxy proxy-url
 $ git config --global https.proxy proxy-url
 ```
 
-To disable the proxy, use
+Щоб вимкнути проксі, використовуйте
 
 ```bash
 $ git config --global --unset http.proxy
@@ -190,20 +166,19 @@ $ git config --global --unset https.proxy
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Git Help and Manual
+## Довідка про Git та посібник користувача
 
-Always remember that if you forget the subcommands or options of a `git` command, you can access the
-relevant list of options typing `git <command> -h` or access the corresponding Git manual by typing
-`git <command> --help`, e.g.:
+Завжди пам’ятайте, що якщо ви забули підкоманди чи параметри команди `git`, ви можете отримати відповідний список параметрів, ввівши `git <command> -h` або подивитись документацію до Git, ввівши
+`git <command> --help`, наприклад:
 
 ```bash
 $ git config -h
 $ git config --help
 ```
 
-While viewing the manual, remember the `:` is a prompt waiting for commands and you can press <kbd>Q</kbd> to exit the manual.
+Під час перегляду посібника пам’ятайте, що `:` — це підказка, яка вказує на очікування команди, і ви можете натиснути <kbd>Q</kbd>, щоб вийти з посібника.
 
-More generally, you can get the list of available `git` commands and further resources of the Git manual typing:
+Загалом, ви можете отримати список доступних команд `git` і подальші ресурси за допомогою цієї команди:
 
 ```bash
 $ git help
@@ -215,6 +190,6 @@ $ git help
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Use `git config` with the `--global` option to configure a user name, email address, editor, and other preferences once per machine.
+- Використовуйте `git config` з опцією `--global`, щоб налаштувати ім’я користувача, адресу електронної пошти, редактор та інші параметри. Це треба робити один раз для кожної машини.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
