@@ -3,53 +3,26 @@ permalink: index.html
 site: sandpaper::sandpaper_site
 ---
 
-Wolfman and Dracula have been hired by Universal Missions (a space
-services spinoff from Euphoric State University) to investigate if it
-is possible to send their next planetary lander to Mars.  They want to
-be able to work on the plans at the same time, but they have run into
-problems doing this in the past.  If they take turns, each one will
-spend a lot of time waiting for the other to finish, but if they work
-on their own copies and email changes back and forth things will be
-lost, overwritten, or duplicated.
+Wolfman та Dracula найняті на роботу до Universal Missions (відділ космічних служб з Euphoric State University), щоб дослідити, чи можна відправити планетарний посадковий модуль на Марс.  Вони хочуть мати можливість працювати над планами одночасно, але у минулому це призводило до проблем.  Якщо вони будуть робити зміни по черзі, то кожен витрачатиме багато часу, чекаючи, поки інший закінчить, а якщо вони будуть працювати над власними копіями та відсилати файли туди й назад електронною поштою, зміни будуть втрачені, перезаписані або продубльовані.
 
-A colleague suggests using [version control](learners/reference.md#version-control) to
-manage their work. Version control is better than mailing files back and forth:
+Колега пропонує їм використовувати [контроль версій](learners/reference.md#version-control), щоб вправитися з цією своєю роботою. Контроль версій кращий, ніж пересилання файлів туди й назад:
 
 - Nothing that is committed to version control is ever lost, unless
-  you work really, really hard at losing it. Since all old versions of
-  files are saved, it's always possible to go back in time to see
-  exactly who wrote what on a particular day, or what version of a
-  program was used to generate a particular set of results.
+  you work really, really hard at losing it. Оскільки всі попередні версії файлів зберігаються, завжди можна повернутися у минуле, щоб побачити, хто саме написав що в певний день, або яка версія програми була використана для створення певного набору результатів.
 
-- As we have this record of who made what changes when, we know who to ask
-  if we have questions later on, and, if needed, revert to a previous
-  version, much like the "undo" feature in an editor.
+- Оскільки ми маємо ці записи про те, хто зробив які зміни та коли, ми будемо знати, кого запитати, якщо в нас виникне питання пізніше, і, якщо потрібно, повернутися до попередньої версії, так само як за допомогою функції "undo" у редакторі.
 
-- When several people collaborate in the same project, it's possible to
-  accidentally overlook or overwrite someone's changes. The version control
-  system automatically notifies users whenever there's a conflict between one
-  person's work and another's.
+- Коли кілька людей співпрацюють в одному проєкті, можна випадково пропустити або перезаписати чиїсь зміни. Система контролю версій автоматично повідомляє користувачів, коли виникає конфлікт між роботою однієї людини та іншої.
 
-Teams are not the only ones to benefit from version control: lone
-researchers can benefit immensely.  Keeping a record of what was
-changed, when, and why is extremely useful for all researchers if they
-ever need to come back to the project later on (e.g., a year later,
-when memory has faded).
+Не тільки команди виграють від контролю версій: індивідуальні дослідники можуть також отримати величезну користь.  Ведення записів про те, що було змінено, коли й чому надзвичайно корисно для всіх дослідників, якщо їм коли-небудь знадобиться повернутися до проєкту пізніше (наприклад, через рік, коли вже важко це пригадати).
 
-Version control is the lab notebook of the digital world: it's what
-professionals use to keep track of what they've done and to
-collaborate with other people.  Every large software development
-project relies on it, and most programmers use it for their small jobs
-as well.  And it isn't just for software: books,
-papers, small data sets, and anything that changes over time or needs
-to be shared can and should be stored in a version control system.
+Контроль версій - це лабораторний ноутбук цифрового світу: це те, що професіонали використовують, щоб відстежувати тем, що вони зробили, і співпрацювати з іншими людьми.  Кожен великий проєкт розробки програмного забезпечення покладається на нього, і більшість програмістів також використовують його і для своїх невеликих завдань.  І це не тільки для програмного забезпечення: книги, статті, набори даних, і все, що змінюється з часом або потребує спільного використання, можна і потрібно зберігати в системі контролю версій.
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
-## Prerequisites
+## Передумови
 
-In this lesson we use Git from the Unix Shell.
-Some previous experience with the shell is expected,
-_but isn't mandatory_.
+У цьому уроці ми використовуємо Git з командного рядка за допомогою оболонки Unix Shell.
+Очікується деякий попередній досвід роботи з shell, _але він не є обов'язковим_.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
