@@ -9,7 +9,7 @@
 #incubator: The Carpentries Incubator
 carpentry: 'swc'
 #Overall title for pages.
-title: 'Version Control with Git'
+title: 'Контроль версій за допомогою Git'
 #Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2014-12-04'
 #Comma-separated list of keywords for the lesson
@@ -20,7 +20,7 @@ life_cycle: 'stable'
 #License of the lesson materials (recommended CC-BY 4.0)
 license: 'CC-BY 4.0'
 #Link to the source repository for this lesson
-source: 'https://github.com/swcarpentry/git-novice'
+source: 'https://github.com/ukrainian-carpentries/git-novice'
 #Default branch of your lesson
 branch: 'main'
 #Who to contact if there are any issues
@@ -65,6 +65,6 @@ profiles:
 #Customisation ---------------------------------------------
 #This space below is where custom yaml items (e.g. pinning
 #sandpaper and varnish versions) should live
-url: 'https://swcarpentry.github.io/git-novice'
+url: 'https://ukrainian-carpentries.github.io/git-novice/'
 analytics: carpentries
-lang: en
+lang: uk
