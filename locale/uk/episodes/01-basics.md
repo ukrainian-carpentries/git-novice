@@ -32,9 +32,7 @@ exercises: 0
 
 ![](fig/versions.svg){alt='Різні версії можна зберегти'}
 
-Unless multiple users make changes to the same section of the document - a
-[conflict](../learners/reference.md#conflict) - you can
-incorporate two sets of changes into the same base document.
+Якщо немає [конфліктів](../learners/reference.md#conflict), тобто немає ситуації, коли декілька користувачів вносять зміни до одного й того ж розділу документа, то буде можливо включити два набори змін до одного базового документа.
 
 ![](fig/merge.svg){alt='Різні версії можна обʼєднати'}
 
