@@ -26,7 +26,8 @@ Git を新しいパソコンで初めて使う場合、いくつかの設定を�
 コマンドラインでは、Git コマンドは `git <動詞> <オプション>` と入力します。ここでの「動詞」は、Git に何をさせたいのかを表し、「オプション」はその動詞にとって必要とされる追加の情報です。 ドラキュラが新しいユーザーの場合、以下のようにコンピュータを設定します：
 
 ```bash
-Vim の終了の仕方
+$ git config --global user.name "Vlad Dracula"
+$ git config --global user.email "vlad@tran.sylvan.ia"
 ```
 
 ここでは、ドラキュラの代わりに自分の名前とメールアドレスを使いましょう。 ここで入力した名前とメールアドレスは、これから行う Git での作業に関わってきます。というのも、これからのレッスンで[GitHub](https://github.com/)、[BitBucket](https://bitbucket.org/)、[GitLab](https://gitlab.com/)、またはその他のGit をホストするサーバーに変更箇所を「プシュ」した（送った）際に、これらの情報が使われるからです。
