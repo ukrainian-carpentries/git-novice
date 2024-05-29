@@ -161,7 +161,7 @@ Further, the discussion page has more detail on ignore rules.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Including Specific Files
+## 無視の対象に特定のファイルを含める
 
 `final.csv`以外の、ルートディレクトリ内にある他の `.data` ファイルを全て無視したい場合はどうすればいいのでしょう？
 ヒント： `!` （感嘆符）が何をするのか調べてみましょう。
@@ -179,8 +179,7 @@ Further, the discussion page has more detail on ignore rules.
 
 感嘆符は、無視してあったファイルを対象から外します。
 
-このレッスンで`.csv`ファイルをコミットしたことがあるので、この新しいルールでは無視されません。 Only future additions
-of `.csv` files added to the root directory will be ignored.
+このレッスンで`.csv`ファイルをコミットしたことがあるので、この新しいルールでは無視されません。 ルートディレクトリに追加された `.csv` ファイルの以後の追記のみが無視されます。
 
 :::::::::::::::::::::::::
 
@@ -190,8 +189,7 @@ of `.csv` files added to the root directory will be ignored.
 
 ## Ignoring Nested Files: Variation
 
-Given a directory structure that looks similar to the earlier Nested Files
-exercise, but with a slightly different directory structure:
+前の入れ子になったファイルの練習問題と同様のディレクトリ構造ですが、少し異なるディレクトリ構造になっているとしましょう：
 
 ```bash
 results/data
@@ -200,19 +198,15 @@ results/plots
 results/analysis
 ```
 
-How would you ignore all of the contents in the results folder, but not `results/data`?
+results フォルダ内のコンテンツの全てを無視する、 しかし `results/data` は無視しない。そんな場合はどうするでしょうか？
 
-Hint: think a bit about how you created an exception with the `!` operator
-before.
+ヒント： 以前に `!` 演算子を使って例外を作った方法を少し考えてみてください。
 
 :::::::::::::::  solution
 
 ## 解答
 
-If you want to ignore the contents of
-`results/` but not those of `results/data/`, you can change your `.gitignore` to ignore
-the contents of results folder, but create an exception for the contents of the
-`results/data` subfolder. Your .gitignore would look like this:
+`results/` のコンテンツは無視したいが、 `results/data/` のコンテンツは無視したくない場合、 `.gitignore` を変更して、 results フォルダの内容は無視する、しかし `results/data` サブフォルダのコンテンツは例外として設定することができます。 あなたの .gitignore は次のようになるでしょう：
 
 ```output
 results/*               # ignore everything in results folder
