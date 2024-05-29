@@ -1,5 +1,5 @@
 ---
-title: Creating a Repository
+title: リポジトリの作成
 teaching: 10
 exercises: 0
 ---
