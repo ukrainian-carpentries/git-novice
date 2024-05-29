@@ -38,7 +38,7 @@ $ git config --global user.email "vlad@tran.sylvan.ia"
 
 ## 電子メールの非公開
 
-If you elect to use a private email address with GitHub, then use GitHub's no-reply email address for the `user.email` value. It looks like `ID+username@users.noreply.github.com`. You can look up your own address in your GitHub [email settings](https://github.com/settings/emails).
+GitHubでプライベートメールアドレスを使用する場合は、GitHubのno-replyメールアドレスを`user.email`の値として使用してください。 それは、`ID+username@users.noreply.github.com`の形式になります。 自分のアドレスはGitHubの[メール設定](https://github.com/settings/emails)で確認できます。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
