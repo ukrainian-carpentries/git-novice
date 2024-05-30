@@ -1,5 +1,5 @@
 ---
-title: Creating a Repository
+title: Створення репозиторію
 teaching: 10
 exercises: 0
 ---
