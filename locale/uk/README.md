@@ -2,7 +2,7 @@
 
 # Internationalisation hub repository for Software Carpentry git-novice
 
-An introduction to version control for novices using Git.
+Введення до контролю версій за допомогою Git для початківців.
 Please see [https://swcarpentry.github.io/git-novice/](https://swcarpentry.github.io/git-novice/) for a rendered version of this material in english.
 
 More info to follow.
