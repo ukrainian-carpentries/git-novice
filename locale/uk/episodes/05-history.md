@@ -301,7 +301,7 @@ HEAD is now at f22b25e Start notes on Mars as a base
 
 4. `$ git checkout <unique ID of last commit> data_cruncher.py`
 
-5. Both 2 and 4
+5. Як 2, так і 4
 
 :::::::::::::::  solution
 
