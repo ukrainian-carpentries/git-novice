@@ -107,13 +107,13 @@ nothing to commit (create/copy files and use "git add" to track)
 Попри занепокоєння Wolfman, Dracula створює проєкт `moons` всередині проєкту `planets` за допомогою наступної послідовності команд:
 
 ```bash
-$ cd ~/Desktop   # return to Desktop directory
-$ cd planets     # go into planets directory, which is already a Git repository
-$ ls -a          # ensure the .git subdirectory is still present in the planets directory
-$ mkdir moons    # make a subdirectory planets/moons
-$ cd moons       # go into moons subdirectory
-$ git init       # make the moons subdirectory a Git repository
-$ ls -a          # ensure the .git subdirectory is present indicating we have created a new Git repository
+$ cd ~/Desktop   # повернутися до каталогу Desktop
+$ cd planets     # перейти до каталогу planets, який вже є репозиторієм Git
+$ ls -a          # перевірити, що підкаталог .git все ще присутній у каталозі planets
+$ mkdir moons    # створити підкаталог planets/moons
+$ cd moons       # перейти у підкаталог moons
+$ git init       # створити репозиторій Git у підкаталозі moons
+$ ls -a          # перевірити наявність підкаталогу .git, що підтверджує створення нового репозиторію
 ```
 
 Чи потрібна команда `git init`, яка виконується в підкаталозі `moons`, для відстеження файлів, що зберігаються в підкаталозі `moons`?
