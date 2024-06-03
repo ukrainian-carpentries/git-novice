@@ -37,7 +37,7 @@ exercises: 0
 
 ## Збереження конфіденційності вашої електронної адреси
 
-If you elect to use a private email address with GitHub, then use GitHub's no-reply email address for the `user.email` value. It looks like `ID+username@users.noreply.github.com`. You can look up your own address in your GitHub [email settings](https://github.com/settings/emails).
+Якщо ви вирішили приховати власну електронну адресу на GitHub, то використовуйте у `user.email` свою "no-reply" електронну адресу, яку GitHub повʼязує з вашим обліковим записом. Вона має вигляд, схожий на `ID+username@users.noreply.github.com`. Ви можете знайти цю адресу у [налаштуваннях електронної пошти](https://github.com/settings/email) для вашого облікового запису GitHub.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
