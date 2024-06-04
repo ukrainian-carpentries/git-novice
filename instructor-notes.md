@@ -9,10 +9,10 @@ lets you focus on the more interesting/innovative aspects of your project.
   - It's easy to set up
   - Every copy of a Git repository is a full backup of a project and its history
   - A few easy-to-remember commands are all you need for most day-to-day version control tasks
-  - The [GitHub][github] hosting service provides a web-based collaboration service
+  - Хостинг [GitHub][github] надає вебсервіс для спільної роботи
 - Two main concepts
-  - *commit*: a recorded set of changes in your project's files
-  - *repository*: the history of all your project's commits
+  - _commit_: a recorded set of changes in your project's files
+  - _repository_: the history of all your project's commits
 - Why use GitHub?
   - No need for a server: easy to set up
   - GitHub's strong community: your colleagues are probably already there
@@ -24,8 +24,7 @@ definitely the most complicated tool.  However, GitHub presently dominates the
 open software repository landscape, so the time and effort required to teach
 fundamental Git is justified and worthwhile.
 
-Because of this complexity, we don't teach novice learners about many
-interesting topics, such as branching, hashes, and commit objects.
+Через цю складність, ми не вчимо початківців багатьом цікавим темам, такі як розгалуження, хеші так об'єкти комітів.
 
 Instead we try to convince them that version control is useful for researchers
 working in teams or not, because it is
@@ -38,7 +37,7 @@ working in teams or not, because it is
 
 - You can "split" your shell so that recent commands remain in view using [this](https://github.com/rgaiacs/swc-shell-split-window) script.
 
-- Make sure the network is working *before* starting this lesson.
+- Make sure the network is working _before_ starting this lesson.
 
 - Drawings are particularly useful in this lesson: if you have a whiteboard,
   [use it][drawings]!
@@ -77,7 +76,7 @@ working in teams or not, because it is
   widely used in the sciences right now.
 
 - Further resources:
-  
+
   - [git-it] is a self-paced command-line Git demo,
     with [git-it-electron] its GitHub Desktop successor.
   - [Code School][code-school] has a free interactive course, [Try Git][try-git].
@@ -102,11 +101,11 @@ working in teams or not, because it is
 
 - We suggest instructors and students use `nano` as the text editor for this
   lessons because
-  
+
   - it runs in all three major operating systems,
   - it runs inside the shell (switching windows can be confusing to students), and
   - it has shortcut help at the bottom of the window.
-  
+
   Please point out to students during setup that they can and should use
   another text editor if they're already familiar with it.
 
@@ -128,15 +127,15 @@ working in teams or not, because it is
   that the `.git` folder contains the whole Git repo and deleting this folder
   undoes a `git init`. It also gives the learner the way to fix the common
   mistake of putting unwanted folders (like `Desktop`) under version control.
-  
+
   Instead of removing the `.git` folder directly, you can choose to move it
   first to a safer directory and remove it from there:
-  
+
   ```bash
   $ mv .git temp_git
   $ rm -rf  temp_git
   ```
-  
+
   The challenge suggests that it is a bad idea to create a Git repo inside another repo.
   For more discussion on this topic, please see [this issue][repos-in-repos].
 
@@ -216,7 +215,7 @@ particular set of files in `.gitignore`.
 - If you're the only instructor, the best way to create is clone the two
   repos in your Desktop, but under different names, e.g., pretend one is your
   computer at work:
-  
+
   ```bash
   $ git clone https://github.com/vlad/planets.git planets-at-work
   ```
@@ -224,7 +223,7 @@ particular set of files in `.gitignore`.
 - It's very common that learners mistype the remote alias or the remote URL
   when adding a remote, so they cannot `push`. You can diagnose this with
   `git remote -v` and checking carefully for typos.
-  
+
   - To fix a wrong alias, you can do `git remote rename <old> <new>`.
   - To fix a wrong URL, you can do `git remote set-url <alias> <newurl> `.
 
@@ -233,7 +232,7 @@ particular set of files in `.gitignore`.
 
 - If both repos are in the `Desktop`, have them to clone their collaborator
   repo under a given directory using a second argument:
-  
+
   ```bash
   $ git clone https://github.com/vlad/planets.git vlad-planet
   ```
@@ -249,11 +248,11 @@ particular set of files in `.gitignore`.
 
 ## [Conflicts](../episodes/09-conflict.md)
 
-- Expect the learners to make mistakes. Expect *yourself* to make mistakes.
+- Expect the learners to make mistakes. Expect _yourself_ to make mistakes.
   This happens because it is late in the lesson and everyone is tired.
 
 - If you're the only instructor, the best way to create a conflict is:
-  
+
   - Clone your repo in a different directory, pretending is your computer at
     work: `git clone https://github.com/vlad/planets.git planets-at-work`.
   - At the office, you make a change, commit and push.
@@ -265,10 +264,10 @@ particular set of files in `.gitignore`.
   just (try to) commit. You can diagnose this with `git status`.
 
 - Remember that you can discard one of the two parents of the merge:
-  
+
   - discard the remote file, `git checkout --ours conflicted_file.txt`
   - discard the local file, `git checkout --theirs conflicted_file.txt`
-  
+
   You still have to `git add` and `git commit` after this. This is
   particularly useful when working with binary files.
 
@@ -312,6 +311,3 @@ web-hosted private repositories.
 [git-parable]: https://tom.preston-werner.com/2009/05/19/the-git-parable.html
 [repos-in-repos]: https://github.com/swcarpentry/git-novice/issues/272
 [cc-faq-software]: https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software
-
-
-

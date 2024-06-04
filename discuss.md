@@ -105,7 +105,6 @@ Sort them by the number of stars and have a look at the top few.
 If you find some you like,
 please check that they're covered by an open source license before you clone them.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Non-text Files
@@ -120,7 +119,7 @@ We will now revisit this in more detail.
 
 Many people want to version control non-text files, such as images, PDFs and Microsoft Office or LibreOffice documents.
 It is true that Git can handle these filetypes (which fall under the banner of "binary" file types).
-However, just because it *can* be done doesn't mean it *should* be done.
+However, just because it _can_ be done doesn't mean it _should_ be done.
 
 Much of Git's magic comes from being able to do line-by-line comparisons ("diffs") between files.
 This is generally easy for programming source code and marked up text.
@@ -195,7 +194,7 @@ You can see exactly which lines changed and what the changes were.
 An uninformative `git diff` is not the only consequence of using Git on binary files.
 However, most of the other problems boil down to whether or not a good diff is possible.
 
-This isn't to say you should *never* use Git on binary files.
+This isn't to say you should _never_ use Git on binary files.
 A rule of thumb is that it's OK if the binary file won't change very often,
 and if it does change, you don't care about merging in small differences between versions.
 
@@ -472,5 +471,3 @@ results/*             # ignore the files in the results directory
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

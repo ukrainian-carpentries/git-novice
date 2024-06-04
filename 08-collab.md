@@ -1,74 +1,60 @@
 ---
-title: Collaborating
+title: Співпраця
 teaching: 25
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Clone a remote repository.
-- Collaborate by pushing to a common repository.
-- Describe the basic collaborative workflow.
+- Клонування віддаленого репозиторію.
+- Співпраця шляхом надсилання змін до спільного репозиторію.
+- Загальний вигляд процесу співпраці.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I use version control to collaborate with other people?
+- Як я можу використовувати контроль версій для співпраці з іншими?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-For the next step, get into pairs.  One person will be the "Owner" and the other
-will be the "Collaborator". The goal is that the Collaborator add changes into
-the Owner's repository. We will switch roles at the end, so both persons will
-play Owner and Collaborator.
+Для наступного кроку слухачам потрібно розбитися на пари.  Одна людина буде "Власником", а інша - "Співавтором". Мета полягає в тому, щоб Співавтор додав зміни в репозиторій Власника. У подальшому слухачі поміняються ролями так, щоб обидві людини спробували грати ролі як Власника, так і Співавтора.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Practicing By Yourself
+## Практика без партнера
 
-If you're working through this lesson on your own, you can carry on by opening
-a second terminal window.
-This window will represent your partner, working on another computer. You
-won't need to give anyone access on GitHub, because both 'partners' are you.
-
+Якщо ви працюєте над цим уроком самостійно, ви можете імітувати подібний сценарій, відкривши ще одне вікно терміналу.
+Це вікно буде представляти вашого партнера, який працює на іншому комп'ютері. Вам не буде потрібно надавати нікому доступ до GitHub, тому що обидва "партнери" - це ви.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The Owner needs to give the Collaborator access. In your repository page on GitHub, click the "Settings"
-button on the right, select "Collaborators", click "Add people", and
-then enter your partner's username.
+Власник репозиторію повинен надати Співавтору доступ. У GitHub, натисніть кнопку "Settings" праворуч, оберіть "Collaborators", натисніть "Add people", та потім введіть ім\`я користувача GitHub, повідомлене вашим партнером.
 
-![](fig/github-add-collaborators.png){alt='screenshot of repository page with Settings then Collaborators selected, showing how to add Collaborators in a GitHub repository'}
+![](fig/github-add-collaborators.png){alt='Сторінка репозиторію після вибору Settings -> Collaborators, яка показує додавання співавторів у GitHub'}
 
-To accept access to the Owner's repo, the Collaborator
-needs to go to [https://github.com/notifications](https://github.com/notifications)
-or check for email notification. Once there she can accept access to the Owner's repo.
+Щоб отримати доступ до репозиторію Власника, Співавтору
+потрібно відкрити [https://github.com/notifications](https://github.com/notifications)
+або перевірити наявність повідомлення електронною поштою. Потім треба прийняти відповідне запрошення, яке ви там знайдете.
 
-Next, the Collaborator needs to download a copy of the Owner's repository to her
-machine. This is called "cloning a repo".
+Далі, Співавтор повинен завантажити копію репозиторію Власника на свій комп\`ютер. Це називається "клонування репозиторію".
 
-The Collaborator doesn't want to overwrite her own version of `planets.git`, so
-needs to clone the Owner's repository to a different location than her own
-repository with the same name.
+Співавтор не хоче втратити свою власну версію `planets.git`, і тому йому потрібно клонувати репозиторій Власника в інше місце, аніж у свій власний репозиторій з такою ж назвою.
 
-To clone the Owner's repo into her `Desktop` folder, the Collaborator enters:
+Щоб клонувати репозиторій Власника у каталог `Desktop`, Співавтор вводить:
 
 ```bash
 $ git clone git@github.com:vlad/planets.git ~/Desktop/vlad-planets
 ```
 
-Replace 'vlad' with the Owner's username.
+(обовʼязково замініть 'vlad' на ім\`я користувача GitHub Власника).
 
-If you choose to clone without the clone path
-(`~/Desktop/vlad-planets`) specified at the end,
-you will clone inside your own planets folder!
-Make sure to navigate to the `Desktop` folder first.
+Якщо ви вирішите клонувати без додавання шляху клонування (`~/Desktop/vlad-planets`) вказаного в кінці команди, ви будете клонувати всередину вашого власного каталогу `planets`!
+Переконайтеся, що спочатку ви перейшли до каталогу `Desktop`.
 
-![](fig/github-collaboration.svg){alt='After Creating Clone of Repository'}
+![](fig/github-collaboration.svg){alt='Після клонування репозиторію'}
 
-The Collaborator can now make a change in her clone of the Owner's repository,
-exactly the same way as we've been doing before:
+Співавтор тепер може зробити зміни у своєму клоні репозиторію Власника так само, як ми робили раніше:
 
 ```bash
 $ cd ~/Desktop/vlad-planets
@@ -90,7 +76,7 @@ $ git commit -m "Add notes about Pluto"
  create mode 100644 pluto.txt
 ```
 
-Then push the change to the *Owner's repository* on GitHub:
+Далі, відправте зміни до _репозиторію Власника_ на GitHub:
 
 ```bash
 $ git push origin main
@@ -107,51 +93,30 @@ To https://github.com/vlad/planets.git
    9272da5..29aba7c  main -> main
 ```
 
-Note that we didn't have to create a remote called `origin`: Git uses this
-name by default when we clone a repository.  (This is why `origin` was a
-sensible choice earlier when we were setting up remotes by hand.)
+Зауважте, що нам не потрібно було вказувати віддалений репозиторій під назвою `origin`: Git визначає його за замовчуванням, коли ми клонуємо репозиторій.  (Ось чому `origin` був розумним вибором раніше, коли ми налаштовували віддалені репозиторії вручну.)
 
-Take a look at the Owner's repository on GitHub again, and you should be
-able to see the new commit made by the Collaborator. You may need to refresh
-your browser to see the new commit.
+Подивіться знову на репозиторій Власника на GitHub, і ви маєте побачити новий коміт, зроблений Співавтором. Можливо, вам доведеться оновити ваш браузер, щоб побачити новий коміт.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Some more about remotes
+## Деякі інші відомості про віддалені репозиторії
 
-In this episode and the previous one, our local repository has had
-a single "remote", called `origin`. A remote is a copy of the repository
-that is hosted somewhere else, that we can push to and pull from, and
-there's no reason that you have to work with only one. For example,
-on some large projects you might have your own copy in your own GitHub
-account (you'd probably call this `origin`) and also the main "upstream"
-project repository (let's call this `upstream` for the sake of examples).
-You would pull from `upstream` from time to
-time to get the latest updates that other people have committed.
+У цьому і попередньому епізодах, наш локальний репозиторій мав єдиний "віддалений" репозиторій, під назвою `origin`. Віддалений - це копія репозиторію, яка знаходиться в іншому місці, з якою ми можемо обмінюватися комітами через `git pull` та `git push`, і немає жодних причин працювати тільки з одним віддаленим репозиторієм. Наприклад, у деяких великих проєктах у вас може бути власна копія у вашому власному обліковому записі GitHub (ви, ймовірно, назвете її `origin`), а також так званий "upstream" - головний репозиторій проєкту (ми назвемо його `upstream` для прикладу).
+Час від часу ви будете за допомогою `git pull` отримувати зміни з `upstream`, щоб отримати останні оновлення, які зробили інші.
 
-Remember that the name you give to a remote only exists locally. It's
-an alias that you choose - whether `origin`, or `upstream`, or `fred` -
-and not something intrinstic to the remote repository.
+Пам'ятайте, що ім'я, яке ви надаєте віддаленому репозиторію, існує лише локально. Це псевдонім, який ви вибираєте - будь то `origin`, чи `upstream`, чи `fred` - а не щось притаманне віддаленому репозиторію.
 
-The `git remote` family of commands is used to set up and alter the remotes
-associated with a repository. Here are some of the most useful ones:
+Сімейство команд `git remote` використовується для налаштування та зміни віддалених репозиторіїв, пов'язаних з локальним репозиторієм. Ось деякі з найбільш корисних:
 
-- `git remote -v` lists all the remotes that are configured (we already used
-  this in the last episode)
-- `git remote add [name] [url]` is used to add a new remote
-- `git remote remove [name]` removes a remote. Note that it doesn't affect the
-  remote repository at all - it just removes the link to it from the local repo.
-- `git remote set-url [name] [newurl]` changes the URL that is associated
-  with the remote. This is useful if it has moved, e.g. to a different GitHub
-  account, or from GitHub to a different hosting service. Or, if we made a typo when
-  adding it!
-- `git remote rename [oldname] [newname]` changes the local alias by which a remote
-  is known - its name. For example, one could use this to change `upstream` to `fred`.
-  
+- `git remote -v` друкує всі віддалені репозиторії, які налаштовані (ми вже використовували це в останньому епізоді)
+- `git remote add [name] [url]` використовується для додавання нового віддаленого репозиторію
+- `git remote remove [name]` видаляє віддалений репозиторій. Зауважте, що це взагалі не впливає на віддалений репозиторій - він просто видаляє посилання на нього з локального репозиторію.
+- `git remote set-url [name] [newurl]` змінює URL, який пов\`язаний з віддаленим репозиторієм. Це корисно, якщо він перейшов, наприклад, на інший обліковий запис GitHub або з GitHub на іншу платформу хостингу. Або, якщо ми зробили помилку при його додаванні!
+- `git remote rename [oldname] [newname]` змінює локальний псевдонім, під яким відомий віддалений репозиторій - тобто його назву. Наприклад, можна використовувати це, щоб змінити `upstream` на `fred`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-To download the Collaborator's changes from GitHub, the Owner now enters:
+Тепер, щоб завантажити з GitHub зміни, які зробив Співавтор, Власник вводить:
 
 ```bash
 $ git pull origin main
@@ -173,59 +138,44 @@ Fast-forward
  create mode 100644 pluto.txt
 ```
 
-Now the three repositories (Owner's local, Collaborator's local, and Owner's on
-GitHub) are back in sync.
+Тепер три репозиторії (локальний Власника, локальний Співавтора, і репозиторій Власника на GitHub) знову синхронізуються.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## A Basic Collaborative Workflow
+## Загальний вигляд процесу співпраці
 
-In practice, it is good to be sure that you have an updated version of the
-repository you are collaborating on, so you should `git pull` before making
-our changes. The basic collaborative workflow would be:
+На практиці добре бути впевненим, що у вас є оновлена версія репозиторію, над яким ви співпрацюєте, тому перед внесенням наших змін слід зробити `git pull`. Основним робочим процесом буде наступне:
 
-- update your local repo with `git pull origin main`,
-- make your changes and stage them with `git add`,
-- commit your changes with `git commit -m`, and
-- upload the changes to GitHub with `git push origin main`
+- оновити локальний репозиторій за допомогою `git pull origin main`,
+- робити свої зміни і додати їх до зони стейджингу за допомогою `git add`,
+- зберегти зміни за допомогою `git commit -m`, та
+- завантажити зміни на GitHub за допомогою `git push origin main`
 
-It is better to make many commits with smaller changes rather than
-of one commit with massive changes: small commits are easier to
-read and review.
-
+Краще зробити багато комітів з меншими змінами, ніж один коміт з масивними змінами: маленькі коміти легше читати та перевіряти.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Switch Roles and Repeat
+## Обмін ролями та повторення
 
-Switch roles and repeat the whole process.
-
+Тепер поміняйтеся ролями та повторіть увесь процес.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Review Changes
+## Перегляд Змін
 
-The Owner pushed commits to the repository without giving any information
-to the Collaborator. How can the Collaborator find out what has changed with
-command line? And on GitHub?
+Власник надіслав коміти до репозиторію, не надаючи жодної інформації Співавтору. Як Співавтор може дізнатися, що змінилося, за допомогою командного рядка? А як дізнатися про це на GitHub?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-On the command line, the Collaborator can use `git fetch origin main`
-to get the remote changes into the local repository, but without merging
-them. Then by running `git diff main origin/main` the Collaborator
-will see the changes output in the terminal.
+В командному рядку, Співавтор може використати `git fetch origin main`, щоб завантажити віддалені зміни до локального репозиторію, але без їх об'єднання із версією Співавтора. Потім запустивши `git diff main origin/main`, Співавтор може побачити зміни у терміналі.
 
-On GitHub, the Collaborator can go to the repository and click on
-"commits" to view the most recent commits pushed to the repository.
-
-
+На GitHub, Співавтор може перейти у репозиторій і натиснути на "commits", щоб переглянути найновіші коміти, що були надіслані до репозиторію.
 
 :::::::::::::::::::::::::
 
@@ -233,34 +183,27 @@ On GitHub, the Collaborator can go to the repository and click on
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Comment Changes in GitHub
+## Коментування змін в GitHub
 
-The Collaborator has some questions about one line change made by the Owner and
-has some suggestions to propose.
+Співавтор має деякі питання про зміни в одному з рядків, зроблені Власником, та має деякі пропозиції.
 
-With GitHub, it is possible to comment on the diff of a commit. Over the line of
-code to comment, a blue comment icon appears to open a comment window.
+У GitHub можна залишити коментар у вікні перегляду змін, зроблених у коміті. Наведіть курсор миші на рядок, який ви бажаєте прокоментувати, і тоді зліва з'явиться синій значок коментаря, який відкриє, якщо його натиснути, вікно для введення коментаря.
 
-The Collaborator posts her comments and suggestions using the GitHub interface.
-
+Таким чином, Співавтор публікує свої коментарі та пропозиції за допомогою інтерфейсу GitHub.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Version History, Backup, and Version Control
+## Історія версій, Резервне Копіювання та Контроль Версій
 
-Some backup software can keep a history of the versions of your files. They also
-allows you to recover specific versions. How is this functionality different from version control?
-What are some of the benefits of using version control, Git and GitHub?
-
+Деякі програми резервного копіювання можуть зберігати історію версій ваших файлів. Вони також дозволяють відновити певні версії. Чим їх функціональність відрізняється від контролю версій?
+Які переваги має використання контролю версій, Git та GitHub?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up.
+- `git clone` копіює віддалений репозиторій у локальний репозиторій та автоматично налаштовує віддалений репозиторій як `origin`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

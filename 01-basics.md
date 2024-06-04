@@ -1,119 +1,72 @@
 ---
-title: Automated Version Control
+title: Автоматизований контроль версій
 teaching: 5
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Understand the benefits of an automated version control system.
-- Understand the basics of how automated version control systems work.
+- Зрозуміти переваги автоматизованої системи контролю версій.
+- Зрозуміти основи функціонування автоматизованих систем контролю версій.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What is version control and why should I use it?
+- Що таке контроль версій і навіщо його використовувати?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-We'll start by exploring how version control can be used
-to keep track of what one person did and when.
-Even if you aren't collaborating with other people,
-automated version control is much better than this situation:
+Ми почнемо з розгляду того, як контроль версій може бути використаний для відстеження того, що і коли зробив один користувач.
+Навіть якщо ви не співпрацюєте з іншими людьми, автоматизований контроль версій набагато краще, ніж ця ситуація:
 
-!["notFinal.doc" by Jorge Cham, <https://www.phdcomics.com>](fig/phd101212s.png){alt='Comic: a PhD student sends "FINAL.doc" to their supervisor, but after several increasingly intense and frustrating rounds of comments and revisions they end up with a file named "FINAL_rev.22.comments49.corrections.10.#@$%WHYDIDCOMETOGRADSCHOOL????.doc"'}
+!["notFinal.doc" Хорхе Чам, https://www.phdcomics.com](fig/phd101212s.png){alt='Comic: аспірант надсилає «FINAL.doc» своєму науковому керівнику. Декілька дедалі інтенсивніших та неприємних раундів обміну коментарями і версіями закінчуються файлом під назвою "FINAL_rev.22.comments49.corrections.10.#@$%HYDIDCOMETOGRADSCHOOL????.doc"'}
 
-We've all been in this situation before: it seems unnecessary to have
-multiple nearly-identical versions of the same document. Some word
-processors let us deal with this a little better, such as Microsoft
-Word's
-[Track Changes](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a),
-Google Docs' [version history](https://support.google.com/docs/answer/190843?hl=en), or
-LibreOffice's [Recording and Displaying Changes](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
+Ми всі були в цій ситуації раніше: здається непотрібним мати кілька майже ідентичних версій одного документа. Деякі текстові процесори дозволяють нам впоратися з цим трохи краще, наприклад, Microsoft Word може [відстежувати зміни](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a), Google Docs підтримує [історію версій](https://support.google.com/docs/answer/190843?hl=en), а LibreOffice - [запис та відображення змін](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
 
-Version control systems start with a base version of the document and
-then record changes you make each step of the way. You can
-think of it as a recording of your progress: you can rewind to start at the base
-document and play back each change you made, eventually arriving at your
-more recent version.
+Системи управління версіями починають зі зберігання базової (тобто початкової) версії документа, а потім записують зміни, які ви робите на кожному етапі редагування. Ви можете думати про це як про запис вашого прогресу: ви можете перемотати його назад, щоб почати з базової версії документу та відтворити кожну внесену вами зміну, в кінцевому підсумку прийшовши до вашої більш пізньої версії.
 
-![](fig/play-changes.svg){alt='Changes Are Saved Sequentially'}
+![](fig/play-changes.svg){alt='Зміни зберігаються у послідовності'}
 
-Once you think of changes as separate from the document itself, you
-can then think about "playing back" different sets of changes on the base document, ultimately
-resulting in different versions of that document. For example, two users can make independent
-sets of changes on the same document.
+Якщо ви будете розглядати зміни, як щось окреме від самого документу, ви можете уявити собі процес «відтворення» різних наборів змін на базовому документі, який, зрештою, призведе до різних версій цього документа. Наприклад, два користувачі можуть робити незалежні набори змін в одному документі.
 
-![](fig/versions.svg){alt='Different Versions Can be Saved'}
+![](fig/versions.svg){alt='Різні версії можна зберегти'}
 
-Unless multiple users make changes to the same section of the document - a 
-[conflict](../learners/reference.md#conflict) - you can
-incorporate two sets of changes into the same base document.
+Якщо немає [конфліктів](../learners/reference.md#conflict), тобто немає ситуації, коли декілька користувачів вносять зміни до одного й того ж розділу документа, то буде можливо включити два набори змін до одного базового документа.
 
-![](fig/merge.svg){alt='Multiple Versions Can be Merged'}
+![](fig/merge.svg){alt='Різні версії можна обʼєднати'}
 
-A version control system is a tool that keeps track of these changes for us,
-effectively creating different versions of our files. It allows us to decide
-which changes will be made to the next version (each record of these changes is
-called a [commit](../learners/reference.md#commit)), and keeps useful metadata
-about them. The complete history of commits for a particular project and their
-metadata make up a [repository](../learners/reference.md#repository).
-Repositories can be kept in sync across different computers, facilitating
-collaboration among different people.
+Система управління версіями - це інструмент, який відстежує ці зміни для нас, по суті створюючи різні версії наших файлів. Це дозволяє нам вирішити, які зміни будуть внесені до наступної версії (кожен запис цих змін називається [коміт (commit)](../learners/reference.md#commit)), і зберігає корисні метадані про зміни. Повна історія комітів для конкретного проєкту та їх метадані складають [репозиторій (repository)](../learners/reference.md#repository).
+Репозиторії, які знаходяться на різних комп'ютерах, можуть бути синхронізовані, що сприяє співпраці між різними людьми.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## The Long History of Version Control Systems
+## Давня історія систем управління версіями
 
-Automated version control systems are nothing new.
-Tools like [RCS](https://en.wikipedia.org/wiki/Revision_Control_System), [CVS](https://en.wikipedia.org/wiki/Concurrent_Versions_System), or [Subversion](https://en.wikipedia.org/wiki/Apache_Subversion) have been around since the early 1980s and are used by
-many large companies.
-However, many of these are now considered legacy systems (i.e., outdated) due to various
-limitations in their capabilities.
-More modern systems, such as Git and [Mercurial](https://swcarpentry.github.io/hg-novice/),
-are *distributed*, meaning that they do not need a centralized server to host the repository.
-These modern systems also include powerful merging tools that make it possible for
-multiple authors to work on
-the same files concurrently.
-
+Автоматизовані системи управління версіями не є чимось новим.
+Інструменти, такі як [RCS](https://en.wikipedia.org/wiki/Revision_Control_System), [CVS](https://en.wikipedia.org/wiki/Concurrent_Versions_System), або [Subversion](https://en.wikipedia.org/wiki/Apache_Subversion) існують з початку 1980-х років і використовуються багатьма великими компаніями.
+Однак багато з них зараз вважаються застарілими системами через різні обмеження у своїх можливостях.
+Більш сучасні системи, такі як Git та [Mercurial](https://swcarpentry.github.io/hg-novice/), є розподіленими , що означає, що їм не потрібен централізований сервер для розміщення репозиторію.
+Ці сучасні системи також включають потужні інструменти злиття змін (merging), які дозволяють багатьом авторам працювати над одними й тими ж файлами одночасно.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Paper Writing
+## Написання статті
 
-- Imagine you drafted an excellent paragraph for a paper you are writing, but later ruin
-  it. How would you retrieve the *excellent* version of your conclusion? Is it even possible?
+- Уявіть, що ви склали чудовий абзац для статті, яку ви пишете, але пізніше ви зіпсували його. Як би ви відродили попередню чудову версію вашого висновку? Чи можливо це взагалі?
 
-- Imagine you have 5 co-authors. How would you manage the changes and comments
-  they make to your paper?  If you use LibreOffice Writer or Microsoft Word, what happens if
-  you accept changes made using the `Track Changes` option? Do you have a
-  history of those changes?
+- Уявіть, що у вас є 5 співавторів. Як би ви відстежували зміни та коментарі, які вони вносять до вашої статті?  Якщо ви використовуєте LibreOffice Writer або Microsoft Word, що станеться, якщо ви приймете зміни, внесені за допомогою опції `Відстежувати зміни` ("Track Changes")? Чи будете ви мати історію цих змін?
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
-- Recovering the excellent version is only possible if you created a copy
-  of the old version of the paper. The danger of losing good versions
-  often leads to the problematic workflow illustrated in the PhD Comics
-  cartoon at the top of this page.
+- Відновити чудову версію можливо тільки якщо ви створили копію старої версії статті. Ризик втрати хороших версій часто призводить до проблемного робочого процесу, проілюстрованого у коміксі з PhD Comics на початку цієї сторінки.
 
-- Collaborative writing with traditional word processors is cumbersome.
-  Either every collaborator has to work on a document sequentially
-  (slowing down the process of writing), or you have to send out a
-  version to all collaborators and manually merge their comments into
-  your document. The 'track changes' or 'record changes' option can
-  highlight changes for you and simplifies merging, but as soon as you
-  accept changes you will lose their history. You will then no longer
-  know who suggested that change, why it was suggested, or when it was
-  merged into the rest of the document. Even online word processors like
-  Google Docs or Microsoft Office Online do not fully resolve these
-  problems.
-  
-  
+- Спільна робота над документами за допомогою традиційних текстових процесорів є громіздкою.
+  Або кожен співробітник повинен працювати над документом послідовно (сповільнюючи процес написання), або ви повинні відправляти нову версію всім співробітникам і вручну додавати їх коментарі у документ. Режими 'відстеження змін' ('track changes') або 'запису змін' ('record changes') можуть зробити зміни більш помітними та спростити їх додавання, але як тільки ви погоджуєтесь прийняти зміни, ви втрачаєте їх історію. Після цього ви більше не будете знати хто запропонував цю зміну, чому вона була запропонована, або коли вона була додана до документа. Навіть текстові онлайн-процесори, такі як Google Docs або Microsoft Office Online, не вирішують повністю ці проблеми.
 
 :::::::::::::::::::::::::
 
@@ -121,9 +74,7 @@ the same files concurrently.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Version control is like an unlimited 'undo'.
-- Version control also allows many people to work in parallel.
+- Контроль версій схожий на необмежене «undo».
+- Контроль версій також дозволяє багатьом людям працювати паралельно.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
