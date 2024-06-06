@@ -10,7 +10,7 @@ lets you focus on the more interesting/innovative aspects of your project.
   - Кожна копія репозиторію Git є повною резервною копією проєкту та його історії
   - A few easy-to-remember commands are all you need for most day-to-day version control tasks
   - The [GitHub][github] hosting service provides a web-based collaboration service
-- Two main concepts
+- Два основних поняття
   - _commit_: a recorded set of changes in your project's files
   - _repository_: the history of all your project's commits
 - Why use GitHub?
@@ -19,8 +19,7 @@ lets you focus on the more interesting/innovative aspects of your project.
 
 ## Overall
 
-Version control might be the most important topic we teach, but Git is
-definitely the most complicated tool.  However, GitHub presently dominates the
+Контроль версій може бути найважливішою темою, яку ми викладаємо, але Git, безумовно, є найскладнішим інструментом.  However, GitHub presently dominates the
 open software repository landscape, so the time and effort required to teach
 fundamental Git is justified and worthwhile.
 
@@ -35,7 +34,7 @@ working in teams or not, because it is
 
 ## Teaching Notes
 
-- You can "split" your shell so that recent commands remain in view using [this](https://github.com/rgaiacs/swc-shell-split-window) script.
+- Ви можете "розділити" ваш термінал так, щоб останні команди залишалися в полі зору за допомогою [цього](https://github.com/rgaiacs/swc-shell-split-window) скрипту.
 
 - Make sure the network is working _before_ starting this lesson.
 
