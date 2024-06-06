@@ -78,7 +78,7 @@ working in teams or not, because it is
 
   - [git-it] is a self-paced command-line Git demo,
     with [git-it-electron] its GitHub Desktop successor.
-  - [Code School][code-school] has a free interactive course, [Try Git][try-git].
+  - [Code School][code-school] має безкоштовний інтерактивний курс [Try Git][try-git].
   - for instructors, [the Git parable][git-parable] is useful background reading
 
 ## [Automated Version Control](../episodes/01-basics.md)
