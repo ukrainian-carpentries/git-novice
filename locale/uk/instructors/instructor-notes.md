@@ -5,9 +5,9 @@ title: Instructor Notes
 Using a software tool to handle the versions of your project files
 lets you focus on the more interesting/innovative aspects of your project.
 
-- Version control's advantages
-  - It's easy to set up
-  - Every copy of a Git repository is a full backup of a project and its history
+- Переваги контролю версій
+  - Його легко встановити
+  - Кожна копія репозиторію Git є повною резервною копією проєкту та його історії
   - A few easy-to-remember commands are all you need for most day-to-day version control tasks
   - Хостинг [GitHub][github] надає вебсервіс для спільної роботи
 - Two main concepts
