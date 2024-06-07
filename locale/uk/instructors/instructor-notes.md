@@ -96,13 +96,13 @@ working in teams or not, because it is
   and, "come on this really has to be the last version" to motivate version
   control as a better way to collaborate and as a better way to back work up.
 
-## [Setting Up Git](../episodes/02-setup.md)
+## [Налаштування Git](../episodes/02-setup.md)
 
 - We suggest instructors and students use `nano` as the text editor for this
   lessons because
 
-  - it runs in all three major operating systems,
-  - it runs inside the shell (switching windows can be confusing to students), and
+  - він працює у всіх трьох основних операційних системах
+  - він працює всередині терміналу (перемикання вікон може заплутати учнів), та
   - it has shortcut help at the bottom of the window.
 
   Please point out to students during setup that they can and should use
