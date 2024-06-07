@@ -83,7 +83,7 @@ working in teams or not, because it is
 
 ## [Automated Version Control](../episodes/01-basics.md)
 
-- Ask, "Who uses 'undo' in their editor?" All say "Me". 'Undo' is the simplest
+- Ask, "Who uses 'undo' in their editor?" Всі скажуть: "Я". 'Undo' is the simplest
   form of version control.
 
 - Give learners a five-minute overview of what version control does for them
