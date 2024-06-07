@@ -117,10 +117,10 @@ working in teams or not, because it is
   using `git branch -M main` if there are currently commits in the repository,
   or `git checkout -b main` if there are no commits/the repository is completely empty.
 
-## [Creating a Repository](../episodes/03-create.md)
+## [Створення репозиторію](../episodes/03-create.md)
 
 - When you do `git status`, Mac users may see a `.DS_Store` file showing as
-  untracked. This a file that Mac OS creates in each directory.
+  untracked. Це файл, який Mac OS створює в кожній директорії.
 
 - The challenge "Places to create repositories" tries to reinforce the idea
   that the `.git` folder contains the whole Git repo and deleting this folder
