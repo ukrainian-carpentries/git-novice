@@ -136,7 +136,7 @@ working in teams or not, because it is
   ```
 
   The challenge suggests that it is a bad idea to create a Git repo inside another repo.
-  For more discussion on this topic, please see [this issue][repos-in-repos].
+  Для додаткової дискусії на цю тему, будь ласка, дивіться [це питання][repos-in-repos].
 
 ## [Tracking Changes](../episodes/04-changes.md)
 
@@ -150,8 +150,7 @@ working in teams or not, because it is
 - One thing may cause confusion is recovering old versions.  If, instead of
   doing `$ git checkout f22b25e mars.txt`, someone does `$ git checkout f22b25e`, they wind up in the "detached HEAD" state and confusion abounds.
   It's then possible to keep on committing, but things like `git push origin main` a bit later will not give easily comprehensible results.  It also
-  makes it look like commits can be lost.  To "re-attach" HEAD, use
-  `git checkout main`.
+  makes it look like commits can be lost.  Щоб "повторно прикріпити" HEAD, використовуйте `git checkout main`.
 
 - This is a good moment to show a log within a Git GUI. If you skip it
   because you're short on time, show it once in GitHub.
@@ -161,7 +160,7 @@ working in teams or not, because it is
 Just remember that you can use wildcards and regular expressions to ignore a
 particular set of files in `.gitignore`.
 
-## [Remotes in GitHub](../episodes/07-github.md)
+## [Віддалені репозиторії у GitHub](../episodes/07-github.md)
 
 - Make it clear that Git and GitHub are not the same thing: Git is an open
   source version control tool, GitHub is a company that hosts Git
