@@ -225,8 +225,7 @@ particular set of files in `.gitignore`.
   - To fix a wrong alias, you can do `git remote rename <old> <new>`.
   - To fix a wrong URL, you can do `git remote set-url <alias> <newurl> `.
 
-- Before cloning the repo, be sure that nobody is inside another repo. The
-  best way to achieve this is moving to the `Desktop` before cloning: `cd && cd Desktop`.
+- Before cloning the repo, be sure that nobody is inside another repo. Найкращий спосіб досягти цього - перейти на `Робочий стіл` перед клонуванням: `cd && cd Desktop`.
 
 - If both repos are in the `Desktop`, have them to clone their collaborator
   repo under a given directory using a second argument:
