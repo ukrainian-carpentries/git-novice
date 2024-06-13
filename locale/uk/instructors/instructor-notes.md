@@ -234,19 +234,18 @@ particular set of files in `.gitignore`.
   $ git clone https://github.com/vlad/planets.git vlad-planet
   ```
 
-- The most common mistake is that learners `push` before `pull`ing. If they
+- Найпоширенішою помилкою є те, що учні `відправляють` зміни перед тим, як `отримати` їх. If they
   `pull` afterward, they may get a conflict.
 
-- Conflicts, sometimes weird, will start to arise. Stay tight: conflicts are
-  next.
+- Conflicts, sometimes weird, will start to arise. Зберігайте спокій: конфлікти розглядаються у наступному епізоді.
 
 - Learners may have slightly different output from `git push` and `git pull`
   depending on the version of git, and if upstream (`-u`) is used.
 
-## [Conflicts](../episodes/09-conflict.md)
+## [Конфлікти](../episodes/09-conflict.md)
 
-- Expect the learners to make mistakes. Expect _yourself_ to make mistakes.
-  This happens because it is late in the lesson and everyone is tired.
+- Очікуйте, що учні зроблять помилки. Очікуйте, що ви можете зробити помилки.
+  Це відбувається тому, що урок триває вже достатньо довго і всі втомилися.
 
 - If you're the only instructor, the best way to create a conflict is:
 
@@ -260,20 +259,19 @@ particular set of files in `.gitignore`.
 - Learners usually forget to `git add` the file after fixing the conflict and
   just (try to) commit. You can diagnose this with `git status`.
 
-- Remember that you can discard one of the two parents of the merge:
+- Памʼятайте, що можна відкинути одного з двох батьків злиття:
 
-  - discard the remote file, `git checkout --ours conflicted_file.txt`
-  - discard the local file, `git checkout --theirs conflicted_file.txt`
+  - відкинути віддалений файл, `git checkout --ours conflicted_file.txt`
+  - відкинути локальний файл, `git checkout --theirs conflicted_file.txt`
 
-  You still have to `git add` and `git commit` after this. This is
-  particularly useful when working with binary files.
+  Ви все ще повинні зробити `git add` та `git commit` після цього. Особливо це корисно при роботі з бінарними файлами.
 
 - Keep in mind that depending on the Git version used, the outputs for
   `git push` and `git pull` can vary slightly.
 
-## [Open Science](../episodes/10-open.md)
+## [Відкрита наука](../episodes/10-open.md)
 
-## [Licensing](../episodes/11-licensing.md)
+## [Ліцензування](../episodes/11-licensing.md)
 
 We teach about licensing because questions about who owns what, or can use
 what, arise naturally once we start talking about using public services like
@@ -285,14 +283,12 @@ works (including software documentation and images used in software) but not
 software itself. Creative Commons [recommends][cc-faq-software] a
 software-specific license instead.
 
-## [Citation](../episodes/12-citation.md)
+## [Цитування](../episodes/12-citation.md)
 
-## [Hosting](../episodes/13-hosting.md)
+## [Хостинг](../episodes/13-hosting.md)
 
 A common concern for learners is having their work publicly available on
-GitHub.  While we encourage open science, sometimes private repos are the
-only choice. It's always interesting to mention the options to have
-web-hosted private repositories.
+GitHub.  Хоча ми заохочуємо відкриту науку, іноді приватні репо є єдиним вибором. Завжди цікаво згадати варіанти розміщення приватних репозиторіїв.
 
 [github]: https://github.com/
 [drawings]: https://marklodato.github.io/visual-git-guide/index-en.html
