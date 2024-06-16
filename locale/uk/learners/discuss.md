@@ -1,8 +1,8 @@
 ---
-title: Discussion
+title: Обговорення
 ---
 
-## Frequently Asked Questions
+## Поширені запитання
 
 People often have questions about Git beyond the scope of the core material.
 Students who have completed the rest of the lessons might find value in looking through the following topics.
