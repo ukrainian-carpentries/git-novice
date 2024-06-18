@@ -1,18 +1,17 @@
 ---
-title: Discussion
+title: Обговорення
 ---
 
-## Frequently Asked Questions
+## Поширені запитання
 
 People often have questions about Git beyond the scope of the core material.
-Students who have completed the rest of the lessons might find value in looking through the following topics.
+Студентам, які завершили решту уроків, може бути корисно розглянути наступні теми.
 
-Note that since this material isn't essential for basic Git usage, it won't be covered by the instructor.
+Зауважте, що оскільки цей матеріал не є обов'язковим для базового використання Git, він не буде розглянутий інструктором.
 
-## More Advanced Git Configuration
+## Додаткові налаштування Git
 
-In [Setting Up Git](../episodes/02-setup.md),
-we used `git config --global` to set some default options for Git.
+Під час [Налаштування Git](../episodes/02-setup.md), ми використовували `git config --global`, щоб встановити деякі параметри за замовчуванням для Git.
 It turns out that these configuration options get stored in your home directory
 in a plain text file called `.gitconfig`.
 
@@ -35,17 +34,17 @@ This file can be opened in your preferred text editor.
 as this helps avoid introducing syntax errors.)
 
 Eventually, you will want to start customizing Git's behaviour.
-This can be done by adding more entries to your `.gitconfig`.
+Це можна зробити, додавши більше записів до вашого `.gitconfig`.
 The available options are described in the manual:
 
 ```bash
 $ git config --help
 ```
 
-In particular, you might find it useful to add aliases.
-These are like shortcuts for longer Git commands.
-For example, if you get sick of typing `git checkout` all the time,
-you could run the command:
+Зокрема, вам може знадобитися додати псевдоніми.
+Це щось на кшталт скорочень для довших команд Git.
+Наприклад, якщо вам набридло постійно вводити `git checkout`,
+ви можете виконати команду:
 
 ```bash
 $ git config --global alias.co checkout
@@ -63,7 +62,7 @@ we could now instead type:
 $ git co f22b25e mars.txt
 ```
 
-## Styling Git's Log
+## Стилізація журналу Git
 
 A good target for customization is output from the log.
 The default log is quite verbose but gives no graphical hints
@@ -92,22 +91,22 @@ $ git config --global --unset format.pretty
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Undoing Git Configuration Changes
+## Скасування змін конфігурації Git
 
-You can use the `--unset` flag to delete unwanted options from `.gitconfig`.
+Ви можете використовувати опцію `--unset` для видалення небажаних параметрів з `.gitconfig`.
 Another way to roll back changes is to store your `.gitconfig` using Git.
 
 For hints on what you might want to configure,
 go to GitHub and search for "gitconfig".
-You will find hundreds of repositories in which people have stored
-their own Git configuration files.
+Ви знайдете сотні репозиторіїв, у яких люди зберегли
+свої власні файли конфігурації Git.
 Sort them by the number of stars and have a look at the top few.
 If you find some you like,
 please check that they're covered by an open source license before you clone them.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Non-text Files
+## Нетекстові файли
 
 Recall when we discussed [Conflicts](../episodes/09-conflict.md)
 there was a challenge that asked,
