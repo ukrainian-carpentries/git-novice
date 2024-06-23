@@ -125,22 +125,22 @@ This is generally easy for programming source code and marked up text.
 Для нетекстових файлів, diff зазвичай може виявляти лише те, що файли змінилися
 але не можуть сказати, як і де.
 
-This has various impacts on Git's performance and will make it difficult to
-compare different versions of your project.
+Це по-різному впливає на продуктивність Git та ускладнює
+порівняння різних версій вашого проєкту.
 
 For a basic example to show the difference it makes,
 we're going to go see what would have happened if Dracula had tried
 using outputs from a word processor instead of plain text.
 
-Create a new directory and go into it:
+Створіть нову директорію і перейдіть до неї:
 
 ```bash
 $ mkdir planets-nontext
 $ cd planets-nontext
 ```
 
-Use a program such as Microsoft Word or LibreOffice Writer to create a new document.
-Enter the same text that we began with before:
+Використовуйте таку програму, як Microsoft Word або LibreOffice Writer, щоб створити новий документ.
+Введіть той самий текст, з якого ми починали раніше:
 
 ```output
 Cold and dry, but everything is my favorite color
@@ -187,8 +187,8 @@ index df0654a..315bf3a 100644
 +The two moons may be a problem for Wolfman
 ```
 
-Notice how plain text files give a much more informative diff.
-You can see exactly which lines changed and what the changes were.
+Зверніть увагу, що звичайні текстові файли дають набагато інформативніший diff.
+Ви можете побачити, які саме лінії змінилися і які були зміни.
 
 An uninformative `git diff` is not the only consequence of using Git on binary files.
 However, most of the other problems boil down to whether or not a good diff is possible.
