@@ -198,19 +198,19 @@ A rule of thumb is that it's OK if the binary file won't change very often,
 and if it does change, you don't care about merging in small differences between versions.
 
 Ми вже бачили, як текстовий оброблений звіт провалить цей тест.
-An example that passes the test is a logo for your organization or project.
+Прикладом, який проходить перевірку, є логотип для вашої організації або проєкту.
 Even though a logo will be stored in a binary format such as `jpg` or `png`,
 you can expect it will remain fairly static through the lifetime of your repository.
 On the rare occasion that branding does change,
 you will probably just want to replace the logo completely rather than merge little differences in.
 
-## Removing a File
+## Видалення файлу
 
 Adding and modifying files are not the only actions one might take
 when working on a project.  It might be required to remove a file
 from the repository.
 
-Create a new file for the planet Nibiru:
+Створіть новий файл для планети Nibiru:
 
 ```bash
 $ echo "This is another name for fake planet X" > nibiru.txt
@@ -246,18 +246,18 @@ Changes to be committed:
 
 ```
 
-The change has been staged.  Now commit the removal, and remove the
-file from the repository itself.  Note that the file will be removed
-in the new commit.  The previous commit will still
-have the file, if you were to retrieve that specific commit.
+Зміна була перенесена у зону стейджингу.  Now commit the removal, and remove the
+file from the repository itself.  Зауважте, що файл буде вилучено
+у новому коміті.  Попередній коміт все одно
+матиме файл, якщо ви хочете отримати цей конкретний коміт.
 
 ```bash
 $ git commit -m 'Removing info on Nibiru.  It is not a real planet!'
 ```
 
-## Removing a File with Unix
+## Видалення файлу за допомогою Unix
 
-Sometimes we might forget to remove the file through Git. If you removed the
+Іноді ми можемо забути видалити файл через Git. If you removed the
 file with Unix `rm` instead of using `git rm`, no worries,
 Git is smart enough to notice the missing file. Let us recreate the file and
 commit it again.
@@ -286,9 +286,9 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-See how Git has noticed that the file `nibiru.txt` has been removed
-from the disk.  The next step is to "stage" the removal of the file
-from the repository.  This is done with the command `git rm` just as
+Дивіться, як Git помітив, що файл `nibiru.txt` був видалений
+з диска.  Наступним кроком є "стейджинг" видалення файлу
+з репозиторію.  This is done with the command `git rm` just as
 before.
 
 ```bash
@@ -312,7 +312,7 @@ committed.
 $ git commit -m 'Removing info on Nibiru, again!'
 ```
 
-## Renaming a File
+## Перейменування файлу
 
 Another common change when working on a project is to rename a file.
 
@@ -322,7 +322,7 @@ Create a file for the planet Krypton:
 $ echo "Superman's home planet" > krypton.txt
 ```
 
-Add it to the repository:
+Додайте його до репозиторію:
 
 ```bash
 $ git add krypton.txt
@@ -347,7 +347,7 @@ Changes to be committed:
 	renamed:    krypton.txt -> earth.txt
 ```
 
-The final step is commit our change to the repository:
+Останнім кроком є внесення змін до репозиторію:
 
 ```bash
 $ git commit -m 'Superman's home is now Earth'
