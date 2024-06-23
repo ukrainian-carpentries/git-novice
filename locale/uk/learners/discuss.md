@@ -358,8 +358,8 @@ $ git commit -m 'Superman's home is now Earth'
 If you forgot to use Git and you used Unix `mv` instead
 of `git mv`, you will have a touch more work to do but Git will
 be able to deal with it. Let's try again renaming the file,
-this time with Unix `mv`. First, we need to recreate the
-`krypton.txt` file:
+this time with Unix `mv`. По-перше, нам потрібно відтворити
+файл `krypton.txt`:
 
 ```bash
 $ echo "Superman's home planet" > krypton.txt
@@ -393,7 +393,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Git has noticed that the file `krypton.txt` has disappeared from the
 file system and a new file `earth.txt` has showed up.
 
-Add those changes to the staging area:
+Додайте ці зміни в зону стейджингу:
 
 ```bash
 $ git add krypton.txt earth.txt
@@ -412,7 +412,7 @@ Changes to be committed:
 Notice how Git has now figured out that the `krypton.txt` has not
 disappeared - it has simply been renamed.
 
-The final step, as before, is to commit our change to the repository:
+Останнім кроком, як і раніше, є внесення змін до репозиторію:
 
 ```bash
 $ git commit -m 'Superman's home is Earth, told you before.'
@@ -429,14 +429,14 @@ your needs over another. Keep in mind that the way that Git travels along
 directory paths can be confusing.
 
 Sometimes the `**` pattern comes in handy, too, which matches multiple
-directory levels. E.g. `**/results/plots/*` would make git ignore the
+directory levels. Наприклад, `**/results/plots/*` would make git ignore the
 `results/plots` directory in any root directory.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Ignoring Nested Files: Challenge Problem
+## Ігнорування вкладених файлів: завдання
 
-Given a directory structure that looks like:
+Враховуючи структуру каталогу, яка виглядає так:
 
 ```bash
 results/data
@@ -445,7 +445,7 @@ results/run001.log
 results/run002.log
 ```
 
-And a .gitignore that looks like:
+Та .gitignore, який виглядає так:
 
 ```output
 *.csv
@@ -456,15 +456,15 @@ files, but ignore the rest of `results/`?
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
-To do this, your .gitignore would look like this:
+Для цього ваш .gitignore буде виглядати так:
 
 ```output
-*.csv                 # ignore the .csv files
-results/*             # ignore the files in the results directory
-!results/data/        # do not ignore the files in results/data
-!results/data/*       # do not ignore the .csv files in reults/data
+*.csv                 #  ігноруйте файли .csv
+results/*             # ігноруйте файли в директорії
+!results/data/        # не ігноруйте файли в results/data
+!results/data/*       # не ігноруйте файли .dat в results/data
 ```
 
 :::::::::::::::::::::::::
