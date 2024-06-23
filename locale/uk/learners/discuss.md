@@ -197,7 +197,7 @@ This isn't to say you should _never_ use Git on binary files.
 A rule of thumb is that it's OK if the binary file won't change very often,
 and if it does change, you don't care about merging in small differences between versions.
 
-We've already seen how a word processed report will fail this test.
+Ми вже бачили, як текстовий оброблений звіт провалить цей тест.
 An example that passes the test is a logo for your organization or project.
 Even though a logo will be stored in a binary format such as `jpg` or `png`,
 you can expect it will remain fairly static through the lifetime of your repository.
