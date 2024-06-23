@@ -116,14 +116,14 @@ that is stored in version control?"
 
 Тепер ми розглянемо це питання більш детально.
 
-Many people want to version control non-text files, such as images, PDFs and Microsoft Office or LibreOffice documents.
+Багато людей бажають керувати версіями нетекстових файлів, таких як зображення, PDF-файли та документи Microsoft Office або LibreOffice.
 It is true that Git can handle these filetypes (which fall under the banner of "binary" file types).
 However, just because it _can_ be done doesn't mean it _should_ be done.
 
 Much of Git's magic comes from being able to do line-by-line comparisons ("diffs") between files.
 This is generally easy for programming source code and marked up text.
-For non-text files, a diff can usually only detect that the files have changed
-but can't say how or where.
+Для нетекстових файлів, diff зазвичай може виявляти лише те, що файли змінилися
+але не можуть сказати, як і де.
 
 This has various impacts on Git's performance and will make it difficult to
 compare different versions of your project.
