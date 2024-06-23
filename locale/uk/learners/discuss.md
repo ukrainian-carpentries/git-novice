@@ -114,7 +114,7 @@ there was a challenge that asked,
 when there is a conflict in an image or some other non-textual file
 that is stored in version control?"
 
-We will now revisit this in more detail.
+Тепер ми розглянемо це питання більш детально.
 
 Many people want to version control non-text files, such as images, PDFs and Microsoft Office or LibreOffice documents.
 It is true that Git can handle these filetypes (which fall under the banner of "binary" file types).
