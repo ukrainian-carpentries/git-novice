@@ -29,17 +29,17 @@ exercises: 0
 進歩を記録していると考えてもらって構いません。変更点を最初の状況まで
 戻してから、最新版になるまでの変更を一つずつ再現していくことができます。
 
-![](fig/play-changes.svg){alt='変更は連続して保存されます'}
+![](fig/play-changes.svg){alt='A diagram demonstrating how a single document grows as the result of sequential changes'}
 
 「変更点」と「ドキュメント」を別々の物として考えてみると、基礎となるドキュメントに
 異なる変更点を「再現」する事によって、結果的に違ったバージョンのドキュメントを
 作る事が可能だという事が分かります。 例えば、下の図のように二人のユーザーが同じドキュメントに違った編集を加えた場合です。
 
-![](fig/versions.svg){alt='異なるバージョンの保存ができます'}
+![](fig/versions.svg){alt='A diagram with one source document that has been modified in two different ways to produce two different versions of the document'}
 
 変更点の衝突（[コンフリクト](../learners/reference.md#conflict)）が無ければ、二つ以上の違った変更点を基礎ドキュメントに加えることさえできます。
 
-![](fig/merge.svg){alt='複数のバージョンをマージできます'}
+![](fig/merge.svg){alt='A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions'}
 
 バージョン管理システムは、ユーザーがドキュメントに加えた変更点を記録するツールであり、 結果的にドキュメントの違ったバージョンを作成する事ができます。 このツールを活用 する事によって、次のバージョンに加える変更点（個々の変更点は 「[commit（コミット）](../learners/reference.md#commit)」と呼びます）を決める事ができ、変更点に関するメタデータも一緒に保存する事ができます。 特定のプロジェクトのコミット履歴とそれに関するメタデータを総じて 「[repository（リポジトリ）](\(../learners/reference.md#repository\))」と呼びます。
 リポジトリは 別々のコンピュータと同期させる事が出来るので、他人との共同作業を潤滑に進めることが可能になります。
