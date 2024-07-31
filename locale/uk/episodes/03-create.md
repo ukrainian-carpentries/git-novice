@@ -21,7 +21,7 @@ exercises: 0
 
 Ми продовжимо нашу вигадану історію, у якій Wolfman та Dracula досліджують, чи можливо відправити планетарний посадковий модуль на Марс.
 
-![](fig/motivatingexample.png){alt='motivatingexample'}
+![](fig/motivatingexample.png){alt='The main elements of the story: Dracula, Wolfman, the Mummy, Mars, Pluto and The Moon'}
 [Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
 by [b-maze](https://www.deviantart.com/b-maze) / [Deviant Art](https://www.deviantart.com/).
 [Mars](https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg) by European Space Agency /
@@ -83,7 +83,7 @@ $ git checkout -b main
 Switched to a new branch 'main'
 ```
 
-Ми можемо перевірити, що все налаштовано правильно, запитавши Git про стан нашого проєкту:
+We can now start using one of the most important git commands, which is particularly helpful to beginners. `git status` tells us the status of our project, and better, a list of changes in the project and options on what to do with those changes. We can use it as often as we want, whenever we want to understand what is going on.
 
 ```bash
 $ git status
@@ -138,7 +138,7 @@ fatal: Not a git repository (or any of the parent directories): .git
 
 ## Виправлення помилок `git init`
 
-Wolfman пояснив, як вкладений репозиторій є зайвим і може призвести до плутанини у майбутньому. Тепер Dracula хотів би видалити вкладений репозиторій. Як Dracula може скасувати свою останню команду `git init` виконану у підкаталозі `moons`?
+Wolfman пояснив, як вкладений репозиторій є зайвим і може призвести до плутанини у майбутньому. Dracula would like to go back to a single git repository. Як Dracula може скасувати свою останню команду `git init` виконану у підкаталозі `moons`?
 
 :::::::::::::::  solution
 
@@ -152,19 +152,21 @@ Wolfman пояснив, як вкладений репозиторій є зай
 $ rm filename
 ```
 
-Подібним чином каталог можна видалити за допомогою `rm -r dirname` або `rm -rf dirname`.
+Similarly a directory can be removed using `rm -r dirname`.
 Якщо файли чи каталоги, які видаляються таким чином, вже відстежуються Git, тоді їх видалення стає ще однією зміною, яку нам потрібно буде відстежувати (ми побачимо як це робити в наступному епізоді).
 
 ### Відповідь
 
 Git зберігає всі свої файли в каталозі `.git`.
-Щоб виправити цю маленьку помилку, Dracula може просто видалити каталог `.git` > в підкаталозі `moons`, виконавши наступну команду всередині каталогу `planets`:
+To recover from this little mistake, Dracula can remove the `.git`
+folder in the moons subdirectory by running the following command from inside the `planets` directory:
 
 ```bash
 $ rm -rf moons/.git
 ```
 
 Проте, будьте обережні! Виконання цієї команди у неправильному каталозі призведе до видалення всієї історії змін проєкту, яку ви хотіли б зберегти.
+In general, deleting files and directories using `rm` from the command line cannot be reversed.
 Тому завжди перевіряйте свій поточний каталог за допомогою команди `pwd`.
 
 :::::::::::::::::::::::::
