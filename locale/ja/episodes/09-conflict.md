@@ -125,7 +125,7 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-![](fig/conflict.svg){alt='The Conflicting Changes'}
+![](fig/conflict.svg){alt='A diagram showing a conflict that might occur when two sets of independent changes are merged'}
 
 Git rejects the push because it detects that the remote repository has new updates that have not been
 incorporated into the local branch.
@@ -503,7 +503,7 @@ started.
 | 3     |                                                                                                                                                                                            |                                                                                                                                                                                             |
 | 4     |                                                                                                                                                                                            |                                                                                                                                                                                             |
 | 5     |                                                                                                                                                                                            |                                                                                                                                                                                             |
-| 6     | Celebrate!                                                                                                                                                                                 | `AFK`                                                                                                                                                                                       |
+| 6     | Celebrate!                                                                                                                                                                                 |                                                                                                                                                                                             |
 
 :::::::::::::::  solution
 
@@ -516,7 +516,7 @@ started.
 | 3     | Stage changes                                                                                                      | `git add numbers.txt`                                                                                                                                                                                                                                                                                                                                         |
 | 4     | Commit changes                                                                                                     | `git commit -m "Add 100 to numbers.txt"`                                                                                                                                                                                                                                                                                                                      |
 | 5     | Update remote                                                                                                      | `git push origin main`                                                                                                                                                                                                                                                                                                                                        |
-| 6     | Celebrate!                                                                                                         | `AFK`                                                                                                                                                                                                                                                                                                                                                         |
+| 6     | Celebrate!                                                                                                         |                                                                                                                                                                                                                                                                                                                                                               |
 
 :::::::::::::::::::::::::
 
