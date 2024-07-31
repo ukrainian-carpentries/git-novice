@@ -271,7 +271,7 @@ Git наполягає, щоб ми додали файли до набору з
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-![](fig/git-staging-area.svg){alt='Зона стейджингу (Git staging area)'}
+![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
 Подивімося, як наші зміни у файлі проходять шлях від текстового редактора до зони стейджингу і далі у довгострокове зберігання.
 Спочатку, ми додамо новий рядок у наш файл:
@@ -486,7 +486,7 @@ $ git commit -m "Add some initial thoughts on spaceships"
 
 Для повторення: коли ми хочемо додати зміни до нашого репозиторію, спочатку нам потрібно додати змінені файли в зону стейджингу (`git add`) а потім зберегти заплановані зміни до репозиторію (`git commit`):
 
-![](fig/git-comitting.svg){alt='Послідовність дій для коміту'}
+![](fig/git-committing.svg){alt='A diagram showing two documents being separately staged using git add, before being combined into one commit using git commit'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
