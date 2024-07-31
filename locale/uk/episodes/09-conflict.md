@@ -117,7 +117,7 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-![](fig/conflict.svg){alt='Суперечливі зміни'}
+![](fig/conflict.svg){alt='A diagram showing a conflict that might occur when two sets of independent changes are merged'}
 
 Git не дозволяє цю операцію, оскільки виявляє, що віддалений репозиторій має нові оновлення, які не були включені до локальної гілки.
 Що ми повинні зробити - це отримати зміни з GitHub, [обʼєднати](../learners/reference.md#merge) їх з копією репозиторію, у якій ми зараз працюємо, а тільки потім надіслати їх на GitHub.
@@ -447,7 +447,7 @@ $ git commit -m "Use two images: surface and sky"
 | 3    |                                                                                                                                                                                         |                                                                                                                                                                                             |
 | 4    |                                                                                                                                                                                         |                                                                                                                                                                                             |
 | 5    |                                                                                                                                                                                         |                                                                                                                                                                                             |
-| 6    | Відсвяткувати!                                                                                                                                                                          | `AFK` (Away From Keyboard)                                                                                                                                               |
+| 6    | Відсвяткувати!                                                                                                                                                                          |                                                                                                                                                                                             |
 
 :::::::::::::::  solution
 
@@ -460,7 +460,7 @@ $ git commit -m "Use two images: surface and sky"
 | 3    | Додати зміни до зони стейджингу                                                                                 | `git add numbers.txt`                                                                                                                                                                                                                                                                                                                                         |
 | 4    | Зробити коміт                                                                                                   | `git commit -m "Add 100 to numbers.txt"`                                                                                                                                                                                                                                                                                                                      |
 | 5    | Оновити віддалений репозиторій                                                                                  | `git push origin main`                                                                                                                                                                                                                                                                                                                                        |
-| 6    | Відсвяткувати!                                                                                                  | `AFK` (Away From Keyboard)                                                                                                                                                                                                                                                                                                                 |
+| 6    | Відсвяткувати!                                                                                                  |                                                                                                                                                                                                                                                                                                                                                               |
 
 :::::::::::::::::::::::::
 
