@@ -22,8 +22,8 @@ Gitの設定ができたら、
 
 火星に惑星着陸船を送ることが可能かどうかを調査しているウルフマンとドラキュラの話に戻りましょう。
 
-![](fig/motivatingexample.png){alt='motivatingexample'}
-[ウルフマン対ドラキュラ](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
+![](fig/motivatingexample.png){alt='The main elements of the story: Dracula, Wolfman, the Mummy, Mars, Pluto and The Moon'}
+[Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
 by [b-maze](https://www.deviantart.com/b-maze) / [Deviant Art](https://www.deviantart.com/).
 [火星](https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg) by European Space Agency /
 [CC-BY-SA 3.0 IGO](https://creativecommons.org/licenses/by/3.0/deed.en).
@@ -84,7 +84,7 @@ $ git checkout -b main
 Switched to a new branch 'main'
 ```
 
-プロジェクトのステータスをGitに問うことで、すべてが正しく設定されていることを確認できます:
+We can now start using one of the most important git commands, which is particularly helpful to beginners. `git status` tells us the status of our project, and better, a list of changes in the project and options on what to do with those changes. We can use it as often as we want, whenever we want to understand what is going on.
 
 ```bash
 $ git status
@@ -139,7 +139,7 @@ fatal: Not a git repository (or any of the parent directories): .git
 
 ## `git init` の間違いを修正する
 
-ウルフマンはドラキュラに、「入れ子」状態になっているリポジトリがいかに冗長で、混乱を引き起こす可能性があるかを説明しました。 説明を聞いて、ドラキュラは「入れ子」状態のリポジトリを削除したいと思いました。 `moons`サブディレクトリの最後の`git init`を、ドラキュラはどうやって、元に戻すことができるのでしょうか？
+ウルフマンはドラキュラに、「入れ子」状態になっているリポジトリがいかに冗長で、混乱を引き起こす可能性があるかを説明しました。 Dracula would like to go back to a single git repository. `moons`サブディレクトリの最後の`git init`を、ドラキュラはどうやって、元に戻すことができるのでしょうか？
 
 :::::::::::::::  solution
 
@@ -153,19 +153,21 @@ Gitリポジトリからのファイルの削除は、慎重に行う必要が�
 $ rm filename
 ```
 
-同様に、`rm -r dirname` または `rm -rf dirname` を使ってディレクトリを削除することができます。
+Similarly a directory can be removed using `rm -r dirname`.
 この方法で削除されるファイルやフォルダがGitによって追跡されているなら、次のエピソードで見られるように、それらの削除が、追跡する必要がある別の変更になります。
 
 ### 解答
 
 Gitはすべてのファイルを`.git`ディレクトリに保存します。
-この小さなミスから立ち直るには、ドラキュラは`planets`ディレクトリの中から次のコマンドを実行して、moonsサブディレクトリの中の`.git`フォルダを削除すれば良い：
+To recover from this little mistake, Dracula can remove the `.git`
+folder in the moons subdirectory by running the following command from inside the `planets` directory:
 
 ```bash
 $ rm -rf moons/.git
 ```
 
 しかし、気をつけてください！ 間違ったディレクトリでこのコマンドを実行すると、残しておきたいプロジェクトのGit履歴がすべて削除されてしまいます。
+In general, deleting files and directories using `rm` from the command line cannot be reversed.
 したがって、常に `pwd` コマンドを使用してカレントディレクトリを確認してください。
 
 :::::::::::::::::::::::::
