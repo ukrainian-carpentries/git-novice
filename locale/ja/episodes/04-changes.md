@@ -282,7 +282,7 @@ Git には、まだコミットされていない[changeset](../learners/referen
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-![](fig/git-staging-area.svg){alt='Gitのステージング・エリア'}
+![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
 それでは、ファイルの変更点がエディタからステージングエリア、そして長期保存に移る過程を見てみましょう。
 初めに、新しい文章をファイルに加えましょう：
@@ -499,7 +499,7 @@ $ git commit -m "Add some initial thoughts on spaceships"
 
 まとめると、変更内容をリポジトリに追加したい時は`git add` で変更点をステージングエリアに移してから、`git commit` でステージングエリアの変更点をリポジトリに保存します：
 
-![](fig/git-committing.svg){alt='git commitのワークフロー'}
+![](fig/git-committing.svg){alt='A diagram showing two documents being separately staged using git add, before being combined into one commit using git commit'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
