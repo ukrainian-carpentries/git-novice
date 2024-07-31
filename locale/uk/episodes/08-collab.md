@@ -31,7 +31,7 @@ exercises: 0
 
 Власник репозиторію повинен надати Співавтору доступ. У GitHub, натисніть кнопку "Settings" праворуч, оберіть "Collaborators", натисніть "Add people", та потім введіть ім\`я користувача GitHub, повідомлене вашим партнером.
 
-![](fig/github-add-collaborators.png){alt='Сторінка репозиторію після вибору Settings -> Collaborators, яка показує додавання співавторів у GitHub'}
+![](fig/github-add-collaborators.png){alt='A screenshot of the GitHub Collaborators settings page, which is accessed by clicking "Settings" then "Collaborators"'}
 
 Щоб отримати доступ до репозиторію Власника, Співавтору
 потрібно відкрити [https://github.com/notifications](https://github.com/notifications)
@@ -52,7 +52,7 @@ $ git clone git@github.com:vlad/planets.git ~/Desktop/vlad-planets
 Якщо ви вирішите клонувати без додавання шляху клонування (`~/Desktop/vlad-planets`) вказаного в кінці команди, ви будете клонувати всередину вашого власного каталогу `planets`!
 Переконайтеся, що спочатку ви перейшли до каталогу `Desktop`.
 
-![](fig/github-collaboration.svg){alt='Після клонування репозиторію'}
+![](fig/github-collaboration.svg){alt='A diagram showing that "git clone" can create a copy of a remote GitHub repository, allowing a second person to create their own local repository that they can make changes to.'}
 
 Співавтор тепер може зробити зміни у своєму клоні репозиторію Власника так само, як ми робили раніше:
 
