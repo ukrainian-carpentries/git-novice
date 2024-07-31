@@ -30,17 +30,17 @@ Git のようなシステムを使用すると、任意の 2 つのリポジト�
 
 [GitHub](https://github.com) にログインし、右上隅のアイコンをクリックして `planets` という名前の新しいリポジトリを作成してみましょう：
 
-![](fig/github-create-repo-01.png){alt='Creating a Repository on GitHub (Step 1)'}
+![](fig/github-create-repo-01.png){alt='The first step in creating a repository on GitHub: clicking the "create new" button'}
 
 リポジトリに「planets」という名前を付けて、「Create Repository」をクリックします。
 
 注: このリポジトリはローカルのリポジトリに接続されるため、空にしておく必要があります。 「Initialize this repository with a README」のチェックを外したままにし、「Add .gitignore」と「Add a license.」の両方のオプションを「None」のままにします。 リポジトリを空にしておく必要がある理由の完全な説明については、以下の「GitHub ライセンスと README ファイル」の演習を参照してください。
 
-![](fig/github-create-repo-02.png){alt='Creating a Repository on GitHub (Step 2)'}
+![](fig/github-create-repo-02.png){alt='The second step in creating a repository on GitHub: filling out the new repository form to provide the repository name, and specify that neither a readme nor a license should be created'}
 
 リポジトリが作成されるとすぐに、GitHub には ある URL と、ローカルのリポジトリの構成方法に関する情報が記載されたページが表示されます。
 
-![](fig/github-create-repo-03.png){alt='Creating a Repository on GitHub (Step 3)'}
+![](fig/github-create-repo-03.png){alt='The summary page displayed by GitHub after a new repository has been created. It contains instructions for configuring the new GitHub repository as a git remote'}
 
 これにより、GitHub のサーバー上で次のことが効果的に行われます。
 
@@ -53,11 +53,11 @@ $ git init
 もしあなたが以前の [エピソード](04-changes.md) を覚えていれば、私達は `mars.txt` に以前の作業を追加してコミットしました。
 ローカルリポジトリのダイアグラムは次のようになります：
 
-![](fig/git-staging-area.svg){alt='The Local Repository with Git Staging Area'}
+![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
 Now that we have two repositories, we need a diagram like this:
 
-![](fig/git-freshly-made-github-repo.svg){alt='Freshly-Made GitHub Repository'}
+![](fig/git-freshly-made-github-repo.svg){alt='A diagram illustrating how the GitHub "planets" repository is also a git repository like our local repository, but that it is currently empty'}
 
 Note that our local repository still contains our earlier work on `mars.txt`, but the
 remote repository on GitHub appears empty as it doesn't contain any files yet.
@@ -69,7 +69,7 @@ GitHub repository a [remote](../learners/reference.md#remote) for the local repo
 The home page of the repository on GitHub includes the URL string we need to
 identify it:
 
-![](fig/github-find-repo-string.png){alt='Where to Find Repository URL on GitHub'}
+![](fig/github-find-repo-string.png){alt='Clicking the "Copy to Clipboard" button on GitHub to obtain the repository\'s URL'}
 
 Click on the 'SSH' link to change the [protocol](../learners/reference.md#protocol) from HTTPS to SSH.
 
@@ -83,7 +83,7 @@ minimum level for GitHub.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-![](fig/github-change-repo-string.png){alt='Changing the Repository URL on GitHub'}
+![](fig/github-change-repo-string.png){alt='A screenshot showing that clicking on "SSH" will make GitHub provide the SSH URL for a repository instead of the HTTPS URL'}
 
 Copy that URL from the browser, go into the local `planets` repository, and run
 this command:
@@ -185,7 +185,10 @@ Created directory '/c/Users/Vlad Dracula/.ssh'.
 Enter passphrase (empty for no passphrase):
 ```
 
-Now, it is prompting Dracula for a passphrase.  Since he is using his lab's laptop that other people sometimes have access to, he wants to create a passphrase.  Be sure to use something memorable or save your passphrase somewhere, as there is no "reset my password" option.
+Now, it is prompting Dracula for a passphrase.  Since he is using his lab's laptop that other people sometimes have access to, he wants to create a passphrase.
+Be sure to use something memorable or save your passphrase somewhere, as there is no "reset my password" option.
+Note that, when typing a passphrase on a terminal, there won't be any visual feedback of your typing.
+This is normal: your passphrase will be recorded even if you see nothing changing on your screen.
 
 ```output
 Enter same passphrase again:
@@ -348,7 +351,7 @@ to make Git default to using the terminal for usernames and passwords.
 
 Our local and remote repositories are now in this state:
 
-![](fig/github-repo-after-first-push.svg){alt='GitHub Repository After First Push'}
+![](fig/github-repo-after-first-push.svg){alt='A diagram showing how "git push origin" will push changes from the local repository to the remote, making the remote repository an exact copy of the local repository.'}
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
