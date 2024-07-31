@@ -28,17 +28,17 @@ exercises: 0
 
 Увійдіть до [GitHub](https://github.com), потім натисніть на значок у верхньому правому куті, щоб створити новий репозиторій під назвою `planets`:
 
-![](fig/github-create-repo-01.png){alt='Створення репозиторію на GitHub (крок 1)'}
+![](fig/github-create-repo-01.png){alt='The first step in creating a repository on GitHub: clicking the "create new" button'}
 
 Назвіть ваш репозиторій "planets" і потім натисніть на "Create Repository".
 
 Зауважте: оскільки цей репозиторій буде підʼєднано до локального репозиторію, він має бути порожнім. Залиште "Initialize this repository with a README" непозначеним, та оберіть "None" як опції для обох "Add .gitignore" та "Add a license". Дивіться вправу "Файли ліцензії та README" нижче для повного пояснення того, чому репозиторій повинен бути порожнім.
 
-![](fig/github-create-repo-02.png){alt='Створення репозиторію на GitHub (крок 2)'}
+![](fig/github-create-repo-02.png){alt='The second step in creating a repository on GitHub: filling out the new repository form to provide the repository name, and specify that neither a readme nor a license should be created'}
 
 Як тільки репозиторій створено, GitHub відображає сторінку з URL і певною інформацією про те, як налаштувати локальний репозиторій:
 
-![](fig/github-create-repo-03.png){alt='Створення репозиторію на GitHub (крок 3)'}
+![](fig/github-create-repo-03.png){alt='The summary page displayed by GitHub after a new repository has been created. It contains instructions for configuring the new GitHub repository as a git remote'}
 
 Насправді це робить наступне на сервері GitHub:
 
@@ -50,11 +50,11 @@ $ git init
 
 Якщо ви пам'ятаєте, у [одному з попередніх епізодів](04-changes.md), де ми додавали та зберігали нашу попередню роботу над `mars.txt`, в нас була діаграма, яка зображувала локальний репозиторій, та виглядала так:
 
-![](fig/git-staging-area.svg){alt='Локальний репозиторій із зоною стейджингу'}
+![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
 Тепер, коли ми маємо два репозиторії, нам потрібна така діаграма:
 
-![](fig/git-freshly-made-github-repo.svg){alt='Щойно створений репозиторій GitHub'}
+![](fig/git-freshly-made-github-repo.svg){alt='A diagram illustrating how the GitHub "planets" repository is also a git repository like our local repository, but that it is currently empty'}
 
 Зауважте, що наш локальний репозиторій все ще містить нашу попередню роботу над `mars.txt`, але віддалений репозиторій на GitHub виглядає порожнім, оскільки він ще не містить жодних файлів.
 
@@ -63,7 +63,7 @@ $ git init
 Тепер підключаємо два сховища одне до одного.  Ми робимо це вказуючи GitHub репозиторій у якості [віддаленого](../learners/reference.md#remote) для локального репозиторію.
 Домашня сторінка репозиторію на GitHub містить URL, який нам потрібен, щоб його ідентифікувати:
 
-![](fig/github-find-repo-string.png){alt='Як знайти URL репозиторію у GitHub'}
+![](fig/github-find-repo-string.png){alt='Clicking the "Copy to Clipboard" button on GitHub to obtain the repository\'s URL'}
 
 Натисніть на кнопку 'SSH', щоб змінити [протокол](../learners/reference.md#protocol) з HTTPS на SSH.
 
@@ -75,7 +75,7 @@ $ git init
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-![](fig/github-change-repo-string.png){alt='Зміна URL репозиторію у GitHub'}
+![](fig/github-change-repo-string.png){alt='A screenshot showing that clicking on "SSH" will make GitHub provide the SSH URL for a repository instead of the HTTPS URL'}
 
 Скопіюйте цю URL-адресу з браузера, перейдіть до локального репозиторію `planets`, та виконайте цю команду:
 
@@ -170,7 +170,10 @@ Created directory '/c/Users/Vlad Dracula/.ssh'.
 Enter passphrase (empty for no passphrase):
 ```
 
-Тепер Dracula має обрати пароль.  Він хоче створити пароль, оскільки він використовує ноутбук зі своєї лабораторії, до якого іноді мають доступ інші люди.  Обов'язково використовуйте пароль, який можна запам'ятати, або збережіть пароль десь у надійному місці, оскільки тут немає опції «змінити мій пароль».
+Тепер Dracula має обрати пароль.  Він хоче створити пароль, оскільки він використовує ноутбук зі своєї лабораторії, до якого іноді мають доступ інші люди.
+Обов'язково використовуйте пароль, який можна запам'ятати, або збережіть пароль десь у надійному місці, оскільки тут немає опції «змінити мій пароль».
+Note that, when typing a passphrase on a terminal, there won't be any visual feedback of your typing.
+This is normal: your passphrase will be recorded even if you see nothing changing on your screen.
 
 ```output
 Enter same passphrase again:
@@ -316,7 +319,7 @@ $ unset SSH_ASKPASS
 
 Тепер наші локальний та віддалений репозиторії перебувають у такому стані:
 
-![](fig/github-repo-after-first-push.svg){alt='Репозиторій GitHub після першого виконання команди push'}
+![](fig/github-repo-after-first-push.svg){alt='A diagram showing how "git push origin" will push changes from the local repository to the remote, making the remote repository an exact copy of the local repository.'}
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
