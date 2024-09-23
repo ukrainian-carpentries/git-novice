@@ -24,7 +24,7 @@ Under the following terms:
 
 - **Attribution**---You must give appropriate credit (mentioning that your work
   is derived from work that is Copyright (c) The Carpentries and, where
-  practical, linking to https\://carpentries.org/), provide a [link to the
+  practical, linking to \<https\://carpentries.org/>), provide a [link to the
   license][cc-by-human], and indicate if changes were made. You may do so in
   any reasonable manner, but not in any way that suggests the licensor endorses
   you or your use.
