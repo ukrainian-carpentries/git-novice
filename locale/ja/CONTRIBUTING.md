@@ -97,7 +97,7 @@ final say over what gets merged into the lesson.
 The Carpentries is a global organisation with volunteers and learners all over
 the world. We share values of inclusivity and a passion for sharing knowledge,
 teaching and learning. There are several ways to connect with The Carpentries
-community listed at https\://carpentries.org/connect/ including via social
+community listed at \<https\://carpentries.org/connect/> including via social
 media, slack, newsletters, and email lists. You can also [reach us by
 email][contact].
 
