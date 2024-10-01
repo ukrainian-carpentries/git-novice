@@ -1,5 +1,5 @@
 ---
-title: Instructor Notes
+title: Нотатки для інструктора
 ---
 
 Using a software tool to handle the versions of your project files
@@ -288,7 +288,8 @@ software-specific license instead.
 ## [Хостинг](../episodes/13-hosting.md)
 
 A common concern for learners is having their work publicly available on
-GitHub.  Хоча ми заохочуємо відкриту науку, іноді приватні репо є єдиним вибором. Завжди цікаво згадати варіанти розміщення приватних репозиторіїв.
+GitHub.  While we encourage open science, sometimes private repos are the
+only choice. Завжди цікаво згадати варіанти розміщення приватних репозиторіїв.
 
 [github]: https://github.com/
 [drawings]: https://marklodato.github.io/visual-git-guide/index-en.html

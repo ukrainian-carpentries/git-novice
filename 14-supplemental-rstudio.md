@@ -68,7 +68,7 @@ RStudio дозволяє створити [проєкт][rstudio-projects], по
 Далі RStudio запитає, який наявний каталог ми хочемо використовувати. Натисніть
 "Browse..." і перейдіть до відповідного каталогу, потім натисніть"Create Project":
 
-![](fig/RStudio_screenshot_navigateexisting.png)
+![](fig/RStudio_screenshot_navigateexisting.png){alt='RStudio window showing the "Create Project From Existing Directory" dialog. In the dialog, the project working directory has been set to "~/Desktop/planets"'}
 
 Чудово! Ми створили новий проєкт в RStudio в рамках наявного репозиторію `planets`. Зверніть увагу на вертикальне меню "Git" у панелі меню. RStudio визнав, що
 поточний каталог є репозиторієм Git, і пропонує нам
@@ -80,11 +80,11 @@ RStudio дозволяє створити [проєкт][rstudio-projects], по
 "Files" у правому нижньому куті. Тепер додамо деяку інформацію
 про Плутон:
 
-![](fig/RStudio_screenshot_editfiles.png)
+![](fig/RStudio_screenshot_editfiles.png){alt='RStudio window demonstrating the use of the editor panel to modify the "pluto.txt" file'}
 
 Після того, як ми зберегли наші відредаговані файли, ми можемо використати RStudio для збереження змін, натиснувши на "Commit..." в меню Git:
 
-![](fig/RStudio_screenshot_commit.png){alt='Знімок екрана RStudio, що показує меню Git з обраним пунктом "Commit..."'}
+![](fig/RStudio_screenshot_commit.png){alt='RStudio screenshot showing the Git menu dropdown with the "Commit..." option selected'}
 
 Це відкриє діалогове вікно, де ми можемо вказати, які файли зберігати у коміті (обираючи відповідні поля
 у стовпці "Staged"), та ввести повідомлення коміту
@@ -92,11 +92,11 @@ RStudio дозволяє створити [проєкт][rstudio-projects], по
 поточний стан кожного файлу. Натискання на файлі показує інформацію про зміни у нижній
 панелі (використовуючи результат команди `git diff`). Як тільки все виглядає так, як ми хочемо, ми натискаємо "Commit":
 
-![](fig/RStudio_screenshot_review.png)
+![](fig/RStudio_screenshot_review.png){alt='RStudio screenshow showing the "Review Changes" dialog. The top left panel shows the list of files that can be included or excluded from the commit. The top right panel is for writing a commit message. The bottom panel shows information about the currently selected file in the top left panel.'}
 
 Зміни можна відправити до віддаленого репозиторію, обравши "Push Branch" з меню Git. Існують також опції меню для отримання змін з віддаленого репозиторію та для перегляду історії комітів:
 
-![](fig/RStudio_screenshot_history.png){alt='Знімок екрана RStudio, що показує меню git з обраним пунктом "History"'}
+![](fig/RStudio_screenshot_history.png){alt='RStudio screenshot showing the git menu dropdown with the "History" option selected'}
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -109,7 +109,7 @@ RStudio дозволяє створити [проєкт][rstudio-projects], по
 
 Якщо натиснути на "History", ми побачимо графічну версію того, що нам сказав би `git log`:
 
-![](fig/RStudio_screenshot_viewhistory.png)
+![](fig/RStudio_screenshot_viewhistory.png){alt='RStudio screenshot showing the "Review Changes" dialog after pressing the "History" button. The top panel lists the commits in the repository, similar to git log. The bottom panel shows the changes included in the commit that has been selected in the top panel.'}
 
 RStudio створює ряд файлів, які використовуються для відстеження проєкту. Зазвичай ми не хочемо відстежувати їх у Git; в цьому випадку ми додаємо їх до нашого файлу `.gitignore`:
 
