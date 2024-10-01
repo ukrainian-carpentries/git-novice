@@ -391,7 +391,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Віддалені репозиторії у GitHub</h1>
-        <p>Останнє оновлення 2024-06-04 |
+        <p>Останнє оновлення 2024-10-01 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/07-github.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -447,7 +447,7 @@
 <hr class="half-width"><p>Увійдіть до <a href="https://github.com" class="external-link">GitHub</a>, потім натисніть
 на значок у верхньому правому куті, щоб створити новий репозиторій під
 назвою <code>planets</code>:</p>
-<figure><img src="../fig/github-create-repo-01.png" alt="Створення репозиторію на GitHub (крок 1)" class="figure mx-auto d-block"></figure><p>Назвіть ваш репозиторій “planets” і потім натисніть на “Create
+<figure><img src="../fig/github-create-repo-01.png" alt='The first step in creating a repository on GitHub: clicking the "create new" button' class="figure mx-auto d-block"></figure><p>Назвіть ваш репозиторій “planets” і потім натисніть на “Create
 Repository”.</p>
 <p>Зауважте: оскільки цей репозиторій буде підʼєднано до локального
 репозиторію, він має бути порожнім. Залиште “Initialize this repository
@@ -455,9 +455,9 @@ with a README” непозначеним, та оберіть “None” як �
 .gitignore” та “Add a license”. Дивіться вправу “Файли ліцензії та
 README” нижче для повного пояснення того, чому репозиторій повинен бути
 порожнім.</p>
-<figure><img src="../fig/github-create-repo-02.png" alt="Створення репозиторію на GitHub (крок 2)" class="figure mx-auto d-block"></figure><p>Як тільки репозиторій створено, GitHub відображає сторінку з URL і
+<figure><img src="../fig/github-create-repo-02.png" alt="The second step in creating a repository on GitHub: filling out the new repository form to provide the repository name, and specify that neither a readme nor a license should be created" class="figure mx-auto d-block"></figure><p>Як тільки репозиторій створено, GitHub відображає сторінку з URL і
 певною інформацією про те, як налаштувати локальний репозиторій:</p>
-<figure><img src="../fig/github-create-repo-03.png" alt="Створення репозиторію на GitHub (крок 3)" class="figure mx-auto d-block"></figure><p>Насправді це робить наступне на сервері GitHub:</p>
+<figure><img src="../fig/github-create-repo-03.png" alt="The summary page displayed by GitHub after a new repository has been created. It contains instructions for configuring the new GitHub repository as a git remote" class="figure mx-auto d-block"></figure><p>Насправді це робить наступне на сервері GitHub:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -469,8 +469,8 @@ README” нижче для повного пояснення того, чому
 епізодів</a>, де ми додавали та зберігали нашу попередню роботу над
 <code>mars.txt</code>, в нас була діаграма, яка зображувала локальний
 репозиторій, та виглядала так:</p>
-<figure><img src="../fig/git-staging-area.svg" alt="Локальний репозиторій із зоною стейджингу" class="figure mx-auto d-block"></figure><p>Тепер, коли ми маємо два репозиторії, нам потрібна така діаграма:</p>
-<figure><img src="../fig/git-freshly-made-github-repo.svg" alt="Щойно створений репозиторій GitHub" class="figure mx-auto d-block"></figure><p>Зауважте, що наш локальний репозиторій все ще містить нашу попередню
+<figure><img src="../fig/git-staging-area.svg" alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository' class="figure mx-auto d-block"></figure><p>Тепер, коли ми маємо два репозиторії, нам потрібна така діаграма:</p>
+<figure><img src="../fig/git-freshly-made-github-repo.svg" alt='A diagram illustrating how the GitHub "planets" repository is also a git repository like our local repository, but that it is currently empty' class="figure mx-auto d-block"></figure><p>Зауважте, що наш локальний репозиторій все ще містить нашу попередню
 роботу над <code>mars.txt</code>, але віддалений репозиторій на GitHub
 виглядає порожнім, оскільки він ще не містить жодних файлів.</p>
 </section><section><h2 class="section-heading" id="підʼєднання-локального-репозиторію-до-віддаленого">2. Підʼєднання локального репозиторію до віддаленого<a class="anchor" aria-label="anchor" href="#%D0%BF%D1%96%D0%B4%CA%BC%D1%94%D0%B4%D0%BD%D0%B0%D0%BD%D0%BD%D1%8F-%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D1%96%D1%8E-%D0%B4%D0%BE-%D0%B2%D1%96%D0%B4%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D0%BE"></a></h2>
@@ -478,7 +478,7 @@ README” нижче для повного пояснення того, чому
 GitHub репозиторій у якості <a href="reference.html#remote">віддаленого</a> для локального репозиторію.
 Домашня сторінка репозиторію на GitHub містить URL, який нам потрібен,
 щоб його ідентифікувати:</p>
-<figure><img src="../fig/github-find-repo-string.png" alt="Як знайти URL репозиторію у GitHub" class="figure mx-auto d-block"></figure><p>Натисніть на кнопку ‘SSH’, щоб змінити <a href="reference.html#protocol">протокол</a> з HTTPS на SSH.</p>
+<figure><img src="../fig/github-find-repo-string.png" alt="Clicking the &quot;Copy to Clipboard&quot; button on GitHub to obtain the repository's URL" class="figure mx-auto d-block"></figure><p>Натисніть на кнопку ‘SSH’, щоб змінити <a href="reference.html#protocol">протокол</a> з HTTPS на SSH.</p>
 <div id="https-в-порівнянні-з-ssh" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -493,7 +493,7 @@ GitHub репозиторій у якості <a href="reference.html#remote">в
 </div>
 </div>
 </div>
-<figure><img src="../fig/github-change-repo-string.png" alt="Зміна URL репозиторію у GitHub" class="figure mx-auto d-block"></figure><p>Скопіюйте цю URL-адресу з браузера, перейдіть до локального
+<figure><img src="../fig/github-change-repo-string.png" alt='A screenshot showing that clicking on "SSH" will make GitHub provide the SSH URL for a repository instead of the HTTPS URL' class="figure mx-auto d-block"></figure><p>Скопіюйте цю URL-адресу з браузера, перейдіть до локального
 репозиторію <code>planets</code>, та виконайте цю команду:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -635,7 +635,10 @@ Enter passphrase (empty for no passphrase):</code></pre>
 він використовує ноутбук зі своєї лабораторії, до якого іноді мають
 доступ інші люди. Обов’язково використовуйте пароль, який можна
 запам’ятати, або збережіть пароль десь у надійному місці, оскільки тут
-немає опції «змінити мій пароль».</p>
+немає опції «змінити мій пароль». Note that, when typing a passphrase on
+a terminal, there won’t be any visual feedback of your typing. This is
+normal: your passphrase will be recorded even if you see nothing
+changing on your screen.</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -830,7 +833,7 @@ Git Bash у Windows. Якщо ви бажаєте вводити своє ім`�
 </div>
 <p>Тепер наші локальний та віддалений репозиторії перебувають у такому
 стані:</p>
-<figure><img src="../fig/github-repo-after-first-push.svg" alt="Репозиторій GitHub після першого виконання команди push" class="figure mx-auto d-block"></figure><div id="опція--u" class="callout">
+<figure><img src="../fig/github-repo-after-first-push.svg" alt='A diagram showing how "git push origin" will push changes from the local repository to the remote, making the remote repository an exact copy of the local repository.' class="figure mx-auto d-block"></figure><div id="опція--u" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -888,7 +891,7 @@ Already up-to-date.</code></pre>
   Рішення
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Ліва кнопка (з зображенням буфера обміну) копіює повний ідентифікатор
 коміту до буфера обміну. В shell, <code>git log</code> покаже вам для
@@ -950,7 +953,7 @@ Already up-to-date.</code></pre>
   Рішення
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>GitHub відображає дати у відносному форматі, який легко читається
 людиною (наприклад, “22 години тому” або “три тижні тому”). Однак, якщо
@@ -979,7 +982,7 @@ Already up-to-date.</code></pre>
   Рішення
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Коли ми завантажуємо зміни, ми взаємодіємо з віддаленим репозиторієм,
 щоб додати до нього зміни, які ми зробили локально (часто для того, щоб
@@ -1011,7 +1014,7 @@ GitHub, але коли ми ініціалізували наш GitHub репо
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>У цьому випадку ми побачимо конфлікт злиття через неспоріднені
 історії. Коли GitHub створює файл <code>README.md</code>, він виконує
@@ -1138,7 +1141,7 @@ SSH.</li>
   "url": "https://ukrainian-carpentries.github.io/git-novice/instructor/07-github.html",
   "identifier": "https://ukrainian-carpentries.github.io/git-novice/instructor/07-github.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-06-04",
+  "dateModified": "2024-10-01",
   "datePublished": "2024-10-01"
 }
 

@@ -457,7 +457,7 @@
         
 <section id="aio-01-basics"><p>Content from <a href="01-basics.html">Автоматизований контроль версій</a></p>
 <hr>
-<p>Останнє оновлення 2024-06-04 |
+<p>Останнє оновлення 2024-10-01 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/01-basics.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -509,16 +509,16 @@
 прогресу: ви можете перемотати його назад, щоб почати з базової версії
 документу та відтворити кожну внесену вами зміну, в кінцевому підсумку
 прийшовши до вашої більш пізньої версії.</p>
-<figure><img src="fig/play-changes.svg" alt="Зміни зберігаються у послідовності" class="figure mx-auto d-block"></figure><p>Якщо ви будете розглядати зміни, як щось окреме від самого документу,
+<figure><img src="fig/play-changes.svg" alt="A diagram demonstrating how a single document grows as the result of sequential changes" class="figure mx-auto d-block"></figure><p>Якщо ви будете розглядати зміни, як щось окреме від самого документу,
 ви можете уявити собі процес «відтворення» різних наборів змін на
 базовому документі, який, зрештою, призведе до різних версій цього
 документа. Наприклад, два користувачі можуть робити незалежні набори
 змін в одному документі.</p>
-<figure><img src="fig/versions.svg" alt="Різні версії можна зберегти" class="figure mx-auto d-block"></figure><p>Якщо немає <a href="reference.html#conflict">конфліктів</a>, тобто
+<figure><img src="fig/versions.svg" alt="A diagram with one source document that has been modified in two different ways to produce two different versions of the document" class="figure mx-auto d-block"></figure><p>Якщо немає <a href="reference.html#conflict">конфліктів</a>, тобто
 немає ситуації, коли декілька користувачів вносять зміни до одного й
 того ж розділу документа, то буде можливо включити два набори змін до
 одного базового документа.</p>
-<figure><img src="fig/merge.svg" alt="Різні версії можна обʼєднати" class="figure mx-auto d-block"></figure><p>Система управління версіями - це інструмент, який відстежує ці зміни
+<figure><img src="fig/merge.svg" alt="A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions" class="figure mx-auto d-block"></figure><p>Система управління версіями - це інструмент, який відстежує ці зміни
 для нас, по суті створюючи різні версії наших файлів. Це дозволяє нам
 вирішити, які зміни будуть внесені до наступної версії (кожен запис цих
 змін називається <a href="reference.html#commit">коміт (commit)</a>), і
@@ -955,7 +955,7 @@ Mac), ваш комп’ютер кодує це як символ. Різні �
 </div>
 </div></section><section id="aio-03-create"><p>Content from <a href="03-create.html">Створення репозиторію</a></p>
 <hr>
-<p>Останнє оновлення 2024-06-04 |
+<p>Останнє оновлення 2024-10-01 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/03-create.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -991,7 +991,7 @@ Mac), ваш комп’ютер кодує це як символ. Різні �
 <p>Ми продовжимо нашу вигадану історію, у якій Wolfman та Dracula
 досліджують, чи можливо відправити планетарний посадковий модуль на
 Марс.</p>
-<p><img src="fig/motivatingexample.png" alt="motivatingexample" class="figure"><a href="https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530" class="external-link">Werewolf
+<p><img src="fig/motivatingexample.png" alt="The main elements of the story: Dracula, Wolfman, the Mummy, Mars, Pluto and The Moon" class="figure"><a href="https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530" class="external-link">Werewolf
 vs dracula</a> by <a href="https://www.deviantart.com/b-maze" class="external-link">b-maze</a>
 / <a href="https://www.deviantart.com/" class="external-link">Deviant Art</a>. <a href="https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg" class="external-link">Mars</a>
 by European Space Agency / <a href="https://creativecommons.org/licenses/by/3.0/deed.en" class="external-link">CC-BY-SA 3.0
@@ -1065,8 +1065,11 @@ Luc Viatour / <a href="https://lucnix.be/" class="external-link">https://lucnix.
 </h3>
 <pre class="output" tabindex="0"><code>Switched to a new branch 'main'</code></pre>
 </div>
-<p>Ми можемо перевірити, що все налаштовано правильно, запитавши Git про
-стан нашого проєкту:</p>
+<p>We can now start using one of the most important git commands, which
+is particularly helpful to beginners. <code>git status</code> tells us
+the status of our project, and better, a list of changes in the project
+and options on what to do with those changes. We can use it as often as
+we want, whenever we want to understand what is going on.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1119,7 +1122,7 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
   Рішення
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Ні. Dracula не має необхідності робити підкаталог <code>moons</code>
 репозиторієм Git, тому що репозиторій <code>planets</code> може
@@ -1158,8 +1161,8 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
 </h3>
 <div class="callout-content">
 <p>Wolfman пояснив, як вкладений репозиторій є зайвим і може призвести
-до плутанини у майбутньому. Тепер Dracula хотів би видалити вкладений
-репозиторій. Як Dracula може скасувати свою останню команду
+до плутанини у майбутньому. Dracula would like to go back to a single
+git repository. Як Dracula може скасувати свою останню команду
 <code>git init</code> виконану у підкаталозі <code>moons</code>?</p>
 </div>
 </div>
@@ -1171,7 +1174,7 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
   Відповідь (КОРИСТУЙТЕСЯ З ОБЕРЕЖНІСТЮ!)
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="section level3">
 <h3 id="контекст">Контекст<a class="anchor" aria-label="anchor" href="#%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BA%D1%81%D1%82"></a>
@@ -1185,19 +1188,19 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> rm filename</span></code></pre>
 </div>
-<p>Подібним чином каталог можна видалити за допомогою
-<code>rm -r dirname</code> або <code>rm -rf dirname</code>. Якщо файли
-чи каталоги, які видаляються таким чином, вже відстежуються Git, тоді їх
-видалення стає ще однією зміною, яку нам потрібно буде відстежувати (ми
-побачимо як це робити в наступному епізоді).</p>
+<p>Similarly a directory can be removed using
+<code>rm -r dirname</code>. Якщо файли чи каталоги, які видаляються
+таким чином, вже відстежуються Git, тоді їх видалення стає ще однією
+зміною, яку нам потрібно буде відстежувати (ми побачимо як це робити в
+наступному епізоді).</p>
 </div>
 <div class="section level3">
 <h3 id="відповідь">Відповідь<a class="anchor" aria-label="anchor" href="#%D0%B2%D1%96%D0%B4%D0%BF%D0%BE%D0%B2%D1%96%D0%B4%D1%8C"></a>
 </h3>
-<p>Git зберігає всі свої файли в каталозі <code>.git</code>. Щоб
-виправити цю маленьку помилку, Dracula може просто видалити каталог
-<code>.git</code> &gt; в підкаталозі <code>moons</code>, виконавши
-наступну команду всередині каталогу <code>planets</code>:</p>
+<p>Git зберігає всі свої файли в каталозі <code>.git</code>. To recover
+from this little mistake, Dracula can remove the <code>.git</code>
+folder in the moons subdirectory by running the following command from
+inside the <code>planets</code> directory:</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1205,8 +1208,10 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
 </div>
 <p>Проте, будьте обережні! Виконання цієї команди у неправильному
 каталозі призведе до видалення всієї історії змін проєкту, яку ви хотіли
-б зберегти. Тому завжди перевіряйте свій поточний каталог за допомогою
-команди <code>pwd</code>.</p>
+б зберегти. In general, deleting files and directories using
+<code>rm</code> from the command line cannot be reversed. Тому завжди
+перевіряйте свій поточний каталог за допомогою команди
+<code>pwd</code>.</p>
 </div>
 </div>
 </div>
@@ -1228,7 +1233,7 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
 </div>
 </div></section><section id="aio-04-changes"><p>Content from <a href="04-changes.html">Відстеження змін</a></p>
 <hr>
-<p>Останнє оновлення 2024-06-04 |
+<p>Останнє оновлення 2024-10-01 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/04-changes.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1599,7 +1604,7 @@ no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
 </div>
 </div>
-<figure><img src="fig/git-staging-area.svg" alt="Зона стейджингу (Git staging area)" class="figure mx-auto d-block"></figure><p>Подивімося, як наші зміни у файлі проходять шлях від текстового
+<figure><img src="fig/git-staging-area.svg" alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository' class="figure mx-auto d-block"></figure><p>Подивімося, як наші зміни у файлі проходять шлях від текстового
 редактора до зони стейджингу і далі у довгострокове зберігання.
 Спочатку, ми додамо новий рядок у наш файл:</p>
 <div class="codewrapper sourceCode" id="cb29">
@@ -1870,7 +1875,7 @@ f22b25e Start notes on Mars as a base</code></pre>
 спочатку нам потрібно додати змінені файли в зону стейджингу
 (<code>git add</code>) а потім зберегти заплановані зміни до репозиторію
 (<code>git commit</code>):</p>
-<figure><img src="fig/git-comitting.svg" alt="Послідовність дій для коміту" class="figure mx-auto d-block"></figure><div id="вибір-повідомлення-коміту" class="callout challenge">
+<figure><img src="fig/git-committing.svg" alt="A diagram showing two documents being separately staged using git add, before being combined into one commit using git commit" class="figure mx-auto d-block"></figure><div id="вибір-повідомлення-коміту" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -2146,7 +2151,7 @@ mars.txt”</li>
 </div>
 </div></section><section id="aio-05-history"><p>Content from <a href="05-history.html">Дослідження історії</a></p>
 <hr>
-<p>Останнє оновлення 2024-06-04 |
+<p>Останнє оновлення 2024-10-01 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/05-history.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2241,7 +2246,7 @@ index b36abfd..0848c8d 100644
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> git diff HEAD~3 mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> git diff HEAD~2 mars.txt</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2264,7 +2269,7 @@ index df0654a..b36abfd 100644
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git show HEAD~3 mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git show HEAD~2 mars.txt</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2289,13 +2294,14 @@ index 0000000..df0654a
 <code>HEAD~1</code> означає “попередній коміт”, тоді як
 <code>HEAD~123</code> повертається на 123 коміти назад від того місця,
 де ми зараз знаходимось.</p>
-<p>Ми також можемо вказувати на коміти, використовуючи ті довгі рядки
-цифр і букв, які показує <code>git log</code>. Це унікальні
-ідентифікатори змін, де “унікальний” насправді означає унікальний: кожна
-зміна будь-якого набору файлів на будь-якому комп’ютері буде мати
-унікальний 40-символьний ідентифікатор. Наш перший коміт отримав
-ідентифікатор <code>f22b25e3233b4645dabd0d81e651fe074bd8e73b</code>, тож
-спробуймо наступне:</p>
+<p>We can also refer to commits using those long strings of digits and
+letters that both <code>git log</code> and <code>git show</code>
+display. Це унікальні ідентифікатори змін, де “унікальний” насправді
+означає унікальний: кожна зміна будь-якого набору файлів на будь-якому
+комп’ютері буде мати унікальний 40-символьний ідентифікатор. Наш перший
+коміт отримав ідентифікатор
+<code>f22b25e3233b4645dabd0d81e651fe074bd8e73b</code>, тож спробуймо
+наступне:</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2352,19 +2358,19 @@ index df0654a..93a3e13 100644
 </h3>
 <pre class="output" tabindex="0"><code>On branch main
 Changes not staged for commit:
-   (use "git add/rm &lt;file&gt;..." to update what will be committed)
-   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
 
-    deleted:    nibiru.txt
+    modified:   mars.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
-<p>Отже, ми можемо повернути цей файл до його попереднього стану за
-допомогою <code>git checkout</code>:</p>
+<p>We can put things back the way they were by using
+<code>git restore</code>:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span> git checkout HEAD mars.txt</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span> git restore mars.txt</span>
 <span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="ex">$</span> cat mars.txt</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -2374,16 +2380,15 @@ no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity</code></pre>
 </div>
-<p>Як ви можете здогадатися з назви цієї команди,
-<code>git checkout</code> знаходить (тобто відновлює) стару версію
-файлу. У цьому випадку ми повідомляємо Git, що хочемо відновити версію
-файлу, записану в <code>HEAD</code> (тобто в останньому зробленому
-коміті). Якщо ми хочемо повернутися ще раніше, замість цього ми можемо
-використовувати ідентифікатор коміту:</p>
+<p>As you might guess from its name, <code>git restore</code> restores
+an old version of a file. By default, it recovers the version of the
+file recorded in <code>HEAD</code>, which is the last saved commit. If
+we want to go back even further, we can use a commit identifier instead,
+using <code>-s</code> option:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> git checkout f22b25e mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> git restore <span class="at">-s</span> f22b25e mars.txt</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2404,100 +2409,41 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>On branch main
-Changes to be committed:
-  (use "git reset HEAD &lt;file&gt;..." to unstage)
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+        modified:   mars.txt
 
-    modified:   mars.txt
+no changes added to commit (use "git add" and/or "git commit -a")
 </code></pre>
 </div>
-<p>Звернуть увагу, що зміни зараз знаходяться у зоні стейджінгу. Знову ж
-таки, ми можемо повернути усе як було за допомогою
-<code>git checkout</code>:</p>
+<p>Звернуть увагу, що зміни зараз знаходяться у зоні стейджінгу. Again,
+we can put things back the way they were by using
+<code>git restore</code>:</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> git checkout HEAD mars.txt</span></code></pre>
-</div>
-<div id="не-втрачайте-голову-тобто-head" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="не-втрачайте-голову-тобто-head" class="callout-inner">
-<h3 class="callout-title">Не втрачайте голову (тобто, HEAD)</h3>
-<div class="callout-content">
-<p>Вище ми використовували</p>
-<div class="codewrapper sourceCode" id="cb24">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="ex">$</span> git checkout f22b25e mars.txt</span></code></pre>
-</div>
-<p>щоб повернути <code>mars.txt</code> до його стану після коміту
-<code>f22b25e</code>. Проте, будьте обережні! Команда
-<code>checkout</code> має інші важливі варіанти використання, та Git не
-зрозуміє ваших намірів, якщо ви будете неточно вводити команди.
-Наприклад, якщо ви забудете <code>mars.txt</code> у попередній
-команді.</p>
-<div class="codewrapper sourceCode" id="cb25">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git checkout f22b25e</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> git restore mars.txt</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="ex">$</span> cat mars.txt</span></code></pre>
 </div>
 <div class="codewrapper">
-<h3 class="code-label">ПОМИЛКА<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Note: checking out 'f22b25e'.
-
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-
- git checkout -b &lt;new-branch-name&gt;
-
-HEAD is now at f22b25e Start notes on Mars as a base</code></pre>
-</div>
-<p>Таким чином, стан “detached HEAD” схожий на “дивися, але не чіпай”,
-тому ви не повинні робити жодних змін у цьому стані. Після дослідження
-стану вашого репозиторію у минулому, знову “приєднайте” свій
-<code>HEAD</code> за допомогою команди
-<code>git checkout main</code>.</p>
-</div>
-</div>
+<pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity</code></pre>
 </div>
 <p>Важливо пам’ятати, що ми повинні використовувати номер коміту, який
 ідентифікує стан репозиторію <em>до</em> зміни, яку ми намагаємося
 скасувати. Поширеною помилкою є використання номеру коміту, в якому ми
-зробили зміни, які намагаємося скасувати. У наведеному нижче прикладі ми
-хочемо отримати стан перед самим останнім комітом (<code>HEAD~1</code>),
-тобто коміт <code>f22b25e</code>:</p>
-<figure><img src="fig/git-checkout.svg" alt="Використання git checkout" class="figure mx-auto d-block"></figure><p>Отже, якщо скласти це все разом, то Git працює як зображено у цьому
+зробили зміни, які намагаємося скасувати. In the example below, we want
+to retrieve the state from before the most recent commit
+(<code>HEAD~1</code>), which is commit <code>f22b25e</code>. We use the
+<code>.</code> to mean all files:</p>
+<figure><img src="fig/git-restore.svg" alt="A diagram showing how git restore can be used to restore the previous version of two files" class="figure mx-auto d-block"></figure><p>Отже, якщо скласти це все разом, то Git працює як зображено у цьому
 коміксі:</p>
-<figure><img src="fig/git_staging.svg" alt="https://figshare.com/articles/How\_Git\_works\_a\_cartoon/1328266" class="figure mx-auto d-block"><div class="figcaption"><a href="https://figshare.com/articles/How%5C_Git%5C_works%5C_a%5C_cartoon/1328266" class="external-link uri">https://figshare.com/articles/How\_Git\_works\_a\_cartoon/1328266</a></div>
-</figure><div id="спрощення-загального-випадку" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="спрощення-загального-випадку" class="callout-inner">
-<h3 class="callout-title">Спрощення загального випадку</h3>
-<div class="callout-content">
-<p>Якщо уважно прочитати результат команди <code>git status</code>, ви
-побачите, що він містить цю підказку:</p>
-<div class="codewrapper">
-<h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</code></pre>
-</div>
-<p>Як сказано раніше, <code>git checkout</code> без ідентифікатора
-версії відновлює файли до стану, збереженого в <code>HEAD</code>.
-Подвійне тире <code>--</code> необхідне, щоб відділити імена файлів, які
-відновлюються, від самої команди: без подвійного тире Git буде
-намагатися використати назву файлу як ідентифікатор коміту.</p>
-</div>
-</div>
-</div>
-<p>Той факт, що файли можна відновлювати окремо, сприяє змінам в
+<figure><img src="fig/git_staging.svg" alt="A diagram showing the entire git workflow: local changes are staged using git add, applied to the local repository using git commit, and can be restored from the repository using git checkout" class="figure mx-auto d-block"><div class="figcaption"><a href="https://figshare.com/articles/How%5C_Git%5C_works%5C_a%5C_cartoon/1328266" class="external-link uri">https://figshare.com/articles/How\_Git\_works\_a\_cartoon/1328266</a></div>
+</figure><p>Той факт, що файли можна відновлювати окремо, сприяє змінам в
 організації роботи. Якщо все знаходиться в одному величезному документі,
 буде важко (але не неможливо) скасувати зміни у вступі без скасування
 також змін, внесених пізніше до висновку. З іншого боку, якщо вступ і
@@ -2519,10 +2465,10 @@ HEAD is now at f22b25e Start notes on Mars as a base</code></pre>
 Git версію її скрипту, який називається
 <code>data_cruncher.py</code>?</p>
 <ol style="list-style-type: decimal">
-<li><p><code>$ git checkout HEAD</code></p></li>
-<li><p><code>$ git checkout HEAD data_cruncher.py</code></p></li>
-<li><p><code>$ git checkout HEAD~1 data_cruncher.py</code></p></li>
-<li><p><code>$ git checkout &lt;unique ID of last commit&gt; data_cruncher.py</code></p></li>
+<li><p><code>$ git restore</code></p></li>
+<li><p><code>$ git restore data_cruncher.py</code></p></li>
+<li><p><code>$ git restore -s HEAD~1 data_cruncher.py</code></p></li>
+<li><p><code>$ git restore -s &lt;unique ID of last commit&gt; data_cruncher.py</code></p></li>
 <li><p>Як 2, так і 4</p></li>
 </ol>
 </div>
@@ -2535,11 +2481,11 @@ Git версію її скрипту, який називається
   Рішення
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Відповідь (5) - як 2, так і 4.</p>
-<p>Команда <code>checkout</code> відновлює файли з репозиторію,
-перезаписуючи файли у ваш робочий каталог. Обидві відповіді 2 та 4
+<p>The <code>restore</code> command restores files from the repository,
+overwriting the files in your working directory. Обидві відповіді 2 та 4
 відновлюють <em>останню збережену в репозиторії</em> версію файлу
 <code>data_cruncher.py</code>. Відповідь 2 використовує
 <code>HEAD</code>, щоб вказати <em>останній</em> коміт, тоді як
@@ -2547,15 +2493,9 @@ Git версію її скрипту, який називається
 саме й означає <code>HEAD</code>.</p>
 <p>Відповідь 3 замінить <code>data_cruncher.py</code> його версією з
 коміту <em>перед</em> <code>HEAD</code>, що НЕ є тим, що ми хотіли.</p>
-<p>Відповідь 1 може бути небезпечною! Без назви файлу,
-<code>git checkout</code> відновить <strong>всі файли</strong> у
-поточному каталозі (і усіх підкаталогах нижче нього) до їх стану згідно
-із вказаним комітом. Ця команда відновить <code>data_cruncher.py</code>
-до його останньої збереженої версії, але вона також відновить <em>всі
-інші файли, які було змінено</em> на ту ж саму версію, стираючи будь-які
-зміни, які ви могли внести до цих файлів! Як обговорювалося вище, ви
-перейдете у стан “<em>detached</em> <code>HEAD</code>”, але ж ви не
-хочете там бути.</p>
+<p>Answer 1 results in an error. You need to specify a file to restore.
+If you want to restore all files you should use
+<code>git restore .</code></p>
 </div>
 </div>
 </div>
@@ -2573,12 +2513,11 @@ Git версію її скрипту, який називається
 всі користувачі репозиторію цього проєкту отримали правильні зміни.
 Команда <code>git revert [erroneous commit ID]</code> створить новий
 коміт, який скасує помилковий коміт.</p>
-<p>Команда <code>git revert</code> відрізняється від
-<code>git checkout [commit ID]</code>, оскільки
-<code>git checkout</code> повертає файли, зміни у яких ще не ввійшли до
-нового коміту у локальному репозиторії, до їх попереднього стану, тоді
-як <code>git revert</code> скасовує зміни, які вже внесені до локального
-та віддаленого репозиторіїв.</p>
+<p>The command <code>git revert</code> is different from
+<code>git restore -s [commit ID] .</code> because
+<code>git restore</code> returns the files not yet committed within the
+local repository to a previous state, whereas <code>git revert</code>
+reverses changes committed to the local and project repositories.</p>
 <p>Нижче наведені правильні кроки та пояснення для Дженніфер щодо
 користування <code>git revert</code>. Яка команда відсутня?</p>
 <ol style="list-style-type: decimal">
@@ -2599,7 +2538,7 @@ Git версію її скрипту, який називається
   Рішення
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Команда <code>git log</code> зображує історію проєкту з
 ідентифікаторами комітів.</p>
@@ -2619,16 +2558,16 @@ Git версію її скрипту, який називається
 <h3 class="callout-title">Розуміння послідовності дій та історії</h3>
 <div class="callout-content">
 <p>Який результат останньої команди в цій послідовності?</p>
-<div class="codewrapper sourceCode" id="cb28">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="ex">$</span> cd planets</span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Venus is beautiful and full of love"</span> <span class="op">&gt;</span> venus.txt</span>
-<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="ex">$</span> git add venus.txt</span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Venus is too hot to be suitable as a base"</span> <span class="op">&gt;&gt;</span> venus.txt</span>
-<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Comment on Venus as an unsuitable base"</span></span>
-<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a><span class="ex">$</span> git checkout HEAD venus.txt</span>
-<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a><span class="ex">$</span> cat venus.txt <span class="co">#this will print the contents of venus.txt to the screen</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> cd planets</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Venus is beautiful and full of love"</span> <span class="op">&gt;</span> venus.txt</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="ex">$</span> git add venus.txt</span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Venus is too hot to be suitable as a base"</span> <span class="op">&gt;&gt;</span> venus.txt</span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Comment on Venus as an unsuitable base"</span></span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a><span class="ex">$</span> git restore venus.txt</span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a><span class="ex">$</span> cat venus.txt <span class="co">#this will print the contents of venus.txt to the screen</span></span></code></pre>
 </div>
 <ol style="list-style-type: decimal">
 <li><div class="codewrapper">
@@ -2661,7 +2600,7 @@ Error because you have changed venus.txt without committing the changes</code></
   Рішення
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Правильною є відповідь 2.</p>
 <p>Команда <code>git add venus.txt</code> розміщує поточну версію
@@ -2673,9 +2612,9 @@ Error because you have changed venus.txt without committing the changes</code></
 версія <code>venus.txt</code>, яка буде збережена у коміті, буде з зони
 стейджингу та буде мати тільки один рядок.</p>
 <p>На цей час робоча копія файлу ще має другий рядок (і тому
-<code>git status</code> покаже, що файл змінено). Однак
-<code>git checkout HEAD venus.txt</code> замінить робочу копію останньою
-збереженою версією <code>venus.txt</code>.</p>
+<code>git status</code> покаже, що файл змінено). However,
+<code>git restore venus.txt</code> replaces the working copy with the
+most recently committed version of <code>venus.txt</code>.</p>
 <p>Тож, <code>cat venus.txt</code> покаже</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2710,13 +2649,11 @@ Error because you have changed venus.txt without committing the changes</code></
 <div id="скасування-змін-у-зоні-стейджингу" class="callout-inner">
 <h3 class="callout-title">Скасування змін у зоні стейджингу</h3>
 <div class="callout-content">
-<p>Команда <code>git checkout</code> може бути використана для
-відновлення попереднього коміту, коли зміни були зроблені, але ще не
-додані до зони стейджингу. Але чи спрацює вона і для змін, які були
-додані до зони стейджингу, але не ще збережені у коміті? Зробіть зміни у
-<code>mars.txt</code>, додайте їх до зони стейджингу за допомогою
-<code>git add</code>, та використайте <code>git checkout</code>, щоб
-побачити чи можете ви скасувати свої зміни.</p>
+<p><code>git restore</code> can be used to restore a previous commit
+when unstaged changes have been made, but will it also work for changes
+that have been staged but not committed? Make a change to
+<code>mars.txt</code>, add that change using <code>git add</code>, then
+use <code>git restore</code> to see if you can remove your change.</p>
 </div>
 </div>
 </div>
@@ -2727,65 +2664,56 @@ Error because you have changed venus.txt without committing the changes</code></
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
-<p>Після додавання зміни за допомогою <code>git add</code>, команду
-<code>git checkout</code> не можна використовувати безпосередньо.
-Подивіться на результат <code>git status</code>:</p>
+<p>After adding a change, <code>git restore</code> can not be used
+directly. Подивіться на результат <code>git status</code>:</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>On branch main
 Changes to be committed:
-  (use "git reset HEAD &lt;file&gt;..." to unstage)
-
+  (use "git restore --staged &lt;file&gt;..." to unstage)
         modified:   mars.txt
 </code></pre>
 </div>
 <p>Зауважте, що якщо ви не маєте такого самого результату, то можливо,
 ви забули змінити файл, або ви не тільки додали його до зони стейджингу,
 <em>а також</em> зробили коміт.</p>
-<p>Використання команди <code>git checkout -- mars.txt</code> тепер не
-дає помилки, але також не відновлює файл. Git зображує корисне
-повідомлення - нам потрібно спочатку використати <code>git reset</code>,
-щоб видалити файл з зони стейджингу:</p>
-<div class="codewrapper sourceCode" id="cb35">
+<p>Using the command <code>git restore mars.txt</code> now does not give
+an error, but it does not restore the file either. Git helpfully tells
+us that we need to use <code>git restore --staged</code> first to
+unstage the file:</p>
+<div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="ex">$</span> git reset HEAD mars.txt</span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>Unstaged changes after reset:
-M	mars.txt</code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> git restore <span class="at">--staged</span> mars.txt</span></code></pre>
 </div>
 <p>Тепер <code>git status</code> зображує наступне:</p>
-<div class="codewrapper sourceCode" id="cb37">
+<div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>On branch main
 Changes not staged for commit:
-   (use "git add/rm &lt;file&gt;..." to update what will be committed)
-   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git git restore &lt;file&gt;..." to discard changes in working directory)
 
-    deleted:    nibiru.txt
+        modified:   mars.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
-<p>Це означає, що тепер ми можемо використовувати
-<code>git checkout</code>, щоб відновити файл до попереднього
-коміту:</p>
-<div class="codewrapper sourceCode" id="cb39">
+<p>This means we can now use <code>git restore</code> to restore the
+file to the previous commit:</p>
+<div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="ex">$</span> git checkout <span class="at">--</span> mars.txt</span>
-<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="ex">$</span> git restore mars.txt</span>
+<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2814,10 +2742,10 @@ nothing to commit, working tree clean</code></pre>
 <p>Нагадаємо, що команда <code>git diff</code> може використовуватись
 для одного конкретного файлу, наприклад, <code>git diff mars.txt</code>.
 Ми можемо застосувати тут подібну ідею.</p>
-<div class="codewrapper sourceCode" id="cb41">
+<div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="ex">$</span> git log mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> git log mars.txt</span></code></pre>
 </div>
 <p>На жаль, деякі з цих повідомлень комітів дуже неоднозначні,
 наприклад, <code>update files</code>. Як же переглянути усі ці версії
@@ -2826,18 +2754,18 @@ nothing to commit, working tree clean</code></pre>
 корисні для отримання звітів про різні деталі історії проєкту. Але чи
 можна об’єднати їх результат в одну команду? Давайте спробуємо
 наступне:</p>
-<div class="codewrapper sourceCode" id="cb42">
+<div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> mars.txt</span></code></pre>
 </div>
 <p>Ви повинні отримати довгий список, у якому ви побачите як
 повідомлення коміту, так і зроблені зміни.</p>
 <p>Питання: Що робить наступна команда?</p>
-<div class="codewrapper sourceCode" id="cb43">
+<div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> HEAD~9 <span class="pp">*</span>.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> HEAD~9 <span class="pp">*</span>.txt</span></code></pre>
 </div>
 </div>
 </div>
@@ -2853,7 +2781,7 @@ nothing to commit, working tree clean</code></pre>
 <li>
 <code>git diff</code> відображає відмінності між комітами.</li>
 <li>
-<code>git checkout</code> відновлює старі версії файлів.</li>
+<code>git restore</code> recovers old versions of files.</li>
 </ul>
 </div>
 </div>
@@ -3338,7 +3266,7 @@ nothing to commit, working tree clean</code></pre>
 </div>
 </div></section><section id="aio-07-github"><p>Content from <a href="07-github.html">Віддалені репозиторії у GitHub</a></p>
 <hr>
-<p>Останнє оновлення 2024-06-04 |
+<p>Останнє оновлення 2024-10-01 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/07-github.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3392,7 +3320,7 @@ nothing to commit, working tree clean</code></pre>
 <p>Увійдіть до <a href="https://github.com" class="external-link">GitHub</a>, потім натисніть
 на значок у верхньому правому куті, щоб створити новий репозиторій під
 назвою <code>planets</code>:</p>
-<figure><img src="fig/github-create-repo-01.png" alt="Створення репозиторію на GitHub (крок 1)" class="figure mx-auto d-block"></figure><p>Назвіть ваш репозиторій “planets” і потім натисніть на “Create
+<figure><img src="fig/github-create-repo-01.png" alt='The first step in creating a repository on GitHub: clicking the "create new" button' class="figure mx-auto d-block"></figure><p>Назвіть ваш репозиторій “planets” і потім натисніть на “Create
 Repository”.</p>
 <p>Зауважте: оскільки цей репозиторій буде підʼєднано до локального
 репозиторію, він має бути порожнім. Залиште “Initialize this repository
@@ -3400,9 +3328,9 @@ with a README” непозначеним, та оберіть “None” як �
 .gitignore” та “Add a license”. Дивіться вправу “Файли ліцензії та
 README” нижче для повного пояснення того, чому репозиторій повинен бути
 порожнім.</p>
-<figure><img src="fig/github-create-repo-02.png" alt="Створення репозиторію на GitHub (крок 2)" class="figure mx-auto d-block"></figure><p>Як тільки репозиторій створено, GitHub відображає сторінку з URL і
+<figure><img src="fig/github-create-repo-02.png" alt="The second step in creating a repository on GitHub: filling out the new repository form to provide the repository name, and specify that neither a readme nor a license should be created" class="figure mx-auto d-block"></figure><p>Як тільки репозиторій створено, GitHub відображає сторінку з URL і
 певною інформацією про те, як налаштувати локальний репозиторій:</p>
-<figure><img src="fig/github-create-repo-03.png" alt="Створення репозиторію на GitHub (крок 3)" class="figure mx-auto d-block"></figure><p>Насправді це робить наступне на сервері GitHub:</p>
+<figure><img src="fig/github-create-repo-03.png" alt="The summary page displayed by GitHub after a new repository has been created. It contains instructions for configuring the new GitHub repository as a git remote" class="figure mx-auto d-block"></figure><p>Насправді це робить наступне на сервері GitHub:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -3414,8 +3342,8 @@ README” нижче для повного пояснення того, чому
 епізодів</a>, де ми додавали та зберігали нашу попередню роботу над
 <code>mars.txt</code>, в нас була діаграма, яка зображувала локальний
 репозиторій, та виглядала так:</p>
-<figure><img src="fig/git-staging-area.svg" alt="Локальний репозиторій із зоною стейджингу" class="figure mx-auto d-block"></figure><p>Тепер, коли ми маємо два репозиторії, нам потрібна така діаграма:</p>
-<figure><img src="fig/git-freshly-made-github-repo.svg" alt="Щойно створений репозиторій GitHub" class="figure mx-auto d-block"></figure><p>Зауважте, що наш локальний репозиторій все ще містить нашу попередню
+<figure><img src="fig/git-staging-area.svg" alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository' class="figure mx-auto d-block"></figure><p>Тепер, коли ми маємо два репозиторії, нам потрібна така діаграма:</p>
+<figure><img src="fig/git-freshly-made-github-repo.svg" alt='A diagram illustrating how the GitHub "planets" repository is also a git repository like our local repository, but that it is currently empty' class="figure mx-auto d-block"></figure><p>Зауважте, що наш локальний репозиторій все ще містить нашу попередню
 роботу над <code>mars.txt</code>, але віддалений репозиторій на GitHub
 виглядає порожнім, оскільки він ще не містить жодних файлів.</p>
 </section><section><h2 class="section-heading" id="підʼєднання-локального-репозиторію-до-віддаленого">2. Підʼєднання локального репозиторію до віддаленого<a class="anchor" aria-label="anchor" href="#%D0%BF%D1%96%D0%B4%CA%BC%D1%94%D0%B4%D0%BD%D0%B0%D0%BD%D0%BD%D1%8F-%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D1%96%D1%8E-%D0%B4%D0%BE-%D0%B2%D1%96%D0%B4%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D0%BE"></a>
@@ -3425,7 +3353,7 @@ README” нижче для повного пояснення того, чому
 GitHub репозиторій у якості <a href="reference.html#remote">віддаленого</a> для локального репозиторію.
 Домашня сторінка репозиторію на GitHub містить URL, який нам потрібен,
 щоб його ідентифікувати:</p>
-<figure><img src="fig/github-find-repo-string.png" alt="Як знайти URL репозиторію у GitHub" class="figure mx-auto d-block"></figure><p>Натисніть на кнопку ‘SSH’, щоб змінити <a href="reference.html#protocol">протокол</a> з HTTPS на SSH.</p>
+<figure><img src="fig/github-find-repo-string.png" alt="Clicking the &quot;Copy to Clipboard&quot; button on GitHub to obtain the repository's URL" class="figure mx-auto d-block"></figure><p>Натисніть на кнопку ‘SSH’, щоб змінити <a href="reference.html#protocol">протокол</a> з HTTPS на SSH.</p>
 <div id="https-в-порівнянні-з-ssh" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -3440,7 +3368,7 @@ GitHub репозиторій у якості <a href="reference.html#remote">в
 </div>
 </div>
 </div>
-<figure><img src="fig/github-change-repo-string.png" alt="Зміна URL репозиторію у GitHub" class="figure mx-auto d-block"></figure><p>Скопіюйте цю URL-адресу з браузера, перейдіть до локального
+<figure><img src="fig/github-change-repo-string.png" alt='A screenshot showing that clicking on "SSH" will make GitHub provide the SSH URL for a repository instead of the HTTPS URL' class="figure mx-auto d-block"></figure><p>Скопіюйте цю URL-адресу з браузера, перейдіть до локального
 репозиторію <code>planets</code>, та виконайте цю команду:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3585,7 +3513,10 @@ Enter passphrase (empty for no passphrase):</code></pre>
 він використовує ноутбук зі своєї лабораторії, до якого іноді мають
 доступ інші люди. Обов’язково використовуйте пароль, який можна
 запам’ятати, або збережіть пароль десь у надійному місці, оскільки тут
-немає опції «змінити мій пароль».</p>
+немає опції «змінити мій пароль». Note that, when typing a passphrase on
+a terminal, there won’t be any visual feedback of your typing. This is
+normal: your passphrase will be recorded even if you see nothing
+changing on your screen.</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -3783,7 +3714,7 @@ Git Bash у Windows. Якщо ви бажаєте вводити своє ім`�
 </div>
 <p>Тепер наші локальний та віддалений репозиторії перебувають у такому
 стані:</p>
-<figure><img src="fig/github-repo-after-first-push.svg" alt="Репозиторій GitHub після першого виконання команди push" class="figure mx-auto d-block"></figure><div id="опція--u" class="callout">
+<figure><img src="fig/github-repo-after-first-push.svg" alt='A diagram showing how "git push origin" will push changes from the local repository to the remote, making the remote repository an exact copy of the local repository.' class="figure mx-auto d-block"></figure><div id="опція--u" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -3841,7 +3772,7 @@ Already up-to-date.</code></pre>
   Рішення
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Ліва кнопка (з зображенням буфера обміну) копіює повний ідентифікатор
 коміту до буфера обміну. В shell, <code>git log</code> покаже вам для
@@ -3903,7 +3834,7 @@ Already up-to-date.</code></pre>
   Рішення
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>GitHub відображає дати у відносному форматі, який легко читається
 людиною (наприклад, “22 години тому” або “три тижні тому”). Однак, якщо
@@ -3932,7 +3863,7 @@ Already up-to-date.</code></pre>
   Рішення
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Коли ми завантажуємо зміни, ми взаємодіємо з віддаленим репозиторієм,
 щоб додати до нього зміни, які ми зробили локально (часто для того, щоб
@@ -3964,7 +3895,7 @@ GitHub, але коли ми ініціалізували наш GitHub репо
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>У цьому випадку ми побачимо конфлікт злиття через неспоріднені
 історії. Коли GitHub створює файл <code>README.md</code>, він виконує
@@ -4037,7 +3968,7 @@ SSH.</li>
 </div>
 </section></section><section id="aio-08-collab"><p>Content from <a href="08-collab.html">Співпраця</a></p>
 <hr>
-<p>Останнє оновлення 2024-06-04 |
+<p>Останнє оновлення 2024-10-01 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/08-collab.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4095,7 +4026,7 @@ SSH.</li>
 натисніть кнопку “Settings” праворуч, оберіть “Collaborators”, натисніть
 “Add people”, та потім введіть ім`я користувача GitHub, повідомлене
 вашим партнером.</p>
-<figure><img src="fig/github-add-collaborators.png" alt="Сторінка репозиторію після вибору Settings -&gt; Collaborators, яка показує додавання співавторів у GitHub" class="figure mx-auto d-block"></figure><p>Щоб отримати доступ до репозиторію Власника, Співавтору потрібно
+<figure><img src="fig/github-add-collaborators.png" alt='A screenshot of the GitHub Collaborators settings page, which is accessed by clicking "Settings" then "Collaborators"' class="figure mx-auto d-block"></figure><p>Щоб отримати доступ до репозиторію Власника, Співавтору потрібно
 відкрити <a href="https://github.com/notifications" class="external-link">https://github.com/notifications</a>
 або перевірити наявність повідомлення електронною поштою. Потім треба
 прийняти відповідне запрошення, яке ви там знайдете.</p>
@@ -4119,7 +4050,7 @@ SSH.</li>
 будете клонувати всередину вашого власного каталогу
 <code>planets</code>! Переконайтеся, що спочатку ви перейшли до каталогу
 <code>Desktop</code>.</p>
-<figure><img src="fig/github-collaboration.svg" alt="Після клонування репозиторію" class="figure mx-auto d-block"></figure><p>Співавтор тепер може зробити зміни у своєму клоні репозиторію
+<figure><img src="fig/github-collaboration.svg" alt='A diagram showing that "git clone" can create a copy of a remote GitHub repository, allowing a second person to create their own local repository that they can make changes to.' class="figure mx-auto d-block"></figure><p>Співавтор тепер може зробити зміни у своєму клоні репозиторію
 Власника так само, як ми робили раніше:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4369,7 +4300,7 @@ Fast-forward
 </div>
 </div></section><section id="aio-09-conflict"><p>Content from <a href="09-conflict.html">Конфлікти</a></p>
 <hr>
-<p>Останнє оновлення 2024-06-04 |
+<p>Останнє оновлення 2024-10-01 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/09-conflict.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4516,7 +4447,7 @@ hint: to the same ref. You may want to first integrate the remote changes
 hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.</code></pre>
 </div>
-<figure><img src="fig/conflict.svg" alt="Суперечливі зміни" class="figure mx-auto d-block"></figure><p>Git не дозволяє цю операцію, оскільки виявляє, що віддалений
+<figure><img src="fig/conflict.svg" alt="A diagram showing a conflict that might occur when two sets of independent changes are merged" class="figure mx-auto d-block"></figure><p>Git не дозволяє цю операцію, оскільки виявляє, що віддалений
 репозиторій має нові оновлення, які не були включені до локальної гілки.
 Що ми повинні зробити - це отримати зміни з GitHub, <a href="reference.html#merge">обʼєднати</a> їх з копією репозиторію, у
 якій ми зараз працюємо, а тільки потім надіслати їх на GitHub. Давайте
@@ -4980,8 +4911,7 @@ Wolfman, ми можемо застосувати <code>git checkout</code> з
 <tr class="even">
 <td>6</td>
 <td>Відсвяткувати!</td>
-<td>
-<code>AFK</code> (Away From Keyboard)</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -5037,8 +4967,7 @@ Wolfman, ми можемо застосувати <code>git checkout</code> з
 <tr class="even">
 <td>6</td>
 <td>Відсвяткувати!</td>
-<td>
-<code>AFK</code> (Away From Keyboard)</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -5394,7 +5323,7 @@ Storage, а потім додати великий файл до репозит�
 </div>
 </div></section><section id="aio-12-citation"><p>Content from <a href="12-citation.html">Цитування</a></p>
 <hr>
-<p>Останнє оновлення 2024-06-04 |
+<p>Останнє оновлення 2024-10-01 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/12-citation.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -5429,30 +5358,18 @@ Storage, а потім додати великий файл до репозит�
 <code>CITATION.txt</code>, який описує, як цитувати ваш проєкт;
 наприклад, для Software Carpentry <a href="https://github.com/swcarpentry/website/blob/gh-pages/CITATION" class="external-link">цей
 файл</a> зазначає:</p>
-<pre class="source"><code>To reference Software Carpentry in publications, please cite both of the following:
+<pre class="source"><code>To reference Software Carpentry in publications, please cite:
 
-Greg Wilson: "Software Carpentry: Getting Scientists to Write Better
-Code by Making Them More Productive".  Computing in Science &amp;
-Engineering, Nov-Dec 2006.
+Greg Wilson: "Software Carpentry: Lessons Learned". F1000Research,
+2016, 3:62 (doi: 10.12688/f1000research.3-62.v2).
 
-Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448,
-July 2013.
-
-@article{wilson-software-carpentry-2006,
-    author =  {Greg Wilson},
-    title =   {Software Carpentry: Getting Scientists to Write Better Code by Making Them More Productive},
-    journal = {Computing in Science \&amp; Engineering},
-    month =   {November--December},
-    year =    {2006},
-}
-
-@online{wilson-software-carpentry-2013,
+@online{wilson-software-carpentry-2016,
   author      = {Greg Wilson},
   title       = {Software Carpentry: Lessons Learned},
-  version     = {1},
-  date        = {2013-07-20},
-  eprinttype  = {arxiv},
-  eprint      = {1307.5448}
+  version     = {2},
+  date        = {2016-01-28},
+  url         = {http://f1000research.com/articles/3-62/v2},
+  doi         = {10.12688/f1000research.3-62.v2}
 }</code></pre>
 <p>Більш детальні поради та інші способи зробити ваш код цитованим можна
 знайти <a href="https://www.software.ac.uk/how-cite-and-describe-software" class="external-link">у блозі
@@ -5479,7 +5396,7 @@ https://doi.org/10.7717/peerj-cs.8</code></pre>
 </div>
 </div></section><section id="aio-13-hosting"><p>Content from <a href="13-hosting.html">Хостинг</a></p>
 <hr>
-<p>Останнє оновлення 2024-06-04 |
+<p>Останнє оновлення 2024-10-01 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/13-hosting.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -5510,18 +5427,18 @@ https://doi.org/10.7717/peerj-cs.8</code></pre>
 </div>
 </div>
 </div>
-<p>Друге велике питання для груп, які хочуть розмістити свою роботу у
-відкритому доступі, полягає в тому, де розмістити свій код і дані. Один
-із варіантів полягає в тому, щоб лабораторія, кафедра чи університет
-надали сервер, керували обліковими записами та резервними копіями тощо.
-Основна перевага цього полягає в тому, що при цьому зʼясується кому що
-належить. Це особливо важливо, коли будь-який матеріал є чутливим (тобто
-стосується експериментів за участю людей або може бути використаний у
-патентній заявці). Основними недоліками цього є вартість надання послуги
-та її довговічність: вчений, який витратив десять років на збір даних,
-бажав би бути впевненим, що дані все ще будуть існувати через десять
-років. Але це значно перевищує термін більшості грантів, які фінансують
-академічну інфраструктуру.</p>
+<p>After <a href="11-licensing.html">choosing a license</a>, another big
+question for groups that want to open up their work is where to host
+their code and data. Один із варіантів полягає в тому, щоб лабораторія,
+кафедра чи університет надали сервер, керували обліковими записами та
+резервними копіями тощо. Основна перевага цього полягає в тому, що при
+цьому зʼясується кому що належить. Це особливо важливо, коли будь-який
+матеріал є чутливим (тобто стосується експериментів за участю людей або
+може бути використаний у патентній заявці). Основними недоліками цього є
+вартість надання послуги та її довговічність: вчений, який витратив
+десять років на збір даних, бажав би бути впевненим, що дані все ще
+будуть існувати через десять років. Але це значно перевищує термін
+більшості грантів, які фінансують академічну інфраструктуру.</p>
 <p>Інший варіант - придбати домен і заплатити інтернет-провайдеру (ISP)
 за його підтримку. Це дає індивіду або групі більше контролю, і обходить
 проблеми, які можуть виникнути при переході з однієї установи в іншу.
@@ -5618,7 +5535,7 @@ GitHub може запропонувати зміни до цього текст
 </div>
 </div></section><section id="aio-14-supplemental-rstudio"><p>Content from <a href="14-supplemental-rstudio.html">Додатково: Використання Git з RStudio</a></p>
 <hr>
-<p>Останнє оновлення 2024-06-04 |
+<p>Останнє оновлення 2024-10-01 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/14-supplemental-rstudio.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -5718,27 +5635,27 @@ Desktop, шлях може бути таким:
 <p>Далі RStudio запитає, який наявний каталог ми хочемо використовувати.
 Натисніть “Browse…” і перейдіть до відповідного каталогу, потім
 натисніть”Create Project”:</p>
-<figure><img src="fig/RStudio_screenshot_navigateexisting.png" class="figure mx-auto d-block"></figure><p>Чудово! Ми створили новий проєкт в RStudio в рамках наявного
+<figure><img src="fig/RStudio_screenshot_navigateexisting.png" alt='RStudio window showing the "Create Project From Existing Directory" dialog. In the dialog, the project working directory has been set to "~/Desktop/planets"' class="figure mx-auto d-block"></figure><p>Чудово! Ми створили новий проєкт в RStudio в рамках наявного
 репозиторію <code>planets</code>. Зверніть увагу на вертикальне меню
 “Git” у панелі меню. RStudio визнав, що поточний каталог є репозиторієм
 Git, і пропонує нам ряд інструментів для використання Git:</p>
 <figure><img src="fig/RStudio_screenshot_afterclone.png" alt="Вікно RStudio після створення нового проєкту з великою стрілкою, що вказує на вертикальну панель меню Git." class="figure mx-auto d-block"></figure><p>Щоб редагувати наявні файли в репозиторії, ми можемо натискати на них
 у панелі “Files” у правому нижньому куті. Тепер додамо деяку інформацію
 про Плутон:</p>
-<figure><img src="fig/RStudio_screenshot_editfiles.png" class="figure mx-auto d-block"></figure><p>Після того, як ми зберегли наші відредаговані файли, ми можемо
+<figure><img src="fig/RStudio_screenshot_editfiles.png" alt='RStudio window demonstrating the use of the editor panel to modify the "pluto.txt" file' class="figure mx-auto d-block"></figure><p>Після того, як ми зберегли наші відредаговані файли, ми можемо
 використати RStudio для збереження змін, натиснувши на “Commit…” в меню
 Git:</p>
-<figure><img src="fig/RStudio_screenshot_commit.png" alt='Знімок екрана RStudio, що показує меню Git з обраним пунктом "Commit..."' class="figure mx-auto d-block"></figure><p>Це відкриє діалогове вікно, де ми можемо вказати, які файли зберігати
+<figure><img src="fig/RStudio_screenshot_commit.png" alt='RStudio screenshot showing the Git menu dropdown with the "Commit..." option selected' class="figure mx-auto d-block"></figure><p>Це відкриє діалогове вікно, де ми можемо вказати, які файли зберігати
 у коміті (обираючи відповідні поля у стовпці “Staged”), та ввести
 повідомлення коміту (у верхній правій панелі). Піктограми у стовпці
 “Status” вказують поточний стан кожного файлу. Натискання на файлі
 показує інформацію про зміни у нижній панелі (використовуючи результат
 команди <code>git diff</code>). Як тільки все виглядає так, як ми
 хочемо, ми натискаємо “Commit”:</p>
-<figure><img src="fig/RStudio_screenshot_review.png" class="figure mx-auto d-block"></figure><p>Зміни можна відправити до віддаленого репозиторію, обравши “Push
+<figure><img src="fig/RStudio_screenshot_review.png" alt='RStudio screenshow showing the "Review Changes" dialog. The top left panel shows the list of files that can be included or excluded from the commit. The top right panel is for writing a commit message. The bottom panel shows information about the currently selected file in the top left panel.' class="figure mx-auto d-block"></figure><p>Зміни можна відправити до віддаленого репозиторію, обравши “Push
 Branch” з меню Git. Існують також опції меню для отримання змін з
 віддаленого репозиторію та для перегляду історії комітів:</p>
-<figure><img src="fig/RStudio_screenshot_history.png" alt='Знімок екрана RStudio, що показує меню git з обраним пунктом "History"' class="figure mx-auto d-block"></figure><div id="що-робити-якщо-команди-pushpull-виділені-сірим-кольором" class="callout">
+<figure><img src="fig/RStudio_screenshot_history.png" alt='RStudio screenshot showing the git menu dropdown with the "History" option selected' class="figure mx-auto d-block"></figure><div id="що-робити-якщо-команди-pushpull-виділені-сірим-кольором" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -5755,7 +5672,7 @@ RStudio.</p>
 </div>
 <p>Якщо натиснути на “History”, ми побачимо графічну версію того, що нам
 сказав би <code>git log</code>:</p>
-<figure><img src="fig/RStudio_screenshot_viewhistory.png" class="figure mx-auto d-block"></figure><p>RStudio створює ряд файлів, які використовуються для відстеження
+<figure><img src="fig/RStudio_screenshot_viewhistory.png" alt='RStudio screenshot showing the "Review Changes" dialog after pressing the "History" button. The top panel lists the commits in the repository, similar to git log. The bottom panel shows the changes included in the commit that has been selected in the top panel.' class="figure mx-auto d-block"></figure><p>RStudio створює ряд файлів, які використовуються для відстеження
 проєкту. Зазвичай ми не хочемо відстежувати їх у Git; в цьому випадку ми
 додаємо їх до нашого файлу <code>.gitignore</code>:</p>
 <figure><img src="fig/RStudio_screenshot_gitignore.png" alt="Знімок екрану RStudio, що показує .gitignore, відкритий у вікні редактора з файлами .Rproj.user, .Rhistory, .RData, та *.Rproj, доданими наприкінці" class="figure mx-auto d-block"></figure><div id="порада-як-виключити-файли-з-контролю-версій" class="callout">
@@ -5796,7 +5713,7 @@ Git, що треба ігнорувати ці файли та директор�
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Це можна зробити в Rstudio наступним чином:</p>
 <div class="codewrapper sourceCode" id="cb1">

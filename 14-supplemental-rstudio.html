@@ -381,7 +381,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Додатково: Використання Git з RStudio</h1>
-        <p>Останнє оновлення 2024-06-04 |
+        <p>Останнє оновлення 2024-10-01 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/14-supplemental-rstudio.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -479,27 +479,27 @@ Desktop, шлях може бути таким:
 <p>Далі RStudio запитає, який наявний каталог ми хочемо використовувати.
 Натисніть “Browse…” і перейдіть до відповідного каталогу, потім
 натисніть”Create Project”:</p>
-<figure><img src="fig/RStudio_screenshot_navigateexisting.png" class="figure mx-auto d-block"></figure><p>Чудово! Ми створили новий проєкт в RStudio в рамках наявного
+<figure><img src="fig/RStudio_screenshot_navigateexisting.png" alt='RStudio window showing the "Create Project From Existing Directory" dialog. In the dialog, the project working directory has been set to "~/Desktop/planets"' class="figure mx-auto d-block"></figure><p>Чудово! Ми створили новий проєкт в RStudio в рамках наявного
 репозиторію <code>planets</code>. Зверніть увагу на вертикальне меню
 “Git” у панелі меню. RStudio визнав, що поточний каталог є репозиторієм
 Git, і пропонує нам ряд інструментів для використання Git:</p>
 <figure><img src="fig/RStudio_screenshot_afterclone.png" alt="Вікно RStudio після створення нового проєкту з великою стрілкою, що вказує на вертикальну панель меню Git." class="figure mx-auto d-block"></figure><p>Щоб редагувати наявні файли в репозиторії, ми можемо натискати на них
 у панелі “Files” у правому нижньому куті. Тепер додамо деяку інформацію
 про Плутон:</p>
-<figure><img src="fig/RStudio_screenshot_editfiles.png" class="figure mx-auto d-block"></figure><p>Після того, як ми зберегли наші відредаговані файли, ми можемо
+<figure><img src="fig/RStudio_screenshot_editfiles.png" alt='RStudio window demonstrating the use of the editor panel to modify the "pluto.txt" file' class="figure mx-auto d-block"></figure><p>Після того, як ми зберегли наші відредаговані файли, ми можемо
 використати RStudio для збереження змін, натиснувши на “Commit…” в меню
 Git:</p>
-<figure><img src="fig/RStudio_screenshot_commit.png" alt='Знімок екрана RStudio, що показує меню Git з обраним пунктом "Commit..."' class="figure mx-auto d-block"></figure><p>Це відкриє діалогове вікно, де ми можемо вказати, які файли зберігати
+<figure><img src="fig/RStudio_screenshot_commit.png" alt='RStudio screenshot showing the Git menu dropdown with the "Commit..." option selected' class="figure mx-auto d-block"></figure><p>Це відкриє діалогове вікно, де ми можемо вказати, які файли зберігати
 у коміті (обираючи відповідні поля у стовпці “Staged”), та ввести
 повідомлення коміту (у верхній правій панелі). Піктограми у стовпці
 “Status” вказують поточний стан кожного файлу. Натискання на файлі
 показує інформацію про зміни у нижній панелі (використовуючи результат
 команди <code>git diff</code>). Як тільки все виглядає так, як ми
 хочемо, ми натискаємо “Commit”:</p>
-<figure><img src="fig/RStudio_screenshot_review.png" class="figure mx-auto d-block"></figure><p>Зміни можна відправити до віддаленого репозиторію, обравши “Push
+<figure><img src="fig/RStudio_screenshot_review.png" alt='RStudio screenshow showing the "Review Changes" dialog. The top left panel shows the list of files that can be included or excluded from the commit. The top right panel is for writing a commit message. The bottom panel shows information about the currently selected file in the top left panel.' class="figure mx-auto d-block"></figure><p>Зміни можна відправити до віддаленого репозиторію, обравши “Push
 Branch” з меню Git. Існують також опції меню для отримання змін з
 віддаленого репозиторію та для перегляду історії комітів:</p>
-<figure><img src="fig/RStudio_screenshot_history.png" alt='Знімок екрана RStudio, що показує меню git з обраним пунктом "History"' class="figure mx-auto d-block"></figure><div id="що-робити-якщо-команди-pushpull-виділені-сірим-кольором" class="callout">
+<figure><img src="fig/RStudio_screenshot_history.png" alt='RStudio screenshot showing the git menu dropdown with the "History" option selected' class="figure mx-auto d-block"></figure><div id="що-робити-якщо-команди-pushpull-виділені-сірим-кольором" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -516,7 +516,7 @@ RStudio.</p>
 </div>
 <p>Якщо натиснути на “History”, ми побачимо графічну версію того, що нам
 сказав би <code>git log</code>:</p>
-<figure><img src="fig/RStudio_screenshot_viewhistory.png" class="figure mx-auto d-block"></figure><p>RStudio створює ряд файлів, які використовуються для відстеження
+<figure><img src="fig/RStudio_screenshot_viewhistory.png" alt='RStudio screenshot showing the "Review Changes" dialog after pressing the "History" button. The top panel lists the commits in the repository, similar to git log. The bottom panel shows the changes included in the commit that has been selected in the top panel.' class="figure mx-auto d-block"></figure><p>RStudio створює ряд файлів, які використовуються для відстеження
 проєкту. Зазвичай ми не хочемо відстежувати їх у Git; в цьому випадку ми
 додаємо їх до нашого файлу <code>.gitignore</code>:</p>
 <figure><img src="fig/RStudio_screenshot_gitignore.png" alt="Знімок екрану RStudio, що показує .gitignore, відкритий у вікні редактора з файлами .Rproj.user, .Rhistory, .RData, та *.Rproj, доданими наприкінці" class="figure mx-auto d-block"></figure><div id="порада-як-виключити-файли-з-контролю-версій" class="callout">
@@ -555,7 +555,7 @@ Git, що треба ігнорувати ці файли та директор�
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Це можна зробити в Rstudio наступним чином:</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -646,7 +646,7 @@ Git, що треба ігнорувати ці файли та директор�
   "url": "https://ukrainian-carpentries.github.io/git-novice/14-supplemental-rstudio.html",
   "identifier": "https://ukrainian-carpentries.github.io/git-novice/14-supplemental-rstudio.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-06-04",
+  "dateModified": "2024-10-01",
   "datePublished": "2024-10-01"
 }
 

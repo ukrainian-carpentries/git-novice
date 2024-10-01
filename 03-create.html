@@ -381,7 +381,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Створення репозиторію</h1>
-        <p>Останнє оновлення 2024-06-04 |
+        <p>Останнє оновлення 2024-10-01 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/03-create.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -419,7 +419,7 @@
 <p>Ми продовжимо нашу вигадану історію, у якій Wolfman та Dracula
 досліджують, чи можливо відправити планетарний посадковий модуль на
 Марс.</p>
-<p><img src="fig/motivatingexample.png" alt="motivatingexample" class="figure"><a href="https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530" class="external-link">Werewolf
+<p><img src="fig/motivatingexample.png" alt="The main elements of the story: Dracula, Wolfman, the Mummy, Mars, Pluto and The Moon" class="figure"><a href="https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530" class="external-link">Werewolf
 vs dracula</a> by <a href="https://www.deviantart.com/b-maze" class="external-link">b-maze</a>
 / <a href="https://www.deviantart.com/" class="external-link">Deviant Art</a>. <a href="https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg" class="external-link">Mars</a>
 by European Space Agency / <a href="https://creativecommons.org/licenses/by/3.0/deed.en" class="external-link">CC-BY-SA 3.0
@@ -493,8 +493,11 @@ Luc Viatour / <a href="https://lucnix.be/" class="external-link">https://lucnix.
 </h3>
 <pre class="output" tabindex="0"><code>Switched to a new branch 'main'</code></pre>
 </div>
-<p>Ми можемо перевірити, що все налаштовано правильно, запитавши Git про
-стан нашого проєкту:</p>
+<p>We can now start using one of the most important git commands, which
+is particularly helpful to beginners. <code>git status</code> tells us
+the status of our project, and better, a list of changes in the project
+and options on what to do with those changes. We can use it as often as
+we want, whenever we want to understand what is going on.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -547,7 +550,7 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
   Рішення
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Ні. Dracula не має необхідності робити підкаталог <code>moons</code>
 репозиторієм Git, тому що репозиторій <code>planets</code> може
@@ -586,8 +589,8 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
 </h3>
 <div class="callout-content">
 <p>Wolfman пояснив, як вкладений репозиторій є зайвим і може призвести
-до плутанини у майбутньому. Тепер Dracula хотів би видалити вкладений
-репозиторій. Як Dracula може скасувати свою останню команду
+до плутанини у майбутньому. Dracula would like to go back to a single
+git repository. Як Dracula може скасувати свою останню команду
 <code>git init</code> виконану у підкаталозі <code>moons</code>?</p>
 </div>
 </div>
@@ -599,7 +602,7 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
   Відповідь (КОРИСТУЙТЕСЯ З ОБЕРЕЖНІСТЮ!)
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="section level3">
 <h3 id="контекст">Контекст<a class="anchor" aria-label="anchor" href="#%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BA%D1%81%D1%82"></a></h3>
@@ -612,18 +615,18 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> rm filename</span></code></pre>
 </div>
-<p>Подібним чином каталог можна видалити за допомогою
-<code>rm -r dirname</code> або <code>rm -rf dirname</code>. Якщо файли
-чи каталоги, які видаляються таким чином, вже відстежуються Git, тоді їх
-видалення стає ще однією зміною, яку нам потрібно буде відстежувати (ми
-побачимо як це робити в наступному епізоді).</p>
+<p>Similarly a directory can be removed using
+<code>rm -r dirname</code>. Якщо файли чи каталоги, які видаляються
+таким чином, вже відстежуються Git, тоді їх видалення стає ще однією
+зміною, яку нам потрібно буде відстежувати (ми побачимо як це робити в
+наступному епізоді).</p>
 </div>
 <div class="section level3">
 <h3 id="відповідь">Відповідь<a class="anchor" aria-label="anchor" href="#%D0%B2%D1%96%D0%B4%D0%BF%D0%BE%D0%B2%D1%96%D0%B4%D1%8C"></a></h3>
-<p>Git зберігає всі свої файли в каталозі <code>.git</code>. Щоб
-виправити цю маленьку помилку, Dracula може просто видалити каталог
-<code>.git</code> &gt; в підкаталозі <code>moons</code>, виконавши
-наступну команду всередині каталогу <code>planets</code>:</p>
+<p>Git зберігає всі свої файли в каталозі <code>.git</code>. To recover
+from this little mistake, Dracula can remove the <code>.git</code>
+folder in the moons subdirectory by running the following command from
+inside the <code>planets</code> directory:</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -631,8 +634,10 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
 </div>
 <p>Проте, будьте обережні! Виконання цієї команди у неправильному
 каталозі призведе до видалення всієї історії змін проєкту, яку ви хотіли
-б зберегти. Тому завжди перевіряйте свій поточний каталог за допомогою
-команди <code>pwd</code>.</p>
+б зберегти. In general, deleting files and directories using
+<code>rm</code> from the command line cannot be reversed. Тому завжди
+перевіряйте свій поточний каталог за допомогою команди
+<code>pwd</code>.</p>
 </div>
 </div>
 </div>
@@ -712,7 +717,7 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
   "url": "https://ukrainian-carpentries.github.io/git-novice/03-create.html",
   "identifier": "https://ukrainian-carpentries.github.io/git-novice/03-create.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-06-04",
+  "dateModified": "2024-10-01",
   "datePublished": "2024-10-01"
 }
 
