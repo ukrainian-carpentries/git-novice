@@ -13,7 +13,7 @@ lets you focus on the more interesting/innovative aspects of your project.
 - Два основних поняття
   - _commit_: a recorded set of changes in your project's files
   - _repository_: the history of all your project's commits
-- Why use GitHub?
+- Навіщо використовувати GitHub?
   - No need for a server: easy to set up
   - GitHub's strong community: your colleagues are probably already there
 
@@ -74,14 +74,14 @@ working in teams or not, because it is
   Subversion are now seen as legacy systems, and Mercurial isn't nearly as
   widely used in the sciences right now.
 
-- Further resources:
+- Додаткові ресурси:
 
   - [git-it] is a self-paced command-line Git demo,
     with [git-it-electron] its GitHub Desktop successor.
   - [Code School][code-school] має безкоштовний інтерактивний курс [Try Git][try-git].
   - for instructors, [the Git parable][git-parable] is useful background reading
 
-## [Automated Version Control](../episodes/01-basics.md)
+## [Автоматизований контроль версії](../episodes/01-basics.md)
 
 - Ask, "Who uses 'undo' in their editor?" Всі скажуть: "Я". 'Undo' is the simplest
   form of version control.
@@ -138,7 +138,7 @@ working in teams or not, because it is
   The challenge suggests that it is a bad idea to create a Git repo inside another repo.
   Для додаткової дискусії на цю тему, будь ласка, дивіться [це питання][repos-in-repos].
 
-## [Tracking Changes](../episodes/04-changes.md)
+## [Відстеження змін](../episodes/04-changes.md)
 
 - It's important that learners do a full commit cycle by themselves (make
   changes, `git diff`, `git add`, and `git commit`). The "`bio` repository"
@@ -155,7 +155,7 @@ working in teams or not, because it is
 - This is a good moment to show a log within a Git GUI. If you skip it
   because you're short on time, show it once in GitHub.
 
-## [Ignoring Things](../episodes/06-ignore.md)
+## [Ігнорування файлів](../episodes/06-ignore.md)
 
 Just remember that you can use wildcards and regular expressions to ignore a
 particular set of files in `.gitignore`.
