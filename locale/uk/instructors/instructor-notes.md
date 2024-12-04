@@ -8,13 +8,13 @@ lets you focus on the more interesting/innovative aspects of your project.
 - Переваги контролю версій
   - Його легко встановити
   - Кожна копія репозиторію Git є повною резервною копією проєкту та його історії
-  - A few easy-to-remember commands are all you need for most day-to-day version control tasks
+  - Кілька простих для запам'ятовування команд - це все, що потрібно для більшості повсякденних завдань з контролю версій
   - The [GitHub][github] hosting service provides a web-based collaboration service
 - Два основних поняття
   - _commit_: a recorded set of changes in your project's files
-  - _repository_: the history of all your project's commits
+  - _repository_: історія всіх комітів вашого проєкту
 - Навіщо використовувати GitHub?
-  - No need for a server: easy to set up
+  - Нема потреби в сервері: легко налаштувати
   - GitHub's strong community: your colleagues are probably already there
 
 ## Overall
@@ -23,12 +23,12 @@ lets you focus on the more interesting/innovative aspects of your project.
 open software repository landscape, so the time and effort required to teach
 fundamental Git is justified and worthwhile.
 
-Через цю складність, ми не вчимо початківців багатьом цікавим темам, такі як гілки, хеші так об'єкти комітів.
+Because of this complexity, we don't teach novice learners about many
+interesting topics, such as branching, hashes, and commit objects.
 
-Instead we try to convince them that version control is useful for researchers
-working in teams or not, because it is
+Замість цього ми намагаємося переконати їх у тому, що контроль версій корисний для дослідників, які працюють в командах чи самостійно, бо це
 
-- a better way to "undo" changes,
+- ліпший спосіб "скасувати" зміни,
 - a better way to collaborate than mailing files back and forth, and
 - a better way to share your code and other scientific work with the world.
 
