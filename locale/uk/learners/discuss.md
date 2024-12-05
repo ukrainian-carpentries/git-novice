@@ -4,16 +4,16 @@ title: Обговорення
 
 ## Поширені запитання
 
-People often have questions about Git beyond the scope of the core material.
+Зазвичай, у людей виникають питання щодо Git, що виходять за рамки основного матеріалу.
 Студентам, які завершили решту уроків, може бути корисно розглянути наступні теми.
 
-Зауважте, що оскільки цей матеріал не є обов'язковим для базового використання Git, він не буде розглянутий інструктором.
+Зауважте, що оскільки цей матеріал не є обов'язковим для базового використання Git, він не буде розглядатися інструктором.
 
 ## Додаткові налаштування Git
 
 Під час [Налаштування Git](../episodes/02-setup.md), ми використовували `git config --global`, щоб встановити деякі параметри за замовчуванням для Git.
-It turns out that these configuration options get stored in your home directory
-in a plain text file called `.gitconfig`.
+Отже, ці параметри конфігурації зберігаються у вашому домашньому каталогу
+у звичайному текстовому файлі під назвою `.gitconfig`.
 
 ```bash
 $ cat ~/.gitconfig
@@ -41,7 +41,7 @@ The available options are described in the manual:
 $ git config --help
 ```
 
-Зокрема, вам може знадобитися додати псевдоніми.
+In particular, you might find it useful to add aliases.
 Це щось на кшталт скорочень для довших команд Git.
 Наприклад, якщо вам набридло постійно вводити `git checkout`,
 ви можете виконати команду:
@@ -56,7 +56,7 @@ Now if we return to the example from [Exploring History](../episodes/05-history.
 $ git checkout f22b25e mars.txt
 ```
 
-we could now instead type:
+ми могли б тепер ввести:
 
 ```bash
 $ git co f22b25e mars.txt
