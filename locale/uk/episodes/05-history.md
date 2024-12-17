@@ -24,84 +24,92 @@ exercises: 0
 Як ми побачили у попередньому епізоді, ми можемо посилатися на коміти за їх ідентифікаторами.  Ви можете звернутися до _останнього коміту_ робочого каталогу
 за допомогою ідентифікатора `HEAD`.
 
-Оскільки кожного разу ми додавали тільки один рядок до `mars.txt`, зараз нам буде легко простежити досягнутий прогрес. Зробімо це, використовуючи `HEAD`.  Перш ніж ми почнемо,
-давайте змінимо значення на `mars.txt`, додавши ще один рядок.
+We've been adding small changes at a time to `guacamole.md`, so it's easy to track our
+progress by looking, so let's do that using our `HEAD`s.  Before we start,
+let's make a change to `guacamole.md`, adding yet another line.
 
 ```bash
-$ nano mars.txt
-$ cat mars.txt
+$ nano guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+# Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions
 An ill-considered change
 ```
 
 Тепер подивимося на наш результат.
 
 ```bash
-$ git diff HEAD mars.txt
+$ git diff HEAD guacamole.md
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index b36abfd..0848c8d 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1,3 +1,4 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
- But the Mummy will appreciate the lack of humidity
-+An ill-considered change.
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -4,3 +4,4 @@
+ * lime
+ * salt
+ ## Instructions
++An ill-considered change
 ```
 
 Це те саме, що ви отримаєте, якщо пропустите `HEAD` (спробуйте це).\
 Але справжня користь полягає у тому, що ви таким чином можете посилатися на попередні коміти.  Наприклад, додаючи `~1` (де "~" - це тільда), ми посилаємось на коміт зроблений безпосередньо перед `HEAD`.
 
 ```bash
-$ git diff HEAD~1 mars.txt
+$ git diff HEAD~1 guacamole.md
 ```
 
 Якщо ми хочемо побачити різницю між старішими комітами, ми можемо знову використовувати `git diff`, використовуючи для послання на них `HEAD~1`, `HEAD~2` тощо:
 
 ```bash
-$ git diff HEAD~2 mars.txt
+$ git diff HEAD~2 guacamole.md
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index df0654a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,4 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
-+An ill-considered change
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,3 +1,6 @@
+ # Guacamole
+ ## Ingredients
++* avocado
++* lime
++* salt
+ ## Instructions
 ```
 
 Ми також можемо використати команду `git show`, яка показує які зміни ми внесли у будь-якому попередньо зробленому коміті, а також і повідомлення коміту (на відміну від команди `git diff` яка покаже _різницю_ між комітом та нашим робочим каталогом).
 
 ```bash
-$ git show HEAD~2 mars.txt
+$ git show HEAD~2 guacamole.md
 ```
 
 ```output
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 09:51:46 2013 -0400
+Author: Alfredo Linguini <a.linguini@ratatouille.fr>
+Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Start notes on Mars as a base
+    Create a template for recipe
 
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 new file mode 100644
 index 0000000..df0654a
 --- /dev/null
-+++ b/mars.txt
-@@ -0,0 +1 @@
-+Cold and dry, but everything is my favorite color
++++ b/guacamole.md
+@@ -0,0 +1,3 @@
++# Guacamole
++## Ingredients
++## Instructions
 ```
 
 Таким чином, ми можемо побудувати ланцюжок комітів.
@@ -118,42 +126,49 @@ that both `git log` and `git show` display.
 Наш перший коміт отримав ідентифікатор `f22b25e3233b4645dabd0d81e651fe074bd8e73b`, тож спробуймо наступне:
 
 ```bash
-$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
+$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b guacamole.md
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index df0654a..93a3e13 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,4 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,3 +1,7 @@
+ # Guacamole
+ ## Ingredients
++* avocado
++* lime
++* salt
+ ## Instructions
 +An ill-considered change
 ```
 
 Це правильна відповідь, проте, введення випадкових рядків з 40 символів дуже незручно. Тож Git дозволяє нам використовувати тільки перші кілька символів (як правило, сім для проєктів нормального розміру):
 
 ```bash
-$ git diff f22b25e mars.txt
+$ git diff f22b25e guacamole.md
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index df0654a..93a3e13 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,4 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,3 +1,7 @@
+ # Guacamole
+ ## Ingredients
++* avocado
++* lime
++* salt
+ ## Instructions
 +An ill-considered change
 ```
 
 Це чудово! Отже,
 ми можемо зберегти зміни у файлах і побачити, що ми змінили. Наступне питання - а як ми можемо відновити їх старіші версії?
-Припустимо, що ми передумали щодо останнього оновлення файлу `mars.txt` (рядок "ill-considered change").
+Let's suppose we change our mind about the last update to
+`guacamole.md` (the "ill-considered change").
 
 `git status` зараз каже нам, що файл був змінений, але ці зміни не були додані до зони стейджингу:
 
@@ -166,8 +181,7 @@ On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-
-    modified:   mars.txt
+    modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -176,14 +190,17 @@ We can put things back the way they were
 by using `git restore`:
 
 ```bash
-$ git restore mars.txt
-$ cat mars.txt
+$ git restore guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+# Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions
 ```
 
 As you might guess from its name,
@@ -195,15 +212,17 @@ If we want to go back even further,
 we can use a commit identifier instead, using `-s` option:
 
 ```bash
-$ git restore -s f22b25e mars.txt
+$ git restore -s f22b25e guacamole.md
 ```
 
 ```bash
-$ cat mars.txt
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
+# Guacamole
+## Ingredients
+## Instructions
 ```
 
 ```bash
@@ -215,24 +234,28 @@ On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-        modified:   mars.txt
+    modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
 ```
 
-Звернуть увагу, що зміни зараз знаходяться у зоні стейджінгу.
-Again, we can put things back the way they were by using `git restore`:
+Notice that the changes are not currently in the staging area, and have not been committed.
+If we wished, we can put things back the way they were at the last commit by using `git restore` to overwrite
+the working copy with the last committed version:
 
 ```bash
-$ git restore mars.txt
-$ cat mars.txt
+$ git restore guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+# Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions
 ```
 
 Важливо пам'ятати, що ми повинні використовувати номер коміту, який ідентифікує стан репозиторію _до_ зміни, яку ми намагаємося скасувати.
@@ -307,7 +330,7 @@ reverses changes committed to the local and project repositories.
 
 4. Введіть повідомлення для нового коміту.
 
-5. Збережіть його та закрийте редактор.
+5. Save and close.
 
 :::::::::::::::  solution
 
@@ -328,54 +351,51 @@ reverses changes committed to the local and project repositories.
 Який результат останньої команди в цій послідовності?
 
 ```bash
-$ cd planets
-$ echo "Venus is beautiful and full of love" > venus.txt
-$ git add venus.txt
-$ echo "Venus is too hot to be suitable as a base" >> venus.txt
-$ git commit -m "Comment on Venus as an unsuitable base"
-$ git restore venus.txt
-$ cat venus.txt #this will print the contents of venus.txt to the screen
+$ cd recipes
+$ echo "I like tomatoes, therefore I like ketchup" > ketchup.md
+$ git add ketchup.md
+$ echo "ketchup enhances pasta dishes" >> ketchup.md
+$ git commit -m "My opinions about the red sauce"
+$ git restore ketchup.md
+$ cat ketchup.md # this will print the content of ketchup.md on screen
 ```
 
 1. ```output
+   ketchup enhances pasta dishes
    ```
-
-Venus is too hot to be suitable as a base
-
-````
 2. ```output
-Venus is beautiful and full of love
-````
-
-3. ```output
+   I like tomatoes, therefore I like ketchup
    ```
-
-Venus is beautiful and full of love
-Venus is too hot to be suitable as a base
-
-````
+3. ```output
+   I like tomatoes, therefore I like ketchup
+   ketchup enhances pasta dishes
+   ```
 4. ```output
-Error because you have changed venus.txt without committing the changes
-````
+   Error because you have changed ketchup.md without committing the changes
+   ```
 
 :::::::::::::::  solution
 
-## Рішення
+## Solution
 
-Правильною є відповідь 2.
+The answer is 2.
 
-Команда `git add venus.txt` розміщує поточну версію 'venus.txt' в зоні стейджингу.
-Зміни до файлу з другої команди `echo` будуть зроблені лише у робочій копії цього файлу, але не у його версії в зоні стейджингу.
+The changes to the file from the second `echo` command are only applied to the working copy,
+not the version in the staging area.
+The command `git add ketchup.md` places the current version of `ketchup.md` into the staging area.
 
-Тож, коли виконується команда `git commit -m "Comment on Venus as an unsuitable base"`, версія `venus.txt`, яка буде збережена у коміті, буде з зони стейджингу та буде мати тільки один рядок.
+So, when `git commit -m "My opinions about the red sauce"` is executed,
+the version of `ketchup.md` committed to the repository is the one from the staging area and
+has only one line.
 
-На цей час робоча копія файлу ще має другий рядок (і тому `git status` покаже, що файл змінено). However, `git restore venus.txt`
-replaces the working copy with the most recently committed version of `venus.txt`.
+At this time, the working copy still has the second line (and
 
-Тож, `cat venus.txt` покаже
+`git status` will show that the file is modified). However, `git restore ketchup.md`
+replaces the working copy with the most recently committed version of `ketchup.md`.
+So, `cat ketchup.md` will output
 
 ```output
-Venus is beautiful and full of love.
+I like tomatoes, therefore I like ketchup
 ```
 
 :::::::::::::::::::::::::
@@ -384,50 +404,55 @@ Venus is beautiful and full of love.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Перевірка розуміння `git diff`
+## Checking Understanding of `git diff`
 
-Розглянемо цю команду: `git diff HEAD~9 mars.txt`. Що, на вашу думку, зробить ця команда, якщо ви її виконаєте? Що станеться, коли ви її виконаєте? Чому?
+Consider this command: `git diff HEAD~9 guacamole.md`. What do you predict this command
+will do if you execute it? What happens when you do execute it? Why?
 
-Спробуйте іншу команду, `git diff [ID] mars.txt`, де [ID] замінено на унікальний ідентифікатор вашого останнього коміту. Як ви думаєте, що вона зробить? Виконайте її та перевірте, чи це так.
+Try another command, `git diff [ID] guacamole.md`, where [ID] is replaced with
+the unique identifier for your most recent commit. What do you think will happen,
+and what does happen?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Скасування змін у зоні стейджингу
+## Getting Rid of Staged Changes
 
 `git restore` can be used to restore a previous commit when unstaged changes have
 been made, but will it also work for changes that have been staged but not committed?
-Make a change to `mars.txt`, add that change using `git add`,
+Make a change to `guacamole.md`, add that change using `git add`,
 then use `git restore` to see if you can remove your change.
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
 After adding a change, `git restore` can not be used directly.
-Подивіться на результат `git status`:
+Let's look at the output of `git status`:
 
 ```output
 On branch main
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
-        modified:   mars.txt
+        modified:   guacamole.md
 
 ```
 
-Зауважте, що якщо ви не маєте такого самого результату, то можливо, ви забули змінити файл, або ви не тільки додали його до зони стейджингу, _а також_ зробили коміт.
+Note that if you don't have the same output
+you may either have forgotten to change the file,
+or you have added it _and_ committed it.
 
-Using the command `git restore mars.txt` now does not give an error,
+Using the command `git restore guacamole.md` now does not give an error,
 but it does not restore the file either.
 Git helpfully tells us that we need to use `git restore --staged` first
 to unstage the file:
 
 ```bash
-$ git restore --staged mars.txt
+$ git restore --staged guacamole.md
 ```
 
-Тепер `git status` зображує наступне:
+Now, `git status` gives us:
 
 ```bash
 $ git status
@@ -438,8 +463,7 @@ On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git git restore <file>..." to discard changes in working directory)
-
-        modified:   mars.txt
+        modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -448,7 +472,7 @@ This means we can now use `git restore` to restore the file
 to the previous commit:
 
 ```bash
-$ git restore mars.txt
+$ git restore guacamole.md
 $ git status
 ```
 
@@ -463,44 +487,48 @@ nothing to commit, working tree clean
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Перегляд історії
+## Explore and Summarize Histories
 
-Перегляд історії є важливою частиною роботи з Git, але часто нелегко знайти правильний ідентифікатор коміту, особливо якщо коміт був зроблений декілька місяців тому.
+Exploring history is an important part of Git, and often it is a challenge to find
+the right commit ID, especially if the commit is from several months ago.
 
-Уявіть, що проєкт `planets` має більш ніж 50 файлів.
-Ви хотіли б знайти коміт, який змінює певний текст у `mars.txt`.
-Коли ви вводите `git log`, з'являється дуже довгий список.
-Як можна звузити коло пошуку?
+Imagine the `recipes` project has more than 50 files.
+You would like to find a commit that modifies some specific text in `guacamole.md`.
+When you type `git log`, a very long list appeared.
+How can you narrow down the search?
 
-Нагадаємо, що команда `git diff` може використовуватись для одного конкретного файлу, наприклад, `git diff mars.txt`. Ми можемо застосувати тут подібну ідею.
+Recall that the `git diff` command allows us to explore one specific file,
+e.g., `git diff guacamole.md`. We can apply a similar idea here.
 
 ```bash
-$ git log mars.txt
+$ git log guacamole.md
 ```
 
-На жаль, деякі з цих повідомлень комітів дуже неоднозначні, наприклад, `update files`.
-Як же переглянути усі ці версії файлу?
+Unfortunately some of these commit messages are very ambiguous, e.g., `update files`.
+How can you search through these files?
 
-Обидві команди `git diff` та `git log` дуже корисні для отримання звітів про різні деталі історії проєкту.
-Але чи можна об'єднати їх результат в одну команду? Давайте спробуємо наступне:
+Both `git diff` and `git log` are very useful and they summarize a different part of the history
+for you.
+Is it possible to combine both? Let's try the following:
 
 ```bash
-$ git log --patch mars.txt
+$ git log --patch guacamole.md
 ```
 
-Ви повинні отримати довгий список, у якому ви побачите як повідомлення коміту, так і зроблені зміни.
+You should get a long list of output, and you should be able to see both commit messages and
+the difference between each commit.
 
-Питання: Що робить наступна команда?
+Question: What does the following command do?
 
 ```bash
-$ git log --patch HEAD~9 *.txt
+$ git log --patch HEAD~9 *.md
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git diff` відображає відмінності між комітами.
+- `git diff` displays differences between commits.
 - `git restore` recovers old versions of files.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
