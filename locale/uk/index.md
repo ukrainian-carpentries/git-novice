@@ -3,7 +3,11 @@ permalink: index.html
 site: sandpaper::sandpaper_site
 ---
 
-Wolfman та Dracula найняті на роботу до Universal Missions (відділ космічних служб з Euphoric State University), щоб дослідити, чи можна відправити планетарний посадковий модуль на Марс.  Вони хочуть мати можливість працювати над планами одночасно, але у минулому це призводило до проблем.  Якщо вони будуть робити зміни по черзі, то кожен витрачатиме багато часу, чекаючи, поки інший закінчить, а якщо вони будуть працювати над власними копіями та відсилати файли туди й назад електронною поштою, зміни будуть втрачені, перезаписані або продубльовані.
+Jimmy and Alfredo have been hired by Ratatouille restaurant (a special
+restaurant from Euphoric State University) to investigate if it
+is possible to make the best recipes archive ever.  They want to
+be able to work on indexing the prices at the same time, but they have run into
+problems doing this in the past.  Якщо вони будуть робити зміни по черзі, то кожен витрачатиме багато часу, чекаючи, поки інший закінчить, а якщо вони будуть працювати над власними копіями та відсилати файли туди й назад електронною поштою, зміни будуть втрачені, перезаписані або продубльовані.
 
 Колега пропонує їм використовувати [контроль версій](learners/reference.md#version-control), щоб вправитися з цією своєю роботою. Контроль версій кращий, ніж пересилання файлів туди й назад:
 
