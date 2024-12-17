@@ -3,8 +3,11 @@ permalink: index.html
 site: sandpaper::sandpaper_site
 ---
 
-ウルフマンとドラキュラはユニバーサル・ミッションズ（ユーフォリック州立大学からスピンオフした宇宙
-サービス）に雇われ、次の惑星着陸船を火星に送ることが可能かどうかを調査しています。  彼らはそれぞれ同時に計画を立てたいのですが、前にもこのような仕事をしようとしたら困ったことがありました。  交代制にすれば、各自がもう片方が終わるのを待つのに多くの時間を費やすことになります。しかし、それぞれ自分のコピーを編集して、メールで添付ファイルを送ったりすると情報の喪失や上書き、複製などといった問題が起こります。
+Jimmy and Alfredo have been hired by Ratatouille restaurant (a special
+restaurant from Euphoric State University) to investigate if it
+is possible to make the best recipes archive ever.  They want to
+be able to work on indexing the prices at the same time, but they have run into
+problems doing this in the past.  交代制にすれば、各自がもう片方が終わるのを待つのに多くの時間を費やすことになります。しかし、それぞれ自分のコピーを編集して、メールで添付ファイルを送ったりすると情報の喪失や上書き、複製などといった問題が起こります。
 
 同僚が[バーション管理](learners/reference.md#version-control)を使って作業を管理することを勧めました。 バージョン管理はファイルを送り返すよりも優れています：
 
