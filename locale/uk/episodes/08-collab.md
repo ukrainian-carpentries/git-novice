@@ -39,17 +39,21 @@ exercises: 0
 
 Далі, Співавтор повинен завантажити копію репозиторію Власника на свій комп\`ютер. Це називається "клонування репозиторію".
 
-Співавтор не хоче втратити свою власну версію `planets.git`, і тому йому потрібно клонувати репозиторій Власника в інше місце, аніж у свій власний репозиторій з такою ж назвою.
+The Collaborator doesn't want to overwrite her own version of `recipes.git`, so
+needs to clone the Owner's repository to a different location than her own
+repository with the same name.
 
 Щоб клонувати репозиторій Власника у каталог `Desktop`, Співавтор вводить:
 
 ```bash
-$ git clone git@github.com:vlad/planets.git ~/Desktop/vlad-planets
+$ git clone git@github.com:alflin/recipes.git ~/Desktop/alflin-recipes
 ```
 
-(обовʼязково замініть 'vlad' на ім\`я користувача GitHub Власника).
+Replace 'alflin' with the Owner's username.
 
-Якщо ви вирішите клонувати без додавання шляху клонування (`~/Desktop/vlad-planets`) вказаного в кінці команди, ви будете клонувати всередину вашого власного каталогу `planets`!
+If you choose to clone without the clone path
+(`~/Desktop/alflin-recipes`) specified at the end,
+you will clone inside your own recipes folder!
 Переконайтеся, що спочатку ви перейшли до каталогу `Desktop`.
 
 ![](fig/github-collaboration.svg){alt='A diagram showing that "git clone" can create a copy of a remote GitHub repository, allowing a second person to create their own local repository that they can make changes to.'}
@@ -57,23 +61,28 @@ $ git clone git@github.com:vlad/planets.git ~/Desktop/vlad-planets
 Співавтор тепер може зробити зміни у своєму клоні репозиторію Власника так само, як ми робили раніше:
 
 ```bash
-$ cd ~/Desktop/vlad-planets
-$ nano pluto.txt
-$ cat pluto.txt
+$ cd ~/Desktop/alflin-recipes
+$ nano hummus.md
+$ cat hummus.md
 ```
 
 ```output
-It is so a planet!
+# Hummus
+## Ingredients
+* chickpeas
+* lemon
+* olive oil
+* salt
 ```
 
 ```bash
-$ git add pluto.txt
-$ git commit -m "Add notes about Pluto"
+$ git add hummus.md
+$ git commit -m "Add ingredients for hummus"
 ```
 
 ```output
- 1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt
+ 1 file changed, 6 insertion(+)
+ create mode 100644 hummus.md
 ```
 
 Далі, відправте зміни до _репозиторію Власника_ на GitHub:
@@ -89,7 +98,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/vlad/planets.git
+To https://github.com/alflin/recipes.git
    9272da5..29aba7c  main -> main
 ```
 
@@ -104,7 +113,9 @@ To https://github.com/vlad/planets.git
 У цьому і попередньому епізодах, наш локальний репозиторій мав єдиний "віддалений" репозиторій, під назвою `origin`. Віддалений - це копія репозиторію, яка знаходиться в іншому місці, з якою ми можемо обмінюватися комітами через `git pull` та `git push`, і немає жодних причин працювати тільки з одним віддаленим репозиторієм. Наприклад, у деяких великих проєктах у вас може бути власна копія у вашому власному обліковому записі GitHub (ви, ймовірно, назвете її `origin`), а також так званий "upstream" - головний репозиторій проєкту (ми назвемо його `upstream` для прикладу).
 Час від часу ви будете за допомогою `git pull` отримувати зміни з `upstream`, щоб отримати останні оновлення, які зробили інші.
 
-Пам'ятайте, що ім'я, яке ви надаєте віддаленому репозиторію, існує лише локально. Це псевдонім, який ви вибираєте - будь то `origin`, чи `upstream`, чи `fred` - а не щось притаманне віддаленому репозиторію.
+Пам'ятайте, що ім'я, яке ви надаєте віддаленому репозиторію, існує лише локально. It's
+an alias that you choose - whether `origin`, or `upstream`, or `alfred` -
+and not something intrinstic to the remote repository.
 
 Сімейство команд `git remote` використовується для налаштування та зміни віддалених репозиторіїв, пов'язаних з локальним репозиторієм. Ось деякі з найбільш корисних:
 
@@ -112,7 +123,7 @@ To https://github.com/vlad/planets.git
 - `git remote add [name] [url]` використовується для додавання нового віддаленого репозиторію
 - `git remote remove [name]` видаляє віддалений репозиторій. Зауважте, що це взагалі не впливає на віддалений репозиторій - він просто видаляє посилання на нього з локального репозиторію.
 - `git remote set-url [name] [newurl]` змінює URL, який пов\`язаний з віддаленим репозиторієм. Це корисно, якщо він перейшов, наприклад, на інший обліковий запис GitHub або з GitHub на іншу платформу хостингу. Або, якщо ми зробили помилку при його додаванні!
-- `git remote rename [oldname] [newname]` змінює локальний псевдонім, під яким відомий віддалений репозиторій - тобто його назву. Наприклад, можна використовувати це, щоб змінити `upstream` на `fred`.
+- `git remote rename [oldname] [newname]` змінює локальний псевдонім, під яким відомий віддалений репозиторій - тобто його назву. For example, one could use this to change `upstream` to `alfred`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -128,14 +139,14 @@ remote: Counting objects: 100% (4/4), done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/alflin/recipes
  * branch            main     -> FETCH_HEAD
    9272da5..29aba7c  main     -> origin/main
 Updating 9272da5..29aba7c
 Fast-forward
- pluto.txt | 1 +
- 1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt
+ hummus.md | 5 +
+ 1 file changed, 5 insertion(+)
+ create mode 100644 hummus.md
 ```
 
 Тепер три репозиторії (локальний Власника, локальний Співавтора, і репозиторій Власника на GitHub) знову синхронізуються.
