@@ -148,7 +148,7 @@ interesting topics, such as branching, hashes, and commit objects.
   skip it because you're short on time, show it once in GitHub.
 
 - One thing may cause confusion is recovering old versions.  If, instead of
-  doing `$ git checkout f22b25e mars.txt`, someone does `$ git checkout f22b25e`, they wind up in the "detached HEAD" state and confusion abounds.
+  doing `$ git checkout f22b25e guacamole.md`, someone does `$ git checkout f22b25e`, they wind up in the "detached HEAD" state and confusion abounds.
   It's then possible to keep on committing, but things like `git push origin main` a bit later will not give easily comprehensible results.  It also
   makes it look like commits can be lost.  Щоб "повторно прикріпити" HEAD, використовуйте `git checkout main`.
 
@@ -215,7 +215,7 @@ particular set of files in `.gitignore`.
   computer at work:
 
   ```bash
-  $ git clone https://github.com/vlad/planets.git planets-at-work
+  $ git clone https://github.com/alflin/recipes.git recipes-at-work
   ```
 
 - It's very common that learners mistype the remote alias or the remote URL
@@ -231,7 +231,7 @@ particular set of files in `.gitignore`.
   repo under a given directory using a second argument:
 
   ```bash
-  $ git clone https://github.com/vlad/planets.git vlad-planet
+  $ git clone https://github.com/alflin/recipes.git alflin-recipes
   ```
 
 - Найпоширенішою помилкою є те, що учні `відправляють` зміни перед тим, як `отримати` їх. If they
@@ -250,7 +250,7 @@ particular set of files in `.gitignore`.
 - If you're the only instructor, the best way to create a conflict is:
 
   - Clone your repo in a different directory, pretending is your computer at
-    work: `git clone https://github.com/vlad/planets.git planets-at-work`.
+    work: `git clone https://github.com/alflin/recipes.git recipes-at-work`.
   - At the office, you make a change, commit and push.
   - At your laptop repo, you (forget to pull and) make a change, commit and
     try to push.
