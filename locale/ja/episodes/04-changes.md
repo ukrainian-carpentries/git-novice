@@ -21,44 +21,48 @@ exercises: 0
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 まずはじめに、正しいディレクトリにいるかどうか確かめましょう。
-`planets` ディレクトリに入っているはずです。
+You should be in the `recipes` directory.
 
 ```bash
-$ cd ~/Desktop/planets
+$ cd ~/Desktop/recipes
 ```
 
-赤い惑星（火星）が基地に最適かどうかについてのノートを書くために`mars.txt` というファイルを作成しましょう。
+Let's create a file called `guacamole.md` that contains the basic structure of a recipe.
 `nano` （もしくは好きなテキストエディタ）でファイルを編集しましょう。
-以前 `core.editor` で設定したエディタとは別のエディタで編集しても大丈夫です。 ですが、新しくファイルを作成・編集するコマンドはエディタによって違うということを覚えておいてください（`nano` ではないかもしれません）。 テキストエディタについて復習したい方は、[Unix シェル](https://swcarpentry.github.io/shell-novice/) の [どのエディタ？](https://swcarpentry.github.io/shell-novice/03-create/) のレッスンを見てみてください。
+以前 `core.editor` で設定したエディタとは別のエディタで編集しても大丈夫です。 But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). テキストエディタについて復習したい方は、[Unix シェル](https://swcarpentry.github.io/shell-novice/) の [どのエディタ？](https://swcarpentry.github.io/shell-novice/03-create/) のレッスンを見てみてください。
 
 ```bash
-$ nano mars.txt
+$ nano guacamole.md
 ```
 
-以下の文を `mars.txt` に記入してください：
+Type the text below into the `guacamole.md` file:
 
 ```output
-Cold and dry, but everything is my favorite color
+# Guacamole
+## Ingredients
+## Instructions
 ```
 
-まず、listコマンド（`ls`）を実行して、ファイルが正しく作成されたことを確認しましょう：
+Save the file and exit your editor. Next, let’s verify that the file was properly created by running the list command (`ls`):
 
 ```bash
 $ ls
 ```
 
 ```output
-mars.txt
+guacamole.md
 ```
 
-これで `mars.txt` は一文だけ入ってる状態になりました。確認してみましょう：
+`guacamole.md` contains three lines, which we can see by running:
 
 ```bash
-$ cat mars.txt
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
+# Guacamole
+## Ingredients
+## Instructions
 ```
 
 プロジェクトの状態をもう一度確認してみると、
@@ -76,7 +80,7 @@ No commits yet
 Untracked files:
    (use "git add <file>..." to include in what will be committed)
 
-	mars.txt
+	guacamole.md
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -87,7 +91,7 @@ Git が追跡していないファイルがこのディレクトリに存在し�
 `git add` を使って、Git にこのファイルを追跡してもらいましょう：
 
 ```bash
-$ git add mars.txt
+$ git add guacamole.md
 ```
 
 そして、正しく動作したか確認してみましょう：
@@ -104,22 +108,22 @@ No commits yet
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
-	new file:   mars.txt
+	new file:   guacamole.md
 
 ```
 
-これで Git は `mars.txt` を追跡するように設定することができました。
-ですが、まだ変更点をコミットとして記録していません。
+Git now knows that it's supposed to keep track of `guacamole.md`,
+but it hasn't recorded these changes as a commit yet.
 これをするには、もう一つコマンドを使う必要があります：
 
 ```bash
-$ git commit -m "Start notes on Mars as a base"
+$ git commit -m "Create a template for recipe"
 ```
 
 ```output
-[main (root-commit) f22b25e] Start notes on Mars as a base
+[main (root-commit) f22b25e] Create a template for recipe
  1 file changed, 1 insertion(+)
- create mode 100644 mars.txt
+ create mode 100644 guacamole.md
 ```
 
 `git commit` を使うと、
@@ -155,10 +159,10 @@ $ git log
 
 ```output
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base
+    Create a template for recipe
 ```
 
 `git log` は、リポジトリに施された全てのコミットを最新のものから順に表示します。
@@ -168,22 +172,26 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 
 ## 変更点は何処にあるの？
 
-ここで `ls` を使用すると、`mars.txt` ファイル一つしかありません。
+If we run `ls` at this point, we will still see just one file called `guacamole.md`.
 なぜかと言うと、Git はファイルの変更履歴を、以前触れた `.git` という特別なディレクトリに保存します。これをする事によって、ファイルシステムが散らからないようにし、うっかり古いバージョンのファイルを変更、または削除できないようにしています。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-それでは、ドラキュラがファイルに新しい情報を加えたとしましょう。
+Now suppose Alfredo adds more information to the file.
 （以前と同様に、`nano` を使い、`cat` でファイルの中身を表示させます。違うエディタを使ってもいいし、`cat` を使わなくても構いません。）
 
 ```bash
-$ nano mars.txt
-$ cat mars.txt
+$ nano guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+# Guacamole
+## Ingredients
+* avocado
+* lemon
+* salt
+## Instructions
 ```
 
 `git status` を使うと、追跡しているファイルが変更されたことを知らせてくれます：
@@ -196,9 +204,9 @@ $ git status
 On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git restore <file>..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -213,13 +221,17 @@ $ git diff
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index df0654a..315bf3a 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,3 +1,6 @@
+ # Guacamole
+ ## Ingredients
++* avocado
++* lemon
++* salt
+ ## Instructions
 ```
 
 すると、暗号のようなメッセージが出力されます。
@@ -236,16 +248,17 @@ index df0654a..315bf3a 100644
 変更点を確認したら、コミットしましょう：
 
 ```bash
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git commit -m "Add basic guacamole's ingredients"
+$ git status
 ```
 
 ```output
 On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git restore <file>..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -255,13 +268,13 @@ no changes added to commit (use "git add" and/or "git commit -a")
 直しましょう：
 
 ```bash
-$ git add mars.txt
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git add guacamole.md
+$ git commit -m "Add basic guacamole's ingredients"
 ```
 
 ```output
-[main 34961b1] Add concerns about effects of Mars' moons on Wolfman
- 1 file changed, 1 insertion(+)
+[main 34961b1] Add basic guacamole's ingredient
+ 1 file changed, 3 insertions(+)
 ```
 
 Git は変更をコミットする前に、コミットしたいファイルを
@@ -285,17 +298,21 @@ Git には、まだコミットされていない[changeset](../learners/referen
 ![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
 それでは、ファイルの変更点がエディタからステージングエリア、そして長期保存に移る過程を見てみましょう。
-初めに、新しい文章をファイルに加えましょう：
+First,
+we'll improve our recipe by changing 'lemon' to 'lime':
 
 ```bash
-$ nano mars.txt
-$ cat mars.txt
+$ nano guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+# Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions
 ```
 
 ```bash
@@ -303,24 +320,28 @@ $ git diff
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,6 +1,6 @@
+ # Guacamole
+ ## Ingredients
+ * avocado
+-* lemon
++* lime
+ * salt
+ ## Instructions
 ```
 
-いい感じです。
-これでファイルの最後に新しく文章を足すことができました。
-（左にある `+` マークで記されています。）
+So far, so good:
+we've replaced one line (shown with a `-` in the first column) with a new line
+(shown with a `+` in the first column).
 それでは変更点をステージングエリアに入れて
 `git diff` がなにを表示するのかを見てみましょう：
 
 ```bash
-$ git add mars.txt
+$ git add guacamole.md
 $ git diff
 ```
 
@@ -332,25 +353,29 @@ $ git diff --staged
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,6 +1,6 @@
+ # Guacamole
+ ## Ingredients
+ * avocado
+-* lemon
++* lime
+ * salt
+ ## Instructions
 ```
 
 以前コミットされた状態のファイルとステージングエリアにある変更点の違いが表示されます。
 変更内容を保存しましょう：
 
 ```bash
-$ git commit -m "Discuss concerns about Mars' climate for Mummy"
+$ git commit -m "Modify guacamole to the traditional recipe"
 ```
 
 ```output
-[main 005937f] Discuss concerns about Mars' climate for Mummy
+[main 005937f] Modify guacamole to the traditional recipe
  1 file changed, 1 insertion(+)
 ```
 
@@ -373,22 +398,22 @@ $ git log
 
 ```output
 commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-    Discuss concerns about Mars' climate for Mummy
+    Modify guacamole to the traditional recipe
 
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add concerns about effects of Mars' moons on Wolfman
+    Add basic guacamole's ingredients
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base
+    Create a template for recipe
 ```
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -424,10 +449,10 @@ $ git log -1
 
 ```output
 commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-   Discuss concerns about Mars' climate for Mummy
+   Modify guacamole to the traditional recipe
 ```
 
 `--oneline` オプションを使うことによって、表示する情報を制限する事ができます：
@@ -437,9 +462,9 @@ $ git log --oneline
 ```
 
 ```output
-005937f (HEAD -> main) Discuss concerns about Mars' climate for Mummy
-34961b1 Add concerns about effects of Mars' moons on Wolfman
-f22b25e Start notes on Mars as a base
+005937f (HEAD -> main) Modify guacamole to the traditional recipe
+34961b1 Add basic guacamole's ingredients
+f22b25e Create a template for recipe
 ```
 
 `--oneline` オプションを他のオプションと組み合わせることもできます。 便利な組み合わせの一つとして、 `--graph` を追加すると、コミット履歴をテキストベースのグラフとして表示し、どのコミットが現在の `HEAD`、現在のブランチ `main`、あるいは[その他の Git リファレンス][git-references]に関連しているかを示すことができます：
@@ -449,9 +474,9 @@ $ git log --oneline --graph
 ```
 
 ```output
-* 005937f (HEAD -> main) Discuss concerns about Mars' climate for Mummy
-* 34961b1 Add concerns about effects of Mars' moons on Wolfman
-* f22b25e Start notes on Mars as a base
+* 005937f (HEAD -> main) Modify guacamole to the traditional recipe
+* 34961b1 Add basic guacamole's ingredients
+* f22b25e Create a template for recipe
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -466,33 +491,35 @@ Git でディレクトリを使用する際は、以下の二点を覚えてお�
    自分で試してみてください：
 
 ```bash
-$ mkdir spaceships
+$ mkdir cakes
 $ git status
-$ git add spaceships
+$ git add cakes
 $ git status
 ```
 
-注目してほしいのは、新しく作った `directory` ディレクトリは `git add` でリポジトリに追加したにも関わらず、追跡されてないファイルのリストに表示されていません。 たまに `.gitkeep` ファイルが空のディレクトリ内にあるのは、このためです。 `.gitignore`とは違って、このファイルは特別でも何でもなく、空のディレクトリを Git のリポジトリに追加、そして追跡させるためだけに置いてあるだけです。 なので、別の名前のファイルでも同じことができます。
+Note, our newly created empty directory `cakes` does not appear in
+the list of untracked files even if we explicitly add it (_via_ `git add`) to our
+repository. たまに `.gitkeep` ファイルが空のディレクトリ内にあるのは、このためです。 `.gitignore`とは違って、このファイルは特別でも何でもなく、空のディレクトリを Git のリポジトリに追加、そして追跡させるためだけに置いてあるだけです。 なので、別の名前のファイルでも同じことができます。
 
 2. Git リポジトリ内でディレクトリを作成し、複数のファイルをそのディレクトリに入れたい場合、ディレクトリ内のファイルをひとまとめに追加する事ができます：
 
 ```bash
-git add <directory-with-files>
+$ git add <directory-with-files>
 ```
 
 自分で試してみてください：
 
 ```bash
-$ touch spaceships/apollo-11 spaceships/sputnik-1
+$ touch cakes/brownie cakes/lemon_drizzle
 $ git status
-$ git add spaceships
+$ git add cakes
 $ git status
 ```
 
 次に進む前に、これらの変更をコミットしましょう。
 
 ```bash
-$ git commit -m "Add some initial thoughts on spaceships"
+$ git commit -m "Add some initial cakes"
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -505,11 +532,12 @@ $ git commit -m "Add some initial thoughts on spaceships"
 
 ## コミットメッセージを決める
 
-以下のコミットメッセージの内、最後の `mars.txt` のコミットに最適なメッセージはどれでしょう？
+Which of the following commit messages would be most appropriate for the
+last commit made to `guacamole.md`?
 
 1. "Changes"
-2. "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
-3. "Discuss effects of Mars' climate on the Mummy"
+2. "Changed lemon for lime"
+3. "Guacamole modified to the traditional recipe"
 
 :::::::::::::::  solution
 
@@ -564,10 +592,10 @@ $ git commit -m "Add some initial thoughts on spaceships"
 
 一つのコミットに対し、ステージングエリアは複数のファイルの変更点を保持する事ができます。
 
-1. Add some text to `mars.txt` noting your decision
-   to consider Venus as a base
-2. Create a new file `venus.txt` with your initial thoughts
-   about Venus as a base for you and your friends
+1. Add some text to `guacamole.md` noting the rough price of the
+   ingredients.
+2. Create a new file `groceries.md` with a list of products and
+   their prices for different markets.
 3. Add changes from both files to the staging area,
    and commit those changes.
 
@@ -575,52 +603,57 @@ $ git commit -m "Add some initial thoughts on spaceships"
 
 ## 解答
 
-以下の`cat mars.txt`の出力は、この課題で追加された内容のみを反映しています。 出力は異なる場合があります。
-
-まずは `mars.txt` と `venus.txt` を編集しましょう：
+First we make our changes to the `guacamole.md` and `groceries.md` files:
 
 ```bash
-$ nano mars.txt
-$ cat mars.txt
+$ nano guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
-Maybe I should start with a base on Venus.
+# Guacamole
+## Ingredients
+* avocado (1.35)
+* lime (0.64)
+* salt (2)
 ```
 
 ```bash
-$ nano venus.txt
-$ cat venus.txt
+$ nano groceries.md
+$ cat groceries.md
 ```
 
 ```output
-Venus is a nice planet and I definitely should consider it as a base.
+# Market A
+* avocado: 1.35 per unit.
+* lime: 0.64 per unit
+* salt: 2 per kg
 ```
 
-これで二つのファイルをステージングエリアに追加することができます。 二つのファイルを一気に追加するには：
+Now you can add both files to the staging area. We can do that in one line:
 
 ```bash
-$ git add mars.txt venus.txt
+$ git add guacamole.md groceries.md
 ```
 
-一つずつ追加するには：
+Or with multiple commands:
 
 ```bash
-$ git add mars.txt
-$ git add venus.txt
+$ git add guacamole.md
+$ git add groceries.md
 ```
 
-これでファイルをコミットする準備ができました。 `git status` でチェックしましょう。 コミットをするには：
+Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
 
 ```bash
-$ git commit -m "Write plans to start a base on Venus"
+$ git commit -m "Write prices for ingredients and their source"
 ```
 
 ```output
 [main cc127c2]
- Write plans to start a base on Venus
- 2 files changed, 2 insertions(+)
- create mode 100644 venus.txt
+ Write prices for ingredients and their source
+ 2 files changed, 7 insertions(+)
+ create mode 100644 groceries.md
 ```
 
 :::::::::::::::::::::::::
@@ -629,46 +662,49 @@ $ git commit -m "Write plans to start a base on Venus"
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## `bio` リポジトリ
+## `bio` Repository
 
-- `bio` という Git リポジトリ新しく作りましょう。
-- `me.txt` というファイルに自分について３文書いて、変更点をコミットしてください。
-- すでに書いた文章の内、ひとつだけ編集して、更にもう一文加えてください。
-- 編集した後の状態とその前の違いを表示してください。
+- Create a new Git repository on your computer called `bio`.
+- Write a three-line biography for yourself in a file called `me.txt`,
+  commit your changes
+- Modify one line, add a fourth line
+- Display the differences
+  between its updated state and its original state.
 
 :::::::::::::::  solution
 
-## 解答
+## Solution
 
-必要であれば、`planets` から出ましょう：
+If needed, move out of the `recipes` folder:
 
 ```bash
 $ cd ..
 ```
 
-新しく `bio` というディレクトリを作り、中に移動しましょう：
+Create a new folder called `bio` and 'move' into it:
 
 ```bash
 $ mkdir bio
 $ cd bio
 ```
 
-リポジトリを作りましょう：
+Initialise git:
 
 ```bash
 $ git init
 ```
 
-`nano` か他のテキストエディタで `me.txt` を作りましょう。
-作ったら、変更点を追加してコミットしてください：
+Create your biography file `me.txt` using `nano` or another text editor.
+Once in place, add and commit it to the repository:
 
 ```bash
 $ git add me.txt
-$ git commit -m "Add biography file" 
+$ git commit -m "Add biography file"
 ```
 
-指示通りにファイルを編集してください（一文だけ変えて、もう一文足す）。
-オリジナルと編集後のファイルの違いを表示させるために、`git diff` を使います：
+Modify the file as described (modify one line, add a fourth line).
+To display the differences
+between its updated state and its original state, use `git diff`:
 
 ```bash
 $ git diff me.txt
@@ -679,14 +715,14 @@ $ git diff me.txt
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 [commit-messages]: https://chris.beams.io/posts/git-commit/
-[git-references]: https://git-scm.com/book/ja/v2/Git%E3%81%AE%E5%86%85%E5%81%B4-Git%E3%81%AE%E5%8F%82%E7%85%A7
+[git-references]: https://git-scm.com/book/en/v2/Git-Internals-Git-References
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git status` はリポジトリの状態を表示する。
-- ファイルはプロジェクトの作業ディレクトリ、ステージング・エリア（次のコミットに含まれる変更点が蓄積される場所）、そしてローカル・リポジトリ（コミットが永久に記録される場所）に保存される。
-- `git add` はファイルをステージング・エリアに移動させる。
-- `git commit` はステージされた内容をローカル・リポジトリに保存する。
-- コミットメッセージは、変更点がわかりやすいように書きましょう。
+- `git status` shows the status of a repository.
+- Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded).
+- `git add` puts files in the staging area.
+- `git commit` saves the staged content as a new commit in the local repository.
+- Write a commit message that accurately describes your changes.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
