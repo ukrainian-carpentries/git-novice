@@ -21,8 +21,8 @@ exercises: 0
 Створімо декілька фіктивних файлів:
 
 ```bash
-$ mkdir results
-$ touch a.csv b.csv c.csv results/a.out results/b.out
+$ mkdir receipts
+$ touch a.png b.png c.png receipts/a.jpg receipts/b.jpg
 ```
 
 і подивимося, що скаже Git:
@@ -36,10 +36,10 @@ On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	a.csv
-	b.csv
-	c.csv
-	results/
+	a.png
+	b.png
+	c.png
+	receipts/
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -55,11 +55,12 @@ $ cat .gitignore
 ```
 
 ```output
-*.csv
-results/
+*.png
+receipts/
 ```
 
-Це шаблони, які наказують Git ігнорувати будь-який файл, ім'я якого закінчується на `.dat`, а також усе, що знаходиться у каталозі `results`.
+These patterns tell Git to ignore any file whose name ends in `.png`
+and everything in the `receipts` directory.
 (Якщо будь-які з цих файлів вже відстежуються, то Git продовжить їх відстежувати.)
 
 Як тільки ми створили цей файл, результат команди `git status` стає набагато зрозумілішим:
@@ -84,7 +85,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 ```bash
 $ git add .gitignore
-$ git commit -m "Ignore data files and the results folder"
+$ git commit -m "Ignore png files and the receipts folder."
 $ git status
 ```
 
@@ -96,12 +97,12 @@ nothing to commit, working tree clean
 Як бонус, використання `.gitignore` допомагає нам уникнути випадкового додавання до репозиторію файлів, які ми не хочемо відстежувати:
 
 ```bash
-$ git add a.csv
+$ git add a.png
 ```
 
 ```output
 The following paths are ignored by one of your .gitignore files:
-a.csv
+a.png
 Use -f if you really want to add them.
 ```
 
@@ -117,10 +118,10 @@ On branch main
 Ignored files:
  (use "git add -f <file>..." to include in what will be committed)
 
-        a.csv
-        b.csv
-        c.csv
-        results/
+        a.png
+        b.png
+        c.png
+        receipts/
 
 nothing to commit, working tree clean
 ```
@@ -132,23 +133,27 @@ nothing to commit, working tree clean
 Враховуючи структуру каталогу, яка виглядає так:
 
 ```bash
-results/data
-results/plots
+receipts/data
+receipts/plots
 ```
 
-Як зробити так, щоб Git ігнорував тільки `results/plots`, а не `results/data`?
+How would you ignore only `receipts/plots` and not `receipts/data`?
 
 :::::::::::::::  solution
 
 ## Рішення
 
-Якщо ви хочете ігнорувати лише вміст `results/plots`, ви можете зробити це шляхом додавання наступного рядка до вашого `.gitignore`:
+If you only want to ignore the contents of
+`receipts/plots`, you can change your `.gitignore` to ignore
+only the `/plots/` subfolder by adding the following line to
+your .gitignore:
 
 ```output
-results/plots/
+receipts/plots/
 ```
 
-Цей рядок забезпечить ігнорування лише вмісту `results/plots`, але не вмісту `results/data`.
+This line will ensure only the contents of `receipts/plots` is ignored, and
+not the contents of `receipts/data`.
 
 Як і в більшості питань програмування, є ще кілька альтернативних способів, які можуть забезпечити виконання цього правила ігнорування.
 Вправа "Варіант ігнорування вкладених файлів" нижче має трохи іншу структуру каталогів, та пояснює альтернативну відповідь.
@@ -162,7 +167,8 @@ results/plots/
 
 ## Додавання конкретних файлів
 
-Як ігнорувати всі файли `.dat` у кореневому каталозі, за винятком `final.csv`?
+How would you ignore all `.png` files in your root directory except for
+`final.png`?
 Підказка: дізнайтеся, що робить `!` (оператор знаку оклику).
 
 :::::::::::::::  solution
@@ -172,13 +178,15 @@ results/plots/
 Треба додати наступні два рядки до вашого файлу `.gitignore`:
 
 ```output
-*.csv           # ігнорувати усі файли з даними
-!final.csv      # окрім final.csv
+*.png           # ignore all png files
+!final.png      # except final.png
 ```
 
 Знак оклику призведе до включення раніше виключеного запису.
 
-Зверніть увагу також на те, що, оскільки ви раніше вже зберегли файли `.csv` у комітах, зроблених в цьому уроці, вони не будуть проігноровані після додавання цього нового правила. Тільки майбутні додавання `.csv` файлів до кореневого каталогу будуть проігноровані.
+Note also that because you've previously committed `.png` files in this
+lesson they will not be ignored with this new rule. Only future additions
+of `.png` files added to the root directory will be ignored.
 
 :::::::::::::::::::::::::
 
@@ -191,13 +199,13 @@ results/plots/
 Нехай ми маємо структуру каталогів, яка виглядає подібно до попередньої вправи "Ігнорування файлів у підкаталогах", проте дещо відрізняється:
 
 ```bash
-results/data
-results/images
-results/plots
-results/analysis
+receipts/data
+receipts/images
+receipts/plots
+receipts/analysis
 ```
 
-Як би ви проігнорували весь вміст у каталозі `results`, окрім `results/data`?
+How would you ignore all of the contents in the receipts folder, but not `receipts/data`?
 
 Підказка: подумайте про те, як ви раніше зробили виняток за допомогою оператору `!`.
 
@@ -205,11 +213,14 @@ results/analysis
 
 ## Рішення
 
-Якщо ви хочете ігнорувати вміст каталогу `results/`, але не каталогу `results/data/`, ви можете змінити ваш`.gitignore`, щоб ігнорувати вміст каталогу `results`, але створити виняток для вмісту підкаталогу `results/data`. Ваш `.gitignore` буде виглядати так:
+If you want to ignore the contents of
+`receipts/` but not those of `receipts/data/`, you can change your `.gitignore` to ignore
+the contents of receipts folder, but create an exception for the contents of the
+`receipts/data` subfolder. Ваш `.gitignore` буде виглядати так:
 
 ```output
-results/*               # ігнорувати все в каталозі results
-!results/data/          # не ігнорувати вміст results/data/
+receipts/*               # ignore everything in receipts folder
+!receipts/data/          # do not ignore receipts/data/ contents
 ```
 
 :::::::::::::::::::::::::
@@ -223,21 +234,23 @@ results/*               # ігнорувати все в каталозі result
 Припустимо, що у вас порожній файл `.gitignore`, і ви бачите структуру каталогів, яка виглядає так:
 
 ```bash
-results/data/position/gps/a.csv
-results/data/position/gps/b.csv
-results/data/position/gps/c.csv
-results/data/position/gps/info.txt
-results/plots
+receipts/data/market_position/gps/a.dat
+receipts/data/market_position/gps/b.dat
+receipts/data/market_position/gps/c.dat
+receipts/data/market_position/gps/info.txt
+receipts/plots
 ```
 
-Яке найкоротше правило ви можете додати до `.gitignore`, щоб ігнорувати всі файли з розширенням `.csv` у каталозі `result/data/position/gps`? При цьому, не ігноруйте `info.txt`.
+What's the shortest `.gitignore` rule you could write to ignore all `.dat`
+files in `result/data/market_position/gps`? При цьому, не ігноруйте `info.txt`.
 
 :::::::::::::::  solution
 
 ## Рішення
 
-Додавання `results/data/position/gps/*.csv` призведе до ігнорування усіх файлів у `results/data/position/gps`, які закінчуються на `.csv`.
-Файл `results/data/position/gps/info.txt` не буде проігноровано.
+Appending `receipts/data/market_position/gps/*.dat` will match every file in `receipts/data/market_position/gps`
+that ends with `.dat`.
+The file `receipts/data/market_position/gps/info.txt` will not be ignored.
 
 :::::::::::::::::::::::::
 
@@ -329,6 +342,7 @@ data/experiment_2/variation_1/d.csv
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Файл `.gitignore` інформує Git про те, які файли треба ігнорувати.
+- The .gitignore file is a text file that tells Git which files to track and which to ignore in the repository.
+- You can list specific files or folders to be ignored by Git, or you can include files that would normally be ignored.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
