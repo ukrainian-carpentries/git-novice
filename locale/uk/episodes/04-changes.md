@@ -21,44 +21,48 @@ exercises: 0
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Спочатку переконаймося, що ми все ще у правильному каталозі.
-Ви повинні знаходитися у каталозі `planets`.
+You should be in the `recipes` directory.
 
 ```bash
-$ cd ~/Desktop/planets
+$ cd ~/Desktop/recipes
 ```
 
-Тепер створимо файл під назвою `mars.txt`, який буде містити деякі нотатки про придатність Марса як бази.
+Let's create a file called `guacamole.md` that contains the basic structure of a recipe.
 Ми будемо використовувати редактор `nano` для редагування файлу; ви можете використовувати будь-який редактор, який вам подобається.
-Зокрема, це не обовʼязково повинен бути `core.editor`, який ви раніше вказали глобально. Але пам'ятайте, що команда bash для створення або редагування нового файлу буде залежати від редактора, який ви оберете (це може бути не `nano`). Для довідки щодо текстових редакторів, дивіться ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor/) в уроці [The Unix Shell](https://swcarpentry.github.io/shell-novice/).
+Зокрема, це не обовʼязково повинен бути `core.editor`, який ви раніше вказали глобально. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). Для довідки щодо текстових редакторів, дивіться ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor/) в уроці [The Unix Shell](https://swcarpentry.github.io/shell-novice/).
 
 ```bash
-$ nano mars.txt
+$ nano guacamole.md
 ```
 
-Введіть наведений нижче текст у файл `mars.txt`:
+Type the text below into the `guacamole.md` file:
 
 ```output
-Cold and dry, but everything is my favorite color
+# Guacamole
+## Ingredients
+## Instructions
 ```
 
-Давайте спочатку перевіримо, що файл був правильно створений, запустивши команду `ls`:
+Save the file and exit your editor. Next, let’s verify that the file was properly created by running the list command (`ls`):
 
 ```bash
 $ ls
 ```
 
 ```output
-mars.txt
+guacamole.md
 ```
 
-`mars.txt` містить тільки один рядок, який ми можемо побачити, запустивши:
+`guacamole.md` contains three lines, which we can see by running:
 
 ```bash
-$ cat mars.txt
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
+# Guacamole
+## Ingredients
+## Instructions
 ```
 
 Якщо ми знову перевіримо статус нашого проєкту, Git повідомляє нам, що він помітив новий файл:
@@ -75,7 +79,7 @@ No commits yet
 Untracked files:
    (use "git add <file>..." to include in what will be committed)
 
-	mars.txt
+	guacamole.md
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -84,7 +88,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 Ми можемо повідомити Git, що цей файл треба відстежувати за допомогою команди `git add`:
 
 ```bash
-$ git add mars.txt
+$ git add guacamole.md
 ```
 
 та згодом переконатися, що все виглядає правильно:
@@ -101,21 +105,22 @@ No commits yet
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
-	new file:   mars.txt
+	new file:   guacamole.md
 
 ```
 
-Git тепер знає, що він повинен стежити за файлом `mars.txt`, але він ще не записав ці зміни як коміт.
+Git now knows that it's supposed to keep track of `guacamole.md`,
+but it hasn't recorded these changes as a commit yet.
 Щоб зробити це, нам потрібно виконати ще одну команду:
 
 ```bash
-$ git commit -m "Start notes on Mars as a base"
+$ git commit -m "Create a template for recipe"
 ```
 
 ```output
-[main (root-commit) f22b25e] Start notes on Mars as a base
+[main (root-commit) f22b25e] Create a template for recipe
  1 file changed, 1 insertion(+)
- create mode 100644 mars.txt
+ create mode 100644 guacamole.md
 ```
 
 Коли ми запускаємо `git commit`, Git бере все, що ми раніше запросили його зберегти за допомогою `git add`, та зберігає постійну копію цих змін у спеціальному каталозі `.git`.
@@ -148,10 +153,10 @@ $ git log
 
 ```output
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base
+    Create a template for recipe
 ```
 
 `git log` виводить перелік усіх комітів, які були внесені до репозиторію, у зворотному хронологічному порядку.
@@ -161,22 +166,26 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 
 ## Де зберігаються мої зміни?
 
-Якщо ми тепер запустимо `ls`, ми все одно побачимо лише один файл, який називається `mars.txt`.
+If we run `ls` at this point, we will still see just one file called `guacamole.md`.
 Це відбувається тому, що Git зберігає інформацію про історію файлів у спеціальному каталозі `.git`, згаданому раніше, щоб наша файлова система не засмічувалася (і щоб ми випадково не могли змінити або видалити стару версію).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Тепер припустимо, що Dracula додає нову інформацію до файлу.
+Now suppose Alfredo adds more information to the file.
 (Знову ж таки, ми будемо редагувати його за допомогою `nano`, і потім перевіряти його зміст за допомогою `cat`; ви можете користуватися іншим редактором, та можете не використовувати `cat`.)
 
 ```bash
-$ nano mars.txt
-$ cat mars.txt
+$ nano guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+# Guacamole
+## Ingredients
+* avocado
+* lemon
+* salt
+## Instructions
 ```
 
 Тепер, коли ми запускаємо `git status`, Git повідомляє нам, що файл, про який він вже знає, був змінений:
@@ -189,9 +198,9 @@ $ git status
 On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git restore <file>..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -206,13 +215,17 @@ $ git diff
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index df0654a..315bf3a 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,3 +1,6 @@
+ # Guacamole
+ ## Ingredients
++* avocado
++* lemon
++* salt
+ ## Instructions
 ```
 
 Результат цієї команди важко зрозуміти, тому що це насправді серія команд для таких інструментів, як редактори або `patch`, яка повідомляє їм, як змінити один файл за допомогою іншого.
@@ -227,16 +240,17 @@ index df0654a..315bf3a 100644
 Після того, як ми переглянули наші зміни, прийшов час зберегти їх:
 
 ```bash
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git commit -m "Add basic guacamole's ingredients"
+$ git status
 ```
 
 ```output
 On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git restore <file>..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -245,13 +259,13 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Давайте це виправимо:
 
 ```bash
-$ git add mars.txt
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git add guacamole.md
+$ git commit -m "Add basic guacamole's ingredients"
 ```
 
 ```output
-[main 34961b1] Add concerns about effects of Mars' moons on Wolfman
- 1 file changed, 1 insertion(+)
+[main 34961b1] Add basic guacamole's ingredient
+ 1 file changed, 3 insertions(+)
 ```
 
 Git наполягає, щоб ми додали файли до набору змін, які ми хочемо записати, перед тим як ми зробимо коміт. Це дозволяє зберігати зміни поступово та обʼєднувати їх у логічні блоки, аніж у великі набори змін.
@@ -274,17 +288,21 @@ Git наполягає, щоб ми додали файли до набору з
 ![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
 Подивімося, як наші зміни у файлі проходять шлях від текстового редактора до зони стейджингу і далі у довгострокове зберігання.
-Спочатку, ми додамо новий рядок у наш файл:
+First,
+we'll improve our recipe by changing 'lemon' to 'lime':
 
 ```bash
-$ nano mars.txt
-$ cat mars.txt
+$ nano guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+# Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions
 ```
 
 ```bash
@@ -292,21 +310,27 @@ $ git diff
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,6 +1,6 @@
+ # Guacamole
+ ## Ingredients
+ * avocado
+-* lemon
++* lime
+ * salt
+ ## Instructions
 ```
 
-Поки що все добре: ми додали один рядок в кінці файлу (що зазначає `+` у першій колонці).
+So far, so good:
+we've replaced one line (shown with a `-` in the first column) with a new line
+(shown with a `+` in the first column).
 Тепер помістімо цю зміну у зону стейджингу та подивимося що після цього звітує `git diff`:
 
 ```bash
-$ git add mars.txt
+$ git add guacamole.md
 $ git diff
 ```
 
@@ -318,25 +342,29 @@ $ git diff --staged
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,6 +1,6 @@
+ # Guacamole
+ ## Ingredients
+ * avocado
+-* lemon
++* lime
+ * salt
+ ## Instructions
 ```
 
 то ми побачимо різницю між останніми збереженими змінами та тими, які знаходяться в зоні стейджингу.
 Збережімо наші зміни:
 
 ```bash
-$ git commit -m "Discuss concerns about Mars' climate for Mummy"
+$ git commit -m "Modify guacamole to the traditional recipe"
 ```
 
 ```output
-[main 005937f] Discuss concerns about Mars' climate for Mummy
+[main 005937f] Modify guacamole to the traditional recipe
  1 file changed, 1 insertion(+)
 ```
 
@@ -359,22 +387,22 @@ $ git log
 
 ```output
 commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-    Discuss concerns about Mars' climate for Mummy
+    Modify guacamole to the traditional recipe
 
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add concerns about effects of Mars' moons on Wolfman
+    Add basic guacamole's ingredients
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base
+    Create a template for recipe
 ```
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -411,10 +439,10 @@ $ git log -1
 
 ```output
 commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-   Discuss concerns about Mars' climate for Mummy
+   Modify guacamole to the traditional recipe
 ```
 
 Ви також можете зменшити кількість інформації, використовуючи опцію `--oneline`:
@@ -424,9 +452,9 @@ $ git log --oneline
 ```
 
 ```output
-005937f (HEAD -> main) Discuss concerns about Mars' climate for Mummy
-34961b1 Add concerns about effects of Mars' moons on Wolfman
-f22b25e Start notes on Mars as a base
+005937f (HEAD -> main) Modify guacamole to the traditional recipe
+34961b1 Add basic guacamole's ingredients
+f22b25e Create a template for recipe
 ```
 
 Ви також можете комбінувати опцію `--oneline` з іншими опціями. Наступна корисна комбінація використовує опцію `--graph` для графічного зображення історії комітів за допомогою псевдографіки, вказуючи при цьому які коміти пов'язані з поточним `HEAD`, поточною гілкою `main`, або [іншими обʼєктами у репозиторії][git-references]':
@@ -436,9 +464,9 @@ $ git log --oneline --graph
 ```
 
 ```output
-* 005937f (HEAD -> main) Discuss concerns about Mars' climate for Mummy
-* 34961b1 Add concerns about effects of Mars' moons on Wolfman
-* f22b25e Start notes on Mars as a base
+* 005937f (HEAD -> main) Modify guacamole to the traditional recipe
+* 34961b1 Add basic guacamole's ingredients
+* f22b25e Create a template for recipe
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -453,33 +481,35 @@ $ git log --oneline --graph
    Спробуйте власноруч:
 
 ```bash
-$ mkdir spaceships
+$ mkdir cakes
 $ git status
-$ git add spaceships
+$ git add cakes
 $ git status
 ```
 
-Зауважте, наш новостворений порожній каталог `spaceships` не зʼявляється в переліку невідстежуваних файлів, навіть якщо ми конкретно додали його (_виконав_ `git add`) до нашого> репозиторію Ось чому ви іноді бачите файли `.gitkeep` в інших порожніх каталогах. На відміну від `.gitignore`, ці файли не є особливими і їх єдиною метою є заповнити каталог, щоб Git додав його до репозиторію. Насправді ви можете назвати такі файли до вашої вподоби.
+Note, our newly created empty directory `cakes` does not appear in
+the list of untracked files even if we explicitly add it (_via_ `git add`) to our
+repository. Ось чому ви іноді бачите файли `.gitkeep` в інших порожніх каталогах. На відміну від `.gitignore`, ці файли не є особливими і їх єдиною метою є заповнити каталог, щоб Git додав його до репозиторію. Насправді ви можете назвати такі файли до вашої вподоби.
 
 2. Якщо ви створюєте каталог у вашому репозиторії Git і заповнюєте його файлами, ви можете додати всі файли в каталозі одразу:
 
 ```bash
-git add <directory-with-files>
+$ git add <directory-with-files>
 ```
 
 Спробуйте власноруч:
 
 ```bash
-$ touch spaceships/apollo-11 spaceships/sputnik-1
+$ touch cakes/brownie cakes/lemon_drizzle
 $ git status
-$ git add spaceships
+$ git add cakes
 $ git status
 ```
 
 Перш ніж рухатися далі, ми збережемо ці зміни.
 
 ```bash
-$ git commit -m "Add some initial thoughts on spaceships"
+$ git commit -m "Add some initial cakes"
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -492,11 +522,12 @@ $ git commit -m "Add some initial thoughts on spaceships"
 
 ## Вибір повідомлення коміту
 
-Які з наступних повідомлень коміту будуть найбільш оптимальними для останнього коміту в `mars.txt`?
+Which of the following commit messages would be most appropriate for the
+last commit made to `guacamole.md`?
 
 1. "Changes"
-2. "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
-3. "Discuss effects of Mars' climate on the Mummy"
+2. "Changed lemon for lime"
+3. "Guacamole modified to the traditional recipe"
 
 :::::::::::::::  solution
 
@@ -551,60 +582,67 @@ $ git commit -m "Add some initial thoughts on spaceships"
 
 Зона стейджингу може зберігати зміни в будь-якій кількості файлів, які ви хочете записати в один коміт.
 
-1. Додайте текст до `mars.txt` про те, що ви вирішили розглянути побудову бази на Венері
-2. Створіть новий файл `venus.txt` з вашими думками стосовно Венери як бази для вас та ваших друзів
+1. Add some text to `guacamole.md` noting the rough price of the
+   ingredients.
+2. Create a new file `groceries.md` with a list of products and
+   their prices for different markets.
 3. Додайте зміни в обох файлах до зони стейджінгу, та зробіть коміт цих змін.
 
 :::::::::::::::  solution
 
 ## Рішення
 
-Результат з файлу `cat mars.txt` нижче зображує тільки контент доданий під час цієї вправи. Ваш результат може виглядати іншим чином.
-
-Спочатку ми робимо зміни у файлах `mars.txt` та `venus.txt`
+First we make our changes to the `guacamole.md` and `groceries.md` files:
 
 ```bash
-$ nano mars.txt
-$ cat mars.txt
+$ nano guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
-Maybe I should start with a base on Venus.
+# Guacamole
+## Ingredients
+* avocado (1.35)
+* lime (0.64)
+* salt (2)
 ```
 
 ```bash
-$ nano venus.txt
-$ cat venus.txt
+$ nano groceries.md
+$ cat groceries.md
 ```
 
 ```output
-Venus is a nice planet and I definitely should consider it as a base.
+# Market A
+* avocado: 1.35 per unit.
+* lime: 0.64 per unit
+* salt: 2 per kg
 ```
 
-Тепер ви можете додати обидва файли до зони стейджингу. Ми можемо зробити це однією командою:
+Now you can add both files to the staging area. We can do that in one line:
 
 ```bash
-$ git add mars.txt venus.txt
+$ git add guacamole.md groceries.md
 ```
 
-Або за допомогою декількох команд:
+Or with multiple commands:
 
 ```bash
-$ git add mars.txt
-$ git add venus.txt
+$ git add guacamole.md
+$ git add groceries.md
 ```
 
-Тепер файли готові до коміту. Ви можете перевірити це за допомогою `git status`. Якщо ви готові зробити коміт, використовуйте
+Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
 
 ```bash
-$ git commit -m "Write plans to start a base on Venus"
+$ git commit -m "Write prices for ingredients and their source"
 ```
 
 ```output
 [main cc127c2]
- Write plans to start a base on Venus
- 2 files changed, 2 insertions(+)
- create mode 100644 venus.txt
+ Write prices for ingredients and their source
+ 2 files changed, 7 insertions(+)
+ create mode 100644 groceries.md
 ```
 
 :::::::::::::::::::::::::
@@ -613,46 +651,49 @@ $ git commit -m "Write plans to start a base on Venus"
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Вправа: репозиторій з вашою автобіографією
+## `bio` Repository
 
-- Створіть новий репозиторій Git на вашому компʼютері під назвою `bio`.
-- Напишіть три рядки своєї біографії у файлі під назвою `me.txt`, та зробіть коміт цих змін
-- Змініть один з рядків, додайте четвертий рядок
-- Покажіть відмінності між оновленим файлом та його попередньою версією.
+- Create a new Git repository on your computer called `bio`.
+- Write a three-line biography for yourself in a file called `me.txt`,
+  commit your changes
+- Modify one line, add a fourth line
+- Display the differences
+  between its updated state and its original state.
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-Якщо необхідно, вийдіть з каталогу `planets`:
+If needed, move out of the `recipes` folder:
 
 ```bash
 $ cd ..
 ```
 
-Створіть новий каталог `bio` та перейдіть до нього:
+Create a new folder called `bio` and 'move' into it:
 
 ```bash
 $ mkdir bio
 $ cd bio
 ```
 
-Ініціалізуйте репозиторій Git:
+Initialise git:
 
 ```bash
 $ git init
 ```
 
-Створіть файл `me.txt` з вашою біографією, використовуючи `nano` або інший текстовий редактор.
-Коли будете готові, додайте його до зони стейджингу та запишіть коміт до репозиторію:
+Create your biography file `me.txt` using `nano` or another text editor.
+Once in place, add and commit it to the repository:
 
 ```bash
 $ git add me.txt
-$ git commit -m "Add biography file" 
+$ git commit -m "Add biography file"
 ```
 
-Змініть файл як вказано (змініть один рядок, додайте четвертий рядок).
-Для того, щоб показати зміни між оновленим файлом та його попередньою версією, використайте `git diff`:
+Modify the file as described (modify one line, add a fourth line).
+To display the differences
+between its updated state and its original state, use `git diff`:
 
 ```bash
 $ git diff me.txt
@@ -667,10 +708,10 @@ $ git diff me.txt
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git status` показує стан репозиторію.
-- Файли можуть зберігатися в робочому каталозі проєкту (де їх бачать користувачі), зоні стейджингу (де будується наступний коміт) і локальному репозиторії (де коміти зберігаються постійно).
-- `git add` додає файли до зони стейджингу.
-- `git commit` зберігає все, що міститься у зоні стейджингу, як новий коміт у локальному репозиторії.
-- Повідомлення коміту треба складати так, щоб воно акуратно описувало ваші зміни.
+- `git status` shows the status of a repository.
+- Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded).
+- `git add` puts files in the staging area.
+- `git commit` saves the staged content as a new commit in the local repository.
+- Write a commit message that accurately describes your changes.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
