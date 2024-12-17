@@ -23,14 +23,15 @@ exercises: 0
 - ваш бажаний текстовий редактор,
 - а також те, що ми хочемо використовувати ці параметри глобально (тобто для кожного проєкту).
 
-В командному рядку (command line), команди Git виглядають як `git verb options`, де `verb` - це те що ми фактично хочемо зробити, та `options` - це додаткова інформація, яка може бути потрібна для `verb`. Отже, ось як Dracula налаштовує свій новий ноутбук:
+В командному рядку (command line), команди Git виглядають як `git verb options`, де `verb` - це те що ми фактично хочемо зробити, та `options` - це додаткова інформація, яка може бути потрібна для `verb`. So here is how
+Alfredo sets up his new laptop:
 
 ```bash
-$ git config --global user.name "Vlad Dracula"
-$ git config --global user.email "vlad@tran.sylvan.ia"
+$ git config --global user.name "Alfredo Linguini"
+$ git config --global user.email "a.linguini@ratatouille.fr"
 ```
 
-Будь ласка, використовуйте своє власне ім'я та електронну пошту замість "Dracula". Ці ім'я користувача та електронна пошта будуть асоційовані з вашою подальшою діяльністю Git, а це означає, що будь-які зміни надіслані в [GitHub](https://github.com/), [BitBucket](https://bitbucket.org/), [GitLab](https://gitlab.com/) або інший хост-сервер Git після цього уроку будуть містити цю інформацію.
+Please use your own name and email address instead of Alfredo's. Ці ім'я користувача та електронна пошта будуть асоційовані з вашою подальшою діяльністю Git, а це означає, що будь-які зміни надіслані в [GitHub](https://github.com/), [BitBucket](https://bitbucket.org/), [GitLab](https://gitlab.com/) або інший хост-сервер Git після цього уроку будуть містити цю інформацію.
 
 У цьому уроці ми будемо працювати з [GitHub](https://github.com/), тож використовувана електронна пошта повинна бути такою ж, як і та, яка використовується для налаштування вашого облікового запису GitHub. Якщо вас турбує конфіденційність, перегляньте [інструкції GitHub щодо збереження вашої електронної адреси конфіденційною][git-privacy].
 
@@ -46,7 +47,8 @@ $ git config --global user.email "vlad@tran.sylvan.ia"
 
 ## Закінчення рядків
 
-Як і з іншими клавішами, коли ви натискаєте на клавіатурі <kbd>Enter</kbd> або <kbd>↵</kbd> (або <kbd>Return</kbd> на комп’ютері Mac), ваш комп’ютер кодує це як символ.
+As with other keys, when you press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd> on your keyboard,
+your computer encodes this input as a character.
 Різні операційні системи використовують різні символи для позначення кінця рядка.
 (Ви також можете почути, що їх називають новими рядками або розривами рядків.)
 Оскільки Git використовує ці символи для порівняння файлів,
@@ -70,7 +72,7 @@ $ git config --global core.autocrlf true
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Dracula також повинен налаштувати для використання з Git свій улюблений текстовий редактор, як наведено в таблиці нижче:
+Alfredo also has to set his favorite text editor, following this table:
 
 | Редактор                                                          | Команда конфігурації                                                                                                             |
 | :---------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
@@ -96,13 +98,14 @@ Dracula також повинен налаштувати для використ
 
 ## Вихід з Vim
 
-Зауважте, що Vim є редактором за замовчуванням для багатьох програм. Якщо ви раніше не користувалися Vim і бажаєте вийти із сеансу без збереження
-змін, натисніть <kbd>Esc</kbd>, потім введіть `:q!` і натисніть <kbd>Enter</kbd> або <kbd>↵</kbd> (або <kbd>Return</kbd> на Mac).
-Якщо ви хочете зберегти зміни та вийти, натисніть <kbd>Esc</kbd>, потім введіть `:wq` і натисніть <kbd>Enter</kbd> або <kbd>↵</kbd> (або <kbd>Return</kbd> на Mac).
+Зауважте, що Vim є редактором за замовчуванням для багатьох програм. If you haven't used Vim before and wish to exit a session without saving
+your changes, press <kbd>Esc</kbd> then type `:q!` and press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
+If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Git (2.28+) дозволяє конфігурувати назву гілки, яка створюється під час ініціалізації будь-якого нового репозиторію.  Dracula вирішив використати цю можливість, щоб назвати її `main`, щоб це відповідало налаштуванням у хмарному сервісі, який він зрештою використовуватиме.
+Git (2.28+) дозволяє конфігурувати назву гілки, яка створюється під час ініціалізації будь-якого нового репозиторію.  Alfredo decides to use that feature to set it to `main` so
+it matches the cloud service he will eventually use.
 
 ```bash
 $ git config --global init.defaultBranch main
