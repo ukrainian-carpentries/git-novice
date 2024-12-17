@@ -21,8 +21,8 @@ Git に追跡して欲しくないファイル、例えばエディタが作成�
 例として、いくつかファイルを作ってみましょう：
 
 ```bash
-$ mkdir results
-$ touch a.csv b.csv c.csv results/a.out results/b.out
+$ mkdir receipts
+$ touch a.png b.png c.png receipts/a.jpg receipts/b.jpg
 ```
 
 そして Git が何と言うか見てみましょう：
@@ -36,10 +36,10 @@ On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	a.csv
-	b.csv
-	c.csv
-	results/
+	a.png
+	b.png
+	c.png
+	receipts/
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -56,11 +56,12 @@ $ cat .gitignore
 ```
 
 ```output
-*.csv
-results/
+*.png
+receipts/
 ```
 
-入力したパターンは、 Git に `.dat` で終わるファイル名と`results` ディレクトリ内にあるファイルを無視するように指示しています。
+These patterns tell Git to ignore any file whose name ends in `.png`
+and everything in the `receipts` directory.
 （Git がすでに追跡しているファイルは、引き続き追跡されます。）
 
 このファイルを作った後`git status` の出力を見てみると、大分綺麗になっています：
@@ -85,7 +86,7 @@ Git は新しく作られた `.gitignore` ファイルしか表示していま�
 
 ```bash
 $ git add .gitignore
-$ git commit -m "Ignore data files and the results folder"
+$ git commit -m "Ignore png files and the receipts folder."
 $ git status
 ```
 
@@ -97,12 +98,12 @@ nothing to commit, working tree clean
 `.gitignore` を作った事によって、間違えて不要なファイルをリポジトリに追加する事を防ぐことができます：
 
 ```bash
-$ git add a.csv
+$ git add a.png
 ```
 
 ```output
 The following paths are ignored by one of your .gitignore files:
-a.csv
+a.png
 Use -f if you really want to add them.
 ```
 
@@ -118,10 +119,10 @@ On branch main
 Ignored files:
  (use "git add -f <file>..." to include in what will be committed)
 
-        a.csv
-        b.csv
-        c.csv
-        results/
+        a.png
+        b.png
+        c.png
+        receipts/
 
 nothing to commit, working tree clean
 ```
@@ -133,23 +134,27 @@ nothing to commit, working tree clean
 以下のようなディレクトリ構造があるとします：
 
 ```bash
-results/data
-results/plots
+receipts/data
+receipts/plots
 ```
 
-`results/data` ではなく、`results/plots` のみを無視するにはどうすればいいのでしょう？
+How would you ignore only `receipts/plots` and not `receipts/data`?
 
 :::::::::::::::  solution
 
 ## 解答
 
-`results/plots` 内のファイルのみを無視するのであれば、`.gitignore` に `/plots/` サブフォルダを無視するように.gitignore に以下の文を加えれば解決できます：
+If you only want to ignore the contents of
+`receipts/plots`, you can change your `.gitignore` to ignore
+only the `/plots/` subfolder by adding the following line to
+your .gitignore:
 
 ```output
-results/plots/
+receipts/plots/
 ```
 
-この行によって、`results/plots`の内容だけが無視され、`results/data`の内容は無視されません。
+This line will ensure only the contents of `receipts/plots` is ignored, and
+not the contents of `receipts/data`.
 
 様々なプログラミングの問題と同様に、この無視ルールが守られるようにする回答方法はいくつかありま。
 「ネストされたファイルを無視する：バリエーション」の演習は、わずかに異なるディレクトリ構造を持っており、別の解決策を提示しています。「ネストされたファイルを無視する：バリエーション」の演習は、わずかに異なるディレクトリ構造を持っており、別の解決策を提示しています。
@@ -163,7 +168,8 @@ Further, the discussion page has more detail on ignore rules.
 
 ## 無視の対象に特定のファイルを含める
 
-`final.csv`以外の、ルートディレクトリ内にある他の `.data` ファイルを全て無視したい場合はどうすればいいのでしょう？
+How would you ignore all `.png` files in your root directory except for
+`final.png`?
 ヒント： `!` （感嘆符）が何をするのか調べてみましょう。
 
 :::::::::::::::  solution
@@ -173,13 +179,15 @@ Further, the discussion page has more detail on ignore rules.
 以下二文を .gitignore に加えましょう：
 
 ```output
-*.data           # 全ての data ファイルを無視する
-!final.data      # final.data は対象から除外する
+*.png           # ignore all png files
+!final.png      # except final.png
 ```
 
 感嘆符は、無視してあったファイルを対象から外します。
 
-このレッスンで`.csv`ファイルをコミットしたことがあるので、この新しいルールでは無視されません。 ルートディレクトリに追加された `.csv` ファイルの以後の追記のみが無視されます。
+Note also that because you've previously committed `.png` files in this
+lesson they will not be ignored with this new rule. Only future additions
+of `.png` files added to the root directory will be ignored.
 
 :::::::::::::::::::::::::
 
@@ -192,13 +200,13 @@ Further, the discussion page has more detail on ignore rules.
 前の入れ子になったファイルの練習問題と同様のディレクトリ構造ですが、少し異なるディレクトリ構造になっているとしましょう：
 
 ```bash
-results/data
-results/images
-results/plots
-results/analysis
+receipts/data
+receipts/images
+receipts/plots
+receipts/analysis
 ```
 
-results フォルダ内のコンテンツの全てを無視する、 しかし `results/data` は無視しない。そんな場合はどうするでしょうか？
+How would you ignore all of the contents in the receipts folder, but not `receipts/data`?
 
 ヒント： 以前に `!` 演算子を使って例外を作った方法を少し考えてみてください。
 
@@ -206,11 +214,14 @@ results フォルダ内のコンテンツの全てを無視する、 しかし `
 
 ## 解答
 
-`results/` のコンテンツは無視したいが、 `results/data/` のコンテンツは無視したくない場合、 `.gitignore` を変更して、 results フォルダの内容は無視する、しかし `results/data` サブフォルダのコンテンツは例外として設定することができます。 あなたの .gitignore は次のようになるでしょう：
+If you want to ignore the contents of
+`receipts/` but not those of `receipts/data/`, you can change your `.gitignore` to ignore
+the contents of receipts folder, but create an exception for the contents of the
+`receipts/data` subfolder. あなたの .gitignore は次のようになるでしょう：
 
 ```output
-results/*               # ignore everything in results folder
-!results/data/          # do not ignore results/data/ contents
+receipts/*               # ignore everything in receipts folder
+!receipts/data/          # do not ignore receipts/data/ contents
 ```
 
 :::::::::::::::::::::::::
@@ -224,21 +235,23 @@ results/*               # ignore everything in results folder
 空の.gitignoreファイルがあり、以下のようなディレクトリ構造があるとします：
 
 ```bash
-results/data/position/gps/a.csv
-results/data/position/gps/b.csv
-results/data/position/gps/c.csv
-results/data/position/gps/info.txt
-results/plots
+receipts/data/market_position/gps/a.dat
+receipts/data/market_position/gps/b.dat
+receipts/data/market_position/gps/c.dat
+receipts/data/market_position/gps/info.txt
+receipts/plots
 ```
 
-`result/data/position/gps` 内にある全ての `.data` ファイルを無視する一番短い`.gitignore`ルールは何でしょう？ `info.txt` ファイルは無視しないでください。
+What's the shortest `.gitignore` rule you could write to ignore all `.dat`
+files in `result/data/market_position/gps`? `info.txt` ファイルは無視しないでください。
 
 :::::::::::::::  solution
 
 ## 解答
 
-`results/data/position/gps/*.data` を使えば `results/data/position/gps` 内にある全ての `.data` ファイルを無視できます。
-`results/data/position/gps/info.txt` ファイルは無視されません。
+Appending `receipts/data/market_position/gps/*.dat` will match every file in `receipts/data/market_position/gps`
+that ends with `.dat`.
+The file `receipts/data/market_position/gps/info.txt` will not be ignored.
 
 :::::::::::::::::::::::::
 
@@ -330,6 +343,7 @@ You can still include some specific exception with the exclamation point operato
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `.gitignore` で無視するファイルを指定する
+- The .gitignore file is a text file that tells Git which files to track and which to ignore in the repository.
+- You can list specific files or folders to be ignored by Git, or you can include files that would normally be ignored.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
