@@ -26,11 +26,12 @@ exercises: 0
 
 ## 1\. Створіть віддалений репозиторій
 
-Увійдіть до [GitHub](https://github.com), потім натисніть на значок у верхньому правому куті, щоб створити новий репозиторій під назвою `planets`:
+Log in to [GitHub](https://github.com), then click on the icon in the top right corner to
+create a new repository called `recipes`:
 
 ![](fig/github-create-repo-01.png){alt='The first step in creating a repository on GitHub: clicking the "create new" button'}
 
-Назвіть ваш репозиторій "planets" і потім натисніть на "Create Repository".
+Name your repository "recipes" and then click "Create Repository".
 
 Зауважте: оскільки цей репозиторій буде підʼєднано до локального репозиторію, він має бути порожнім. Залиште "Initialize this repository with a README" непозначеним, та оберіть "None" як опції для обох "Add .gitignore" та "Add a license". Дивіться вправу "Файли ліцензії та README" нижче для повного пояснення того, чому репозиторій повинен бути порожнім.
 
@@ -43,27 +44,30 @@ exercises: 0
 Насправді це робить наступне на сервері GitHub:
 
 ```bash
-$ mkdir planets
-$ cd planets
+$ mkdir recipes
+$ cd recipes
 $ git init
 ```
 
-Якщо ви пам'ятаєте, у [одному з попередніх епізодів](04-changes.md), де ми додавали та зберігали нашу попередню роботу над `mars.txt`, в нас була діаграма, яка зображувала локальний репозиторій, та виглядала так:
+If you remember back to the earlier [episode](04-changes.md) where we added and
+committed our earlier work on `guacamole.md`, we had a diagram of the local repository
+which looked like this:
 
 ![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
 Тепер, коли ми маємо два репозиторії, нам потрібна така діаграма:
 
-![](fig/git-freshly-made-github-repo.svg){alt='A diagram illustrating how the GitHub "planets" repository is also a git repository like our local repository, but that it is currently empty'}
+![](fig/git-freshly-made-github-repo.svg){alt='A diagram illustrating how the GitHub "recipes" repository is also a git repository like our local repository, but that it is currently empty'}
 
-Зауважте, що наш локальний репозиторій все ще містить нашу попередню роботу над `mars.txt`, але віддалений репозиторій на GitHub виглядає порожнім, оскільки він ще не містить жодних файлів.
+Note that our local repository still contains our earlier work on `guacamole.md`, but the
+remote repository on GitHub appears empty as it doesn't contain any files yet.
 
 ## 2\. Підʼєднання локального репозиторію до віддаленого
 
 Тепер підключаємо два сховища одне до одного.  Ми робимо це вказуючи GitHub репозиторій у якості [віддаленого](../learners/reference.md#remote) для локального репозиторію.
 Домашня сторінка репозиторію на GitHub містить URL, який нам потрібен, щоб його ідентифікувати:
 
-![](fig/github-find-repo-string.png){alt='Clicking the "Copy to Clipboard" button on GitHub to obtain the repository\'s URL'}
+![](fig/github-change-repo-string.png){alt='A screenshot showing that clicking on "SSH" will make GitHub provide the SSH URL for a repository instead of the HTTPS URL'}
 
 Натисніть на кнопку 'SSH', щоб змінити [протокол](../learners/reference.md#protocol) з HTTPS на SSH.
 
@@ -75,16 +79,17 @@ $ git init
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-![](fig/github-change-repo-string.png){alt='A screenshot showing that clicking on "SSH" will make GitHub provide the SSH URL for a repository instead of the HTTPS URL'}
+![](fig/github-find-repo-string.png){alt='Clicking the "Copy to Clipboard" button on GitHub to obtain the repository\'s URL'}
 
-Скопіюйте цю URL-адресу з браузера, перейдіть до локального репозиторію `planets`, та виконайте цю команду:
+Copy that URL from the browser, go into the local `recipes` repository, and run
+this command:
 
 ```bash
-$ git remote add origin git@github.com:vlad/planets.git
+$ git remote add origin git@github.com:alflin/recipes.git
 ```
 
-Make sure to use the URL for your repository rather than Vlad's: the only
-difference should be your username instead of `vlad`.
+Make sure to use the URL for your repository rather than Alfredo's: the only
+difference should be your username instead of `alflin`.
 
 `origin` - імʼя, яке використовується локально для позначення віддаленого репозиторію. Його можна було б назвати як завгодно, але `origin` - це домовленість, яка часто використовується за замовчуванням в git та GitHub, так що корисно дотримуватися її, якщо немає особливої причини це не робити.
 
@@ -95,15 +100,15 @@ $ git remote -v
 ```
 
 ```output
-origin   git@github.com:vlad/planets.git (fetch)
-origin   git@github.com:vlad/planets.git (push)
+origin   git@github.com:alflin/recipes.git (fetch)
+origin   git@github.com:alflin/recipes.git (push)
 ```
 
 Детальніше віддалені репозиторії ми розглянемо у наступному епізоді, а поки поговоримо про те, як вони можуть бути використані для співпраці.
 
 ## 3\. Необхідна інформація про SSH протокол та його налаштування
 
-Перш ніж Dracula зможе підʼєднатися до віддаленого репозиторію, він має налаштувати спосіб автентифікації свого комп'ютера у GitHub. Це потрібно для того, щоб GitHub міг розпізнати його, коли він намагається підʼєднатися до свого віддаленого репозиторію.
+Before Alfredo can connect to a remote repository, he needs to set up a way for his computer to authenticate with GitHub so it knows it's him trying to connect to his remote repository.
 
 Ми збираємось налаштувати метод, який зазвичай використовується багатьма різними службами для автентифікації доступу з командного рядка.  Цей метод називається Secure Shell Protocol (SSH).  SSH - це кріптографічний мережевий протокол, який дозволяє безпечний зв'язок між комп'ютерами через ненадійну комунікаційну мережу.
 
@@ -134,44 +139,43 @@ SSH використовує так звану пару ключів. Ці дв�
 Ми запустимо команду `ls` (список), щоб перевірити, які пари ключів вже існують на вашому комп'ютері.
 
 ```bash
-ls -al ~/.ssh
+$ ls -al ~/.ssh
 ```
 
 Ваш результат буде виглядати трохи інакше в залежності від того, чи був коли-небудь SSH налаштований на комп'ютері, який ви використовуєте, чи ні.
 
-Dracula ще не налаштував SSH на його комп\`ютері, тож його результат виглядає так
+Alfredo has not set up SSH on his computer, so his output is
 
 ```output
-ls: cannot access '/c/Users/Vlad Dracula/.ssh': No such file or directory
+ls: cannot access '/c/Users/Alfredo/.ssh': No such file or directory
 ```
 
-Якщо SSH вже налаштований на комп'ютері, який ви використовуєте, то ви побачите перелік пар відкритих та приватних ключів. Назви файлів будуть або `id_ed25519`/`id_ed25519.pub`, або `id_rsa`/`id_rsa.pub` у залежності від того, як ці пари ключів були створені.\
-Оскільки Dracula не має цих файлів на його комп\`ютері, він переходить до наступного кроку, щоб їх створити.
+Якщо SSH вже налаштований на комп'ютері, який ви використовуєте, то ви побачите перелік пар відкритих та приватних ключів. Назви файлів будуть або `id_ed25519`/`id_ed25519.pub`, або `id_rsa`/`id_rsa.pub` у залежності від того, як ці пари ключів були створені.
+Since they don't exist on Alfredo's computer, he uses this command to create them.
 
 ### 3.1 Створення пари ключів SSH
 
-Для створення пари SSH ключів Dracula використовує наступну команду, де параметр `-t` визначає який тип алгоритму використати, а параметр `-C` прикріплює до ключа коментар (який у даному випадку є електронною поштою його власника):
+To create an SSH key pair Alfredo uses this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key (here, Alfredo's email):
 
 ```bash
-$ ssh-keygen -t ed25519 -C "vlad@tran.sylvan.ia"
+$ ssh-keygen -t ed25519 -C "a.linguini@ratatouille.fr"
 ```
 
 Якщо ви використовуєте старішу систему, яка не підтримує алгоритм Ed25519, то використовуйте: `$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
 
 ```output
 Generating public/private ed25519 key pair.
-Enter file in which to save the key (/c/Users/Vlad Dracula/.ssh/id_ed25519):
+Enter file in which to save the key (/c/Users/Alfredo/.ssh/id_ed25519):
 ```
 
 Ми бажаємо використовувати імʼя та розташування файлу за замовчуванням, тому просто натисніть <kbd>Enter</kbd>.
 
 ```output
-Created directory '/c/Users/Vlad Dracula/.ssh'.
+Created directory '/c/Users/Alfredo/.ssh'.
 Enter passphrase (empty for no passphrase):
 ```
 
-Тепер Dracula має обрати пароль.  Він хоче створити пароль, оскільки він використовує ноутбук зі своєї лабораторії, до якого іноді мають доступ інші люди.
-Обов'язково використовуйте пароль, який можна запам'ятати, або збережіть пароль десь у надійному місці, оскільки тут немає опції «змінити мій пароль».
+Now, it is prompting Alfredo for a passphrase. Since he is using his kitchen's laptop that other people sometimes have access to, he wants to create a passphrase. Обов'язково використовуйте пароль, який можна запам'ятати, або збережіть пароль десь у надійному місці, оскільки тут немає опції «змінити мій пароль».
 Note that, when typing a passphrase on a terminal, there won't be any visual feedback of your typing.
 This is normal: your passphrase will be recorded even if you see nothing changing on your screen.
 
@@ -182,10 +186,10 @@ Enter same passphrase again:
 Після введення того ж самого пароля вдруге ми отримуємо підтвердження
 
 ```output
-Your identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519
-Your public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub
+Your identification has been saved in /c/Users/Alfredo/.ssh/id_ed25519
+Your public key has been saved in /c/Users/Alfredo/.ssh/id_ed25519.pub
 The key fingerprint is:
-SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o vlad@tran.sylvan.ia
+SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o a.linguini@ratatouille.fr
 The key's randomart image is:
 +--[ED25519 256]--+
 |^B== o.          |
@@ -209,10 +213,10 @@ ls -al ~/.ssh
 ```
 
 ```output
-drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ./
-drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
--rw-r--r-- 1 Vlad Dracula 197121 419 Jul 16 14:48 id_ed25519
--rw-r--r-- 1 Vlad Dracula 197121 106 Jul 16 14:48 id_ed25519.pub
+drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ./
+drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ../
+-rw-r--r-- 1 Alfredo   197121 419 Jul 16 14:48 id_ed25519
+-rw-r--r-- 1 Alfredo   197121 106 Jul 16 14:48 id_ed25519.pub
 ```
 
 ### 3.2 Копіювання відкритого ключа у GitHub
@@ -242,10 +246,13 @@ cat ~/.ssh/id_ed25519.pub
 ```
 
 ```output
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI vlad@tran.sylvan.ia
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI a.linguini@ratatouille.fr
 ```
 
-Тепер, перейшовши до GitHub.com, натисніть на іконку свого облікового запису у верхньому правому куті, щоб відкрити відповідне меню.  У цьому меню натисніть "Settings," потім на сторінці налаштувань ліворуч знайдіть та натисніть "SSH and GPG keys".  Далі натисніть "New SSH key" кнопку праворуч. Тепер ви можете додати назву ключа (Dracula використовує назву "Vlad's Lab Laptop" щоб запамʼятати, де розташовані оригінальні пари ключів), вставити відкритий SSH ключ, який ви попередньо скопіювали, у відповідне поле, та натиснути кнопку "Add SSH key", щоб завершити налаштування.
+Тепер, перейшовши до GitHub.com, натисніть на іконку свого облікового запису у верхньому правому куті, щоб відкрити відповідне меню.  Click "Settings", then on the
+settings page, click "SSH and GPG keys", on the left side "Access" menu. Далі натисніть "New SSH key" кнопку праворуч. Now,
+you can add the title (Alfredo uses the title "Alfredo's Kitchen Laptop" so he can remember where the original key pair
+files are located), paste your SSH key into the field, and click the "Add SSH key" to complete the setup.
 
 Тепер, коли ми усе налаштували, ми знову перевіримо нашу автентифікацію з командного рядка.
 
@@ -254,7 +261,7 @@ $ ssh -T git@github.com
 ```
 
 ```output
-You've successfully authenticated, but GitHub does not provide shell access.
+Hi Alfredo! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
 Добре! Цей результат підтверджує, що ключ SSH працює як очікується. Тепер ми готові завантажити нашу роботу до віддаленого репозиторію.
@@ -267,7 +274,7 @@ You've successfully authenticated, but GitHub does not provide shell access.
 $ git push origin main
 ```
 
-Оскільки Dracula встановив пароль для свого ключа, то йому буде потрібно спочатку його ввести після відповідного запитання.  Якщо ви не встановили пароль для свого ключа, то команда не буде його запитувати.
+Since Alfredo set up a passphrase, it will prompt him for it.  Якщо ви не встановили пароль для свого ключа, то команда не буде його запитувати.
 
 ```output
 Enumerating objects: 16, done.
@@ -277,7 +284,7 @@ Compressing objects: 100% (11/11), done.
 Writing objects: 100% (16/16), 1.45 KiB | 372.00 KiB/s, done.
 Total 16 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), done.
-To https://github.com/vlad/planets.git
+To https://github.com/alflin/recipes.git
  * [new branch]      main -> main
 ```
 
@@ -336,7 +343,7 @@ $ git pull origin main
 ```
 
 ```output
-From https://github.com/vlad/planets
+From https://github.com/alflin/recipes
  * branch            main     -> FETCH_HEAD
 Already up-to-date.
 ```
@@ -347,8 +354,8 @@ Already up-to-date.
 
 ## Користування вебінтерфейсом GitHub
 
-Перейдіть до вашого репозиторію `planets` на GitHub.
-Під кнопкою "Code", знайдіть та натисніть на текст "XX commits" (де "XX" - якесь число).
+Browse to your `recipes` repository on GitHub.
+Under the Code tab, find and click on the text that says "XX commits" (where "XX" is some number).
 Наведіть курсор та натисніть на три кнопки праворуч від кожного коміту.
 Яку інформацію ви можете отримати/вивчити за допомогою цих кнопок?
 Як би ви отримали ту саму інформацію в shell?
@@ -433,7 +440,7 @@ remote: Enumerating objects: 3, done.
 remote: Counting objects: 100% (3/3), done.
 remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/alflin/recipes
  * branch            main     -> FETCH_HEAD
  * [new branch]      main     -> origin/main
 fatal: refusing to merge unrelated histories
@@ -447,7 +454,7 @@ $ git pull --allow-unrelated-histories origin main
 ```
 
 ```output
-From https://github.com/vlad/planets
+From https://github.com/alflin/recipes
  * branch            main     -> FETCH_HEAD
 Merge made by the 'recursive' strategy.
 README.md | 1 +
