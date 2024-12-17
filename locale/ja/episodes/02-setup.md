@@ -23,14 +23,15 @@ Git を新しいパソコンで初めて使う場合、いくつかの設定を�
 - 使用したいテキストエディタ、
 - 以上の設定をグローバル設定として使う（つまり、全てのプロジェクトに反映させる）。
 
-コマンドラインでは、Git コマンドは `git <動詞> <オプション>` と入力します。ここでの「動詞」は、Git に何をさせたいのかを表し、「オプション」はその動詞にとって必要とされる追加の情報です。 ドラキュラが新しいユーザーの場合、以下のようにコンピュータを設定します：
+コマンドラインでは、Git コマンドは `git <動詞> <オプション>` と入力します。ここでの「動詞」は、Git に何をさせたいのかを表し、「オプション」はその動詞にとって必要とされる追加の情報です。 So here is how
+Alfredo sets up his new laptop:
 
 ```bash
-$ git config --global user.name "Vlad Dracula"
-$ git config --global user.email "vlad@tran.sylvan.ia"
+$ git config --global user.name "Alfredo Linguini"
+$ git config --global user.email "a.linguini@ratatouille.fr"
 ```
 
-ここでは、ドラキュラの代わりに自分の名前とメールアドレスを使いましょう。 ここで入力した名前とメールアドレスは、これから行う Git での作業に関わってきます。というのも、これからのレッスンで[GitHub](https://github.com/)、[BitBucket](https://bitbucket.org/)、[GitLab](https://gitlab.com/)、またはその他のGit をホストするサーバーに変更箇所を「プシュ」した（送った）際に、これらの情報が使われるからです。
+Please use your own name and email address instead of Alfredo's. ここで入力した名前とメールアドレスは、これから行う Git での作業に関わってきます。というのも、これからのレッスンで[GitHub](https://github.com/)、[BitBucket](https://bitbucket.org/)、[GitLab](https://gitlab.com/)、またはその他のGit をホストするサーバーに変更箇所を「プシュ」した（送った）際に、これらの情報が使われるからです。
 
 これらのレッスンでは、[GitHub](https://github.com/) に接続するので、GitHub アカウントと同じメールアドレスに設定してください。 プライバシーについて気になる方は、[GitHub のメールアドレスをプライベートにするための説明][git-privacy] を参照してください。
 
@@ -46,7 +47,8 @@ GitHubでプライベートメールアドレスを使用する場合は、GitHu
 
 ## 改行コード
 
-他のキーと同様に、キーボードで <kbd>Enter</kbd> または <kbd>↵</kbd> （またはMacでは <kbd>Return</kbd>）を押すと、コンピュータはそれを文字として入力します。
+As with other keys, when you press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd> on your keyboard,
+your computer encodes this input as a character.
 話が長くなるので詳しい説明は省きますが、行末に使われる文字はオペレーティングシステム（OS）よって違います。
 （行末に使われる文字を「改行コード」と呼びます。）
 Git は、改行コードを使ってファイルの違いを確かめるため、違うパソコンでファイルを編集した時に思わぬ問題が起こるかもしれません。
@@ -70,7 +72,7 @@ $ git config --global core.autocrlf true
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-以下の表を参考に、ドラキュラはテキストエディタも設定しました：
+Alfredo also has to set his favorite text editor, following this table:
 
 | エディタ                                              | 設定コマンド                                                                                                                           |
 | :------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------- |
@@ -96,12 +98,14 @@ $ git config --global core.autocrlf true
 
 ## Vim の終了の仕方
 
-多くのソフトの初期設定では、Vim がデフォルトのテキストエディタに設定されています。 保存せずに Vim を終了するには、<kbd>Esc</kbd>を押した後に `:q!` と入力してから<kbd>Enter</kbd>または<kbd>↵</kbd>（Macの場合は<kbd>Return</kbd>）を押してください。
-保存してから終了するには、<kbd>Esc</kbd>を押してから `:wq` と入力して<kbd>Enter</kbd>または<kbd>↵</kbd>（Mac の場合は <kbd>Return</kbd>）を押してください。
+多くのソフトの初期設定では、Vim がデフォルトのテキストエディタに設定されています。 If you haven't used Vim before and wish to exit a session without saving
+your changes, press <kbd>Esc</kbd> then type `:q!` and press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
+If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Git (2.28以上) では、新しいリポジトリを初期化したときに作成されるブランチの名前を設定できます。  ドラキュラはその機能を使って、最終的に使うクラウドサービスと一致するように`main`に設定することにします。
+Git (2.28以上) では、新しいリポジトリを初期化したときに作成されるブランチの名前を設定できます。  Alfredo decides to use that feature to set it to `main` so
+it matches the cloud service he will eventually use.
 
 ```bash
 $ git config --global init.defaultBranch main
