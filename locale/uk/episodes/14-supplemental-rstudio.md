@@ -24,8 +24,8 @@ RStudio дозволяє створити [проєкт][rstudio-projects], по
 
 ![](fig/RStudio_screenshot_newproject.png){alt='Знімок екрана RStudio, що показує меню файлу з вибраним пунктом "New Project..."'}
 
-Цей крок відкриває діалогове вікно із запитанням про те, як саме ми хочемо створити проєкт. Тут ми маємо кілька варіантів. Припустимо, що ми хочемо використовувати RStudio з
-репозиторієм `planets`, який ми вже створили раніше. Оскільки цей репозиторій міститься в каталозі на нашому комп'ютері, ми
+Цей крок відкриває діалогове вікно із запитанням про те, як саме ми хочемо створити проєкт. Тут ми маємо кілька варіантів. Let's say that we want to use RStudio with the recipes
+repository that we already made. Оскільки цей репозиторій міститься в каталозі на нашому комп'ютері, ми
 обираємо опцію "Existing Directory":
 
 ![](fig/RStudio_screenshot_existingdirectory.png){alt='Знімок екрана RStudio, що показує діалогове вікно New Project з обраним пунктом "Create project from existing directory"'}
@@ -68,17 +68,18 @@ RStudio дозволяє створити [проєкт][rstudio-projects], по
 Далі RStudio запитає, який наявний каталог ми хочемо використовувати. Натисніть
 "Browse..." і перейдіть до відповідного каталогу, потім натисніть"Create Project":
 
-![](fig/RStudio_screenshot_navigateexisting.png){alt='RStudio window showing the "Create Project From Existing Directory" dialog. In the dialog, the project working directory has been set to "~/Desktop/planets"'}
+![](fig/RStudio_screenshot_navigateexisting.png){alt='RStudio window showing the "Create Project From Existing Directory" dialog. In the dialog, the project working directory has been set to "~/Desktop/recipes"'}
 
-Чудово! Ми створили новий проєкт в RStudio в рамках наявного репозиторію `planets`. Зверніть увагу на вертикальне меню "Git" у панелі меню. RStudio визнав, що
+Чудово! We have created a new project in RStudio within the existing recipes
+repository. Зверніть увагу на вертикальне меню "Git" у панелі меню. RStudio визнав, що
 поточний каталог є репозиторієм Git, і пропонує нам
 ряд інструментів для використання Git:
 
 ![](fig/RStudio_screenshot_afterclone.png){alt='Вікно RStudio після створення нового проєкту з великою стрілкою, що вказує на вертикальну панель меню Git.'}
 
 Щоб редагувати наявні файли в репозиторії, ми можемо натискати на них у панелі
-"Files" у правому нижньому куті. Тепер додамо деяку інформацію
-про Плутон:
+"Files" у правому нижньому куті. Now let's add some additional information
+about Hummus:
 
 ![](fig/RStudio_screenshot_editfiles.png){alt='RStudio window demonstrating the use of the editor panel to modify the "pluto.txt" file'}
 
