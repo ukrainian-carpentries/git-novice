@@ -23,82 +23,91 @@ exercises: 0
 
 前のレッスンで見たように、コミットを識別子で参照できます。  識別子 `HEAD` を使うことで作業ディレクトリの _最新のコミット_ を参照できます。
 
-`mars.txt` に一度に1行ずつ追加しているので、進展を見て確認することは簡単です。それでは `HEAD` を使ってそれを行ってみましょう。  始める前に、 `mars.txt` にもう1行加えることで変更を加えてみましょう。
+We've been adding small changes at a time to `guacamole.md`, so it's easy to track our
+progress by looking, so let's do that using our `HEAD`s.  Before we start,
+let's make a change to `guacamole.md`, adding yet another line.
 
 ```bash
-$ nano mars.txt
-$ cat mars.txt
+$ nano guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+# Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions
 An ill-considered change
 ```
 
 それでは、何が得られるか見てみましょう。
 
 ```bash
-$ git diff HEAD mars.txt
+$ git diff HEAD guacamole.md
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index b36abfd..0848c8d 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1,3 +1,4 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
- But the Mummy will appreciate the lack of humidity
-+An ill-considered change.
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -4,3 +4,4 @@
+ * lime
+ * salt
+ ## Instructions
++An ill-considered change
 ```
 
 これは、 `HEAD` を省略した場合 (試してみてください) に得られるものと同じです。  これの本当の利点は、以前のコミットを参照できることです。  それを行うには、`HEAD` より前のコミットを参照するために `~1` (「~」は「チルダ」、発音は [**til**-d_uh_]) を追加します。
 
 ```bash
-$ git diff HEAD~1 mars.txt
+$ git diff HEAD~1 guacamole.md
 ```
 
 古いコミット間の違いを確認したい場合は、`git diff` を再度使用できますが、`HEAD~1`、`HEAD~2` などの表記を使用して、それらを参照するには下記を行います:
 
 ```bash
-$ git diff HEAD~2 mars.txt
+$ git diff HEAD~2 guacamole.md
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index df0654a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,4 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
-+An ill-considered change
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,3 +1,6 @@
+ # Guacamole
+ ## Ingredients
++* avocado
++* lime
++* salt
+ ## Instructions
 ```
 
 `git diff` を使用して表示されるコミットと作業ディレクトリの _違い_ ではなく、古いコミットで行った変更だけでなくコミットメッセージも表示する `git show`を使用することもできます。
 
 ```bash
-$ git show HEAD~2 mars.txt
+$ git show HEAD~2 guacamole.md
 ```
 
 ```output
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 09:51:46 2013 -0400
+Author: Alfredo Linguini <a.linguini@ratatouille.fr>
+Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Start notes on Mars as a base
+    Create a template for recipe
 
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 new file mode 100644
 index 0000000..df0654a
 --- /dev/null
-+++ b/mars.txt
-@@ -0,0 +1 @@
-+Cold and dry, but everything is my favorite color
++++ b/guacamole.md
+@@ -0,0 +1,3 @@
++# Guacamole
++## Ingredients
++## Instructions
 ```
 
 このようにして、コミットのチェーンを構築できます。
@@ -109,41 +118,48 @@ index 0000000..df0654a
 最初のコミットにはID `f22b25e3233b4645dabd0d81e651fe074bd8e73b` が与えられたので、これを試してみましょう:
 
 ```bash
-$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
+$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b guacamole.md
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index df0654a..93a3e13 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,4 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,3 +1,7 @@
+ # Guacamole
+ ## Ingredients
++* avocado
++* lime
++* salt
+ ## Instructions
 +An ill-considered change
 ```
 
 これは正しい答えですが、ランダムな40文字の文字列を入力するのは面倒なので、Gitは最初の数文字だけを使えばよいようにしてくれています:
 
 ```bash
-$ git diff f22b25e mars.txt
+$ git diff f22b25e guacamole.md
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
+diff --git a/guacamole.md b/guacamole.md
 index df0654a..93a3e13 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,4 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+--- a/guacamole.md
++++ b/guacamole.md
+@@ -1,3 +1,7 @@
+ # Guacamole
+ ## Ingredients
++* avocado
++* lime
++* salt
+ ## Instructions
 +An ill-considered change
 ```
 
 やりました! こんなわけで ファイルへの変更を保存して、何が変更されたかを確認できます。 では、どうすれば古いバージョンのものを復元できるでしょうか?
-`mars.txt`への最後の更新（「熟考を欠いた変更」）について気が変わったとしましょう。
+Let's suppose we change our mind about the last update to
+`guacamole.md` (the "ill-considered change").
 
 `git status` は、ファイルが変更されたことを示しますが、それらの変更はステージングされていません:
 
@@ -156,8 +172,7 @@ On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-
-    modified:   mars.txt
+    modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -165,14 +180,17 @@ no changes added to commit (use "git add" and/or "git commit -a")
 `git restore`を使うと、元の状態に戻すことができます:
 
 ```bash
-$ git restore mars.txt
-$ cat mars.txt
+$ git restore guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+# Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions
 ```
 
 その名前から推測できるように、`git restore` はファイルの古いバージョンを復元します。
@@ -180,15 +198,17 @@ But the Mummy will appreciate the lack of humidity
 さらに遡りたい場合は、`-s`オプションとコミット Id を使うことができます:
 
 ```bash
-$ git restore -s f22b25e mars.txt
+$ git restore -s f22b25e guacamole.md
 ```
 
 ```bash
-$ cat mars.txt
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
+# Guacamole
+## Ingredients
+## Instructions
 ```
 
 ```bash
@@ -200,24 +220,28 @@ On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-        modified:   mars.txt
+    modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
 ```
 
-変更はステージング領域にあることに注意してください。
-繰り返しますが、`git restore` を使うと、元の状態に戻すことができます:
+Notice that the changes are not currently in the staging area, and have not been committed.
+If we wished, we can put things back the way they were at the last commit by using `git restore` to overwrite
+the working copy with the last committed version:
 
 ```bash
-$ git restore mars.txt
-$ cat mars.txt
+$ git restore guacamole.md
+$ cat guacamole.md
 ```
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+# Guacamole
+## Ingredients
+* avocado
+* lime
+* salt
+## Instructions
 ```
 
 取り消したい変更の一個**前**のコミット番号を使う必要があることを覚えておくことが重要です。
@@ -289,7 +313,7 @@ But the Mummy will appreciate the lack of humidity
 
 4. 新しいコミットメッセージを入力します。
 
-5. 保存して閉じます。
+5. Save and close.
 
 :::::::::::::::  solution
 
@@ -310,58 +334,51 @@ But the Mummy will appreciate the lack of humidity
 最後のコマンドの出力は何でしょうか？
 
 ```bash
-$ cd planets
-$ echo "Venus is beautiful and full of love" > venus.txt
-$ git add venus.txt
-$ echo "Venus is too hot to be suitable as a base" >> venus.txt
-$ git commit -m "Comment on Venus as an unsuitable base"
-$ git restore venus.txt
-$ cat venus.txt #this will print the contents of venus.txt to the screen
+$ cd recipes
+$ echo "I like tomatoes, therefore I like ketchup" > ketchup.md
+$ git add ketchup.md
+$ echo "ketchup enhances pasta dishes" >> ketchup.md
+$ git commit -m "My opinions about the red sauce"
+$ git restore ketchup.md
+$ cat ketchup.md # this will print the content of ketchup.md on screen
 ```
 
 1. ```output
+   ketchup enhances pasta dishes
    ```
-
-Venus is too hot to be suitable as a base
-
-````
 2. ```output
-Venus is beautiful and full of love
-````
-
-3. ```output
+   I like tomatoes, therefore I like ketchup
    ```
-
-Venus is beautiful and full of love
-Venus is too hot to be suitable as a base
-
-````
+3. ```output
+   I like tomatoes, therefore I like ketchup
+   ketchup enhances pasta dishes
+   ```
 4. ```output
-Error because you have changed venus.txt without committing the changes
-````
+   Error because you have changed ketchup.md without committing the changes
+   ```
 
 :::::::::::::::  solution
 
-## 解答
+## Solution
 
-答えは2です。
+The answer is 2.
 
-The command `git add venus.txt` places the current version of `venus.txt` into the staging area.
 The changes to the file from the second `echo` command are only applied to the working copy,
 not the version in the staging area.
+The command `git add ketchup.md` places the current version of `ketchup.md` into the staging area.
 
-So, when `git commit -m "Comment on Venus as an unsuitable base"` is executed,
-the version of `venus.txt` committed to the repository is the one from the staging area and
+So, when `git commit -m "My opinions about the red sauce"` is executed,
+the version of `ketchup.md` committed to the repository is the one from the staging area and
 has only one line.
 
 At this time, the working copy still has the second line (and
-`git status` will show that the file is modified). However, `git restore venus.txt`
-replaces the working copy with the most recently committed version of `venus.txt`.
 
-So, `cat venus.txt` will output
+`git status` will show that the file is modified). However, `git restore ketchup.md`
+replaces the working copy with the most recently committed version of `ketchup.md`.
+So, `cat ketchup.md` will output
 
 ```output
-Venus is beautiful and full of love.
+I like tomatoes, therefore I like ketchup
 ```
 
 :::::::::::::::::::::::::
@@ -370,46 +387,55 @@ Venus is beautiful and full of love.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## `git diff` の理解のチェック
+## Checking Understanding of `git diff`
 
-このコマンドをよく考えてみてください: `git diff HEAD~9 mars.txt`。 このコマンドを実行したらどうなるだろうと予測しますか? 実行すると何が起こっていますか? またそれはなぜでしょうか?
+Consider this command: `git diff HEAD~9 guacamole.md`. What do you predict this command
+will do if you execute it? What happens when you do execute it? Why?
 
-別のコマンド `git diff [ID] mars.txt` を試しましょう、ここでの [ID] は最新のコミットのユニークな ID で置き換えられます。 あなたは何が起こるだろうと思いますか?
+Try another command, `git diff [ID] guacamole.md`, where [ID] is replaced with
+the unique identifier for your most recent commit. What do you think will happen,
+and what does happen?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## ステージされた変更の除去
+## Getting Rid of Staged Changes
 
-`git restore` は、ステージされていない変更があったときに 以前のコミットを復元するために使用できます。しかしそれはステージされているがコミットされていない変更に対しても機能するでしょうか?
-`mars.txt` に変更を用意し、その変更を加え（`git add`を使い）、`git restore` を使い変更を取り除くことができるかどうか確かめましょう。
+`git restore` can be used to restore a previous commit when unstaged changes have
+been made, but will it also work for changes that have been staged but not committed?
+Make a change to `guacamole.md`, add that change using `git add`,
+then use `git restore` to see if you can remove your change.
 
 :::::::::::::::  solution
 
-## 解答
+## Solution
 
-変更を追加した後、`git restore` は直接使用できません。
-次に、`git status` の出力を確認してみましょう。
+After adding a change, `git restore` can not be used directly.
+Let's look at the output of `git status`:
 
 ```output
 On branch main
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
-        modified:   mars.txt
+        modified:   guacamole.md
 
 ```
 
-この出力が表示されない場合、ファイルの変更を忘れているか、すでにファイルを追加してコミットした可能性があります。
+Note that if you don't have the same output
+you may either have forgotten to change the file,
+or you have added it _and_ committed it.
 
-この時点で、`git restore mars.txt` コマンドを実行してもエラーは発生しませんが、ファイルは元に戻りません。
-Gitは、まず `git restore --staged` を使用してステージングエリアからファイルを戻す必要があることを教えてくれます。
+Using the command `git restore guacamole.md` now does not give an error,
+but it does not restore the file either.
+Git helpfully tells us that we need to use `git restore --staged` first
+to unstage the file:
 
 ```bash
-$ git restore --staged mars.txt
+$ git restore --staged guacamole.md
 ```
 
-次に、`git status` の出力を確認します。
+Now, `git status` gives us:
 
 ```bash
 $ git status
@@ -420,16 +446,16 @@ On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git git restore <file>..." to discard changes in working directory)
-
-        modified:   mars.txt
+        modified:   guacamole.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-ここで、`git restore` コマンドを使ってファイルを前のコミットの状態に戻すことができます。
+This means we can now use `git restore` to restore the file
+to the previous commit:
 
 ```bash
-$ git restore mars.txt
+$ git restore guacamole.md
 $ git status
 ```
 
@@ -444,44 +470,48 @@ nothing to commit, working tree clean
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## 履歴を探索し、要約する
+## Explore and Summarize Histories
 
-履歴の探索はgitの重要な要素であり、特にそのコミットが数ヶ月前のものである場合は、適切なコミットIDを見つけるのが難しいことがよくあります。
+Exploring history is an important part of Git, and often it is a challenge to find
+the right commit ID, especially if the commit is from several months ago.
 
-`planets` プロジェクトに50を超えるファイルがあると考えてください。
-あなたは `mars.txt` 中の特定のテキストが変更されたコミットを見つけたいとします。
-`git log` と入力すると、非常に長いリストが表示されました。
-どうやって探す範囲を限定しますか?
+Imagine the `recipes` project has more than 50 files.
+You would like to find a commit that modifies some specific text in `guacamole.md`.
+When you type `git log`, a very long list appeared.
+How can you narrow down the search?
 
-`git diff` コマンドを使用すると、1つの特定のファイルを探索できることを思い出してください、 例えば、`git diff mars.txt` 。 ここでも同様のアイデアを適用できます。
+Recall that the `git diff` command allows us to explore one specific file,
+e.g., `git diff guacamole.md`. We can apply a similar idea here.
 
 ```bash
-$ git log mars.txt
+$ git log guacamole.md
 ```
 
-残念ながら、一部のコミットメッセージは `update files`（「ファイルを更新する」）などのように非常に曖昧です。
-これらのファイルをどうやって調べたら良いでしょうか？
+Unfortunately some of these commit messages are very ambiguous, e.g., `update files`.
+How can you search through these files?
 
-`git diff` と `git log` はどちらも非常に便利で、それぞれリポジトリの異なる部分の履歴を要約してくれます。
-これらを組み合わせることは可能でしょうか？ 次のコマンドを試してみましょう：
+Both `git diff` and `git log` are very useful and they summarize a different part of the history
+for you.
+Is it possible to combine both? Let's try the following:
 
 ```bash
-$ git log --patch mars.txt
+$ git log --patch guacamole.md
 ```
 
-長い出力が表示され、各コミットメッセージと、そのコミット間での違い（差分）が確認できるはずです。
+You should get a long list of output, and you should be able to see both commit messages and
+the difference between each commit.
 
-質問: 次のコマンドは何をしますか？
+Question: What does the following command do?
 
 ```bash
-$ git log --patch HEAD~9 *.txt
+$ git log --patch HEAD~9 *.md
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git diff` は、コミット間の違いを表示します。
-- `git checkout` は、ファイルの古いバージョンを復元します。
+- `git diff` displays differences between commits.
+- `git restore` recovers old versions of files.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
