@@ -97,9 +97,9 @@ Alfredo also has to set his favorite text editor, following this table:
 
 ## Вихід з Vim
 
-Зауважте, що Vim є редактором за замовчуванням для багатьох програм. If you haven't used Vim before and wish to exit a session without saving
-your changes, press <kbd>Esc</kbd> then type `:q!` and press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
-If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
+Зауважте, що Vim є редактором за замовчуванням для багатьох програм. Якщо ви раніше не користувалися Vim і бажаєте вийти із сеансу без збереження
+змін, натисніть <kbd>Esc</kbd>, потім введіть `:q!` і натисніть <kbd>Enter</kbd> або <kbd>↵</kbd> (або <kbd>Return</kbd> на Mac).
+Якщо ви хочете зберегти зміни та вийти, натисніть <kbd>Esc</kbd>, потім введіть `:wq` і натисніть <kbd>Enter</kbd> або <kbd>↵</kbd> (або <kbd>Return</kbd> на Mac).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
