@@ -23,15 +23,14 @@ exercises: 0
 - ваш бажаний текстовий редактор,
 - а також те, що ми хочемо використовувати ці параметри глобально (тобто для кожного проєкту).
 
-В командному рядку (command line), команди Git виглядають як `git verb options`, де `verb` - це те що ми фактично хочемо зробити, та `options` - це додаткова інформація, яка може бути потрібна для `verb`. So here is how
-Alfredo sets up his new laptop:
+В командному рядку (command line), команди Git виглядають як `git verb options`, де `verb` - це те що ми фактично хочемо зробити, та `options` - це додаткова інформація, яка може бути потрібна для `verb`. Отже, ось як Dracula налаштовує свій новий ноутбук:
 
 ```bash
-$ git config --global user.name "Alfredo Linguini"
-$ git config --global user.email "a.linguini@ratatouille.fr"
+$ git config --global user.name "Vlad Dracula"
+$ git config --global user.email "vlad@tran.sylvan.ia"
 ```
 
-Please use your own name and email address instead of Alfredo's. Ці ім'я користувача та електронна пошта будуть асоційовані з вашою подальшою діяльністю Git, а це означає, що будь-які зміни надіслані в [GitHub](https://github.com/), [BitBucket](https://bitbucket.org/), [GitLab](https://gitlab.com/) або інший хост-сервер Git після цього уроку будуть містити цю інформацію.
+Будь ласка, використовуйте своє власне ім'я та електронну пошту замість "Dracula". Ці ім'я користувача та електронна пошта будуть асоційовані з вашою подальшою діяльністю Git, а це означає, що будь-які зміни надіслані в [GitHub](https://github.com/), [BitBucket](https://bitbucket.org/), [GitLab](https://gitlab.com/) або інший хост-сервер Git після цього уроку будуть містити цю інформацію.
 
 У цьому уроці ми будемо працювати з [GitHub](https://github.com/), тож використовувана електронна пошта повинна бути такою ж, як і та, яка використовується для налаштування вашого облікового запису GitHub. Якщо вас турбує конфіденційність, перегляньте [інструкції GitHub щодо збереження вашої електронної адреси конфіденційною][git-privacy].
 
