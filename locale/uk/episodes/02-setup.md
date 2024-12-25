@@ -26,8 +26,8 @@ exercises: 0
 В командному рядку (command line), команди Git виглядають як `git verb options`, де `verb` - це те що ми фактично хочемо зробити, та `options` - це додаткова інформація, яка може бути потрібна для `verb`. Отже, ось як Dracula налаштовує свій новий ноутбук:
 
 ```bash
-$ git config --global user.name "Vlad Dracula"
-$ git config --global user.email "vlad@tran.sylvan.ia"
+$ git config --global user.name "Alfredo Linguini"
+$ git config --global user.email "a.linguini@ratatouille.fr"
 ```
 
 Будь ласка, використовуйте своє власне ім'я та електронну пошту замість "Dracula". Ці ім'я користувача та електронна пошта будуть асоційовані з вашою подальшою діяльністю Git, а це означає, що будь-які зміни надіслані в [GitHub](https://github.com/), [BitBucket](https://bitbucket.org/), [GitLab](https://gitlab.com/) або інший хост-сервер Git після цього уроку будуть містити цю інформацію.
