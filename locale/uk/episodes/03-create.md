@@ -137,21 +137,18 @@ his last `git init` in the `desserts` subdirectory?
 
 ### Контекст
 
-Removing files from a Git repository needs to be done with caution. But we have not learned
-yet how to tell Git to track a particular file; we will learn this in the next episode. Files
-that are not tracked by Git can easily be removed like any other "ordinary" files with
+Removing files from a Git repository needs to be done with caution. Проте, ми ще не навчилися вказувати Git як відстежувати певний файл; про це ми дізнаємося в наступному епізоді. Файли, які не відстежуються Git, можна легко видалити, як і будь-які інші "звичайні" файли:
 
 ```bash
 $ rm filename
 ```
 
-Similarly a directory can be removed using `rm -r dirname`.
-If the files or folder being removed in this fashion are tracked by Git, then their removal
-becomes another change that we will need to track, as we will see in the next episode.
+Подібним чином можна видалити каталог за допомогою команди `rm -r dirname`.
+Якщо файли чи каталоги, які видаляються таким чином, вже відстежуються Git, тоді їх видалення стає ще однією зміною, яку нам потрібно буде відстежувати (ми побачимо як це робити в наступному епізоді).
 
-### Solution
+### Відповідь
 
-Git keeps all of its files in the `.git` directory.
+Git зберігає всі свої файли в каталозі `.git`.
 To recover from this little mistake, Alfredo can remove the `.git`
 folder in the desserts subdirectory by running the following command from inside the `recipes` directory:
 
@@ -159,10 +156,9 @@ folder in the desserts subdirectory by running the following command from inside
 $ rm -rf desserts/.git
 ```
 
-But be careful! Running this command in the wrong directory will remove
-the entire Git history of a project you might want to keep.
+Проте, будьте обережні! Виконання цієї команди у неправильному каталозі призведе до видалення всієї історії змін проєкту, яку ви хотіли б зберегти.
 In general, deleting files and directories using `rm` from the command line cannot be reversed.
-Therefore, always check your current directory using the command `pwd`.
+Тому завжди перевіряйте свій поточний каталог за допомогою команди `pwd`.
 
 :::::::::::::::::::::::::
 
@@ -170,7 +166,7 @@ Therefore, always check your current directory using the command `pwd`.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git init` initializes a repository.
-- Git stores all of its repository data in the `.git` directory.
+- `git init` ініціалізує репозиторій.
+- Git зберігає всі дані репозиторію в каталозі `.git`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
