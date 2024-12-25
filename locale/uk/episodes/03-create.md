@@ -64,7 +64,7 @@ Git uses this special subdirectory to store all the information about the projec
 including the tracked files and sub-directories located within the project's directory.
 Якщо ми коли-небудь видалимо підкаталог `.git`, то ми втратимо усю історію проєкту.
 
-Тепер ми можемо почати використовувати одну з найважливіших команд git, яка особливо корисна для початківців. `git status` tells us the status of our project, and better, a list of changes in the project and options on what to do with those changes. We can use it as often as we want, whenever we want to understand what is going on.
+Тепер ми можемо почати використовувати одну з найважливіших команд git, яка особливо корисна для початківців. `git status` tells us the status of our project, and better, a list of changes in the project and options on what to do with those changes. Ми можемо використовувати цю команду необмежену кількість разів, як тільки ми хочемо зрозуміти, що відбувається.
 
 ```bash
 $ git status
@@ -83,7 +83,7 @@ wording of the output might be slightly different.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Places to Create Git Repositories
+## Де створювати репозиторії Git
 
 Along with tracking information about recipes (the project we have already created),
 Alfredo would also like to track information about desserts specifically.
@@ -105,21 +105,15 @@ tracking files stored in the `desserts` subdirectory?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-No. Alfredo does not need to make the `desserts` subdirectory a Git repository
+Ні. Alfredo does not need to make the `desserts` subdirectory a Git repository
 because the `recipes` repository will track all files, sub-directories, and
 subdirectory files under the `recipes` directory.  Thus, in order to track
 all information about desserts, Alfredo only needed to add the `desserts` subdirectory
 to the `recipes` directory.
 
-Additionally, Git repositories can interfere with each other if they are "nested":
-the outer repository will try to version-control
-the inner repository. Therefore, it's best to create each new Git
-repository in a separate directory. To be sure that there is no conflicting
-repository in the directory, check the output of `git status`. If it looks
-like the following, you are good to go to create a new repository as shown
-above:
+Крім того, репозиторії Git можуть заважати один одному, якщо вони "вкладені": зовнішній репозиторій намагатиметься відстежувати зміни у внутрішньому репозиторії. Тому найкраще кожного разу створювати новий репозиторій Git в окремому каталозі. Щоб переконатися, що каталог не є репозиторієм, перевірте результат команди `git status`. Якщо він виглядає як показано нижче, ви можете створити новий репозиторій, як було показано вище:
 
 ```bash
 $ git status
@@ -131,7 +125,7 @@ fatal: Not a git repository (or any of the parent directories): .git
 
 :::::::::::::::::::::::::
 
-## Correcting `git init` Mistakes
+## Виправлення помилок `git init`
 
 Jimmy explains to Alfredo how a nested repository is redundant and may cause confusion
 down the road. Alfredo would like to go back to a single git repository. How can Alfredo undo
@@ -141,7 +135,7 @@ his last `git init` in the `desserts` subdirectory?
 
 ## Solution -- USE WITH CAUTION!
 
-### Background
+### Контекст
 
 Removing files from a Git repository needs to be done with caution. But we have not learned
 yet how to tell Git to track a particular file; we will learn this in the next episode. Files
