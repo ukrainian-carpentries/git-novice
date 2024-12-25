@@ -43,8 +43,7 @@ subdirectories are present from the beginning or added later. Also, note
 that the creation of the `recipes` directory and its initialization as a
 repository are completely separate processes.
 
-If we use `ls` to show the directory's contents,
-it appears that nothing has changed:
+Якщо ми використаємо `ls`, щоб передивитись зміст каталогу, то здається, що нічого не змінилося:
 
 ```bash
 $ ls
@@ -63,10 +62,9 @@ $ ls -a
 
 Git uses this special subdirectory to store all the information about the project,
 including the tracked files and sub-directories located within the project's directory.
-If we ever delete the `.git` subdirectory,
-we will lose the project's history.
+Якщо ми коли-небудь видалимо підкаталог `.git`, то ми втратимо усю історію проєкту.
 
-We can now start using one of the most important git commands, which is particularly helpful to beginners. `git status` tells us the status of our project, and better, a list of changes in the project and options on what to do with those changes. We can use it as often as we want, whenever we want to understand what is going on.
+Тепер ми можемо почати використовувати одну з найважливіших команд git, яка особливо корисна для початківців. `git status` tells us the status of our project, and better, a list of changes in the project and options on what to do with those changes. We can use it as often as we want, whenever we want to understand what is going on.
 
 ```bash
 $ git status
