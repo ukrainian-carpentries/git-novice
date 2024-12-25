@@ -30,7 +30,7 @@ $ git config --global user.name "Alfredo Linguini"
 $ git config --global user.email "a.linguini@ratatouille.fr"
 ```
 
-Будь ласка, використовуйте своє власне ім'я та електронну пошту замість "Dracula". Ці ім'я користувача та електронна пошта будуть асоційовані з вашою подальшою діяльністю Git, а це означає, що будь-які зміни надіслані в [GitHub](https://github.com/), [BitBucket](https://bitbucket.org/), [GitLab](https://gitlab.com/) або інший хост-сервер Git після цього уроку будуть містити цю інформацію.
+Please use your own name and email address instead of Alfredo's. Ці ім'я користувача та електронна пошта будуть асоційовані з вашою подальшою діяльністю Git, а це означає, що будь-які зміни надіслані в [GitHub](https://github.com/), [BitBucket](https://bitbucket.org/), [GitLab](https://gitlab.com/) або інший хост-сервер Git після цього уроку будуть містити цю інформацію.
 
 У цьому уроці ми будемо працювати з [GitHub](https://github.com/), тож використовувана електронна пошта повинна бути такою ж, як і та, яка використовується для налаштування вашого облікового запису GitHub. Якщо вас турбує конфіденційність, перегляньте [інструкції GitHub щодо збереження вашої електронної адреси конфіденційною][git-privacy].
 
@@ -46,8 +46,7 @@ $ git config --global user.email "a.linguini@ratatouille.fr"
 
 ## Закінчення рядків
 
-As with other keys, when you press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd> on your keyboard,
-your computer encodes this input as a character.
+Як і з іншими клавішами, коли ви натискаєте на клавіатурі <kbd>Enter</kbd> або <kbd>↵</kbd> (або <kbd>Return</kbd> на комп’ютері Mac), ваш комп’ютер кодує це як символ.
 Різні операційні системи використовують різні символи для позначення кінця рядка.
 (Ви також можете почути, що їх називають новими рядками або розривами рядків.)
 Оскільки Git використовує ці символи для порівняння файлів,
