@@ -285,7 +285,7 @@ Git наполягає, щоб ми додали файли до набору з
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
+![](fig/git-staging-area.svg){alt='Додавання змін до зони стейджингу за допомогою "git add" та зберігання їх у репозиторії за допомогою "git commit"'}
 
 Подивімося, як наші зміни у файлі проходять шлях від текстового редактора до зони стейджингу і далі у довгострокове зберігання.
 First,
