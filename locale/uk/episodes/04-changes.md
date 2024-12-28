@@ -619,7 +619,7 @@ $ cat groceries.md
 * salt: 2 per kg
 ```
 
-Now you can add both files to the staging area. We can do that in one line:
+Тепер ви можете додати обидва файли до зони стейджингу. Ми можемо зробити це однією командою:
 
 ```bash
 $ git add guacamole.md groceries.md
@@ -632,7 +632,7 @@ $ git add guacamole.md
 $ git add groceries.md
 ```
 
-Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
+Тепер файли готові до коміту. Ви можете перевірити це за допомогою `git status`. If you are ready to commit use:
 
 ```bash
 $ git commit -m "Write prices for ingredients and their source"
@@ -651,18 +651,17 @@ $ git commit -m "Write prices for ingredients and their source"
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## `bio` Repository
+## Вправа: репозиторій з вашою автобіографією
 
-- Create a new Git repository on your computer called `bio`.
+- Створіть новий репозиторій Git на вашому компʼютері під назвою `bio`.
 - Write a three-line biography for yourself in a file called `me.txt`,
   commit your changes
 - Modify one line, add a fourth line
-- Display the differences
-  between its updated state and its original state.
+- Покажіть відмінності між оновленим файлом та його попередньою версією.
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 If needed, move out of the `recipes` folder:
 
@@ -670,30 +669,29 @@ If needed, move out of the `recipes` folder:
 $ cd ..
 ```
 
-Create a new folder called `bio` and 'move' into it:
+Створіть новий каталог `bio` та перейдіть до нього:
 
 ```bash
 $ mkdir bio
 $ cd bio
 ```
 
-Initialise git:
+Ініціалізуйте репозиторій Git:
 
 ```bash
 $ git init
 ```
 
-Create your biography file `me.txt` using `nano` or another text editor.
-Once in place, add and commit it to the repository:
+Створіть файл `me.txt` з вашою біографією, використовуючи `nano` або інший текстовий редактор.
+Коли будете готові, додайте його до зони стейджингу та запишіть коміт до репозиторію:
 
 ```bash
 $ git add me.txt
 $ git commit -m "Add biography file"
 ```
 
-Modify the file as described (modify one line, add a fourth line).
-To display the differences
-between its updated state and its original state, use `git diff`:
+Змініть файл як вказано (змініть один рядок, додайте четвертий рядок).
+Для того, щоб показати зміни між оновленим файлом та його попередньою версією, використайте `git diff`:
 
 ```bash
 $ git diff me.txt
@@ -708,10 +706,10 @@ $ git diff me.txt
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git status` shows the status of a repository.
-- Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded).
-- `git add` puts files in the staging area.
-- `git commit` saves the staged content as a new commit in the local repository.
+- `git status` показує стан репозиторію.
+- Файли можуть зберігатися в робочому каталозі проєкту (де їх бачать користувачі), зоні стейджингу (де будується наступний коміт) і локальному репозиторії (де коміти зберігаються постійно).
+- `git add` додає файли до зони стейджингу.
+- `git commit` зберігає все, що міститься у зоні стейджингу, як новий коміт у локальному репозиторії.
 - Write a commit message that accurately describes your changes.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
