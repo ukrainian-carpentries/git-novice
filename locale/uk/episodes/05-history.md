@@ -207,8 +207,7 @@ As you might guess from its name,
 By default,
 it recovers the version of the file recorded in `HEAD`,
 which is the last saved commit.
-If we want to go back even further,
-we can use a commit identifier instead, using `-s` option:
+Якщо ми хочемо повернутися ще раніше, замість цього ми можемо використовувати ідентифікатор коміту з опцією `-s`:
 
 ```bash
 $ git restore -s f22b25e guacamole.md
