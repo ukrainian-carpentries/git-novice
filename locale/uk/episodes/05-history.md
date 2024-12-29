@@ -186,8 +186,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-We can put things back the way they were
-by using `git restore`:
+Ми можемо повернути цей файл до його попереднього стану за допомогою `git restore`:
 
 ```bash
 $ git restore guacamole.md
