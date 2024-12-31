@@ -260,7 +260,7 @@ $ cat guacamole.md
 In the example below, we want to retrieve the state from before the most
 recent commit (`HEAD~1`), which is commit `f22b25e`. We use the `.` to mean all files:
 
-![](fig/git-restore.svg){alt='A diagram showing how git restore can be used to restore the previous version of two files'}
+![](fig/git-restore.svg){alt='Використання git restore для відновлення попередньої версії двох файлів'}
 
 Отже, якщо скласти це все разом, то Git працює як зображено у цьому коміксі:
 
@@ -294,12 +294,11 @@ recent commit (`HEAD~1`), which is commit `f22b25e`. We use the `.` to mean all 
 
 Відповідь (5) - як 2, так і 4.
 
-The `restore` command restores files from the repository, overwriting the files in your working
-directory. Обидві відповіді 2 та 4 відновлюють _останню збережену в репозиторії_ версію файлу `data_cruncher.py`. Відповідь 2 використовує `HEAD`, щоб вказати _останній_ коміт, тоді як відповідь 4 використовує унікальний ідентифікатор останнього коміту, що саме й означає `HEAD`.
+Команда `restore` відновлює файли з репозиторію, перезаписуючи файли у вашому робочому каталозі. Обидві відповіді 2 та 4 відновлюють _останню збережену в репозиторії_ версію файлу `data_cruncher.py`. Відповідь 2 використовує `HEAD`, щоб вказати _останній_ коміт, тоді як відповідь 4 використовує унікальний ідентифікатор останнього коміту, що саме й означає `HEAD`.
 
 Відповідь 3 замінить `data_cruncher.py` його версією з коміту _перед_ `HEAD`, що НЕ є тим, що ми хотіли.
 
-Answer 1 results in an error. You need to specify a file to restore. If you want to restore all files
+Відповідь 1 призведе до помилки. Вам потрібно вказати файл, який треба відновити. If you want to restore all files
 you should use `git restore .`
 
 :::::::::::::::::::::::::
@@ -327,7 +326,7 @@ reverses changes committed to the local and project repositories.
 
 4. Введіть повідомлення для нового коміту.
 
-5. Save and close.
+5. Збережіть його та закрийте редактор.
 
 :::::::::::::::  solution
 
@@ -373,9 +372,9 @@ $ cat ketchup.md # this will print the content of ketchup.md on screen
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-The answer is 2.
+Правильною є відповідь 2.
 
 The changes to the file from the second `echo` command are only applied to the working copy,
 not the version in the staging area.
