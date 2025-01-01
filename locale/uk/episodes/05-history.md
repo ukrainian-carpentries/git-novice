@@ -489,8 +489,8 @@ the right commit ID, especially if the commit is from several months ago.
 
 Imagine the `recipes` project has more than 50 files.
 You would like to find a commit that modifies some specific text in `guacamole.md`.
-When you type `git log`, a very long list appeared.
-How can you narrow down the search?
+Коли ви вводите `git log`, з'являється дуже довгий список.
+Як можна звузити коло пошуку?
 
 Recall that the `git diff` command allows us to explore one specific file,
 e.g., `git diff guacamole.md`. We can apply a similar idea here.
@@ -500,20 +500,19 @@ $ git log guacamole.md
 ```
 
 Unfortunately some of these commit messages are very ambiguous, e.g., `update files`.
-How can you search through these files?
+Як же переглянути усі ці версії файлу?
 
 Both `git diff` and `git log` are very useful and they summarize a different part of the history
 for you.
-Is it possible to combine both? Let's try the following:
+Але чи можна об'єднати їх результат в одну команду? Let's try the following:
 
 ```bash
 $ git log --patch guacamole.md
 ```
 
-You should get a long list of output, and you should be able to see both commit messages and
-the difference between each commit.
+Ви повинні отримати довгий список, у якому ви побачите як повідомлення коміту, так і зроблені зміни.
 
-Question: What does the following command do?
+Питання: Що робить наступна команда?
 
 ```bash
 $ git log --patch HEAD~9 *.md
@@ -524,6 +523,6 @@ $ git log --patch HEAD~9 *.md
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - `git diff` displays differences between commits.
-- `git restore` recovers old versions of files.
+- `git restore` відновлює старі версії файлів.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
