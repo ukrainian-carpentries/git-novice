@@ -441,14 +441,13 @@ or you have added it _and_ committed it.
 
 Using the command `git restore guacamole.md` now does not give an error,
 but it does not restore the file either.
-Git helpfully tells us that we need to use `git restore --staged` first
-to unstage the file:
+Git друкує корисне повідомлення - нам потрібно спочатку використати `git restore --staged`, щоб видалити файл з зони стейджингу:
 
 ```bash
 $ git restore --staged guacamole.md
 ```
 
-Now, `git status` gives us:
+Тепер `git status` зображує наступне:
 
 ```bash
 $ git status
