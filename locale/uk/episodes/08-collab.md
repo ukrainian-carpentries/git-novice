@@ -31,7 +31,7 @@ exercises: 0
 
 Власник репозиторію повинен надати Співавтору доступ. У GitHub, натисніть кнопку "Settings" праворуч, оберіть "Collaborators", натисніть "Add people", та потім введіть ім\`я користувача GitHub, повідомлене вашим партнером.
 
-![](fig/github-add-collaborators.png){alt='A screenshot of the GitHub Collaborators settings page, which is accessed by clicking "Settings" then "Collaborators"'}
+![](fig/github-add-collaborators.png){alt='Налаштування доступу до репозиторію для співавторів (щоб відкрити цю сторінку, перейдіть на "Settings", а потім оберіть "Collaborators")'}
 
 Щоб отримати доступ до репозиторію Власника, Співавтору
 потрібно відкрити [https://github.com/notifications](https://github.com/notifications)
