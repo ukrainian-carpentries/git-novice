@@ -326,7 +326,7 @@ $ unset SSH_ASKPASS
 
 Тепер наші локальний та віддалений репозиторії перебувають у такому стані:
 
-![](fig/github-repo-after-first-push.svg){alt='A diagram showing how "git push origin" will push changes from the local repository to the remote, making the remote repository an exact copy of the local repository.'}
+![](fig/github-repo-after-first-push.svg){alt='"git push origin" надсилає зміни з локального репозиторію до віддаленого, що робить віддалений репозиторій точною копією локального.'}
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -355,7 +355,7 @@ Already up-to-date.
 ## Користування вебінтерфейсом GitHub
 
 Browse to your `recipes` repository on GitHub.
-Under the Code tab, find and click on the text that says "XX commits" (where "XX" is some number).
+Під кнопкою "Code", знайдіть та натисніть на текст "XX commits" (де "XX" - якесь число).
 Наведіть курсор та натисніть на три кнопки праворуч від кожного коміту.
 Яку інформацію ви можете отримати/вивчити за допомогою цих кнопок?
 Як би ви отримали ту саму інформацію в shell?
