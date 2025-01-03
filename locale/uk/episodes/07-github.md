@@ -39,7 +39,7 @@ Name your repository "recipes" and then click "Create Repository".
 
 Як тільки репозиторій створено, GitHub відображає сторінку з URL і певною інформацією про те, як налаштувати локальний репозиторій:
 
-![](fig/github-create-repo-03.png){alt='The summary page displayed by GitHub after a new repository has been created. It contains instructions for configuring the new GitHub repository as a git remote'}
+![](fig/github-create-repo-03.png){alt='The summary page displayed by GitHub after a new repository has been created. Вона містить інструкції для налаштування нового репозиторію GitHub як віддаленого'}
 
 Насправді це робить наступне на сервері GitHub:
 
@@ -53,7 +53,7 @@ If you remember back to the earlier [episode](04-changes.md) where we added and
 committed our earlier work on `guacamole.md`, we had a diagram of the local repository
 which looked like this:
 
-![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
+![](fig/git-staging-area.svg){alt='Додавання змін до зони стейджингу за допомогою "git add" та зберігання їх у репозиторії за допомогою "git commit"'}
 
 Тепер, коли ми маємо два репозиторії, нам потрібна така діаграма:
 
@@ -177,7 +177,7 @@ Enter passphrase (empty for no passphrase):
 
 Now, it is prompting Alfredo for a passphrase. Since he is using his kitchen's laptop that other people sometimes have access to, he wants to create a passphrase. Обов'язково використовуйте пароль, який можна запам'ятати, або збережіть пароль десь у надійному місці, оскільки тут немає опції «змінити мій пароль».
 Note that, when typing a passphrase on a terminal, there won't be any visual feedback of your typing.
-This is normal: your passphrase will be recorded even if you see nothing changing on your screen.
+Це нормально: ваш пароль буде збережено, навіть якщо ви нічого не побачите на екрані.
 
 ```output
 Enter same passphrase again:
