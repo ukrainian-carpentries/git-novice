@@ -29,13 +29,13 @@ exercises: 0
 Log in to [GitHub](https://github.com), then click on the icon in the top right corner to
 create a new repository called `recipes`:
 
-![](fig/github-create-repo-01.png){alt='The first step in creating a repository on GitHub: clicking the "create new" button'}
+![](fig/github-create-repo-01.png){alt='Початок створення нового репозиторію на GitHub'}
 
 Name your repository "recipes" and then click "Create Repository".
 
 Зауважте: оскільки цей репозиторій буде підʼєднано до локального репозиторію, він має бути порожнім. Залиште "Initialize this repository with a README" непозначеним, та оберіть "None" як опції для обох "Add .gitignore" та "Add a license". Дивіться вправу "Файли ліцензії та README" нижче для повного пояснення того, чому репозиторій повинен бути порожнім.
 
-![](fig/github-create-repo-02.png){alt='The second step in creating a repository on GitHub: filling out the new repository form to provide the repository name, and specify that neither a readme nor a license should be created'}
+![](fig/github-create-repo-02.png){alt='Другий крок створення репозиторію на GitHub: імʼя репозиторію та відсутність файлів readme та ліцензії'}
 
 Як тільки репозиторій створено, GitHub відображає сторінку з URL і певною інформацією про те, як налаштувати локальний репозиторій:
 
