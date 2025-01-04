@@ -56,7 +56,7 @@ If you choose to clone without the clone path
 you will clone inside your own recipes folder!
 Переконайтеся, що спочатку ви перейшли до каталогу `Desktop`.
 
-![](fig/github-collaboration.svg){alt='A diagram showing that "git clone" can create a copy of a remote GitHub repository, allowing a second person to create their own local repository that they can make changes to.'}
+![](fig/github-collaboration.svg){alt='"git clone" створює копію віддаленого репозиторію з GitHub, що дозволяє іншій людині створити свій локальний репозиторій, до якого вони можуть вносити зміни.'}
 
 Співавтор тепер може зробити зміни у своєму клоні репозиторію Власника так само, як ми робили раніше:
 
