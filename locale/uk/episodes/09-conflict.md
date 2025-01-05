@@ -128,7 +128,7 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-![](fig/conflict.svg){alt='A diagram showing a conflict that might occur when two sets of independent changes are merged'}
+![](fig/conflict.svg){alt='Конфлікт може виникати при злитті двох незалежно виконаних наборів змін'}
 
 Git не дозволяє цю операцію, оскільки виявляє, що віддалений репозиторій має нові оновлення, які не були включені до локальної гілки.
 Що ми повинні зробити - це отримати зміни з GitHub, [обʼєднати](../learners/reference.md#merge) їх з копією репозиторію, у якій ми зараз працюємо, а тільки потім надіслати їх на GitHub.
@@ -190,8 +190,7 @@ $ git pull origin main
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The `git pull` command updates the local repository to include those
-changes already included in the remote repository.
+Команда `git pull` оновлює локальний репозиторій, щоб додати до нього ті зміни, які вже містяться у віддаленому репозиторії.
 After the changes from remote branch have been fetched, Git detects that changes made to the local copy
 overlap with those made to the remote repository, and therefore refuses to merge the two versions to
 stop us from trampling on our previous work. The conflict is marked in
