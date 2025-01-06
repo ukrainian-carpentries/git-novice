@@ -35,7 +35,7 @@ Let's create a file called `guacamole.md` that contains the basic structure of a
 $ nano guacamole.md
 ```
 
-Type the text below into the `guacamole.md` file:
+Введіть наведений нижче текст у файл `guacamole.md`:
 
 ```output
 # Guacamole
@@ -53,7 +53,7 @@ $ ls
 guacamole.md
 ```
 
-`guacamole.md` contains three lines, which we can see by running:
+`guacamole.md` містить три рядки, які ми можемо побачити, запустивши:
 
 ```bash
 $ cat guacamole.md
@@ -109,8 +109,7 @@ Changes to be committed:
 
 ```
 
-Git now knows that it's supposed to keep track of `guacamole.md`,
-but it hasn't recorded these changes as a commit yet.
+Git тепер знає, що він повинен стежити за файлом `guacamole.md`, але він ще не записав ці зміни як коміт.
 Щоб зробити це, нам потрібно виконати ще одну команду:
 
 ```bash
@@ -166,7 +165,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 
 ## Де зберігаються мої зміни?
 
-If we run `ls` at this point, we will still see just one file called `guacamole.md`.
+Якщо ми тепер запустимо `ls`, ми все одно побачимо лише один файл, який називається `guacamole.md`.
 Це відбувається тому, що Git зберігає інформацію про історію файлів у спеціальному каталозі `.git`, згаданому раніше, щоб наша файлова система не засмічувалася (і щоб ми випадково не могли змінити або видалити стару версію).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
