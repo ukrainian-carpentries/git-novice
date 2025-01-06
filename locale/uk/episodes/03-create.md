@@ -60,11 +60,10 @@ $ ls -a
 .	..	.git
 ```
 
-Git uses this special subdirectory to store all the information about the project,
-including the tracked files and sub-directories located within the project's directory.
+Git використовує цей спеціальний підкаталог для зберігання всієї інформації про проєкт, у тому числі відстежувані файли і підкаталоги, що розташовані в каталозі проєкту.
 Якщо ми коли-небудь видалимо підкаталог `.git`, то ми втратимо усю історію проєкту.
 
-Тепер ми можемо почати використовувати одну з найважливіших команд git, яка особливо корисна для початківців. `git status` tells us the status of our project, and better, a list of changes in the project and options on what to do with those changes. Ми можемо використовувати цю команду необмежену кількість разів, як тільки ми хочемо зрозуміти, що відбувається.
+Тепер ми можемо почати використовувати одну з найважливіших команд git, яка особливо корисна для початківців. `git status` друкує інформацію про поточний стан нашого проєкту, та перелік зроблених змін у проєкті з варіантами щодо подальших дій. Ми можемо використовувати цю команду необмежену кількість разів, як тільки ми хочемо зрозуміти, що відбувається.
 
 ```bash
 $ git status
@@ -78,8 +77,7 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-If you are using a different version of `git`, the exact
-wording of the output might be slightly different.
+Якщо ви користуєтеся іншою версією `git`, вигляд результату цієї команди може дещо відрізнятися.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -91,13 +89,13 @@ Alfredo creates a `desserts` project inside his `recipes`
 project with the following sequence of commands:
 
 ```bash
-$ cd ~/Desktop    # return to Desktop directory
-$ cd recipes      # go into recipes directory, which is already a Git repository
-$ ls -a           # ensure the .git subdirectory is still present in the recipes directory
-$ mkdir desserts # make a sub-directory recipes/desserts
-$ cd desserts    # go into desserts subdirectory
-$ git init        # make the desserts subdirectory a Git repository
-$ ls -a           # ensure the .git subdirectory is present indicating we have created a new Git repository
+$ cd ~/Desktop   # повернутися до каталогу Desktop
+$ cd recipes     # перейти до каталогу recipes, який вже є репозиторієм Git
+$ ls -a          # перевірити, що підкаталог .git все ще присутній у каталозі recipes
+$ mkdir desserts # створити підкаталог recipes/desserts
+$ cd desserts    # перейти у підкаталог desserts
+$ git init       # створити репозиторій Git у підкаталозі desserts
+$ ls -a          # перевірити наявність підкаталогу .git, що підтверджує створення нового репозиторію
 ```
 
 Is the `git init` command, run inside the `desserts` subdirectory, required for
@@ -133,11 +131,11 @@ his last `git init` in the `desserts` subdirectory?
 
 :::::::::::::::  solution
 
-## Solution -- USE WITH CAUTION!
+## Відповідь (ВИКОРИСТОВУЙТЕ ОБЕРЕЖНО!)
 
 ### Контекст
 
-Removing files from a Git repository needs to be done with caution. Проте, ми ще не навчилися вказувати Git як відстежувати певний файл; про це ми дізнаємося в наступному епізоді. Файли, які не відстежуються Git, можна легко видалити, як і будь-які інші "звичайні" файли:
+Видаляти файли з репозиторію Git треба обережно. Проте, ми ще не навчилися вказувати Git як відстежувати певний файл; про це ми дізнаємося в наступному епізоді. Файли, які не відстежуються Git, можна легко видалити, як і будь-які інші "звичайні" файли:
 
 ```bash
 $ rm filename
@@ -157,7 +155,7 @@ $ rm -rf desserts/.git
 ```
 
 Проте, будьте обережні! Виконання цієї команди у неправильному каталозі призведе до видалення всієї історії змін проєкту, яку ви хотіли б зберегти.
-In general, deleting files and directories using `rm` from the command line cannot be reversed.
+Загалом, видалення файлів і каталогів за допомогою `rm` з командного рядка не можна скасувати.
 Тому завжди перевіряйте свій поточний каталог за допомогою команди `pwd`.
 
 :::::::::::::::::::::::::
