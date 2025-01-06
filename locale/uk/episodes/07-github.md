@@ -31,7 +31,7 @@ create a new repository called `recipes`:
 
 ![](fig/github-create-repo-01.png){alt='Початок створення нового репозиторію на GitHub'}
 
-Name your repository "recipes" and then click "Create Repository".
+Назвіть ваш репозиторій "recipes" і потім натисніть на "Create Repository".
 
 Зауважте: оскільки цей репозиторій буде підʼєднано до локального репозиторію, він має бути порожнім. Залиште "Initialize this repository with a README" непозначеним, та оберіть "None" як опції для обох "Add .gitignore" та "Add a license". Дивіться вправу "Файли ліцензії та README" нижче для повного пояснення того, чому репозиторій повинен бути порожнім.
 
@@ -49,9 +49,7 @@ $ cd recipes
 $ git init
 ```
 
-If you remember back to the earlier [episode](04-changes.md) where we added and
-committed our earlier work on `guacamole.md`, we had a diagram of the local repository
-which looked like this:
+Якщо ви пам'ятаєте, в [одному з попередніх епізодів](04-changes.md), де ми додавали та зберігали нашу попередню роботу над `guacamole.md`, в нас була діаграма, яка зображувала локальний репозиторій, та виглядала так:
 
 ![](fig/git-staging-area.svg){alt='Додавання змін до зони стейджингу за допомогою "git add" та зберігання їх у репозиторії за допомогою "git commit"'}
 
@@ -67,7 +65,7 @@ remote repository on GitHub appears empty as it doesn't contain any files yet.
 Тепер підключаємо два сховища одне до одного.  Ми робимо це вказуючи GitHub репозиторій у якості [віддаленого](../learners/reference.md#remote) для локального репозиторію.
 Домашня сторінка репозиторію на GitHub містить URL, який нам потрібен, щоб його ідентифікувати:
 
-![](fig/github-change-repo-string.png){alt='A screenshot showing that clicking on "SSH" will make GitHub provide the SSH URL for a repository instead of the HTTPS URL'}
+![](fig/github-change-repo-string.png){alt='Натискання на "SSH" для отримання SSH URL-адреси репозиторію замість його HTTPS URL-адреси'}
 
 Натисніть на кнопку 'SSH', щоб змінити [протокол](../learners/reference.md#protocol) з HTTPS на SSH.
 
@@ -81,8 +79,7 @@ remote repository on GitHub appears empty as it doesn't contain any files yet.
 
 ![](fig/github-find-repo-string.png){alt='Clicking the "Copy to Clipboard" button on GitHub to obtain the repository\'s URL'}
 
-Copy that URL from the browser, go into the local `recipes` repository, and run
-this command:
+Скопіюйте цю URL-адресу з браузера, перейдіть до локального репозиторію `recipes`, та виконайте цю команду:
 
 ```bash
 $ git remote add origin git@github.com:alflin/recipes.git
@@ -108,7 +105,7 @@ origin   git@github.com:alflin/recipes.git (push)
 
 ## 3\. Необхідна інформація про SSH протокол та його налаштування
 
-Before Alfredo can connect to a remote repository, he needs to set up a way for his computer to authenticate with GitHub so it knows it's him trying to connect to his remote repository.
+Перш ніж Альфредо зможе підʼєднатися до віддаленого репозиторію, він має налаштувати спосіб автентифікації свого комп'ютера у GitHub. Це потрібно для того, щоб GitHub міг розпізнати його, коли він намагається підʼєднатися до свого віддаленого репозиторію.
 
 Ми збираємось налаштувати метод, який зазвичай використовується багатьма різними службами для автентифікації доступу з командного рядка.  Цей метод називається Secure Shell Protocol (SSH).  SSH - це кріптографічний мережевий протокол, який дозволяє безпечний зв'язок між комп'ютерами через ненадійну комунікаційну мережу.
 
@@ -144,18 +141,18 @@ $ ls -al ~/.ssh
 
 Ваш результат буде виглядати трохи інакше в залежності від того, чи був коли-небудь SSH налаштований на комп'ютері, який ви використовуєте, чи ні.
 
-Alfredo has not set up SSH on his computer, so his output is
+Альфредо ще не налаштував SSH на його комп\`ютері, тож його результат виглядає так
 
 ```output
 ls: cannot access '/c/Users/Alfredo/.ssh': No such file or directory
 ```
 
 Якщо SSH вже налаштований на комп'ютері, який ви використовуєте, то ви побачите перелік пар відкритих та приватних ключів. Назви файлів будуть або `id_ed25519`/`id_ed25519.pub`, або `id_rsa`/`id_rsa.pub` у залежності від того, як ці пари ключів були створені.
-Since they don't exist on Alfredo's computer, he uses this command to create them.
+Оскільки Альфредо не має цих файлів на його комп\`ютері, він використовує цю команду для їх створення.
 
 ### 3.1 Створення пари ключів SSH
 
-To create an SSH key pair Alfredo uses this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key (here, Alfredo's email):
+Для створення пари SSH ключів Альфредо використовує наступну команду, де параметр `-t` визначає який тип алгоритму використовувати, а параметр `-C` додає до ключа коментар (який у цьому випадку є електронною поштою Альфредо):
 
 ```bash
 $ ssh-keygen -t ed25519 -C "a.linguini@ratatouille.fr"
@@ -175,8 +172,8 @@ Created directory '/c/Users/Alfredo/.ssh'.
 Enter passphrase (empty for no passphrase):
 ```
 
-Now, it is prompting Alfredo for a passphrase. Since he is using his kitchen's laptop that other people sometimes have access to, he wants to create a passphrase. Обов'язково використовуйте пароль, який можна запам'ятати, або збережіть пароль десь у надійному місці, оскільки тут немає опції «змінити мій пароль».
-Note that, when typing a passphrase on a terminal, there won't be any visual feedback of your typing.
+Тепер Альфредо має обрати пароль. Since he is using his kitchen's laptop that other people sometimes have access to, he wants to create a passphrase. Обов'язково використовуйте пароль, який можна запам'ятати, або збережіть пароль десь у надійному місці, оскільки тут немає опції «змінити мій пароль».
+Зверніть увагу на те, що під час введення пароля в терміналі нічого не зображується.
 Це нормально: ваш пароль буде збережено, навіть якщо ви нічого не побачите на екрані.
 
 ```output
