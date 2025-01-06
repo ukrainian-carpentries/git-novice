@@ -59,8 +59,7 @@ $ cat .gitignore
 receipts/
 ```
 
-These patterns tell Git to ignore any file whose name ends in `.png`
-and everything in the `receipts` directory.
+Ці шаблони наказують Git ігнорувати будь-який файл, ім’я якого закінчується на `.png`, і все в каталозі `receipts`.
 (Якщо будь-які з цих файлів вже відстежуються, то Git продовжить їх відстежувати.)
 
 Як тільки ми створили цей файл, результат команди `git status` стає набагато зрозумілішим:
@@ -137,7 +136,7 @@ receipts/data
 receipts/plots
 ```
 
-How would you ignore only `receipts/plots` and not `receipts/data`?
+Як зробити так, щоб Git ігнорував тільки `receipts/plots`, а не `receipts/data`?
 
 :::::::::::::::  solution
 
