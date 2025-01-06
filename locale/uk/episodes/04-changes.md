@@ -27,9 +27,9 @@ exercises: 0
 $ cd ~/Desktop/recipes
 ```
 
-Let's create a file called `guacamole.md` that contains the basic structure of a recipe.
+Тепер створимо файл під назвою `guacamole.md` з нашим рецептом.
 Ми будемо використовувати редактор `nano` для редагування файлу; ви можете використовувати будь-який редактор, який вам подобається.
-Зокрема, це не обовʼязково повинен бути `core.editor`, який ви раніше вказали глобально. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). Для довідки щодо текстових редакторів, дивіться ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor/) в уроці [The Unix Shell](https://swcarpentry.github.io/shell-novice/).
+Зокрема, це не обовʼязково повинен бути `core.editor`, який ви раніше вказали глобально. Але пам'ятайте, що команда bash для створення або редагування нового файлу буде залежати від обраного редактора (який не обов'язково буде `nano`). Для довідки щодо текстових редакторів, дивіться ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor/) в уроці [The Unix Shell](https://swcarpentry.github.io/shell-novice/).
 
 ```bash
 $ nano guacamole.md
@@ -287,8 +287,7 @@ Git наполягає, щоб ми додали файли до набору з
 ![](fig/git-staging-area.svg){alt='Додавання змін до зони стейджингу за допомогою "git add" та зберігання їх у репозиторії за допомогою "git commit"'}
 
 Подивімося, як наші зміни у файлі проходять шлях від текстового редактора до зони стейджингу і далі у довгострокове зберігання.
-First,
-we'll improve our recipe by changing 'lemon' to 'lime':
+По-перше, ми покращимо наш рецепт, змінивши лимон на лайм:
 
 ```bash
 $ nano guacamole.md
@@ -323,9 +322,7 @@ index 315bf3a..b36abfd 100644
  ## Instructions
 ```
 
-So far, so good:
-we've replaced one line (shown with a `-` in the first column) with a new line
-(shown with a `+` in the first column).
+Поки що все добре: ми замінили один рядок (позначений `-`) на новий рядок (позначений `+`).
 Тепер помістімо цю зміну у зону стейджингу та подивимося що після цього звітує `git diff`:
 
 ```bash
