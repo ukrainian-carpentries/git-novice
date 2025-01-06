@@ -21,7 +21,7 @@ exercises: 0
 
 We will help Alfredo with his new project, create a repository with all his recipes.
 
-First, let's create a new directory in the `Desktop` folder for our work and then change the current working directory to the newly created one:
+Перш за все, створімо у каталозі `Desktop` новий підкаталог для нашої роботи, а потім змінимо поточний робочий каталог на новостворений:
 
 ```bash
 $ cd ~/Desktop
