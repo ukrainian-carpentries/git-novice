@@ -191,8 +191,7 @@ $ git pull origin main
 Команда `git pull` оновлює локальний репозиторій, щоб додати до нього ті зміни, які вже містяться у віддаленому репозиторії.
 After the changes from remote branch have been fetched, Git detects that changes made to the local copy
 overlap with those made to the remote repository, and therefore refuses to merge the two versions to
-stop us from trampling on our previous work. The conflict is marked in
-in the affected file:
+stop us from trampling on our previous work. У файлі, де є конфлікт, він позначається наступним чином:
 
 ```bash
 $ cat guacamole.md
@@ -212,7 +211,7 @@ $ cat guacamole.md
 >>>>>>> dabb4c8c450e8475aee9b14b4383acc99f42af1d
 ```
 
-Our change is preceded by `<<<<<<< HEAD`.
+Нашим змінам передує `<<<<<<< HEAD`.
 Git has then inserted `=======` as a separator between the conflicting changes
 and marked the end of the content downloaded from GitHub with `>>>>>>>`.
 (The string of letters and digits after that marker
