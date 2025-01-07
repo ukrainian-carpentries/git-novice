@@ -217,12 +217,11 @@ and marked the end of the content downloaded from GitHub with `>>>>>>>`.
 (The string of letters and digits after that marker
 identifies the commit we've just downloaded.)
 
-It is now up to us to edit this file to remove these markers
-and reconcile the changes.
+Тепер ми маємо відредагувати цей файл, щоб видалити ці маркери та узгодити зміни.
 We can do anything we want: keep the change made in the local repository, keep
 the change made in the remote repository, write something new to replace both,
 or get rid of the change entirely.
-Let's replace both so that the file looks like this:
+Замінимо обидві версії так, щоб файл виглядав наступним чином:
 
 ```bash
 Enumerating objects: 10, done.
@@ -284,7 +283,7 @@ $ git commit -m "Merge changes from GitHub"
 [main 2abf2b1] Merge changes from GitHub
 ```
 
-Now we can push our changes to GitHub:
+Тепер ми можемо відправити наші зміни на GitHub:
 
 ```bash
 $ git push origin main
@@ -325,7 +324,7 @@ Fast-forward
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
-We get the merged file:
+Ми отримуємо файл з об'єднаними змінами:
 
 ```bash
 $ cat guacamole.md
