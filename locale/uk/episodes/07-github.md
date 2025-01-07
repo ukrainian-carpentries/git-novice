@@ -26,8 +26,7 @@ exercises: 0
 
 ## 1\. Створіть віддалений репозиторій
 
-Log in to [GitHub](https://github.com), then click on the icon in the top right corner to
-create a new repository called `recipes`:
+Увійдіть до [GitHub](https://github.com), потім натисніть на значок у верхньому правому куті, щоб створити новий репозиторій під назвою `recipes`:
 
 ![](fig/github-create-repo-01.png){alt='Початок створення нового репозиторію на GitHub'}
 
@@ -55,10 +54,9 @@ $ git init
 
 Тепер, коли ми маємо два репозиторії, нам потрібна така діаграма:
 
-![](fig/git-freshly-made-github-repo.svg){alt='A diagram illustrating how the GitHub "recipes" repository is also a git repository like our local repository, but that it is currently empty'}
+![](fig/git-freshly-made-github-repo.svg){alt='Як і наш локальний репозиторій, "recipes" на GitHub також є репозиторієм git, але наразі цей репозиторій пустий'}
 
-Note that our local repository still contains our earlier work on `guacamole.md`, but the
-remote repository on GitHub appears empty as it doesn't contain any files yet.
+Зауважте, що наш локальний репозиторій все ще містить нашу попередню роботу над `guacamole.md`, але віддалений репозиторій на GitHub виглядає порожнім, оскільки він ще не містить файлів.
 
 ## 2\. Підʼєднання локального репозиторію до віддаленого
 
@@ -247,9 +245,7 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI
 ```
 
 Тепер, перейшовши до GitHub.com, натисніть на іконку свого облікового запису у верхньому правому куті, щоб відкрити відповідне меню.  Click "Settings", then on the
-settings page, click "SSH and GPG keys", on the left side "Access" menu. Далі натисніть "New SSH key" кнопку праворуч. Now,
-you can add the title (Alfredo uses the title "Alfredo's Kitchen Laptop" so he can remember where the original key pair
-files are located), paste your SSH key into the field, and click the "Add SSH key" to complete the setup.
+settings page, click "SSH and GPG keys", on the left side "Access" menu. Далі натисніть "New SSH key" кнопку праворуч. Тепер ви можете додати назву ключа (Альфредо використовує назву "Alfredo's Kitchen Laptop" щоб запамʼятати, де розташовані оригінальні пари ключів), скопіювати свій SSH ключ та вставити його у відповідне поле, а потім натиснути кнопку "Add SSH key", щоб завершити налаштування.
 
 Тепер, коли ми усе налаштували, ми знову перевіримо нашу автентифікацію з командного рядка.
 
@@ -351,7 +347,7 @@ Already up-to-date.
 
 ## Користування вебінтерфейсом GitHub
 
-Browse to your `recipes` repository on GitHub.
+Перейдіть до вашого репозиторію `recipes` на GitHub.
 Під кнопкою "Code", знайдіть та натисніть на текст "XX commits" (де "XX" - якесь число).
 Наведіть курсор та натисніть на три кнопки праворуч від кожного коміту.
 Яку інформацію ви можете отримати/вивчити за допомогою цих кнопок?
