@@ -234,7 +234,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ```
 
-Notice that the changes are not currently in the staging area, and have not been committed.
+Звернуть увагу, що зміни зараз знаходяться у зоні стейджінгу та не були збережені у коміті.
 Знову ж таки, ми можемо повернути цей файл до його попереднього стану за допомогою `git restore`:
 
 ```bash
