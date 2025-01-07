@@ -354,7 +354,7 @@ consider these technical approaches to reducing them:
 - Where logically appropriate, break large files into smaller ones so that it is
   less likely that two authors will alter the same file simultaneously
 
-Conflicts can also be minimized with project management strategies:
+Конфлікти також можна мінімізувати за допомогою дотримання деяких стратегій управління проєктами:
 
 - Clarify who is responsible for what areas with your collaborators
 - Discuss what order tasks should be carried out in with your collaborators so
