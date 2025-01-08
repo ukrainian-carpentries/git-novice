@@ -361,13 +361,13 @@ consider these technical approaches to reducing them:
   that tasks expected to change the same lines won't be worked on simultaneously
 - If the conflicts are stylistic churn (e.g. tabs vs. spaces), establish a
   project convention that is governing and use code style tools (e.g.
-  `htmltidy`, `perltidy`, `rubocop`, etc.) to enforce, if necessary
+  `htmltidy`, `perltidy`, `rubocop`, etc.) для забезпечення єдиного стилю
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Solving Conflicts that You Create
+## Вправа: створення та вирішення конфліктів
 
-Clone the repository created by your instructor.
+Клонуйте репозиторій, створений вашим інструктором.
 Add a new file to it,
 and modify an existing file (your instructor will tell you which one).
 When asked by your instructor,
@@ -378,7 +378,7 @@ then resolve it.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Conflicts on Non-textual files
+## Конфлікти у бінарних файлах
 
 What does Git do
 when there is a conflict in an image or some other non-textual file
@@ -386,9 +386,9 @@ that is stored in version control?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-Let's try it. Suppose Alfredo takes a picture of its guacamole and
+Спробуймо це дослідити. Suppose Alfredo takes a picture of its guacamole and
 calls it `guacamole.jpg`.
 
 If you do not have an image file of guacamole available, you can create
@@ -403,8 +403,7 @@ $ ls -lh guacamole.jpg
 -rw-r--r-- 1 alflin 57095 1.0K Mar  8 20:24 guacamole.jpg
 ```
 
-`ls` shows us that this created a 1-kilobyte file. It is full of
-random bytes read from the special file, `/dev/urandom`.
+`ls` показує, що було створено файл розміром 1 кілобайт. Він містить випадкові байти, які були зчитані зі спеціального файлу `/dev/urandom`.
 
 Now, suppose Alfredo adds `guacamole.jpg` to his repository:
 
