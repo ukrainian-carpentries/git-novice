@@ -469,12 +469,11 @@ warning: Cannot merge binary files: guacamole.jpg (HEAD vs. 439dc8c08869c342438f
 ```
 
 Git не може автоматично вставляти маркери конфлікту у зображення, як він це робить для текстових файлів. So, instead of editing the image file, we must check out
-the version we want to keep. Then we can add and commit this version.
+the version we want to keep. Після цього ми можемо виконати відповідні команди `git add` та `git commit`, щоб зберегти цю версію.
 
 On the key line above, Git has conveniently given us commit identifiers
 for the two versions of `guacamole.jpg`. Our version is `HEAD`, and Jimmy's
-version is `439dc8c0...`. If we want to use our version, we can use
-`git checkout`:
+version is `439dc8c0...`. Якщо ми хочемо використовувати нашу версію, ми можемо застосувати `git checkout`:
 
 ```bash
 $ git checkout HEAD guacamole.jpg
@@ -499,7 +498,7 @@ $ git commit -m "Use image of guacamole with nachos instead of just guacamole"
 [main da21b34] Use image of guacamole with nachos instead of just guacamole
 ```
 
-We can also keep _both_ images. The catch is that we cannot keep them
+Ми також можемо зберегти _обидва_ зображення. The catch is that we cannot keep them
 under the same name. But, we can check out each version in succession
 and _rename_ it, then add the renamed versions. First, check out each
 image and rename it:
@@ -538,16 +537,15 @@ no longer exists.
 
 ## A Typical Work Session
 
-You sit down at your computer to work on a shared project that is tracked in a
-remote Git repository. During your work session, you take the following
+Ви сідаєте за комп'ютер, щоб працювати над спільним проєктом, який відстежується у віддаленому репозиторії Git. During your work session, you take the following
 actions, but not in this order:
 
 - _Make changes_ by appending the number `100` to a text file `numbers.txt`
-- _Update remote_ repository to match the local repository
-- _Celebrate_ your success with some fancy beverage(s)
-- _Update local_ repository to match the remote repository
-- _Stage changes_ to be committed
-- _Commit changes_ to the local repository
+- _Оновити віддалений репозиторій_, щоб він відповідав локальному репозиторію
+- _Відсвяткувати_ свій успіх
+- _Оновити локальний репозиторій_, щоб він відповідав віддаленому репозиторію
+- _Додати зміни_ до зони стейджингу
+- _Зробити коміт_ у локальному репозиторії
 
 In what order should you perform these actions to minimize the chances of
 conflicts? Put the commands above in order in the _action_ column of the table
