@@ -68,7 +68,7 @@ repository that we already made. Оскільки цей репозиторій 
 Далі RStudio запитає, який наявний каталог ми хочемо використовувати. Натисніть
 "Browse..." і перейдіть до відповідного каталогу, потім натисніть"Create Project":
 
-![](fig/RStudio_screenshot_navigateexisting.png){alt='RStudio window showing the "Create Project From Existing Directory" dialog. In the dialog, the project working directory has been set to "~/Desktop/recipes"'}
+![](fig/RStudio_screenshot_navigateexisting.png){alt='Вікно RStudio із діалогом "Create Project From Existing Directory". In the dialog, the project working directory has been set to "~/Desktop/recipes"'}
 
 Чудово! We have created a new project in RStudio within the existing recipes
 repository. Зверніть увагу на вертикальне меню "Git" у панелі меню. RStudio визнав, що
