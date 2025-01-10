@@ -200,9 +200,8 @@ $ cat guacamole.md
 ```
 
 Як можна здогадатися з назви, 'git restore' відновлює стару версію файлу.
-By default,
-it recovers the version of the file recorded in `HEAD`,
-which is the last saved commit.
+За замовчуванням `git restore` відновлює версію файлу, записану в `HEAD`,
+який є останнім збереженим комітом.
 Якщо ми хочемо повернутися ще раніше, замість цього ми можемо використовувати ідентифікатор коміту з опцією `-s`:
 
 ```bash
