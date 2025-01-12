@@ -22,14 +22,13 @@ title: Нотатки для інструктора
 open software repository landscape, so the time and effort required to teach
 fundamental Git is justified and worthwhile.
 
-Because of this complexity, we don't teach novice learners about many
-interesting topics, such as branching, hashes, and commit objects.
+Через ці складнощі, ми не вчимо початківців багатьом цікавим темам, таким як гілки, хеші та об'єкти комітів.
 
 Замість цього ми намагаємося переконати їх у тому, що контроль версій корисний для дослідників, які працюють в командах чи самостійно, бо це
 
 - ліпший спосіб "скасувати" зміни,
-- a better way to collaborate than mailing files back and forth, and
-- a better way to share your code and other scientific work with the world.
+- ліпший спосіб для співпраці, ніж розсилка файлів у різних напрямках, та
+- ліпший спосіб поділитися своїм кодом та іншими науковими роботами зі світом.
 
 ## Teaching Notes
 
