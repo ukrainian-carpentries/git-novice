@@ -2,22 +2,21 @@
 title: Нотатки для інструктора
 ---
 
-Using a software tool to handle the versions of your project files
-lets you focus on the more interesting/innovative aspects of your project.
+Використання програмного інструменту для обробки версій файлів вашого проєкту дозволяє зосередитися на більш цікавих/інноваційних аспектах вашого проєкту.
 
 - Переваги контролю версій
   - Його легко встановити
   - Кожна копія репозиторію Git є повною резервною копією проєкту та його історії
   - Кілька простих для запам'ятовування команд - це все, що потрібно для більшості повсякденних завдань з контролю версій
-  - The [GitHub][github] hosting service provides a web-based collaboration service
+  - Послуга хостингу від [GitHub][github] надає вебплатформу для спільної роботи
 - Два основних поняття
-  - _commit_: a recorded set of changes in your project's files
+  - _commit_: збережений набір змін у файлах вашого проєкту
   - _repository_: історія всіх комітів вашого проєкту
 - Навіщо використовувати GitHub?
   - Нема потреби в сервері: легко налаштувати
-  - GitHub's strong community: your colleagues are probably already there
+  - Численна спільнота GitHub: ваші колеги, напевно, вже там
 
-## Overall
+## Загалом
 
 Контроль версій може бути найважливішою темою, яку ми викладаємо, але Git, безумовно, є найскладнішим інструментом.  However, GitHub presently dominates the
 open software repository landscape, so the time and effort required to teach
