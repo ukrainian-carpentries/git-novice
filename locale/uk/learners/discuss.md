@@ -33,15 +33,15 @@ $ cat ~/.gitconfig
 (Але ми радимо продовжити використання команди `git config` для змін у ньому,
 оскільки це допомагає уникнути синтаксичних помилок.)
 
-Eventually, you will want to start customizing Git's behaviour.
+Зрештою, ви забажаєте почати налаштовувати поведінку Git, щоб зробити її більш зручною.
 Це можна зробити, додавши більше записів до вашого `.gitconfig`.
-The available options are described in the manual:
+Наявні параметри описані в документації:
 
 ```bash
 $ git config --help
 ```
 
-In particular, you might find it useful to add aliases.
+Зокрема, вам може знадобитися додати псевдоніми для деяких команд.
 Це щось на кшталт скорочень для довших команд Git.
 Наприклад, якщо вам набридло постійно вводити `git checkout`,
 ви можете виконати команду:
@@ -50,7 +50,7 @@ In particular, you might find it useful to add aliases.
 $ git config --global alias.co checkout
 ```
 
-Now if we return to the example from [Exploring History](../episodes/05-history.md) where we ran:
+Тепер, якщо ми повернемося до прикладу з епізоду [Досліджуючи історію](../episodes/05-history.md), де ми виконували:
 
 ```bash
 $ git checkout f22b25e guacamole.md
@@ -364,8 +364,8 @@ $ git commit -m 'Use the French name for the whitesauce'
 If you forgot to use Git and you used Unix `mv` instead
 of `git mv`, you will have a touch more work to do but Git will
 be able to deal with it. Let's try again renaming the file,
-this time with Unix `mv`. По-перше, нам потрібно відтворити
-файл `krypton.txt`:
+this time with Unix `mv`. First, we need to recreate the
+`krypton.txt` file:
 
 ```bash
 $ echo "Very fun recipe to do" > whitesauce.md
