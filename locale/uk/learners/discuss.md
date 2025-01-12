@@ -29,9 +29,9 @@ $ cat ~/.gitconfig
 	editor = nano
 ```
 
-This file can be opened in your preferred text editor.
-(Note that it is recommended to continue using the `git config` command,
-as this helps avoid introducing syntax errors.)
+Цей файл можна відкрити у вашому улюбленому текстовому редакторі.
+(Але ми радимо продовжити використання команди `git config` для змін у ньому,
+оскільки це допомагає уникнути синтаксичних помилок.)
 
 Eventually, you will want to start customizing Git's behaviour.
 Це можна зробити, додавши більше записів до вашого `.gitconfig`.
