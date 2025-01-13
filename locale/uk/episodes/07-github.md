@@ -267,7 +267,7 @@ Hi Alfredo! You've successfully authenticated, but GitHub does not provide shell
 $ git push origin main
 ```
 
-Since Alfredo set up a passphrase, it will prompt him for it.  Якщо ви не встановили пароль для свого ключа, то команда не буде його запитувати.
+Оскільки Альфредо встановив пароль для свого ключа, то йому буде потрібно його ввести після відповідного запитання.  Якщо ви не встановили пароль для свого ключа, то команда не буде його запитувати.
 
 ```output
 Enumerating objects: 16, done.
