@@ -142,17 +142,13 @@ receipts/plots
 
 ## Рішення
 
-If you only want to ignore the contents of
-`receipts/plots`, you can change your `.gitignore` to ignore
-only the `/plots/` subfolder by adding the following line to
-your .gitignore:
+Якщо ви хочете ігнорувати лише вміст `receipts/plots`, ви можете зробити це шляхом додавання наступного рядка до вашого `.gitignore`:
 
 ```output
 receipts/plots/
 ```
 
-This line will ensure only the contents of `receipts/plots` is ignored, and
-not the contents of `receipts/data`.
+Цей рядок забезпечить ігнорування лише вмісту `receipts/plots`, але не вмісту `receipts/data`.
 
 Як і в більшості питань програмування, є ще кілька альтернативних способів, які можуть забезпечити виконання цього правила ігнорування.
 Вправа "Варіант ігнорування вкладених файлів" нижче має трохи іншу структуру каталогів, та пояснює альтернативну відповідь.
@@ -166,8 +162,7 @@ not the contents of `receipts/data`.
 
 ## Додавання конкретних файлів
 
-How would you ignore all `.png` files in your root directory except for
-`final.png`?
+Як ігнорувати всі файли `.png` у кореневому каталозі, за винятком `final.png`?
 Підказка: дізнайтеся, що робить `!` (оператор знаку оклику).
 
 :::::::::::::::  solution
@@ -183,9 +178,7 @@ How would you ignore all `.png` files in your root directory except for
 
 Знак оклику призведе до включення раніше виключеного запису.
 
-Note also that because you've previously committed `.png` files in this
-lesson they will not be ignored with this new rule. Only future additions
-of `.png` files added to the root directory will be ignored.
+Зауважте також, що оскільки ви вже зберегли файли `.png` у комітах у цьому уроці, вони не будуть проігноровані цим новим правилом. Тільки майбутні додавання `.png` файлів до кореневого каталогу будуть проігноровані.
 
 :::::::::::::::::::::::::
 
@@ -204,7 +197,7 @@ receipts/plots
 receipts/analysis
 ```
 
-How would you ignore all of the contents in the receipts folder, but not `receipts/data`?
+Як би ви проігнорували весь вміст у каталозі `receipts`, крім `receipts/data`?
 
 Підказка: подумайте про те, як ви раніше зробили виняток за допомогою оператору `!`.
 
@@ -212,10 +205,7 @@ How would you ignore all of the contents in the receipts folder, but not `receip
 
 ## Рішення
 
-If you want to ignore the contents of
-`receipts/` but not those of `receipts/data/`, you can change your `.gitignore` to ignore
-the contents of receipts folder, but create an exception for the contents of the
-`receipts/data` subfolder. Ваш `.gitignore` буде виглядати так:
+Щоб проігнорувати все в каталозі `receipts/` без `receipts/data/`, можна змінити ваш`.gitignore`, щоб ігнорувати вміст каталогу `receipts`, але створити виняток для вмісту підкаталогу `receipts/data`. Ваш `.gitignore` буде виглядати так:
 
 ```output
 receipts/*               # ignore everything in receipts folder
@@ -240,16 +230,14 @@ receipts/data/market_position/gps/info.txt
 receipts/plots
 ```
 
-What's the shortest `.gitignore` rule you could write to ignore all `.dat`
-files in `result/data/market_position/gps`? При цьому, не ігноруйте `info.txt`.
+Яке найкоротше правило ви можете додати до `.gitignore`, щоб ігнорувати всі файли з розширенням `.dat` у каталозі `result/data/market_position/gps`? При цьому, не ігноруйте `info.txt`.
 
 :::::::::::::::  solution
 
 ## Рішення
 
-Appending `receipts/data/market_position/gps/*.dat` will match every file in `receipts/data/market_position/gps`
-that ends with `.dat`.
-The file `receipts/data/market_position/gps/info.txt` will not be ignored.
+Додавання `receipts/data/market_position/gps/*.dat` призведе до ігнорування усіх файлів у `receipts/data/market_position/gps`, які закінчуються на `.dat`.
+Файл `receipts/data/market_position/gps/info.txt` не буде проігноровано.
 
 :::::::::::::::::::::::::
 
@@ -341,7 +329,7 @@ data/experiment_2/variation_1/d.csv
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- The .gitignore file is a text file that tells Git which files to track and which to ignore in the repository.
+- Текстовий файл `.gitignore` інформує Git про те, які файли треба ігнорувати в репозиторії.
 - You can list specific files or folders to be ignored by Git, or you can include files that would normally be ignored.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
