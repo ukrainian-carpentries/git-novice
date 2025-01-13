@@ -252,8 +252,7 @@ $ cat guacamole.md
 
 Важливо пам'ятати, що ми повинні використовувати номер коміту, який ідентифікує стан репозиторію _до_ зміни, яку ми намагаємося скасувати.
 Поширеною помилкою є використання номеру коміту, в якому ми зробили зміни, які намагаємося скасувати.
-In the example below, we want to retrieve the state from before the most
-recent commit (`HEAD~1`), which is commit `f22b25e`. Ми використовуємо `.`, щоб позначити всі файли:
+У наведеному нижче прикладі нам треба 'дістати' передостанній коміт (`HEAD~1`), тобто коміт `f22b25e`. Ми використовуємо `.`, щоб позначити всі файли:
 
 ![](fig/git-restore.svg){alt='Використання git restore для відновлення попередньої версії двох файлів'}
 
@@ -469,8 +468,7 @@ nothing to commit, working tree clean
 
 ## Explore and Summarize Histories
 
-Exploring history is an important part of Git, and often it is a challenge to find
-the right commit ID, especially if the commit is from several months ago.
+Перегляд історії є важливим аспектом роботи з Git, але зазвичай знайти правильний ідентифікатор коміту може бути важко, особливо якщо він був зроблений декілька місяців тому.
 
 Imagine the `recipes` project has more than 50 files.
 You would like to find a commit that modifies some specific text in `guacamole.md`.
@@ -506,7 +504,7 @@ $ git log --patch HEAD~9 *.md
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git diff` displays differences between commits.
+- `git diff` показує відмінності між комітами.
 - `git restore` відновлює старі версії файлів.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
