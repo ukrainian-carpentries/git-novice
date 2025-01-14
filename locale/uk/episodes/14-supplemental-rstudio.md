@@ -81,7 +81,7 @@ repository. Зверніть увагу на вертикальне меню "Gi
 "Files" у правому нижньому куті. Now let's add some additional information
 about Hummus:
 
-![](fig/RStudio_screenshot_editfiles.png){alt='RStudio window demonstrating the use of the editor panel to modify the "pluto.txt" file'}
+![](fig/RStudio_screenshot_editfiles.png){alt='Використання панелі редактора для внесення змін до файлу "pluto.txt" у RStudio'}
 
 Після того, як ми зберегли наші відредаговані файли, ми можемо використати RStudio для збереження змін, натиснувши на "Commit..." в меню Git:
 
