@@ -358,7 +358,7 @@ $ cat ketchup.md # this will print the content of ketchup.md on screen
    ketchup enhances pasta dishes
    ```
 4. ```output
-   Error because you have changed ketchup.md without committing the changes
+   Помилка, оскільки ви змінили ketchup.md, але не виконали коміт
    ```
 
 :::::::::::::::  solution
