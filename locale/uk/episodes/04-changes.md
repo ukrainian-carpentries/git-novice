@@ -43,7 +43,7 @@ $ nano guacamole.md
 ## Instructions
 ```
 
-Save the file and exit your editor. Next, let’s verify that the file was properly created by running the list command (`ls`):
+Збережіть файл і вийдіть з редактора. Next, let’s verify that the file was properly created by running the list command (`ls`):
 
 ```bash
 $ ls
