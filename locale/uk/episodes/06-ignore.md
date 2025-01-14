@@ -208,8 +208,8 @@ receipts/analysis
 Щоб проігнорувати все в каталозі `receipts/` без `receipts/data/`, можна змінити ваш`.gitignore`, щоб ігнорувати вміст каталогу `receipts`, але створити виняток для вмісту підкаталогу `receipts/data`. Ваш `.gitignore` буде виглядати так:
 
 ```output
-receipts/*               # ignore everything in receipts folder
-!receipts/data/          # do not ignore receipts/data/ contents
+receipts/*               # ігнорувати все в каталозі receipts
+!receipts/data/          # не ігнорувати вміст каталогу receipts/data/
 ```
 
 :::::::::::::::::::::::::
@@ -330,6 +330,6 @@ data/experiment_2/variation_1/d.csv
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Текстовий файл `.gitignore` інформує Git про те, які файли треба ігнорувати в репозиторії.
-- You can list specific files or folders to be ignored by Git, or you can include files that would normally be ignored.
+- Ви можете вказати певні файли або каталоги, які Git буде ігнорувати, або вказати типи файлів, які зазвичай ігноруються.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
