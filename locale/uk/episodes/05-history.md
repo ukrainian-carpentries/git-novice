@@ -376,8 +376,7 @@ has only one line.
 
 At this time, the working copy still has the second line (and
 
-`git status` will show that the file is modified). However, `git restore ketchup.md`
-replaces the working copy with the most recently committed version of `ketchup.md`.
+`git status` покаже, що файл змінено). Однак `git restore ketchup.md` замінить робочу копію останньою збереженою версією `ketchup.md`.
 So, `cat ketchup.md` will output
 
 ```output
@@ -392,10 +391,9 @@ I like tomatoes, therefore I like ketchup
 
 ## Перевіримо розуміння `git diff`
 
-Consider this command: `git diff HEAD~9 guacamole.md`. Що ви очікуєте від цієї команди після виконання? Що насправді відбувається, коли ви запускаєте її? Чому?
+Розглянемо команду `git diff HEAD~9 guacamole.md`. Що ви очікуєте від цієї команди після виконання? Що насправді відбувається, коли ви запускаєте її? Чому?
 
-Try another command, `git diff [ID] guacamole.md`, where [ID] is replaced with
-the unique identifier for your most recent commit. Що ви очікуєте, і що насправді станеться?
+Спробуйте іншу команду, `git diff [ID] guacamole.md`, де [ID] замінено на унікальний ідентифікатор вашого останнього коміту. Що ви очікуєте, і що насправді станеться?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
