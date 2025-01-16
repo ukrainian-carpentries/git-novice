@@ -368,7 +368,7 @@ $ cat ketchup.md # this will print the content of ketchup.md on screen
 Правильною є відповідь 2.
 
 Зміни, внесені другою командою `echo`, будуть зроблені лише у робочій копії цього файлу, залишаючи версію в зоні стейджингу без змін.
-The command `git add ketchup.md` places the current version of `ketchup.md` into the staging area.
+Команда `git add ketchup.md` розміщує поточну версію 'ketchup.md' в зоні стейджингу.
 
 So, when `git commit -m "My opinions about the red sauce"` is executed,
 the version of `ketchup.md` committed to the repository is the one from the staging area and
