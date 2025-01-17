@@ -457,8 +457,7 @@ results/run002.log
 *.csv
 ```
 
-How would you track all of the contents of `results/data/`, including `*.csv`
-files, but ignore the rest of `results/`?
+Як би ви відстежували весь вміст `results/data/`, включно з файлами `*.csv`, але ігноруючи решту `results/`?
 
 :::::::::::::::  solution
 
