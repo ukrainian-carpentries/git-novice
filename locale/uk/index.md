@@ -3,11 +3,7 @@ permalink: index.html
 site: sandpaper::sandpaper_site
 ---
 
-Jimmy and Alfredo have been hired by Ratatouille restaurant (a special
-restaurant from Euphoric State University) to investigate if it
-is possible to make the best recipes archive ever.  They want to
-be able to work on indexing the prices at the same time, but they have run into
-problems doing this in the past.  Якщо вони будуть робити зміни по черзі, то кожен витрачатиме багато часу, чекаючи, поки інший закінчить, а якщо вони будуть працювати над власними копіями та відсилати файли туди й назад електронною поштою, зміни будуть втрачені, перезаписані або продубльовані.
+Джіммі та Альфредо були найняті на роботу до ресторану "Ratatouille" (підрозділ в Euphoric State University), щоб дослідити, як можна створити найкращий архів рецептів.  Вони хочуть мати можливість працювати над планами одночасно, але у минулому це призводило до проблем.  Якщо вони будуть робити зміни по черзі, то кожен витрачатиме багато часу, чекаючи, поки інший закінчить, а якщо вони будуть працювати над власними копіями та відсилати файли туди й назад електронною поштою, зміни будуть втрачені, перезаписані або продубльовані.
 
 Колега пропонує їм використовувати [контроль версій](learners/reference.md#version-control), щоб вправитися з цією своєю роботою. Контроль версій кращий, ніж пересилання файлів туди й назад:
 
