@@ -123,9 +123,7 @@ fatal: Not a git repository (or any of the parent directories): .git
 
 ## Виправлення помилок `git init`
 
-Jimmy explains to Alfredo how a nested repository is redundant and may cause confusion
-down the road. Alfredo would like to go back to a single git repository. How can Alfredo undo
-his last `git init` in the `desserts` subdirectory?
+Джиммі пояснив Альфредо, що вкладений репозиторій є зайвим і може призвести до плутанини у майбутньому. Alfredo would like to go back to a single git repository. Як Альфредо може скасувати свою останню команду `git init` виконану у підкаталозі `desserts`?
 
 :::::::::::::::  solution
 
