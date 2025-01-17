@@ -29,8 +29,8 @@ $ mkdir recipes
 $ cd recipes
 ```
 
-Then we tell Git to make `recipes` a [repository](../learners/reference.md#repository)
-\-- a place where Git can store versions of our files:
+Далі ми кажемо Git зробити `recipes` [репозиторієм](../learners/reference.md#repository)
+\-- місцем, де Git може зберігати версії наших файлів:
 
 ```bash
 $ git init
