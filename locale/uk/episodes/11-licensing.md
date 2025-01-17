@@ -63,7 +63,7 @@ exercises: 0
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Файли з імʼям `LICENSE`, `LICENSE.md`, або `LICENSE.txt` часто використовуються у репозиторіях, щоб вказати, як їх вміст може застосовуватися іншими.
-- People who incorporate General Public License (GPL'd) software into their own software must make the derived software also open under the GPL license if they decide to share it; most other open licenses do not require this.
+- Розробники, які інтегрують програмне забезпечення з ліцензією General Public License (GPL) у своє власне, також повинні зробити своє програмне забезпечення відкритим під ліцензією GPL. Більшість інших відкритих ліцензій цього не вимагають.
 - Сімейство ліцензій Creative Commons дозволяє авторам гнучко комбінувати вимоги та обмеження щодо зазначення авторства, створення похідних творів, подальшого поширення та комерціалізації.
 - Люди, які не є юристами, не повинні намагатися писати ліцензії з нуля.
 
