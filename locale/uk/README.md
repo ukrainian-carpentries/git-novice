@@ -3,9 +3,9 @@
 # Internationalisation hub repository for Software Carpentry git-novice
 
 Введення до контролю версій за допомогою Git для початківців.
-Please see [https://swcarpentry.github.io/git-novice/](https://swcarpentry.github.io/git-novice/) for a rendered version of this material in english.
+Вебсайт з українською версією цього уроку знаходиться за адресою [https://ukrainian-carpentries.github.io/git-novice/](https://ukrainian-carpentries.github.io/git-novice/).
 
-More info to follow.
+Більш детальна інформація буде додана пізніше.
 
 [create_slack_svg]: https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg
 [slack_invite]: https://slack-invite.carpentries.org/
