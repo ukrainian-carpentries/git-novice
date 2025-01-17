@@ -102,7 +102,7 @@ media, slack, newsletters, and email lists. You can also [reach us by
 email][contact].
 
 [repo]: https://github.com/ukrainian-carpentries/git-novice
-[repo-issues]: https://github.com/swcarpentry/git-novice/issues
+[repo-issues]: https://github.com/ukrainian-carpentries/git-novice/issues
 [contact]: mailto:team@carpentries.org
 [cp-site]: https://carpentries.org/
 [dc-issues]: https://github.com/issues?q=user%3Adatacarpentry
