@@ -374,10 +374,10 @@ So, when `git commit -m "My opinions about the red sauce"` is executed,
 the version of `ketchup.md` committed to the repository is the one from the staging area and
 has only one line.
 
-At this time, the working copy still has the second line (and
+На цьому етапі робоча копія все ще містить другий рядок (та
 
 `git status` покаже, що файл змінено). Однак `git restore ketchup.md` замінить робочу копію останньою збереженою версією `ketchup.md`.
-So, `cat ketchup.md` will output
+В результаті, `cat ketchup.md` покаже:
 
 ```output
 I like tomatoes, therefore I like ketchup
@@ -402,8 +402,7 @@ I like tomatoes, therefore I like ketchup
 ## Скасування змін у зоні стейджингу
 
 Команда `git restore` може бути використана для відновлення попереднього коміту, коли зміни ще не додані до зони стейджингу. Але чи спрацює вона зі змінами, які були додані до зони стейджингу, але ще не збережені у коміті?
-Make a change to `guacamole.md`, add that change using `git add`,
-then use `git restore` to see if you can remove your change.
+Зробіть зміни у `guacamole.md`, додайте їх до зони стейджингу за допомогою `git add`, а потім використайте `git restore`, щоб перевірити чи можете ви скасувати свої зміни.
 
 :::::::::::::::  solution
 
@@ -422,8 +421,7 @@ Changes to be committed:
 
 Зауважте, якщо ваш результат відрізняється, то можливо ви забули змінити файл, або вже додали його до зони стейджингу _та_ зробили коміт.
 
-Using the command `git restore guacamole.md` now does not give an error,
-but it does not restore the file either.
+Використання команди `git restore guacamole.md` тепер не викликає помилки, але також не відновлює файл.
 Git друкує корисне повідомлення - нам потрібно спочатку використати `git restore --staged`, щоб видалити файл з зони стейджингу:
 
 ```bash
@@ -468,13 +466,12 @@ nothing to commit, working tree clean
 
 Перегляд історії є важливим аспектом роботи з Git, але зазвичай знайти правильний ідентифікатор коміту може бути важко, особливо якщо він був зроблений декілька місяців тому.
 
-Imagine the `recipes` project has more than 50 files.
-You would like to find a commit that modifies some specific text in `guacamole.md`.
+Уявіть, що проєкт `recipes` містить понад 50 файлів.
+Вам потрібно знайти коміт, який змінює певний текст у `guacamole.md`.
 Коли ви вводите `git log`, з'являється дуже довгий список.
 Як можна звузити коло пошуку?
 
-Recall that the `git diff` command allows us to explore one specific file,
-e.g., `git diff guacamole.md`. Ми можемо застосувати подібну ідею тут.
+Пам’ятайте, що команда `git diff` дозволяє перевіряти зміни в певному файлі, наприклад, `git diff guacamole.md`. Ми можемо застосувати подібну ідею тут.
 
 ```bash
 $ git log guacamole.md
