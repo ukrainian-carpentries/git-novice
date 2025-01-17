@@ -24,8 +24,8 @@ RStudio дозволяє створити [проєкт][rstudio-projects], по
 
 ![](fig/RStudio_screenshot_newproject.png){alt='Знімок екрана RStudio, що показує меню файлу з вибраним пунктом "New Project..."'}
 
-Цей крок відкриває діалогове вікно із запитанням про те, як саме ми хочемо створити проєкт. Тут ми маємо кілька варіантів. Let's say that we want to use RStudio with the recipes
-repository that we already made. Оскільки цей репозиторій міститься в каталозі на нашому комп'ютері, ми
+Цей крок відкриває діалогове вікно із запитанням про те, як саме ми хочемо створити проєкт. Тут ми маємо кілька варіантів. Припустимо, що ми хочемо використовувати RStudio з
+репозиторієм `recipes`, який ми вже створили раніше. Оскільки цей репозиторій міститься в каталозі на нашому комп'ютері, ми
 обираємо опцію "Existing Directory":
 
 ![](fig/RStudio_screenshot_existingdirectory.png){alt='Знімок екрана RStudio, що показує діалогове вікно New Project з обраним пунктом "Create project from existing directory"'}
@@ -68,18 +68,16 @@ repository that we already made. Оскільки цей репозиторій 
 Далі RStudio запитає, який наявний каталог ми хочемо використовувати. Натисніть
 "Browse..." і перейдіть до відповідного каталогу, потім натисніть"Create Project":
 
-![](fig/RStudio_screenshot_navigateexisting.png){alt='Вікно RStudio із діалогом "Create Project From Existing Directory". In the dialog, the project working directory has been set to "~/Desktop/recipes"'}
+![](fig/RStudio_screenshot_navigateexisting.png){alt='Вікно RStudio із діалогом "Create Project From Existing Directory". У діалоговому вікні робочий каталог проєкту було обрано "~/Desktop/recipes"'}
 
-Чудово! We have created a new project in RStudio within the existing recipes
-repository. Зверніть увагу на вертикальне меню "Git" у панелі меню. RStudio визнав, що
+Чудово! Ми створили новий проєкт у RStudio в межах наявного репозиторію `recipes`. Зверніть увагу на вертикальне меню "Git" у панелі меню. RStudio визнав, що
 поточний каталог є репозиторієм Git, і пропонує нам
 ряд інструментів для використання Git:
 
 ![](fig/RStudio_screenshot_afterclone.png){alt='Вікно RStudio після створення нового проєкту з великою стрілкою, що вказує на вертикальну панель меню Git.'}
 
 Щоб редагувати наявні файли в репозиторії, ми можемо натискати на них у панелі
-"Files" у правому нижньому куті. Now let's add some additional information
-about Hummus:
+"Files" у правому нижньому куті. Тепер додамо деяку інформацію про хумус:
 
 ![](fig/RStudio_screenshot_editfiles.png){alt='Використання панелі редактора для внесення змін до файлу "pluto.txt" у RStudio'}
 
@@ -93,7 +91,7 @@ about Hummus:
 поточний стан кожного файлу. Натискання на файлі показує інформацію про зміни у нижній
 панелі (використовуючи результат команди `git diff`). Як тільки все виглядає так, як ми хочемо, ми натискаємо "Commit":
 
-![](fig/RStudio_screenshot_review.png){alt='Перегляд змін у RStudio. The top left panel shows the list of files that can be included or excluded from the commit. The top right panel is for writing a commit message. Нижня панель показує інформацію про поточний файл, вибраний у верхній лівій панелі.'}
+![](fig/RStudio_screenshot_review.png){alt='Перегляд змін у RStudio. У верхній лівій панелі перераховані файли, які можна додати або вилучити з коміту. Права верхня панель призначена для введення повідомлення коміту. Нижня панель показує інформацію про поточний файл, вибраний у верхній лівій панелі.'}
 
 Зміни можна відправити до віддаленого репозиторію, обравши "Push Branch" з меню Git. Існують також опції меню для отримання змін з віддаленого репозиторію та для перегляду історії комітів:
 
@@ -110,7 +108,7 @@ about Hummus:
 
 Якщо натиснути на "History", ми побачимо графічну версію того, що нам сказав би `git log`:
 
-![](fig/RStudio_screenshot_viewhistory.png){alt='Вікно RStudio із діалогом для перегляду змін після натискання кнопки "History". Верхня панель містить перелік комітів у репозиторії, на кшталт `git log`. The bottom panel shows the changes included in the commit that has been selected in the top panel.'}
+![](fig/RStudio_screenshot_viewhistory.png){alt='Вікно RStudio із діалогом для перегляду змін після натискання кнопки "History". Верхня панель містить перелік комітів у репозиторії, на кшталт `git log`. Нижня панель показує зміни у відповідному коміті, обраному в верхній панелі.'}
 
 RStudio створює ряд файлів, які використовуються для відстеження проєкту. Зазвичай ми не хочемо відстежувати їх у Git; в цьому випадку ми додаємо їх до нашого файлу `.gitignore`:
 
