@@ -101,7 +101,7 @@ community listed at \<https\://carpentries.org/connect/> including via social
 media, slack, newsletters, and email lists. You can also [reach us by
 email][contact].
 
-[repo]: https://github.com/swcarpentry/git-novice
+[repo]: https://github.com/ukrainian-carpentries/git-novice
 [repo-issues]: https://github.com/swcarpentry/git-novice/issues
 [contact]: mailto:team@carpentries.org
 [cp-site]: https://carpentries.org/
