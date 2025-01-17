@@ -32,10 +32,9 @@ title: Нотатки для інструктора
 
 - Ви можете "розділити" ваш термінал так, щоб останні команди залишалися в полі зору за допомогою [цього](https://github.com/rgaiacs/swc-shell-split-window) скрипту.
 
-- Make sure the network is working _before_ starting this lesson.
+- Переконайтеся, що мережа працює _до_ початку цього уроку.
 
-- Drawings are particularly useful in this lesson: if you have a whiteboard,
-  [use it][drawings]!
+- Малюнки особливо корисні у цьому уроці: якщо у вас є дошка, [користуйтеся нею][drawings]!
 
 - Version control is usually not the first subject in a workshop,
   so get learners to create a GitHub account after the session before.
