@@ -1,8 +1,8 @@
 ---
-title: Licenses
+title: Ліцензії
 ---
 
-## Instructional Material
+## Навчальні матеріали
 
 All Carpentries (Software Carpentry, Data Carpentry, and Library Carpentry)
 instructional material is made available under the [Creative Commons
