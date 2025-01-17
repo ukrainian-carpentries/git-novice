@@ -43,7 +43,7 @@ $ nano guacamole.md
 ## Instructions
 ```
 
-Збережіть файл і вийдіть з редактора. Next, let’s verify that the file was properly created by running the list command (`ls`):
+Збережіть файл і вийдіть з редактора. Далі переконайтеся, що файл був створений належним чином, запустивши команду `ls`:
 
 ```bash
 $ ls
@@ -583,7 +583,7 @@ $ git commit -m "Add some initial cakes"
 
 ## Рішення
 
-First we make our changes to the `guacamole.md` and `groceries.md` files:
+Спочатку ми оновимо файли `guacamole.md` та `groceries.md`:
 
 ```bash
 $ nano guacamole.md
@@ -653,7 +653,7 @@ $ git commit -m "Write prices for ingredients and their source"
 
 ## Відповідь
 
-If needed, move out of the `recipes` folder:
+За потреби вийдіть з каталогу `recipes`:
 
 ```bash
 $ cd ..
