@@ -339,7 +339,7 @@ $ cat guacamole.md
 - Pull from upstream more frequently, especially before starting new work
 - Use topic branches to segregate work, merging to main when complete
 - Make smaller more atomic commits
-- Push your work when it is done and encourage your team to do the same to reduce work in progress and, by extension, the chance of having conflicts
+- Надсилайте (за допомогою `git push`) свою роботу після її завершення до спільного репозиторію та заохочуйте свою команду робити те саме. Це зменшує обсяг незавершеної роботи та, відповідно, ймовірність конфліктів
 - Там, де логічно доречно, розбивайте великі файли на менші, щоб зменшити ймовірність того, що кілька авторів редагуватимуть один і той самий файл одночасно
 
 Конфлікти також можна мінімізувати за допомогою дотримання деяких стратегій управління проєктами:
