@@ -208,7 +208,7 @@ particular set of files in `.gitignore`.
   computer at work:
 
   ```bash
-  $ git clone https://github.com/alflin/recipes.git recipes-at-work
+  $ git clone https://github.com/vlad/planets.git planets-at-work
   ```
 
 - It's very common that learners mistype the remote alias or the remote URL
@@ -224,7 +224,7 @@ particular set of files in `.gitignore`.
   repo under a given directory using a second argument:
 
   ```bash
-  $ git clone https://github.com/alflin/recipes.git alflin-recipes
+  $ git clone https://github.com/vlad/planets.git vlad-planet
   ```
 
 - Найпоширенішою помилкою є те, що учні `відправляють` зміни перед тим, як `отримати` їх. If they
