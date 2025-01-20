@@ -141,8 +141,7 @@ title: Нотатки для інструктора
 - This is a good moment to show a diff with a graphical diff tool. If you
   skip it because you're short on time, show it once in GitHub.
 
-- One thing may cause confusion is recovering old versions.  If, instead of
-  doing `$ git checkout f22b25e guacamole.md`, someone does `$ git checkout f22b25e`, they wind up in the "detached HEAD" state and confusion abounds.
+- One thing may cause confusion is recovering old versions.  Якщо замість команди `$ git checkout f22b25e mars.txt`, хтось введе `$ git checkout f22b25e`, то вони опиняться у стані "detached HEAD", що призведе до непорозуміння.
   It's then possible to keep on committing, but things like `git push origin main` a bit later will not give easily comprehensible results.  It also
   makes it look like commits can be lost.  Щоб "повторно прикріпити" HEAD, використовуйте `git checkout main`.
 
