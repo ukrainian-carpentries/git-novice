@@ -38,8 +38,7 @@ title: Нотатки для інструктора
 
 - Version control is usually not the first subject in a workshop,
   so get learners to create a GitHub account after the session before.
-  Remind learners that the username and email they use for GitHub (and setup
-  during Git configuration) will be viewable to the public by default.
+  Нагадайте слухачам, що ім\`я користувача та адреса електронної пошти, яку вони використовують для GitHub (та налаштовують під час конфігурації Git), за замовчуванням будуть наявні для загального перегляду.
   However, there are many reasons why a learner may not want their personal
   information viewable, and GitHub has [resources for keeping an email address
   private][github-privacy].
