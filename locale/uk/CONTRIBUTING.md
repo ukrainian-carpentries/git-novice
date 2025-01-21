@@ -1,4 +1,4 @@
-## Contributing
+## Внески до проєкту
 
 [The Carpentries][cp-site] ([Software Carpentry][swc-site], [Data
 Carpentry][dc-site], and [Library Carpentry][lc-site]) are open source
