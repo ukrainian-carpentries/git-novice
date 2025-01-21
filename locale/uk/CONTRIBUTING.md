@@ -6,22 +6,20 @@ projects, and we welcome contributions of all kinds: new lessons, fixes to
 existing material, bug reports, and reviews of proposed changes are all
 welcome.
 
-### Contributor Agreement
+### Угода Про Участь у Проєкті
 
 By contributing, you agree that we may redistribute your work under our
 license. In exchange, we will address your issues and/or assess
 your change proposal as promptly as we can, and help you become a member of our
-community. Everyone involved in [The Carpentries][cp-site] agrees to abide by
-our [code of conduct](CODE_OF_CONDUCT.md).
+community. Кожен, хто бере участь у [The Carpentries][cp-site] погоджується дотримуватися нашого [кодексу поведінки](CODE_OF_CONDUCT.md).
 
-### How to Contribute
+### Як зробити внесок
 
 The easiest way to get started is to file an issue to tell us about a spelling
 mistake, some awkward wording, or a factual error. This is a good way to
 introduce yourself and to meet some of our community members.
 
-1. If you do not have a [GitHub][github] account, you can [send us comments by
-   email][contact]. However, we will be able to respond more quickly if you use
+1. Якщо у вас немає облікового запису [GitHub][github], ви можете [надіслати нам коментарі електронною поштою][contact]. However, we will be able to respond more quickly if you use
    one of the other methods described below.
 
 2. If you have a [GitHub][github] account, or are willing to [create
@@ -37,7 +35,7 @@ introduce yourself and to meet some of our community members.
 Note: if you want to build the website locally, please refer to [The Workbench
 documentation][template-doc].
 
-### Where to Contribute
+### Де робити внески
 
 1. If you wish to change this lesson, add issues and pull requests here.
 2. If you wish to change the template used for workshop websites, please refer
