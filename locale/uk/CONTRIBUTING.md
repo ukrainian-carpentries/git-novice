@@ -82,20 +82,18 @@ three.
 5. If you receive feedback, make changes on your desktop and push to your
    branch on GitHub: the pull request will update automatically.
 
-NB: The published copy of the lesson is usually in the `main` branch.
+Примітка: опублікована копія уроку зазвичай знаходиться в гілці `main`.
 
 Each lesson has a team of maintainers who review issues and pull requests or
 encourage others to do so. The maintainers are community volunteers, and have
 final say over what gets merged into the lesson.
 
-### Other Resources
+### Інші ресурси
 
 The Carpentries is a global organisation with volunteers and learners all over
-the world. We share values of inclusivity and a passion for sharing knowledge,
-teaching and learning. There are several ways to connect with The Carpentries
+the world. Ми маємо спільні цінності інклюзивності та пристрасті до обміну знаннями, викладання та навчання. There are several ways to connect with The Carpentries
 community listed at \<https\://carpentries.org/connect/> including via social
-media, slack, newsletters, and email lists. You can also [reach us by
-email][contact].
+media, slack, newsletters, and email lists. Ви також можете [зв'язатися з нами електронною поштою][contact].
 
 [repo]: https://github.com/ukrainian-carpentries/git-novice
 [repo-issues]: https://github.com/ukrainian-carpentries/git-novice/issues
