@@ -56,7 +56,7 @@ are particularly valuable**: it's easy for people who have been using these
 lessons for a while to forget how impenetrable some of this material can be, so
 fresh eyes are always welcome.
 
-### What _Not_ to Contribute
+### Які внески не слід робити
 
 Our lessons already contain more material than we can cover in a typical
 workshop, so we are usually _not_ looking for more concepts or tools to add to
@@ -70,7 +70,7 @@ platform. Our workshops typically contain a mixture of Windows, macOS, and
 Linux users; in order to be usable, our lessons must run equally well on all
 three.
 
-### Using GitHub
+### Використання GitHub
 
 If you choose to contribute via GitHub, you may want to look at [How to
 Contribute to an Open Source Project on GitHub][how-contribute]. In brief, we
