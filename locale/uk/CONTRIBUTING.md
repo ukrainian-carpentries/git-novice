@@ -72,9 +72,7 @@ three.
 
 ### Використання GitHub
 
-If you choose to contribute via GitHub, you may want to look at [How to
-Contribute to an Open Source Project on GitHub][how-contribute]. In brief, we
-use [GitHub flow][github-flow] to manage changes:
+Якщо ви вирішили зробити свій внесок через GitHub, вам варто ознайомитися зі статтею [Як зробити внесок у проєкт з відкритим вихідним кодом на GitHub][how-contribute]. Ми використовуємо [GitHub flow][github-flow] для керування змінами:
 
 1. Create a new branch in your desktop copy of this repository for each
    significant change.
