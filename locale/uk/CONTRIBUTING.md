@@ -1,15 +1,11 @@
 ## Внески до проєкту
 
 [The Carpentries][cp-site] ([Software Carpentry][swc-site], [Data
-Carpentry][dc-site], and [Library Carpentry][lc-site]) are open source
-projects, and we welcome contributions of all kinds: new lessons, fixes to
-existing material, bug reports, and reviews of proposed changes are all
-welcome.
+Carpentry][dc-site], та [Library Carpentry][lc-site]) є проєктами з відкритим вихідним кодом. Заохочуються будь-які внески: нові уроки, виправлення поточного матеріалу, повідомлення про помилки, та рецензування запропонованих змін.
 
 ### Угода Про Участь у Проєкті
 
-By contributing, you agree that we may redistribute your work under our
-license. In exchange, we will address your issues and/or assess
+Роблячи свій внесок, ви погоджуєтеся, що ми можемо розповсюджувати ваші роботи згідно з [нашою ліцензією](LICENSE.md). In exchange, we will address your issues and/or assess
 your change proposal as promptly as we can, and help you become a member of our
 community. Кожен, хто бере участь у [The Carpentries][cp-site] погоджується дотримуватися нашого [кодексу поведінки](CODE_OF_CONDUCT.md).
 
