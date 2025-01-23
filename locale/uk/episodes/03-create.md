@@ -47,8 +47,7 @@ subdirectories are present from the beginning or added later. Крім того,
 $ ls
 ```
 
-But if we add the `-a` flag to show everything,
-we can see that Git has created a hidden directory within `recipes` called `.git`:
+Але якщо ми додамо опцію `-a`, щоб показати всі файли, то побачимо, що Git створив у каталозі `recipes` прихований каталог під назвою `.git`:
 
 ```bash
 $ ls -a
@@ -81,10 +80,9 @@ nothing to commit (create/copy files and use "git add" to track)
 
 ## Де створювати репозиторії Git
 
-Along with tracking information about recipes (the project we have already created),
-Alfredo would also like to track information about desserts specifically.
-Alfredo creates a `desserts` project inside his `recipes`
-project with the following sequence of commands:
+Відстежуючи інформацію про рецепти (проєкт, який ми вже створили), Альфредо також хотів би особливо відстежувати інформацію, пов’язану саме з десертами.
+Альфредо створює проєкт `desserts` всередині свого проєкту `recipes`
+за допомогою наступної послідовності команд:
 
 ```bash
 $ cd ~/Desktop   # повернутися до каталогу Desktop
@@ -96,18 +94,13 @@ $ git init       # створити репозиторій Git у підката
 $ ls -a          # перевірити наявність підкаталогу .git, що підтверджує створення нового репозиторію
 ```
 
-Is the `git init` command, run inside the `desserts` subdirectory, required for
-tracking files stored in the `desserts` subdirectory?
+Чи потрібно запускати команду `git init` у підкаталозі `desserts` для відстеження файлів, розташованих у підкаталозі `desserts`?
 
 :::::::::::::::  solution
 
 ## Відповідь
 
-Ні. Alfredo does not need to make the `desserts` subdirectory a Git repository
-because the `recipes` repository will track all files, sub-directories, and
-subdirectory files under the `recipes` directory.  Thus, in order to track
-all information about desserts, Alfredo only needed to add the `desserts` subdirectory
-to the `recipes` directory.
+Ні. Альфредо не потрібно робити окремий підкаталог `desserts` репозиторієм Git, оскільки репозиторій `recipes` відстежуватиме будь-які файли, підкаталоги, та файли у підкаталогах в ньому.  Таким чином, щоб відстежувати всю інформацію про десерти, Альфредо повинен був лише додати підкаталог `desserts` до каталогу `recipes`.
 
 Крім того, репозиторії Git можуть заважати один одному, якщо вони "вкладені": зовнішній репозиторій намагатиметься відстежувати зміни у внутрішньому репозиторії. Тому найкраще кожного разу створювати новий репозиторій Git в окремому каталозі. Щоб переконатися, що каталог не є репозиторієм, перевірте результат команди `git status`. Якщо він виглядає як показано нижче, ви можете створити новий репозиторій, як було показано вище:
 
@@ -143,8 +136,7 @@ $ rm filename
 ### Відповідь
 
 Git зберігає всі свої файли в каталозі `.git`.
-To recover from this little mistake, Alfredo can remove the `.git`
-folder in the desserts subdirectory by running the following command from inside the `recipes` directory:
+Щоб виправити цю маленьку помилку, Альфредо може просто видалити каталог `.git` у підкаталозі `desserts`, виконавши наступну команду всередині каталогу `recipes`:
 
 ```bash
 $ rm -rf desserts/.git
