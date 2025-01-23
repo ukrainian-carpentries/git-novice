@@ -494,7 +494,7 @@ $ git add <directory-with-files>
 Спробуйте власноруч:
 
 ```bash
-$ touch cakes/brownie cakes/lemon_drizzle
+$ touch cakes/brownie_cakes/lemon_drizzle
 $ git status
 $ git add cakes
 $ git status
