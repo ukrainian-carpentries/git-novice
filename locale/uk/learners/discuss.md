@@ -71,7 +71,7 @@ and which were pulled from remotes.
 
 You can use `git log --help` and `git config --help` to look for different ways to change
 the log output.
-Try the following commands and see what effect they have:
+Спробуйте наступні команди та подивіться, який ефект вони матимуть:
 
 ```bash
 $ git config --global alias.lg "log --graph"
@@ -80,8 +80,8 @@ $ git config --global format.pretty oneline
 $ git lg
 ```
 
-If you don't like the effects,
-you can undo them with:
+Якщо вам не подобаються ці ефекти,
+ви можете скасувати їх за допомогою:
 
 ```bash
 $ git config --global --unset alias.lg
@@ -108,15 +108,15 @@ please check that they're covered by an open source license before you clone the
 
 ## Нетекстові файли
 
-Recall when we discussed [Conflicts](../episodes/09-conflict.md)
-there was a challenge that asked,
-"What does Git do
-when there is a conflict in an image or some other non-textual file
-that is stored in version control?"
+Пригадайте, коли ми обговорювали [Конфлікти](../episodes/09-conflict.md)
+було завдання, яке запитувало:
+"Що робить Git
+коли виникає конфлікт у зображенні або якомусь іншому нетекстовому файлі,
+який зберігається у системі контролю версій?"
 
 Тепер ми розглянемо це питання більш детально.
 
-Багато людей бажають керувати версіями нетекстових файлів, таких як зображення, PDF-файли та документи Microsoft Office або LibreOffice.
+Many people want to version control non-text files, such as images, PDFs and Microsoft Office or LibreOffice documents.
 It is true that Git can handle these filetypes (which fall under the banner of "binary" file types).
 However, just because it _can_ be done doesn't mean it _should_ be done.
 
@@ -156,7 +156,7 @@ $ git add guacamole.doc
 $ git commit -m "Create a template for recipe"
 ```
 
-Then make the same changes to `guacamole.doc` that we (or Alfredo) previously made to `guacamole.md`.
+Потім внесіть ті ж зміни в `guacamole.doc`, які ми (або Альфредо) зробили раніше в `guacamole.md`.
 
 ```output
 # Ingredients
@@ -166,8 +166,8 @@ Then make the same changes to `guacamole.doc` that we (or Alfredo) previously ma
 # Instructions
 ```
 
-Save and close the word processor.
-Now see what Git thinks of your changes:
+Збережіть зміни та закрийте текстовий процесор.
+Тепер подивіться, що Git думає про них:
 
 ```bash
 $ git diff
@@ -213,11 +213,11 @@ you will probably just want to replace the logo completely rather than merge lit
 
 ## Видалення файлу
 
-Adding and modifying files are not the only actions one might take
-when working on a project.  It might be required to remove a file
+Додавання та зміна файлів - це не єдині дії, які можна виконати
+під час роботи над проєктом.  It might be required to remove a file
 from the repository.
 
-Create a new file for the invisible ink:
+Створіть новий файл для невидимих чорнил:
 
 ```bash
 $ echo "This is where we keep the secret sauce" > invisible.md
@@ -236,7 +236,7 @@ On branch main
 nothing to commit, working directory clean
 ```
 
-Invisible ink is not a real food.  That was a silly idea.  Let us remove
+Невидиме чорнило не є справжньою їжею.  Це була погана ідея.  Let us remove
 it from the disk and let Git know about it:
 
 ```bash
@@ -293,10 +293,10 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-See how Git has noticed that the file `secret.md` has been removed
-from the disk.  Наступним кроком є "стейджинг" видалення файлу
-з репозиторію.  This is done with the command `git rm` just as
-before.
+Дивіться, як Git помітив, що файл `secret.md` був видалений
+з диска.  Наступним кроком є "стейджинг" видалення файлу
+з репозиторію.  Це робиться за допомогою команди `git rm` так само як і
+раніше.
 
 ```bash
 $ git rm secret.md
@@ -323,7 +323,7 @@ $ git commit -m 'Remove info on invisible ink, again!'
 
 Another common change when working on a project is to rename a file.
 
-Create a file for the whitesauce recipe:
+Створіть файл для рецепта білого соусу:
 
 ```bash
 $ echo "Very fun recipe to do" > whitesauce.md
@@ -338,7 +338,7 @@ $ git commit -m 'Add white sauce recipe'
 
 We all know that white sauce has a more sophisticated name.
 
-Rename the file `whitesauce.md` to `bechamel.md` with Git:
+Змініть назву файлу з `whitesauce.md` на `bechamel.md` за допомогою Git:
 
 ```bash
 $ git mv whitesauce.md bechamel.md
@@ -359,7 +359,7 @@ Changes to be committed:
 $ git commit -m 'Use the French name for the whitesauce'
 ```
 
-## Renaming a File with Unix
+## Перейменування файлу за допомогою Unix
 
 If you forgot to use Git and you used Unix `mv` instead
 of `git mv`, you will have a touch more work to do but Git will
@@ -396,8 +396,8 @@ Untracked files:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Git has noticed that the file `whitesauce.md` has disappeared from the
-file system and a new file `bechamel.md` has showed up.
+Git помітив, що файл `whitesauce.md` зник з
+файлової системи та з'явився новий файл `bechamel.md`.
 
 Додайте ці зміни в зону стейджингу:
 
@@ -415,8 +415,8 @@ Changes to be committed:
 
 ```
 
-Notice how Git has now figured out that the `whitesauce.md` has not
-disappeared - it has simply been renamed.
+Зверніть увагу, що тепер Git зрозумів, що `whitesauce.md` не
+зник - його просто перейменували.
 
 Останнім кроком, як і раніше, є внесення змін до репозиторію:
 
