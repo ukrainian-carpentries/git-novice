@@ -281,8 +281,7 @@ software-specific license instead.
 ## [Хостинг](../episodes/13-hosting.md)
 
 A common concern for learners is having their work publicly available on
-GitHub.  While we encourage open science, sometimes private repos are the
-only choice. Завжди цікаво згадати варіанти розміщення приватних репозиторіїв.
+GitHub.  Хоча ми заохочуємо відкриту науку, іноді приватні репозиторії є єдиним варіантом. Завжди цікаво згадати варіанти розміщення приватних репозиторіїв.
 
 [github]: https://github.com/
 [drawings]: https://marklodato.github.io/visual-git-guide/index-en.html
