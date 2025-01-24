@@ -1,105 +1,70 @@
 ---
-title: Licensing
+title: Ліцензування
 teaching: 5
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain why adding licensing information to a repository is important.
-- Choose a proper license.
-- Explain differences in licensing and social expectations.
+- Пояснити, чому важливо додавати інформацію про ліцензування до репозиторію.
+- Як обрати відповідну ліцензію?
+- Пояснити відмінності в ліцензуванні та соціальних очікуваннях.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What licensing information should I include with my work?
+- Яку інформацію про ліцензію має містити моя робота?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-When a repository with source code, a manuscript or other creative
-works becomes public, it should include a file `LICENSE` or
-`LICENSE.txt` in the base directory of the repository that clearly
-states under which license the content is being made available. This
-is because creative works are automatically eligible for intellectual
-property (and thus copyright) protection. Reusing creative works
-without a license is dangerous, because the copyright holders could
-sue you for copyright infringement.
+Коли репозиторій з вихідним кодом, рукописом або іншими творчими роботами стає публічним, він повинен містити у головному каталозі репозиторію файл під назвою `LICENSE` або `LICENSE.txt`, у якому чітко вказано, під якою ліцензією надається контент. Це пояснюється тим, що творчі роботи автоматично мають право на захист інтелектуальної власності (і, отже, авторських прав). Повторне використання творчих робіт без ліцензії є небезпечним, оскільки правовласники можуть подати на вас до суду за порушення авторських прав.
 
-A license solves this problem by granting rights to others (the
-licensees) that they would otherwise not have. What rights are being
-granted under which conditions differs, often only slightly, from one
-license to another. In practice, a few licenses are by far the most
-popular, and [choosealicense.com](https://choosealicense.com/) will
-help you find a common license that suits your needs.  Important
-considerations include:
+Ліцензія вирішує цю проблему, надаючи іншим особам (ліцензіатам) права, яких вони в іншому випадку не мали б. Те, які права надаються, і за яких умов, може відрізнятися, але часто не дуже, у різних ліцензіях. На практиці, деякі ліцензії на сьогодні є найпопулярнішими, і [choosealicense.com](https://choosealicense.com/) може допомогти вам знайти поширену ліцензію, яка відповідає вашим потребам.  Важливими міркуваннями є:
 
-- Whether you want to address patent rights.
-- Whether you require people distributing derivative works to also
-  distribute their source code.
-- Whether the content you are licensing is source code.
-- Whether you want to license the code at all.
+- Чи хочете ви вказати патентні права.
+- Чи потрібно вам, щоб люди, які будуть поширювати похідні роботи, також розповсюджували свій вихідний код.
+- Чи є вміст, який ви ліцензуєте, вихідним кодом.
+- Чи хочете ви взагалі ліцензувати код.
 
-Choosing a license that is in common use makes life easier for
-contributors and users, because they are more likely to already be
-familiar with the license and don't have to wade through a bunch of
-jargon to decide if they're ok with it.  The [Open Source
-Initiative](https://opensource.org/licenses) and [Free Software
-Foundation](https://www.gnu.org/licenses/license-list.html) both
-maintain lists of licenses which are good choices.
+Вибір ліцензії, яка є загальновживаною, полегшує життя для учасників і користувачів, тому що вони, швидше за все, вже знайомі з ліцензією, і їм не доведеться продиратися через купу жаргону, щоб вирішити, чи згодні вони з нею.  [Ініціатива відкритого коду](https://opensource.org/licenses) та [Фонд вільного програмного забезпечення](https://www.gnu.org/licenses/license-list.html) підтримують списки ліцензій, які є гарним вибором.
 
-[This article][software-licensing] provides an excellent overview of
-licensing and licensing options from the perspective of scientists who
-also write code.
+[Ця стаття][software-licensing] пропонує відмінний огляд ліцензування та його варіантів з точки зору вчених, які також пишуть код.
 
-At the end of the day what matters is that there is a clear statement
-as to what the license is. Also, the license is best chosen from the
-get-go, even if for a repository that is not public. Pushing off the
-decision only makes it more complicated later, because each time a new
-collaborator starts contributing, they, too, hold copyright and will
-thus need to be asked for approval once a license is chosen.
+Зрештою, важливо те, що є чітке твердження про те, яка ліцензія використовується. Також, ліцензію краще вибирати з самого початку, навіть для репозиторію, який не є загальнодоступним. Відкладання
+цієї справи лише ускладнить ваше становище у майбутньому, тому що кожного разу,
+коли нові співавтори зроблять свій внесок, вони також володітимуть авторським правом. Таким чином, будь-який вибір ліцензії пізніше також буде потрібно узгоджувати з ними.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Can I Use Open License?
+## Чи можу я використовувати відкриту ліцензію?
 
-Find out whether you are allowed to apply an open license to your software.
-Can you do this unilaterally,
-or do you need permission from someone in your institution?
-If so, who?
-
+Дізнайтеся, чи дозволено вам застосовувати відкриту ліцензію до вашого програмного забезпечення.
+Чи можете ви зробити це в односторонньому порядку, або вам потрібен дозвіл від когось у вашому закладі?
+Якщо так, то від кого?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## What licenses have I already accepted?
+## З якими ліцензіями ми вже погодились?
 
-Many of the software tools we use on a daily basis (including in this workshop) are
-released as open-source software. Pick a project on GitHub from the list below, or
-one of your own choosing. Find its license (usually in a file called `LICENSE` or
-`COPYING`) and talk about how it restricts your use of the software. Is it one of
-the licenses discussed in this session? How is it different?
+Багато програм, якими ми користуємося щодня (у тому числі і на цьому семінарі) доступні як програмне забезпечення з відкритим вихідним кодом. Виберіть на GitHub проєкт зі списку нижче, або інший проєкт на ваш вибір. Знайдіть його ліцензію (зазвичай у файлі під назвою `LICENSE` або `COPYING`) і подивіться як вона обмежує використання програмного забезпечення. Чи це одна з ліцензій обговорювана у цьому епізоді? Якщо ні, то чим вона відрізняється?
 
-- [Git](https://github.com/git/git), the source-code management tool
-- [CPython](https://github.com/python/cpython), the standard implementation of the Python language
-- [Jupyter](https://github.com/jupyter), the project behind the web-based Python notebooks we'll be using
-- [EtherPad](https://github.com/ether/etherpad-lite), a real-time collaborative editor
-  
+- [Git](https://github.com/git/git) - інструмент для управління вихідним кодом
+- [CPython](https://github.com/python/cpython) - стандартна реалізація мови Python
+- [Jupyter](https://github.com/jupyter) - проєкт, який стоїть за вебноутбуками Python, які ми будемо використовувати
+- [EtherPad](https://github.com/ether/etherpad-lite) - редактор для спільної роботи в реальному часі
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 [software-licensing]: https://doi.org/10.1371/journal.pcbi.1002598
 
-
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- The `LICENSE`, `LICENSE.md`, or `LICENSE.txt` file is often used in a repository to indicate how the contents of the repo may be used by others.
-- People who incorporate General Public License (GPL'd) software into their own software must make their software also open under the GPL license; most other open licenses do not require this.
-- The Creative Commons family of licenses allow people to mix and match requirements and restrictions on attribution, creation of derivative works, further sharing, and commercialization.
-- People who are not lawyers should not try to write licenses from scratch.
+- Файли з імʼям `LICENSE`, `LICENSE.md`, або `LICENSE.txt` часто використовуються у репозиторіях, щоб вказати, як їх вміст може застосовуватися іншими.
+- Розробники, які інтегрують програмне забезпечення з ліцензією General Public License (GPL) у своє власне, також повинні зробити своє програмне забезпечення відкритим під ліцензією GPL. Більшість інших відкритих ліцензій цього не вимагають.
+- Сімейство ліцензій Creative Commons дозволяє авторам гнучко комбінувати вимоги та обмеження щодо зазначення авторства, створення похідних творів, подальшого поширення та комерціалізації.
+- Люди, які не є юристами, не повинні намагатися писати ліцензії з нуля.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

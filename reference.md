@@ -1,81 +1,67 @@
 ---
-title: 'Git Cheatsheets for Quick Reference'
+title: Шпаргалки з Git для швидкого ознайомлення
 ---
 
-## Git Cheatsheets for Quick Reference
+## Шпаргалки з Git для швидкого ознайомлення
 
-- Printable Git cheatsheets in several languages are [available here](https://github.github.com/training-kit/) ([English version](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)). More material is available from the [GitHub training website](https://try.github.io/).
-- An [interactive one-page visualisation](https://ndpsoftware.com/git-cheatsheet.html)
-  about the relationships between workspace, staging area, local repository, upstream repository, and the commands associated with each (with explanations).
-- Both resources are also available in other languages (e.g. Spanish, French, and more).
-- "[Happy Git and GitHub for the useR](https://happygitwithr.com)" is an accessible, free online book by Jenny Bryan on how to setup and use Git and GitHub with specific references on the integration of Git with RStudio and working with Git in R.
-- [Open Scientific Code using Git and GitHub](https://open-source-for-researchers.github.io/open-source-workshop/) - A collection of explanations and short practical exercises to help researchers learn more about version control and open source software.
+- Шпаргалки з Git кількома мовами [доступні тут](https://github.github.com/training-kit/) ([Українська версія](https://training.github.com/downloads/ua/github-git-cheat-sheet/)). Більше матеріалів можна знайти на [навчальному сайті GitHub](https://try.github.io/).
+- [Інтерактивна односторінкова візуалізація](http://ndpsoftware.com/git-cheatsheet.html) про взаємозв'язки між робочим простором, зоною стейджингу, локальним репозиторієм, вихідним (upstream) репозиторієм, та командами, пов'язаними з кожним з них (з поясненнями).
+- Обидва ресурси також доступні іншими мовами (наприклад, іспанською, французькою та іншими).
+- "[Happy Git and GitHub for the useR](http://happygitwithr.com)" - доступна, безкоштовна онлайн книга автора Jenny Bryan про те, як налаштувати та використовувати Git і GitHub, з конкретними посиланнями на інтеграцію Git з RStudio та роботу з Git в R.
+- [Open Scientific Code using Git and GitHub](https://open-source-for-researchers.github.io/open-source-workshop/) - збірка пояснень та коротких практичних вправ, які допоможуть дослідникам дізнатися більше про контроль версій та програмне забезпечення з відкритим кодом.
 
-## Glossary
+## Глосарій
 
 [changeset]{#changeset}
-:   A group of changes to one or more files that are or will be added
-to a single [commit](#commit) in a [version control](#version-control)
-[repository](#repository).
+:   Група змін до одного або декількох файлів, які є або будуть додані до одного
+[коміту](#commit) в [репозиторії](#repository) для [контролю версій](#version-control).
 
 [commit]{#commit}
-:   To record the current state of a set of files (a [changeset](#changeset))
-in a [version control](#version-control) [repository](#repository). As a noun,
-the result of committing, i.e. a recorded changeset in a repository.
-If a commit contains changes to multiple files,
-all of the changes are recorded together.
+:   Дія запису поточного стану набору файлів (тобто, [набору змін](#changeset))
+у [репозиторії](#repository) для [контролю версій](#version-control). Як іменник, зазначає результат коміту, тобто записаний набір змін у репозиторії.
+Якщо коміт містить зміни до декількох файлів, всі зміни записуються разом.
 
 [conflict]{#conflict}
-:   A change made by one user of a [version control system](#version-control)
-that is incompatible with changes made by other users.
-Helping users [resolve](#resolve) conflicts
-is one of version control's major tasks.
+:   Зміна, зроблена одним користувачем [системи управління версіями](#version-control),
+несумісна зі змінами, внесеними іншими користувачами.
+Допомога користувачам [вирішувати](#resolve) конфлікти є одним з основних завдань контролю версій.
 
 [HTTP]{#http}
-:   The Hypertext Transfer [Protocol](#protocol) used for sharing web pages and other data
-on the World Wide Web.
+:   Hypertext Transfer [Протокол](#protocol), що використовується для обміну вебсторінка та іншими даними у всесвітній павутині.
 
 [merge]{#merge}
-:   (a repository): To reconcile two sets of changes to a
-[repository](#repository).
+:   (стосовно репозиторію): Узгодження двох наборів змін до [репозиторію](#repository).
 
 [protocol]{#protocol}
-:   A set of rules that define how one computer communicates with another.
-Common protocols on the Internet include [HTTP](#http) and [SSH](#ssh).
+:   Набір правил, які визначають, як один комп'ютер спілкується з іншим.
+Поширені протоколи Інтернету включають [HTTP](#http) та [SSH](#ssh).
 
 [remote]{#remote}
-:   (of a repository) A version control [repository](#repository) connected to another,
-in such way that both can be kept in sync exchanging [commits](#commit).
+:   (для репозиторію) [Репозиторій](#repository) для контролю версій, зʼєднаний з іншим
+таким чином, що обидва репозиторії можуть бути синхронізовані шляхом обміну [комітамі](#commit).
 
 [repository]{#repository}
-:   A storage area where a [version control](#version-control) system
-stores the full history of [commits](#commit) of a project and information
-about who changed what, when.
+:   Область зберігання, де система [контролю версій](#version-control)
+зберігає повну історію [комітів](#commit) проєкту та інформацію
+про те, хто що змінив і коли.
 
 [resolve]{#resolve}
-:   To eliminate the [conflicts](#conflict) between two or more incompatible changes to a file or set of files
-being managed by a [version control](#version-control) system.
+:   Усунути [конфлікти](#conflict) між двома або більше несумісними змінами до файлу або набору файлів за допомогою системи [контролю версій](#version-control).
 
 [revision]{#revision}
-:   A synonym for [commit](#commit).
+:   Синонім [коміту](#commit).
 
 [SHA-1]{#sha-1}
-:   [SHA-1 hashes](https://en.wikipedia.org/wiki/SHA-1) is what Git uses to compute identifiers, including for commits.
-To compute these, Git uses not only the actual change of a commit, but also its metadata (such as date, author,
-message), including the identifiers of all commits of preceding changes. This makes Git commit IDs virtually unique.
-I.e., the likelihood that two commits made independently, even of the same change, receive the same ID is exceedingly
-small.
+:   [Хеш SHA-1](https://en.wikipedia.org/wiki/SHA-1) - це те, що Git використовує для створення ідентифікаторів, у тому числі для комітів.
+Для їх обчислення Git використовує не тільки фактичні зміни збережені у коміті, але і його метадані (такі як дата, автор, текст повідомлення), включаючи ідентифікатори всіх комітів попередніх змін. Це робить ідентифікатори комітів Git практично унікальними.
+Тобто ймовірність того, що два коміти, зроблені незалежно один від одного, навіть з однаковими змінами, отримують один і той же ідентифікатор, надзвичайно мала.
 
 [SSH]{#ssh}
-:   The Secure Shell [protocol](#protocol) used for secure communication between computers.
+:   Secure Shell [протокол](#protocol), який використовується для безпечного зв'язку між комп'ютерами.
 
 [timestamp]{#timestamp}
-:   A record of when a particular event occurred.
+:   Запис про те, коли сталася певна подія.
 
 [version control]{#version-control}
-:   A tool for managing changes to a set of files.
-Each set of changes creates a new [commit](#commit) of the files;
-the version control system allows users to recover old commits reliably,
-and helps manage conflicting changes made by different users.
-
-
+:   Інструмент для керування змінами набору файлів.
+Кожен набір змін створює новий [коміт](#commit) файлів; система контролю версій дозволяє користувачам надійно відновлювати старі коміти, і допомагає узгоджувати суперечливі зміни, внесені різними користувачами.

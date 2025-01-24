@@ -1,33 +1,31 @@
 ---
-title: Ignoring Things
+title: Ігнорування файлів
 teaching: 5
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Configure Git to ignore specific files.
-- Explain why ignoring files can be useful.
+- Налаштувати Git для ігнорування певних файлів.
+- Зрозуміти чому ігнорування файлів може бути корисним.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I tell Git to ignore files I don't want to track?
+- Як зробити так, щоб Git ігнорував файли, які я не хочу відстежувати?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-What if we have files that we do not want Git to track for us,
-like backup files created by our editor
-or intermediate files created during data analysis?
-Let's create a few dummy files:
+Що робити, якщо у нас є файли, які ми не хочемо відстежувати у Git, наприклад, резервні файли, створені нашим редактором або проміжні файли, створені під час аналізу даних?
+Створімо декілька фіктивних файлів:
 
 ```bash
-$ mkdir results
-$ touch a.csv b.csv c.csv results/a.out results/b.out
+$ mkdir receipts
+$ touch a.png b.png c.png receipts/a.jpg receipts/b.jpg
 ```
 
-and see what Git says:
+і подивимося, що скаже Git:
 
 ```bash
 $ git status
@@ -38,20 +36,18 @@ On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	a.csv
-	b.csv
-	c.csv
-	results/
+	a.png
+	b.png
+	c.png
+	receipts/
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-Putting these files under version control would be a waste of disk space.
-What's worse,
-having them all listed could distract us from changes that actually matter,
-so let's tell Git to ignore them.
+Відстеження цих файлів за допомогою контролю версій буде марною тратою місця на диску.
+Що гірше, висвітлення змін в них під час перегляду історії або статусу проєкту може відвернути нас від змін, які насправді важливі, Тож скажімо Git, що ці файли треба ігнорувати.
 
-We do this by creating a file in the root directory of our project called `.gitignore`:
+Ми можемо зробити це, створюючи у кореневому каталозі нашого проєкту файл під назвою `.gitignore`:
 
 ```bash
 $ nano .gitignore
@@ -59,17 +55,14 @@ $ cat .gitignore
 ```
 
 ```output
-*.csv
-results/
+*.png
+receipts/
 ```
 
-These patterns tell Git to ignore any file whose name ends in `.csv`
-and everything in the `results` directory.
-(If any of these files were already being tracked,
-Git would continue to track them.)
+Ці шаблони наказують Git ігнорувати будь-який файл, ім’я якого закінчується на `.png`, і все в каталозі `receipts`.
+(Якщо будь-які з цих файлів вже відстежуються, то Git продовжить їх відстежувати.)
 
-Once we have created this file,
-the output of `git status` is much cleaner:
+Як тільки ми створили цей файл, результат команди `git status` стає набагато зрозумілішим:
 
 ```bash
 $ git status
@@ -85,15 +78,13 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-The only thing Git notices now is the newly-created `.gitignore` file.
-You might think we wouldn't want to track it,
-but everyone we're sharing our repository with will probably want to ignore
-the same things that we're ignoring.
-Let's add and commit `.gitignore`:
+Єдина річ, яку Git помічає зараз - це новостворений файл `.gitignore`.
+Ви можете подумати, що його не треба відстежувати, але всі, з ким ми ділимося нашим репозиторієм, ймовірно, захочуть ігнорувати ті самі речі, які ігноруємо ми.
+Додамо до репозиторію та здійснимо коміт файлу `.gitignore`:
 
 ```bash
 $ git add .gitignore
-$ git commit -m "Ignore data files and the results folder"
+$ git commit -m "Ignore png files and the receipts folder."
 $ git status
 ```
 
@@ -102,22 +93,20 @@ On branch main
 nothing to commit, working tree clean
 ```
 
-As a bonus, using `.gitignore` helps us avoid accidentally adding files to the repository that we don't want to track:
+Як бонус, використання `.gitignore` допомагає нам уникнути випадкового додавання до репозиторію файлів, які ми не хочемо відстежувати:
 
 ```bash
-$ git add a.csv
+$ git add a.png
 ```
 
 ```output
 The following paths are ignored by one of your .gitignore files:
-a.csv
+a.png
 Use -f if you really want to add them.
 ```
 
-If we really want to override our ignore settings,
-we can use `git add -f` to force Git to add something. For example,
-`git add -f a.csv`.
-We can also always see the status of ignored files if we want:
+Якщо ми дійсно хочемо змінити наші налаштування ігнорування, ми можемо використати `git add -f`, щоб змусити Git щось додати. Наприклад, `git add -f a.csv`.
+Якщо потрібно, можна також побачити статус ігнорованих файлів:
 
 ```bash
 $ git status --ignored
@@ -128,119 +117,42 @@ On branch main
 Ignored files:
  (use "git add -f <file>..." to include in what will be committed)
 
-        a.csv
-        b.csv
-        c.csv
-        results/
+        a.png
+        b.png
+        c.png
+        receipts/
 
 nothing to commit, working tree clean
 ```
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Ignoring Nested Files
+## Ігнорування вкладених файлів
 
-Given a directory structure that looks like:
-
-```bash
-results/data
-results/plots
-```
-
-How would you ignore only `results/plots` and not `results/data`?
-
-:::::::::::::::  solution
-
-## Solution
-
-If you only want to ignore the contents of
-`results/plots`, you can change your `.gitignore` to ignore
-only the `/plots/` subfolder by adding the following line to
-your .gitignore:
-
-```output
-results/plots/
-```
-
-This line will ensure only the contents of `results/plots` is ignored, and
-not the contents of `results/data`.
-
-As with most programming issues, there
-are a few alternative ways that one may ensure this ignore rule is followed.
-The "Ignoring Nested Files: Variation" exercise has a slightly
-different directory structure
-that presents an alternative solution.
-Further, the discussion page has more detail on ignore rules.
-
-
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Including Specific Files
-
-How would you ignore all `.csv` files in your root directory except for
-`final.csv`?
-Hint: Find out what `!` (the exclamation point operator) does
-
-:::::::::::::::  solution
-
-## Solution
-
-You would add the following two lines to your .gitignore:
-
-```output
-*.csv           # ignore all data files
-!final.csv      # except final.csv
-```
-
-The exclamation point operator will include a previously excluded entry.
-
-Note also that because you've previously committed `.csv` files in this
-lesson they will not be ignored with this new rule. Only future additions
-of `.csv` files added to the root directory will be ignored.
-
-
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Ignoring Nested Files: Variation
-
-Given a directory structure that looks similar to the earlier Nested Files
-exercise, but with a slightly different directory structure:
+Враховуючи структуру каталогу, яка виглядає так:
 
 ```bash
-results/data
-results/images
-results/plots
-results/analysis
+receipts/data
+receipts/plots
 ```
 
-How would you ignore all of the contents in the results folder, but not `results/data`?
-
-Hint: think a bit about how you created an exception with the `!` operator
-before.
+Як зробити так, щоб Git ігнорував тільки `receipts/plots`, а не `receipts/data`?
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
-If you want to ignore the contents of
-`results/` but not those of `results/data/`, you can change your `.gitignore` to ignore
-the contents of results folder, but create an exception for the contents of the
-`results/data` subfolder. Your .gitignore would look like this:
+Якщо ви хочете ігнорувати лише вміст `receipts/plots`, ви можете зробити це шляхом додавання наступного рядка до вашого `.gitignore`:
 
 ```output
-results/*               # ignore everything in results folder
-!results/data/          # do not ignore results/data/ contents
+receipts/plots/
 ```
+
+Цей рядок забезпечить ігнорування лише вмісту `receipts/plots`, але не вмісту `receipts/data`.
+
+Як і в більшості питань програмування, є ще кілька альтернативних способів, які можуть забезпечити виконання цього правила ігнорування.
+Вправа "Варіант ігнорування вкладених файлів" нижче має трохи іншу структуру каталогів, та пояснює альтернативну відповідь.
+Крім того, сторінка обговорення має більш детальну інформацію про правила ігнорування.
 
 :::::::::::::::::::::::::
 
@@ -248,30 +160,25 @@ results/*               # ignore everything in results folder
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Ignoring all data Files in a Directory
+## Додавання конкретних файлів
 
-Assuming you have an empty .gitignore file, and given a directory structure that looks like:
-
-```bash
-results/data/position/gps/a.csv
-results/data/position/gps/b.csv
-results/data/position/gps/c.csv
-results/data/position/gps/info.txt
-results/plots
-```
-
-What's the shortest `.gitignore` rule you could write to ignore all `.csv`
-files in `result/data/position/gps`? Do not ignore the `info.txt`.
+Як ігнорувати всі файли `.png` у кореневому каталозі, за винятком `final.png`?
+Підказка: дізнайтеся, що робить `!` (оператор знаку оклику).
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-Appending `results/data/position/gps/*.csv` will match every file in `results/data/position/gps`
-that ends with `.csv`.
-The file `results/data/position/gps/info.txt` will not be ignored.
+Треба додати наступні два рядки до вашого файлу `.gitignore`:
 
+```output
+*.png           # ignore all png files
+!final.png      # except final.png
+```
 
+Знак оклику призведе до включення раніше виключеного запису.
+
+Зауважте також, що оскільки ви вже зберегли файли `.png` у комітах у цьому уроці, вони не будуть проігноровані цим новим правилом. Тільки майбутні додавання `.png` файлів до кореневого каталогу будуть проігноровані.
 
 :::::::::::::::::::::::::
 
@@ -279,10 +186,69 @@ The file `results/data/position/gps/info.txt` will not be ignored.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Ignoring all data Files in the repository
+## Варіант ігнорування вкладених файлів
 
-Let us assume you have many `.csv` files in different subdirectories of your repository.
-For example, you might have:
+Нехай ми маємо структуру каталогів, яка виглядає подібно до попередньої вправи "Ігнорування файлів у підкаталогах", проте дещо відрізняється:
+
+```bash
+receipts/data
+receipts/images
+receipts/plots
+receipts/analysis
+```
+
+Як би ви проігнорували весь вміст у каталозі `receipts`, крім `receipts/data`?
+
+Підказка: подумайте про те, як ви раніше зробили виняток за допомогою оператору `!`.
+
+:::::::::::::::  solution
+
+## Рішення
+
+Щоб проігнорувати все в каталозі `receipts/` без `receipts/data/`, можна змінити ваш`.gitignore`, щоб ігнорувати вміст каталогу `receipts`, але створити виняток для вмісту підкаталогу `receipts/data`. Ваш `.gitignore` буде виглядати так:
+
+```output
+receipts/*               # ігнорувати все в каталозі receipts
+!receipts/data/          # не ігнорувати вміст каталогу receipts/data/
+```
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Ігнорування всіх файлів з даними у каталозі
+
+Припустимо, що у вас порожній файл `.gitignore`, і ви бачите структуру каталогів, яка виглядає так:
+
+```bash
+receipts/data/market_position/gps/a.dat
+receipts/data/market_position/gps/b.dat
+receipts/data/market_position/gps/c.dat
+receipts/data/market_position/gps/info.txt
+receipts/plots
+```
+
+Яке найкоротше правило ви можете додати до `.gitignore`, щоб ігнорувати всі файли з розширенням `.dat` у каталозі `result/data/market_position/gps`? При цьому, не ігноруйте `info.txt`.
+
+:::::::::::::::  solution
+
+## Рішення
+
+Додавання `receipts/data/market_position/gps/*.dat` призведе до ігнорування усіх файлів у `receipts/data/market_position/gps`, які закінчуються на `.dat`.
+Файл `receipts/data/market_position/gps/info.txt` не буде проігноровано.
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Ігнорування всіх файлів з даними у репозиторії
+
+Припустимо тепер, що у вас є багато файлів з розширенням `.csv` в різних підкаталогах вашого репозиторію.
+Наприклад, ви можете мати:
 
 ```bash
 results/a.csv
@@ -291,22 +257,20 @@ data/experiment_2/c.csv
 data/experiment_2/variation_1/d.csv
 ```
 
-How do you ignore all the `.csv` files, without explicitly listing the names of the corresponding folders?
+Як ігнорувати всі файли `.csv` без явного переліку усіх відповідних каталогів?
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
-In the `.gitignore` file, write:
+Додайте наступний рядок до файлу `.gitignore`:
 
 ```output
 **/*.csv
 ```
 
-This will ignore all the `.csv` files, regardless of their position in the directory tree.
-You can still include some specific exception with the exclamation point operator.
-
-
+Це призведе до ігнорування усіх файлів `.csv`, незалежно від їх розташування у дереві каталогів.
+Ви все ще можете робити певні винятки з цього правила за допомогою знаку оклику.
 
 :::::::::::::::::::::::::
 
@@ -314,24 +278,23 @@ You can still include some specific exception with the exclamation point operato
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## The Order of Rules
+## Порядок застосування правил
 
-Given a `.gitignore` file with the following contents:
+Нехай нам дано файл `.gitignore` з наступним вмістом:
 
 ```bash
 *.csv
 !*.csv
 ```
 
-What will be the result?
+Який вплив це буде мати на ігнорування файлів?
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
-The `!` modifier will negate an entry from a previously defined ignore pattern.
-Because the `!*.csv` entry negates all of the previous `.csv` files in the `.gitignore`,
-none of them will be ignored, and all `.csv` files will be tracked.
+Оператор `!` скасує запис з попередньо визначеного шаблону ігнорування.
+Оскільки запис `! *.csv` скасовує всі попередні файли `.csv` в `.gitignore`, жоден з них не буде проігноровано, і всі файли `.csv` будуть відстежуватися.
 
 :::::::::::::::::::::::::
 
@@ -339,27 +302,26 @@ none of them will be ignored, and all `.csv` files will be tracked.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Log Files
+## Log-файли
 
-You wrote a script that creates many intermediate log-files of the form `log_01`, `log_02`, `log_03`, etc.
-You want to keep them but you do not want to track them through `git`.
+Ви написали скрипт, який створює багато проміжних log-файлів з назвами `log_01`, `log_02`, `log_03` тощо.
+Ви хочете зберегти їх, але не бажаєте відстежувати їх за допомогою `git`.
 
-1. Write **one** `.gitignore` entry that excludes files of the form `log_01`, `log_02`, etc.
+1. Додайте до `.gitignore` один рядок, який виключає файли `log_01`, `log_02` тощо.
 
-2. Test your "ignore pattern" by creating some dummy files of the form `log_01`, etc.
+2. Перевірте свій "шаблон ігнорування", створивши деякі фіктивні файли з назвами `log_01`, `log_02` тощо.
 
-3. You find that the file `log_01` is very important after all, add it to the tracked files without changing the `.gitignore` again.
+3. Уявіть тепер, що файл `log_01` дуже важливий, та додайте його до відстежуваних файлів, не змінюючи `.gitignore`.
 
-4. Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via `.gitignore`.
+4. Обговоріть з сусідом, які інші типи файлів можуть перебувати у вашому проєкті, які ви не бажаєте відстежувати і тому бажаєте проігнорувати за допомогою `.gitignore`.
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
-1. append either `log_*`  or  `log*`  as a new entry in your .gitignore
-2. track `log_01` using   `git add -f log_01`
-  
-  
+1. додайте або `log_*`  або  `log*`  як новий рядок до вашого `.gitignore`
+
+2. відстежуйте `log_01` за допомогою `git add -f log_01`
 
 :::::::::::::::::::::::::
 
@@ -367,8 +329,7 @@ You want to keep them but you do not want to track them through `git`.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- The `.gitignore` file tells Git what files to ignore.
+- Текстовий файл `.gitignore` інформує Git про те, які файли треба ігнорувати в репозиторії.
+- Ви можете вказати певні файли або каталоги, які Git буде ігнорувати, або вказати типи файлів, які зазвичай ігноруються.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

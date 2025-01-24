@@ -1,26 +1,26 @@
 ---
-title: Citation
+title: Цитування
 teaching: 2
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Make your work easy to cite
+- Зробити вашу роботу легкою для цитування
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I make my work easier to cite?
+- Як полегшити цитування моєї роботи?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-You may want to include a file called `CITATION` or `CITATION.txt`
-that describes how to reference your project;
-the [one for Software
-Carpentry](https://github.com/swcarpentry/website/blob/gh-pages/CITATION)
-states:
+Ви можете додати файл під назвою `CITATION` або `CITATION.txt`,
+який описує, як цитувати ваш проєкт;
+наприклад, для Software
+Carpentry [цей файл](https://github.com/swcarpentry/website/blob/gh-pages/CITATION)
+зазначає:
 
 ```source
 To reference Software Carpentry in publications, please cite:
@@ -38,8 +38,8 @@ Greg Wilson: "Software Carpentry: Lessons Learned". F1000Research,
 }
 ```
 
-More detailed advice, and other ways to make your code citable can be found
-[at the Software Sustainability Institute blog](https://www.software.ac.uk/publication/how-cite-and-describe-software) and in:
+Більш детальні поради та інші способи зробити ваш код цитованим можна знайти
+[у блозі Software Sustainability Institute](https://www.software.ac.uk/how-cite-and-describe-software), а також у:
 
 ```source
 Smith AM, Katz DS, Niemeyer KE, FORCE11 Software Citation Working Group. (2016) Software citation
@@ -47,15 +47,11 @@ principles. [PeerJ Computer Science 2:e86](https://peerj.com/articles/cs-86/)
 https://doi.org/10.7717/peerj-cs.8
 ```
 
-There is also an [`@software{...`](https://www.google.com/search?q=git+citation+%22%40software%7B%22)
-[BibTeX](https://www.ctan.org/pkg/bibtex) entry type in case
-no "umbrella" citation like a paper or book exists for the project you want to
-make citable.
+Існує також тип запису [`@software{...`](https://www.google.com/search?q=git+citation+%22%40software%7B%22) для [BibTeX](https://www.ctan.org/pkg/bibtex) на випадок, якщо для проєкту, який ви хочете процитувати,
+немає «джерела-парасольки» для цитування, такого як стаття або книга.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Add a CITATION file to a repository to explain how you want your work cited.
+- Додайте файл `CITATION` до репозиторію, щоб пояснити у ньому, як ви хочете бачити посилання на свою роботу.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
