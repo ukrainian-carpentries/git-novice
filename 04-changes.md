@@ -1,47 +1,49 @@
 ---
-title: Відстеження змін
+title: Tracking Changes
 teaching: 20
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Пройти цикл зміни-додавання-коміту для одного або декількох файлів.
-- Пояснити де зберігається інформація на кожному етапі цього циклу.
-- Пояснити різницю між інформативними та неінформативними повідомленнями комітів.
+- Go through the modify-add-commit cycle for one or more files.
+- Explain where information is stored at each stage of that cycle.
+- Distinguish between descriptive and non-descriptive commit messages.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- Як зберегти зміни в Git?
-- Як перевірити стан свого репозиторію?
-- Як зробити нотатки про те, які зміни було внесено і чому?
+- How do I record changes in Git?
+- How do I check the status of my version control repository?
+- How do I record notes about what changes I made and why?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Спочатку переконаймося, що ми все ще у правильному каталозі.
-Ви повинні знаходитися у каталозі `planets`.
+First let's make sure we're still in the right directory.
+You should be in the `planets` directory.
 
 ```bash
 $ cd ~/Desktop/planets
 ```
 
-Тепер створимо файл під назвою `mars.txt`, який буде містити деякі нотатки про придатність Марса як бази.
-Ми будемо використовувати редактор `nano` для редагування файлу; ви можете використовувати будь-який редактор, який вам подобається.
-Зокрема, це не обовʼязково повинен бути `core.editor`, який ви раніше вказали глобально. Але пам'ятайте, що команда bash для створення або редагування нового файлу буде залежати від редактора, який ви оберете (це може бути не `nano`). Для довідки щодо текстових редакторів, дивіться ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor/) в уроці [The Unix Shell](https://swcarpentry.github.io/shell-novice/).
+Let's create a file called `mars.txt` that contains some notes
+about the Red Planet's suitability as a base.
+We'll use `nano` to edit the file;
+you can use whatever editor you like.
+In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
 
 ```bash
 $ nano mars.txt
 ```
 
-Введіть наведений нижче текст у файл `mars.txt`:
+Type the text below into the `mars.txt` file:
 
 ```output
 Cold and dry, but everything is my favorite color
 ```
 
-Давайте спочатку перевіримо, що файл був правильно створений, запустивши команду `ls`:
+Let's first verify that the file was properly created by running the list command (`ls`):
 
 ```bash
 $ ls
@@ -51,7 +53,7 @@ $ ls
 mars.txt
 ```
 
-`mars.txt` містить тільки один рядок, який ми можемо побачити, запустивши:
+`mars.txt` contains a single line, which we can see by running:
 
 ```bash
 $ cat mars.txt
@@ -61,7 +63,8 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 ```
 
-Якщо ми знову перевіримо статус нашого проєкту, Git повідомляє нам, що він помітив новий файл:
+If we check the status of our project again,
+Git tells us that it's noticed the new file:
 
 ```bash
 $ git status
@@ -80,14 +83,15 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-Повідомлення "untracked files" означає, що в каталозі існує файл, який Git не відстежує.
-Ми можемо повідомити Git, що цей файл треба відстежувати за допомогою команди `git add`:
+The "untracked files" message means that there's a file in the directory
+that Git isn't keeping track of.
+We can tell Git to track a file using `git add`:
 
 ```bash
 $ git add mars.txt
 ```
 
-та згодом переконатися, що все виглядає правильно:
+and then check that the right thing happened:
 
 ```bash
 $ git status
@@ -105,8 +109,10 @@ Changes to be committed:
 
 ```
 
-Git тепер знає, що він повинен стежити за файлом `mars.txt`, але він ще не записав ці зміни як коміт.
-Щоб зробити це, нам потрібно виконати ще одну команду:
+Git now knows that it's supposed to keep track of `mars.txt`,
+but it hasn't recorded these changes as a commit yet.
+To get it to do that,
+we need to run one more command:
 
 ```bash
 $ git commit -m "Start notes on Mars as a base"
@@ -118,17 +124,23 @@ $ git commit -m "Start notes on Mars as a base"
  create mode 100644 mars.txt
 ```
 
-Коли ми запускаємо `git commit`, Git бере все, що ми раніше запросили його зберегти за допомогою `git add`, та зберігає постійну копію цих змін у спеціальному каталозі `.git`.
-Ця постійна копія називається [commit](../learners/reference.md#commit)
-(або [revision](../learners/reference.md#revision)). У цьому прикладі коміт має скорочений ідентифікатор `f22b25e`. У вашого коміту може бути інший ідентифікатор.
+When we run `git commit`,
+Git takes everything we have told it to save by using `git add`
+and stores a copy permanently inside the special `.git` directory.
+This permanent copy is called a [commit](../learners/reference.md#commit)
+(or [revision](../learners/reference.md#revision)) and its short identifier is `f22b25e`. Your commit may have another identifier.
 
-Ми використовуємо команду `-m` (від "message") щоб надати короткий, інформативний та конкретний коментар, який допоможе нам згадати пізніше про те, що ми зробили та чому.
-Якщо ми просто запустимо `git commit` без опції `-m`, Git запустить `nano` (або будь-який інший редактор, який ми вказали як `core.editor`), щоб ми могли написати довше повідомлення.
+We use the `-m` flag (for "message")
+to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
+If we just run `git commit` without the `-m` option,
+Git will launch `nano` (or whatever other editor we configured as `core.editor`)
+so that we can write a longer message.
 
-[Гарні повідомлення комітів][commit-messages] починаються з короткого (\< 50 символів) тексту про зміни, внесені в коміт. Загалом, повідомлення має завершувати речення "If applied, this commit will" <commit message here> ("Якщо застосовано, цей коміт буде" <0>).
-Якщо ви хочете детальніше перейти до подробиць, додайте порожній рядок між першим рядком та вашими додатковими примітками. Використовуйте додаткові примітки, щоб пояснити, чому ви внесли зміни та/або яким буде їх вплив.
+[Good commit messages][commit-messages] start with a brief (\<50 characters) statement about the
+changes made in the commit. Generally, the message should complete the sentence "If applied, this commit will" <commit message here>.
+If you want to go into more detail, add a blank line between the summary line and your additional notes. Use this additional space to explain why you made changes and/or what their impact will be.
 
-Якщо ми тепер запустимо `git status`:
+If we run `git status` now:
 
 ```bash
 $ git status
@@ -139,8 +151,9 @@ On branch main
 nothing to commit, working tree clean
 ```
 
-Git говорить нам, що поточний стан файлів відповідає їх стану, який збережений у репозиторії.
-Якщо ми хочемо знати, що саме ми зробили нещодавно - ми можемо попросити Git показати нам історію проєкту, використовуючи `git log`:
+it tells us everything is up to date.
+If we want to know what we've done recently,
+we can ask Git to show us the project's history using `git log`:
 
 ```bash
 $ git log
@@ -154,20 +167,31 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
     Start notes on Mars as a base
 ```
 
-`git log` виводить перелік усіх комітів, які були внесені до репозиторію, у зворотному хронологічному порядку.
-Для кожного коміту буде надруковано повний ідентифікатор коміту (який починається з тих же символів, що і скорочений ідентифікатор, попередньо надрукований командою `git commit`), автор коміту, дата його створення, і повідомлення Git, яке було додано під час запису коміту.
+`git log` lists all commits  made to a repository in reverse chronological order.
+The listing for each commit includes
+the commit's full identifier
+(which starts with the same characters as
+the short identifier printed by the `git commit` command earlier),
+the commit's author,
+when it was created,
+and the log message Git was given when the commit was created.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Де зберігаються мої зміни?
+## Where Are My Changes?
 
-Якщо ми тепер запустимо `ls`, ми все одно побачимо лише один файл, який називається `mars.txt`.
-Це відбувається тому, що Git зберігає інформацію про історію файлів у спеціальному каталозі `.git`, згаданому раніше, щоб наша файлова система не засмічувалася (і щоб ми випадково не могли змінити або видалити стару версію).
+If we run `ls` at this point, we will still see just one file called `mars.txt`.
+That's because Git saves information about files' history
+in the special `.git` directory mentioned earlier
+so that our filesystem doesn't become cluttered
+(and so that we can't accidentally edit or delete an old version).
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Тепер припустимо, що Dracula додає нову інформацію до файлу.
-(Знову ж таки, ми будемо редагувати його за допомогою `nano`, і потім перевіряти його зміст за допомогою `cat`; ви можете користуватися іншим редактором, та можете не використовувати `cat`.)
+Now suppose Dracula adds more information to the file.
+(Again, we'll edit with `nano` and then `cat` the file to show its contents;
+you may use a different editor, and don't need to `cat`.)
 
 ```bash
 $ nano mars.txt
@@ -179,7 +203,8 @@ Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 ```
 
-Тепер, коли ми запускаємо `git status`, Git повідомляє нам, що файл, про який він вже знає, був змінений:
+When we run `git status` now,
+it tells us that a file it already knows about has been modified:
 
 ```bash
 $ git status
@@ -196,10 +221,16 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Ключова фраза - це останній рядок: "no changes added to commit".
-Ми змінили цей файл, але ми ще не зберегли їх (що ми робимо за допомогою `git commit`), та навіть не сказали Git, що ми маємо намір зберегти ці зміни у майбутньому (що ми робимо за допомогою `git add`).
-Тож зробімо це зараз. Хорошою рекомендацією є перегляд наших змін кожного разу перед їх збереженням. Це робиться за допомогою `git diff`.
-Результат показує нам відмінності між поточним станом файлу та його останньою збереженою версією:
+The last line is the key phrase:
+"no changes added to commit".
+We have changed this file,
+but we haven't told Git we will want to save those changes
+(which we do with `git add`)
+nor have we saved them (which we do with `git commit`).
+So let's do that now. It is good practice to always review
+our changes before saving them. We do this using `git diff`.
+This shows us the differences between the current state
+of the file and the most recently saved version:
 
 ```bash
 $ git diff
@@ -215,16 +246,23 @@ index df0654a..315bf3a 100644
 +The two moons may be a problem for Wolfman
 ```
 
-Результат цієї команди важко зрозуміти, тому що це насправді серія команд для таких інструментів, як редактори або `patch`, яка повідомляє їм, як змінити один файл за допомогою іншого.
-Якщо розділити цей результат на фрагменти:
+The output is cryptic because
+it is actually a series of commands for tools like editors and `patch`
+telling them how to reconstruct one file given the other.
+If we break it down into pieces:
 
-1. Перший рядок вказує на те, що результат цієї команди у Git подібний до Unix команди `diff`, яка порівнює стару та нову версії файлу.
-2. Другий рядок повідомляє які саме версії файлу Git порівнює; `df0654a` та `315bf3a` є унікальними ідентифікаторами цих версій.
-3. Третій та четвертий рядки ще раз показують назву файлу, що змінюється.
-4. Решта рядків найцікавіші, вони показують нам фактичні відмінності і рядки, у яких вони відбуваються.
-   Зокрема, значок `+` в першому стовпці вказує де ми додали рядок.
+1. The first line tells us that Git is producing output similar to the Unix `diff` command
+  comparing the old and new versions of the file.
+2. The second line tells exactly which versions of the file
+  Git is comparing;
+  `df0654a` and `315bf3a` are unique computer-generated labels for those versions.
+3. The third and fourth lines once again show the name of the file being changed.
+4. The remaining lines are the most interesting, they show us the actual differences
+  and the lines on which they occur.
+  In particular,
+  the `+` marker in the first column shows where we added a line.
 
-Після того, як ми переглянули наші зміни, прийшов час зберегти їх:
+After reviewing our change, it's time to commit it:
 
 ```bash
 $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
@@ -241,8 +279,9 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Але це не спрацює: Git не буде додавати зміни, тому що ми не використали спочатку `git add`.
-Давайте це виправимо:
+Whoops:
+Git won't commit because we didn't use `git add` first.
+Let's fix that:
 
 ```bash
 $ git add mars.txt
@@ -254,27 +293,54 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
  1 file changed, 1 insertion(+)
 ```
 
-Git наполягає, щоб ми додали файли до набору змін, які ми хочемо записати, перед тим як ми зробимо коміт. Це дозволяє зберігати зміни поступово та обʼєднувати їх у логічні блоки, аніж у великі набори змін.
-Наприклад, припустимо, ми робимо коміт кількох цитат відповідних досліджень у нашій дисертації.
-Можливо, ми бажаємо зберегти ці зміни, та відповідні записи у бібліографії, але не зберігати деякі інші зміни в нашій роботі (наприклад, висновок, який ми ще не закінчили).
+Git insists that we add files to the set we want to commit
+before actually committing anything. This allows us to commit our
+changes in stages and capture changes in logical portions rather than
+only large batches.
+For example,
+suppose we're adding a few citations to relevant research to our thesis.
+We might want to commit those additions,
+and the corresponding bibliography entries,
+but *not* commit some of our work drafting the conclusion
+(which we haven't finished yet).
 
-Щоб це було можливо зробити, Git має спеціальну _зону стейджингу_ (staging area), де він відстежує речі, які були додані до поточного [набору змін (changeset)](../learners/reference.md#changeset) проте, ще не були збережені.
+To allow for this,
+Git has a special *staging area*
+where it keeps track of things that have been added to
+the current [changeset](../learners/reference.md#changeset)
+but not yet committed.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Зона стейджингу (staging area)
+## Staging Area
 
-Якщо ви будете уявляти, ніби Git робить знімки змін протягом життя проєкту, то `git add` вказує що буде на знімку (додаючи речі в зоні стейджингу), а `git commit` після того насправді робить знімок, та назавжди зберігає його (як коміт).
-Якщо у зоні стейджингу нічого немає, то коли ви введете `git commit`, Git запропонує вам використати `git commit -a` або `git commit --all`, який ніби збирає разом всіх, щоб зробити групове фото!
-Однак майже завжди краще явним чином додати речі до зони стейджингу, тому що без цього ви можете випадково зберегти інші зміни, про які ви забули. (Повертаючись до порівняння з груповим фото, якщо ви використали команду "-а", до вашої фотографії може потрапити зайва людина!)
-Тому додавайте речі в зону стейджингу власноруч - > в іншому випадку вам може знадобитися шукати як використовувати "git undo commit" частіше, ніж вам хотілося б!
+If you think of Git as taking snapshots of changes over the life of a project,
+`git add` specifies *what* will go in a snapshot
+(putting things in the staging area),
+and `git commit` then *actually takes* the snapshot, and
+makes a permanent record of it (as a commit).
+If you don't have anything staged when you type `git commit`,
+Git will prompt you to use `git commit -a` or `git commit --all`,
+which is kind of like gathering *everyone* to take a group photo!
+However, it's almost always better to
+explicitly add things to the staging area, because you might
+commit changes you forgot you made. (Going back to the group photo simile,
+you might get an extra with incomplete makeup walking on
+the stage for the picture because you used `-a`!)
+Try to stage things manually,
+or you might find yourself searching for "git undo commit" more
+than you would like!
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
-Подивімося, як наші зміни у файлі проходять шлях від текстового редактора до зони стейджингу і далі у довгострокове зберігання.
-Спочатку, ми додамо новий рядок у наш файл:
+Let's watch as our changes to a file move from our editor
+to the staging area
+and into long-term storage.
+First,
+we'll add another line to the file:
 
 ```bash
 $ nano mars.txt
@@ -302,16 +368,23 @@ index 315bf3a..b36abfd 100644
 +But the Mummy will appreciate the lack of humidity
 ```
 
-Поки що все добре: ми додали один рядок в кінці файлу (що зазначає `+` у першій колонці).
-Тепер помістімо цю зміну у зону стейджингу та подивимося що після цього звітує `git diff`:
+So far, so good:
+we've added one line to the end of the file
+(shown with a `+` in the first column).
+Now let's put that change in the staging area
+and see what `git diff` reports:
 
 ```bash
 $ git add mars.txt
 $ git diff
 ```
 
-Результату немає: це виглядає ніби для Git немає різниці між тим, що вже було збережено назавжди та тим, що зараз міститься у робочій директорії.
-Проте, якщо ми зробимо наступне:
+There is no output:
+as far as Git can tell,
+there's no difference between what it's been asked to save permanently
+and what's currently in the directory.
+However,
+if we do this:
 
 ```bash
 $ git diff --staged
@@ -328,8 +401,10 @@ index 315bf3a..b36abfd 100644
 +But the Mummy will appreciate the lack of humidity
 ```
 
-то ми побачимо різницю між останніми збереженими змінами та тими, які знаходяться в зоні стейджингу.
-Збережімо наші зміни:
+it shows us the difference between
+the last committed change
+and what's in the staging area.
+Let's save our changes:
 
 ```bash
 $ git commit -m "Discuss concerns about Mars' climate for Mummy"
@@ -340,7 +415,7 @@ $ git commit -m "Discuss concerns about Mars' climate for Mummy"
  1 file changed, 1 insertion(+)
 ```
 
-Перевіримо наш статус:
+check our status:
 
 ```bash
 $ git status
@@ -351,7 +426,7 @@ On branch main
 nothing to commit, working tree clean
 ```
 
-і подивимося на історію попередніх змін:
+and look at the history of what we've done so far:
 
 ```bash
 $ git log
@@ -379,31 +454,43 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Порівняння з підсвіткою змінених слів у рядках
+## Word-based diffing
 
-Інколи, наприклад, у випадку текстових документів, результат `diff` дуже важко зрозуміти. Саме тут `--color-words` опція для `git diff` є надзвичайно зручною, бо вона виділяє кольором змінені слова.
+Sometimes, e.g. in the case of the text documents a line-wise
+diff is too coarse. That is where the `--color-words` option of
+`git diff` comes in very useful as it highlights the changed
+words using colors.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Перегляд історії змін за сторінками
-
-Коли розмір результату `git log` перевищує розмір вашого екрану, `git` використовує спеціальну програму "пейджер", щоб поділити результат на сторінки розміром з ваш екран.
-Після виклику "пейджера", ви помітите, що останній рядок на екрані - це `:`, замість звичайного запрошення командного рядка.
-
-- Натисніть <kbd>Q</kbd>, щоб вийти з пейджеру.
-- Натисніть <kbd>пробіл</kbd>, щоб перейти на наступну сторінку.
-- Щоб шукати `some_word` на всіх сторінках, натисніть <kbd>/</kbd> і введіть `some_word`.
-  Натисніть <kbd>N</kbd> для навігації між результатами пошуку.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Обмеження розміру зображуваної історії змін
+## Paging the Log
 
-Щоб запобігти випадку, коли `git log` повністю займає ваш термінал, ви можете обмежувати кількість комітів які відображує Git, використовуючи опцію `-N`, де `N` - кількість комітів які б ви бажали бачити на екрані. Наприклад, якщо ви бажаєте побачити лише останній коміт, використовуйте команду
+When the output of `git log` is too long to fit in your screen,
+`git` uses a program to split it into pages of the size of your screen.
+When this "pager" is called, you will notice that the last line in your
+screen is a `:`, instead of your usual prompt.
+
+- To get out of the pager, press <kbd>Q</kbd>.
+- To move to the next page, press <kbd>Spacebar</kbd>.
+- To search for `some_word` in all pages,
+  press <kbd>/</kbd>
+  and type `some_word`.
+  Navigate through matches pressing <kbd>N</kbd>.
+  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Limit Log Size
+
+To avoid having `git log` cover your entire terminal screen, you can limit the
+number of commits that Git lists by using `-N`, where `N` is the number of
+commits that you want to view. For example, if you only want information from
+the last commit you can use:
 
 ```bash
 $ git log -1
@@ -417,7 +504,8 @@ Date:   Thu Aug 22 10:14:07 2013 -0400
    Discuss concerns about Mars' climate for Mummy
 ```
 
-Ви також можете зменшити кількість інформації, використовуючи опцію `--oneline`:
+You can also reduce the quantity of information using the
+`--oneline` option:
 
 ```bash
 $ git log --oneline
@@ -429,7 +517,11 @@ $ git log --oneline
 f22b25e Start notes on Mars as a base
 ```
 
-Ви також можете комбінувати опцію `--oneline` з іншими опціями. Наступна корисна комбінація використовує опцію `--graph` для графічного зображення історії комітів за допомогою псевдографіки, вказуючи при цьому які коміти пов'язані з поточним `HEAD`, поточною гілкою `main`, або [іншими обʼєктами у репозиторії][git-references]':
+You can also combine the `--oneline` option with others. One useful
+combination adds `--graph` to display the commit history as a text-based
+graph and to indicate which commits are associated with the
+current `HEAD`, the current branch `main`, or
+[other Git references][git-references]:
 
 ```bash
 $ git log --oneline --graph
@@ -445,54 +537,64 @@ $ git log --oneline --graph
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Каталоги
+## Directories
 
-Дві важливі речі, які ви повинні знати про каталоги в Git.
+Two important facts you should know about directories in Git.
 
-1. Git не відстежує каталоги самостійно, тільки файли всередині них.
-   Спробуйте власноруч:
+1. Git does not track directories on their own, only files within them.
+  Try it for yourself:
+  
+  ```bash
+  $ mkdir spaceships
+  $ git status
+  $ git add spaceships
+  $ git status
+  ```
+  
+  Note, our newly created empty directory `spaceships` does not appear in
+  the list of untracked files even if we explicitly add it (*via* `git add`) to our
+  repository. This is the reason why you will sometimes see `.gitkeep` files
+  in otherwise empty directories. Unlike `.gitignore`, these files are not special
+  and their sole purpose is to populate a directory so that Git adds it to
+  the repository. In fact, you can name such files anything you like.
 
-```bash
-$ mkdir spaceships
-$ git status
-$ git add spaceships
-$ git status
-```
-
-Зауважте, наш новостворений порожній каталог `spaceships` не зʼявляється в переліку невідстежуваних файлів, навіть якщо ми конкретно додали його (_виконав_ `git add`) до нашого> репозиторію Ось чому ви іноді бачите файли `.gitkeep` в інших порожніх каталогах. На відміну від `.gitignore`, ці файли не є особливими і їх єдиною метою є заповнити каталог, щоб Git додав його до репозиторію. Насправді ви можете назвати такі файли до вашої вподоби.
-
-2. Якщо ви створюєте каталог у вашому репозиторії Git і заповнюєте його файлами, ви можете додати всі файли в каталозі одразу:
-
-```bash
-git add <directory-with-files>
-```
-
-Спробуйте власноруч:
-
-```bash
-$ touch spaceships/apollo-11 spaceships/sputnik-1
-$ git status
-$ git add spaceships
-$ git status
-```
-
-Перш ніж рухатися далі, ми збережемо ці зміни.
-
-```bash
-$ git commit -m "Add some initial thoughts on spaceships"
-```
+2. If you create a directory in your Git repository and populate it with files,
+  you can add all files in the directory at once by:
+  
+  ```bash
+  git add <directory-with-files>
+  ```
+  
+  Try it for yourself:
+  
+  ```bash
+  $ touch spaceships/apollo-11 spaceships/sputnik-1
+  $ git status
+  $ git add spaceships
+  $ git status
+  ```
+  
+  Before moving on, we will commit these changes.
+  
+  ```bash
+  $ git commit -m "Add some initial thoughts on spaceships"
+  ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Для повторення: коли ми хочемо додати зміни до нашого репозиторію, спочатку нам потрібно додати змінені файли в зону стейджингу (`git add`) а потім зберегти заплановані зміни до репозиторію (`git commit`):
+To recap, when we want to add changes to our repository,
+we first need to add the changed files to the staging area
+(`git add`) and then commit the staged changes to the
+repository (`git commit`):
 
 ![](fig/git-committing.svg){alt='A diagram showing two documents being separately staged using git add, before being combined into one commit using git commit'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Вибір повідомлення коміту
+## Choosing a Commit Message
 
-Які з наступних повідомлень коміту будуть найбільш оптимальними для останнього коміту в `mars.txt`?
+Which of the following commit messages would be most appropriate for the
+last commit made to `mars.txt`?
 
 1. "Changes"
 2. "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
@@ -500,9 +602,13 @@ $ git commit -m "Add some initial thoughts on spaceships"
 
 :::::::::::::::  solution
 
-## Рішення
+## Solution
 
-Відповідь 1 є недостатньо детальною, а мета коміту неясна; відповідь 2 дублює результат команди "git diff" яка покаже зміни, зроблені у цьому коміті; відповідь 3 - оптимальна: коротка, інформативна, та імперативна.
+Answer 1 is not descriptive enough, and the purpose of the commit is unclear;
+and answer 2 is redundant to using "git diff" to see what changed in this commit;
+but answer 3 is good: short, descriptive, and imperative.
+
+
 
 :::::::::::::::::::::::::
 
@@ -510,9 +616,10 @@ $ git commit -m "Add some initial thoughts on spaceships"
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Збереження змін у Git
+## Committing Changes to Git
 
-Яка(які) з наведених нижче команд збережуть зміни у файлі `myfile.txt` до мого локального Git репозиторію?
+Which command(s) below would save the changes of `myfile.txt`
+to my local Git repository?
 
 1. ```bash
    $ git commit -m "my recent changes"
@@ -531,15 +638,14 @@ $ git commit -m "Add some initial thoughts on spaceships"
 
 :::::::::::::::  solution
 
-## Рішення
+## Solution
 
-1. Створить коміт, лише якщо файли вже були у зоні стейджінгу.
-
-2. Намагатиметься створити новий репозиторій.
-
-3. Правильна відповідь: спочатку додайте файл до зони стейджингу, потім зробіть коміт.
-
-4. Спробує записати коміт файлу з назвою "my recent changes" з повідомленням myfile.txt.
+1. Would only create a commit if files have already been staged.
+2. Would try to create a new repository.
+3. Is correct: first add the file to the staging area, then commit.
+4. Would try to commit a file "my recent changes" with the message myfile.txt.
+  
+  
 
 :::::::::::::::::::::::::
 
@@ -547,21 +653,26 @@ $ git commit -m "Add some initial thoughts on spaceships"
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Коміт декількох файлів
+## Committing Multiple Files
 
-Зона стейджингу може зберігати зміни в будь-якій кількості файлів, які ви хочете записати в один коміт.
+The staging area can hold changes from any number of files
+that you want to commit as a single snapshot.
 
-1. Додайте текст до `mars.txt` про те, що ви вирішили розглянути побудову бази на Венері
-2. Створіть новий файл `venus.txt` з вашими думками стосовно Венери як бази для вас та ваших друзів
-3. Додайте зміни в обох файлах до зони стейджінгу, та зробіть коміт цих змін.
+1. Add some text to `mars.txt` noting your decision
+   to consider Venus as a base
+2. Create a new file `venus.txt` with your initial thoughts
+   about Venus as a base for you and your friends
+3. Add changes from both files to the staging area,
+   and commit those changes.
 
 :::::::::::::::  solution
 
-## Рішення
+## Solution
 
-Результат з файлу `cat mars.txt` нижче зображує тільки контент доданий під час цієї вправи. Ваш результат може виглядати іншим чином.
+The output below from `cat mars.txt` reflects only content added during
+this exercise. Your output may vary.
 
-Спочатку ми робимо зміни у файлах `mars.txt` та `venus.txt`
+First we make our changes to the `mars.txt` and `venus.txt` files:
 
 ```bash
 $ nano mars.txt
@@ -581,20 +692,20 @@ $ cat venus.txt
 Venus is a nice planet and I definitely should consider it as a base.
 ```
 
-Тепер ви можете додати обидва файли до зони стейджингу. Ми можемо зробити це однією командою:
+Now you can add both files to the staging area. We can do that in one line:
 
 ```bash
 $ git add mars.txt venus.txt
 ```
 
-Або за допомогою декількох команд:
+Or with multiple commands:
 
 ```bash
 $ git add mars.txt
 $ git add venus.txt
 ```
 
-Тепер файли готові до коміту. Ви можете перевірити це за допомогою `git status`. Якщо ви готові зробити коміт, використовуйте
+Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
 
 ```bash
 $ git commit -m "Write plans to start a base on Venus"
@@ -613,46 +724,49 @@ $ git commit -m "Write plans to start a base on Venus"
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Вправа: репозиторій з вашою автобіографією
+## `bio` Repository
 
-- Створіть новий репозиторій Git на вашому компʼютері під назвою `bio`.
-- Напишіть три рядки своєї біографії у файлі під назвою `me.txt`, та зробіть коміт цих змін
-- Змініть один з рядків, додайте четвертий рядок
-- Покажіть відмінності між оновленим файлом та його попередньою версією.
+- Create a new Git repository on your computer called `bio`.
+- Write a three-line biography for yourself in a file called `me.txt`,
+  commit your changes
+- Modify one line, add a fourth line
+- Display the differences
+  between its updated state and its original state.
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-Якщо необхідно, вийдіть з каталогу `planets`:
+If needed, move out of the `planets` folder:
 
 ```bash
 $ cd ..
 ```
 
-Створіть новий каталог `bio` та перейдіть до нього:
+Create a new folder called `bio` and 'move' into it:
 
 ```bash
 $ mkdir bio
 $ cd bio
 ```
 
-Ініціалізуйте репозиторій Git:
+Initialise git:
 
 ```bash
 $ git init
 ```
 
-Створіть файл `me.txt` з вашою біографією, використовуючи `nano` або інший текстовий редактор.
-Коли будете готові, додайте його до зони стейджингу та запишіть коміт до репозиторію:
+Create your biography file `me.txt` using `nano` or another text editor.
+Once in place, add and commit it to the repository:
 
 ```bash
 $ git add me.txt
 $ git commit -m "Add biography file" 
 ```
 
-Змініть файл як вказано (змініть один рядок, додайте четвертий рядок).
-Для того, щоб показати зміни між оновленим файлом та його попередньою версією, використайте `git diff`:
+Modify the file as described (modify one line, add a fourth line).
+To display the differences
+between its updated state and its original state, use `git diff`:
 
 ```bash
 $ git diff me.txt
@@ -662,15 +776,18 @@ $ git diff me.txt
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+
 [commit-messages]: https://chris.beams.io/posts/git-commit/
 [git-references]: https://git-scm.com/book/en/v2/Git-Internals-Git-References
 
+
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git status` показує стан репозиторію.
-- Файли можуть зберігатися в робочому каталозі проєкту (де їх бачать користувачі), зоні стейджингу (де будується наступний коміт) і локальному репозиторії (де коміти зберігаються постійно).
-- `git add` додає файли до зони стейджингу.
-- `git commit` зберігає все, що міститься у зоні стейджингу, як новий коміт у локальному репозиторії.
-- Повідомлення коміту треба складати так, щоб воно акуратно описувало ваші зміни.
+- `git status` shows the status of a repository.
+- Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded).
+- `git add` puts files in the staging area.
+- `git commit` saves the staged content as a new commit in the local repository.
+- Write a commit message that accurately describes your changes.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

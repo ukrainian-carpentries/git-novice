@@ -1,10 +1,13 @@
 ---
-title: Кодекс поведінки учасників проєкту
+title: "Contributor Code of Conduct"
 ---
 
-Як учасники та супровідники цього проєкту, ми зобов'язуємося дотримуватися [Кодексу поведінки Carpentry][coc].
+As contributors and maintainers of this project,
+we pledge to follow the [The Carpentries Code of Conduct][coc].
 
-Про випадки образливої, агресивної або іншої неприйнятної поведінки можна повідомити, дотримуючись наших [рекомендацій][coc-reporting].
+Instances of abusive, harassing, or otherwise unacceptable behavior
+may be reported by following our [reporting guidelines][coc-reporting].
+
 
 [coc-reporting]: https://docs.carpentries.org/topic_folders/policies/incident-reporting.html
 [coc]: https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html

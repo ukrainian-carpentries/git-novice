@@ -1,19 +1,20 @@
 ---
-title: Обговорення
+title: Discussion
 ---
 
-## Поширені запитання
+## Frequently Asked Questions
 
-Зазвичай, у людей виникають питання щодо Git, що виходять за рамки основного матеріалу.
-Студентам, які завершили решту уроків, може бути корисно розглянути наступні теми.
+People often have questions about Git beyond the scope of the core material.
+Students who have completed the rest of the lessons might find value in looking through the following topics.
 
-Зауважте, що оскільки цей матеріал не є обов'язковим для базового використання Git, він не буде розглядатися інструктором.
+Note that since this material isn't essential for basic Git usage, it won't be covered by the instructor.
 
-## Додаткові налаштування Git
+## More Advanced Git Configuration
 
-Під час [Налаштування Git](../episodes/02-setup.md), ми використовували `git config --global`, щоб встановити деякі параметри за замовчуванням для Git.
-Отже, ці параметри конфігурації зберігаються у вашому домашньому каталогу
-у звичайному текстовому файлі під назвою `.gitconfig`.
+In [Setting Up Git](../episodes/02-setup.md),
+we used `git config --global` to set some default options for Git.
+It turns out that these configuration options get stored in your home directory
+in a plain text file called `.gitconfig`.
 
 ```bash
 $ cat ~/.gitconfig
@@ -34,7 +35,7 @@ This file can be opened in your preferred text editor.
 as this helps avoid introducing syntax errors.)
 
 Eventually, you will want to start customizing Git's behaviour.
-Це можна зробити, додавши більше записів до вашого `.gitconfig`.
+This can be done by adding more entries to your `.gitconfig`.
 The available options are described in the manual:
 
 ```bash
@@ -42,9 +43,9 @@ $ git config --help
 ```
 
 In particular, you might find it useful to add aliases.
-Це щось на кшталт скорочень для довших команд Git.
-Наприклад, якщо вам набридло постійно вводити `git checkout`,
-ви можете виконати команду:
+These are like shortcuts for longer Git commands.
+For example, if you get sick of typing `git checkout` all the time,
+you could run the command:
 
 ```bash
 $ git config --global alias.co checkout
@@ -56,13 +57,13 @@ Now if we return to the example from [Exploring History](../episodes/05-history.
 $ git checkout f22b25e mars.txt
 ```
 
-ми могли б тепер ввести:
+we could now instead type:
 
 ```bash
 $ git co f22b25e mars.txt
 ```
 
-## Стилізація журналу Git
+## Styling Git's Log
 
 A good target for customization is output from the log.
 The default log is quite verbose but gives no graphical hints
@@ -91,22 +92,23 @@ $ git config --global --unset format.pretty
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Скасування змін конфігурації Git
+## Undoing Git Configuration Changes
 
-Ви можете використовувати опцію `--unset` для видалення небажаних параметрів з `.gitconfig`.
+You can use the `--unset` flag to delete unwanted options from `.gitconfig`.
 Another way to roll back changes is to store your `.gitconfig` using Git.
 
 For hints on what you might want to configure,
 go to GitHub and search for "gitconfig".
-Ви знайдете сотні репозиторіїв, у яких люди зберегли
-свої власні файли конфігурації Git.
+You will find hundreds of repositories in which people have stored
+their own Git configuration files.
 Sort them by the number of stars and have a look at the top few.
 If you find some you like,
 please check that they're covered by an open source license before you clone them.
 
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Нетекстові файли
+## Non-text Files
 
 Recall when we discussed [Conflicts](../episodes/09-conflict.md)
 there was a challenge that asked,
@@ -114,33 +116,33 @@ there was a challenge that asked,
 when there is a conflict in an image or some other non-textual file
 that is stored in version control?"
 
-Тепер ми розглянемо це питання більш детально.
+We will now revisit this in more detail.
 
-Багато людей бажають керувати версіями нетекстових файлів, таких як зображення, PDF-файли та документи Microsoft Office або LibreOffice.
+Many people want to version control non-text files, such as images, PDFs and Microsoft Office or LibreOffice documents.
 It is true that Git can handle these filetypes (which fall under the banner of "binary" file types).
-However, just because it _can_ be done doesn't mean it _should_ be done.
+However, just because it *can* be done doesn't mean it *should* be done.
 
 Much of Git's magic comes from being able to do line-by-line comparisons ("diffs") between files.
 This is generally easy for programming source code and marked up text.
-Для нетекстових файлів, diff зазвичай може виявляти лише те, що файли змінилися
-але не можуть сказати, як і де.
+For non-text files, a diff can usually only detect that the files have changed
+but can't say how or where.
 
-Це по-різному впливає на продуктивність Git та ускладнює
-порівняння різних версій вашого проєкту.
+This has various impacts on Git's performance and will make it difficult to
+compare different versions of your project.
 
 For a basic example to show the difference it makes,
 we're going to go see what would have happened if Dracula had tried
 using outputs from a word processor instead of plain text.
 
-Створіть нову директорію і перейдіть до неї:
+Create a new directory and go into it:
 
 ```bash
 $ mkdir planets-nontext
 $ cd planets-nontext
 ```
 
-Використовуйте таку програму, як Microsoft Word або LibreOffice Writer, щоб створити новий документ.
-Введіть той самий текст, з якого ми починали раніше:
+Use a program such as Microsoft Word or LibreOffice Writer to create a new document.
+Enter the same text that we began with before:
 
 ```output
 Cold and dry, but everything is my favorite color
@@ -187,30 +189,30 @@ index df0654a..315bf3a 100644
 +The two moons may be a problem for Wolfman
 ```
 
-Зверніть увагу, що звичайні текстові файли дають набагато інформативніший diff.
-Ви можете побачити, які саме лінії змінилися і які були зміни.
+Notice how plain text files give a much more informative diff.
+You can see exactly which lines changed and what the changes were.
 
 An uninformative `git diff` is not the only consequence of using Git on binary files.
 However, most of the other problems boil down to whether or not a good diff is possible.
 
-This isn't to say you should _never_ use Git on binary files.
+This isn't to say you should *never* use Git on binary files.
 A rule of thumb is that it's OK if the binary file won't change very often,
 and if it does change, you don't care about merging in small differences between versions.
 
-Ми вже бачили, як текстовий оброблений звіт провалить цей тест.
-Прикладом, який проходить перевірку, є логотип для вашої організації або проєкту.
+We've already seen how a word processed report will fail this test.
+An example that passes the test is a logo for your organization or project.
 Even though a logo will be stored in a binary format such as `jpg` or `png`,
 you can expect it will remain fairly static through the lifetime of your repository.
 On the rare occasion that branding does change,
 you will probably just want to replace the logo completely rather than merge little differences in.
 
-## Видалення файлу
+## Removing a File
 
 Adding and modifying files are not the only actions one might take
 when working on a project.  It might be required to remove a file
 from the repository.
 
-Створіть новий файл для планети Nibiru:
+Create a new file for the planet Nibiru:
 
 ```bash
 $ echo "This is another name for fake planet X" > nibiru.txt
@@ -246,18 +248,18 @@ Changes to be committed:
 
 ```
 
-Зміна була перенесена у зону стейджингу.  Now commit the removal, and remove the
-file from the repository itself.  Зауважте, що файл буде вилучено
-у новому коміті.  Попередній коміт все одно
-матиме файл, якщо ви хочете отримати цей конкретний коміт.
+The change has been staged.  Now commit the removal, and remove the
+file from the repository itself.  Note that the file will be removed
+in the new commit.  The previous commit will still
+have the file, if you were to retrieve that specific commit.
 
 ```bash
 $ git commit -m 'Removing info on Nibiru.  It is not a real planet!'
 ```
 
-## Видалення файлу за допомогою Unix
+## Removing a File with Unix
 
-Іноді ми можемо забути видалити файл через Git. If you removed the
+Sometimes we might forget to remove the file through Git. If you removed the
 file with Unix `rm` instead of using `git rm`, no worries,
 Git is smart enough to notice the missing file. Let us recreate the file and
 commit it again.
@@ -286,9 +288,9 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Дивіться, як Git помітив, що файл `nibiru.txt` був видалений
-з диска.  Наступним кроком є "стейджинг" видалення файлу
-з репозиторію.  This is done with the command `git rm` just as
+See how Git has noticed that the file `nibiru.txt` has been removed
+from the disk.  The next step is to "stage" the removal of the file
+from the repository.  This is done with the command `git rm` just as
 before.
 
 ```bash
@@ -312,7 +314,7 @@ committed.
 $ git commit -m 'Removing info on Nibiru, again!'
 ```
 
-## Перейменування файлу
+## Renaming a File
 
 Another common change when working on a project is to rename a file.
 
@@ -322,7 +324,7 @@ Create a file for the planet Krypton:
 $ echo "Superman's home planet" > krypton.txt
 ```
 
-Додайте його до репозиторію:
+Add it to the repository:
 
 ```bash
 $ git add krypton.txt
@@ -347,7 +349,7 @@ Changes to be committed:
 	renamed:    krypton.txt -> earth.txt
 ```
 
-Останнім кроком є внесення змін до репозиторію:
+The final step is commit our change to the repository:
 
 ```bash
 $ git commit -m 'Superman's home is now Earth'
@@ -358,8 +360,8 @@ $ git commit -m 'Superman's home is now Earth'
 If you forgot to use Git and you used Unix `mv` instead
 of `git mv`, you will have a touch more work to do but Git will
 be able to deal with it. Let's try again renaming the file,
-this time with Unix `mv`. По-перше, нам потрібно відтворити
-файл `krypton.txt`:
+this time with Unix `mv`. First, we need to recreate the
+`krypton.txt` file:
 
 ```bash
 $ echo "Superman's home planet" > krypton.txt
@@ -393,7 +395,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Git has noticed that the file `krypton.txt` has disappeared from the
 file system and a new file `earth.txt` has showed up.
 
-Додайте ці зміни в зону стейджингу:
+Add those changes to the staging area:
 
 ```bash
 $ git add krypton.txt earth.txt
@@ -412,7 +414,7 @@ Changes to be committed:
 Notice how Git has now figured out that the `krypton.txt` has not
 disappeared - it has simply been renamed.
 
-Останнім кроком, як і раніше, є внесення змін до репозиторію:
+The final step, as before, is to commit our change to the repository:
 
 ```bash
 $ git commit -m 'Superman's home is Earth, told you before.'
@@ -429,14 +431,14 @@ your needs over another. Keep in mind that the way that Git travels along
 directory paths can be confusing.
 
 Sometimes the `**` pattern comes in handy, too, which matches multiple
-directory levels. Наприклад, `**/results/plots/*` would make git ignore the
+directory levels. E.g. `**/results/plots/*` would make git ignore the
 `results/plots` directory in any root directory.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Ігнорування вкладених файлів: завдання
+## Ignoring Nested Files: Challenge Problem
 
-Враховуючи структуру каталогу, яка виглядає так:
+Given a directory structure that looks like:
 
 ```bash
 results/data
@@ -445,7 +447,7 @@ results/run001.log
 results/run002.log
 ```
 
-Та .gitignore, який виглядає так:
+And a .gitignore that looks like:
 
 ```output
 *.csv
@@ -456,17 +458,19 @@ files, but ignore the rest of `results/`?
 
 :::::::::::::::  solution
 
-## Рішення
+## Solution
 
-Для цього ваш .gitignore буде виглядати так:
+To do this, your .gitignore would look like this:
 
 ```output
-*.csv                 #  ігноруйте файли .csv
-results/*             # ігноруйте файли в директорії
-!results/data/        # не ігноруйте файли в results/data
-!results/data/*       # не ігноруйте файли .dat в results/data
+*.csv                 # ignore the .csv files
+results/*             # ignore the files in the results directory
+!results/data/        # do not ignore the files in results/data
+!results/data/*       # do not ignore the .csv files in reults/data
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
