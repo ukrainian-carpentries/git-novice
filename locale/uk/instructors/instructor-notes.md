@@ -36,27 +36,23 @@ title: Нотатки для інструктора
 
 - Малюнки особливо корисні у цьому уроці: якщо у вас є дошка, [користуйтеся нею][drawings]!
 
-- Version control is usually not the first subject in a workshop,
-  so get learners to create a GitHub account after the session before.
+- Контроль версій, зазвичай, не перша тема, яка розглядається на семінарі, тому заохочуйте учнів створити обліковий запис GitHub заздалегідь, наприклад після попередньої сесії.
   Нагадайте слухачам, що ім\`я користувача та адреса електронної пошти, яку вони використовують для GitHub (та налаштовують під час конфігурації Git), за замовчуванням будуть наявні для загального перегляду.
   However, there are many reasons why a learner may not want their personal
   information viewable, and GitHub has [resources for keeping an email address
   private][github-privacy].
 
-- If some learners are using Windows, there will inevitably be issues
-  merging files with different line endings.  (Even if everyone's on
-  some flavor of Unix, different editors may or may not add a
-  newline to the last line of a file.) Take a moment to explain
-  these issues, since learners will almost certainly trip over them
-  again.  If learners are running into line ending problems, GitHub
-  has a [page][github-line-endings] that helps with troubleshooting.
-  Specifically, the [section on refreshing a repository][github-line-endings-refresh]
-  may be helpful if learners need to change the `core.autocrlf` setting
+- Якщо деякі слухачі використовують Windows, неминуче виникнуть проблеми з об`єднанням файлів із різними закінченнями рядків.  (Even if everyone's on
+    some flavor of Unix, different editors may or may not add a
+    newline to the last line of a file.) Take a moment to explain
+    these issues, since learners will almost certainly trip over them
+    again.  If learners are running into line ending problems, GitHub
+    has a [page][github-line-endings] that helps with troubleshooting.
+    Specifically, the [section on refreshing a repository][github-line-endings-refresh]
+    may be helpful if learners need to change the `core.autocrlf\` setting
   after already having made one or more commits.
 
-- We don't use a Git GUI in these notes because we haven't found one that
-  installs easily and runs reliably on the three major operating systems, and
-  because we want learners to understand what commands are being run.  That
+- Ми не використовуємо Git GUI в цих нотатках, бо не знайшли графічний інтерфейс, який плавно встановлюється та надійно працює у трьох основних операційних системах. Крім того, нам треба, щоб учні розуміли основні команди, які виконуються.  That
   said, instructors should demo a GUI on their desktop at some point during
   this lesson and point learners at [this page][github-gui].
 
