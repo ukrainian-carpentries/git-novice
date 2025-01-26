@@ -395,7 +395,7 @@ $ git commit -m "Add picture of guacamole"
 ```
 
 Припустимо, що Джиммі тим часом додав схожу фотографію.
-His is a picture of a guacamole with nachos, but it is _also_ called `guacamole.jpg`.
+На його фотографії зображено гуакамоле з начос, але воно _також_ називається guacamole.jpg.
 Коли Альфредо намагається відправити зміни до віддаленого репозиторію, він отримує вже знайоме повідомлення:
 
 ```bash
