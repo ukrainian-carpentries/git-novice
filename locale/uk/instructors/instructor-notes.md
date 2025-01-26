@@ -183,10 +183,10 @@ particular set of files in `.gitignore`.
   when adding a remote, so they cannot `push`. You can diagnose this with
   `git remote -v` and checking carefully for typos.
 
-  - To fix a wrong alias, you can do `git remote rename <old> <new>`.
-  - To fix a wrong URL, you can do `git remote set-url <alias> <newurl> `.
+  - Щоб виправити помилковий псевдонім, скористайтеся командою `git remote rename <old> <new>`.
+  - Щоб виправити помилковий URL, ви можете виконати `git remote set-url <alias> <newurl>`.
 
-- Before cloning the repo, be sure that nobody is inside another repo. Найкращий спосіб досягти цього - перейти на `Робочий стіл` перед клонуванням: `cd && cd Desktop`.
+- Before cloning the repo, be sure that nobody is inside another repo. Найкращий спосіб досягти цього - перейти на робочий стіл перед клонуванням: `cd && cd Desktop`.
 
 - If both repos are in the `Desktop`, have them to clone their collaborator
   repo under a given directory using a second argument:
@@ -195,10 +195,10 @@ particular set of files in `.gitignore`.
   $ git clone https://github.com/vlad/planets.git vlad-planet
   ```
 
-- Найпоширенішою помилкою є те, що учні `відправляють` зміни перед тим, як `отримати` їх. If they
+- The most common mistake is that learners `push` before `pull`ing. If they
   `pull` afterward, they may get a conflict.
 
-- Conflicts, sometimes weird, will start to arise. Зберігайте спокій: конфлікти розглядаються у наступному епізоді.
+- Іноді можуть виникнути дивні конфлікти. Зберігайте спокій: конфлікти розглядаються у наступному епізоді.
 
 - Learners may have slightly different output from `git push` and `git pull`
   depending on the version of git, and if upstream (`-u`) is used.
@@ -215,17 +215,17 @@ particular set of files in `.gitignore`.
   - At the office, you make a change, commit and push.
   - At your laptop repo, you (forget to pull and) make a change, commit and
     try to push.
-  - `git pull` now and show the conflict.
+  - Тепер введіть `git pull` та покажіть як виглядає конфлікт.
 
-- Learners usually forget to `git add` the file after fixing the conflict and
-  just (try to) commit. You can diagnose this with `git status`.
+- Учні зазвичай забувають `git add` файл після виправлення конфлікту та просто (намагаються) зробити коміт. Ви можете це продіагностувати за допомогою `git status`.
 
-- Памʼятайте, що можна відкинути одного з двох батьків злиття:
+- Remember that you can discard one of the two parents of the merge:
 
-  - відкинути віддалений файл, `git checkout --ours conflicted_file.txt`
+  - discard the remote file, `git checkout --ours conflicted_file.txt`
   - відкинути локальний файл, `git checkout --theirs conflicted_file.txt`
 
-  Ви все ще повинні зробити `git add` та `git commit` після цього. Особливо це корисно при роботі з бінарними файлами.
+  You still have to `git add` and `git commit` after this. This is
+  particularly useful when working with binary files.
 
 - Майте на увазі, що в залежності від версії Git, яку ви використовуєте, результати для `git push` та `git pull` можуть дещо відрізнятися.
 
@@ -235,8 +235,7 @@ particular set of files in `.gitignore`.
 
 We teach about licensing because questions about who owns what, or can use
 what, arise naturally once we start talking about using public services like
-GitHub to store files. Also, the discussion gives learners a chance to catch
-their breath after what is often a frustrating couple of hours.
+GitHub to store files. Крім того, обговорення дає учням можливість перевести подих після тривалого навантаження.
 
 The Creative Commons family of licenses is recommended for many types of
 works (including software documentation and images used in software) but not
