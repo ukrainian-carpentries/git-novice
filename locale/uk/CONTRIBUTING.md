@@ -9,8 +9,7 @@ Carpentry][dc-site], та [Library Carpentry][lc-site]) є проєктами з
 
 ### Як зробити внесок
 
-Найпростіший спосіб почати - це повідомити про помилку, незрозуміле формулювання чи фактичну помилку. This is a good way to
-introduce yourself and to meet some of our community members.
+Найпростіший спосіб почати - це повідомити про помилку, незрозуміле формулювання чи фактичну помилку. Це чудова можливість представити себе та познайомитися з нашою спільнотою.
 
 1. Якщо у вас немає облікового запису [GitHub][github], ви можете [надіслати нам коментарі електронною поштою][contact]. However, we will be able to respond more quickly if you use
    one of the other methods described below.
