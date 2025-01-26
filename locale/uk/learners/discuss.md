@@ -116,7 +116,7 @@ please check that they're covered by an open source license before you clone the
 
 Тепер ми розглянемо це питання більш детально.
 
-Many people want to version control non-text files, such as images, PDFs and Microsoft Office or LibreOffice documents.
+Багато людей бажають відстежувати версії нетекстових файлів, таких як зображення, PDF-файли та документи Microsoft Office або LibreOffice.
 It is true that Git can handle these filetypes (which fall under the banner of "binary" file types).
 However, just because it _can_ be done doesn't mean it _should_ be done.
 
@@ -321,7 +321,7 @@ $ git commit -m 'Remove info on invisible ink, again!'
 
 ## Перейменування файлу
 
-Another common change when working on a project is to rename a file.
+Іншою поширеною зміною під час роботи над проєктом є перейменування файлу.
 
 Створіть файл для рецепта білого соусу:
 
