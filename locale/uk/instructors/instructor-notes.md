@@ -68,8 +68,8 @@ title: Нотатки для інструктора
 
   - [git-it] is a self-paced command-line Git demo,
     with [git-it-electron] its GitHub Desktop successor.
-  - [Code School][code-school] має безкоштовний інтерактивний курс [Try Git][try-git].
-  - for instructors, [the Git parable][git-parable] is useful background reading
+  - [Code School][code-school] has a free interactive course, [Try Git][try-git].
+  - для викладачів корисною довідковою літературою є [Git parable][git-parable].
 
 ## [Автоматизований контроль версії](../episodes/01-basics.md)
 
@@ -80,16 +80,11 @@ title: Нотатки для інструктора
   before diving into the watch-and-do practicals.  Most of them will have
   tried to co-author papers by emailing files back and forth, or will have
   biked into the office only to realize that the USB key with last night's
-  work is still on the kitchen table.  Instructors can also make jokes about
-  directories with names like "final version", "final version revised",
-  "final version with reviewer three's corrections", "really final version",
-  and, "come on this really has to be the last version" to motivate version
-  control as a better way to collaborate and as a better way to back work up.
+  work is still on the kitchen table.  Інструктори також можуть жартувати про каталоги з назвами на кшталт "остаточна версія", "переглянута остаточна версія", "остаточна версія з трьома виправленнями", "дійсно остаточна версія", та "це вже дійсно має бути остання версія", щоб заохочувати контроль версій як ліпший спосіб для співпраці та резервного копіювання роботи.
 
 ## [Налаштування Git](../episodes/02-setup.md)
 
-- We suggest instructors and students use `nano` as the text editor for this
-  lessons because
+- Ми радимо інструкторам та слухачам використовувати `nano` як текстовий редактор для цих уроків, тому що
 
   - він працює у всіх трьох основних операційних системах
   - він працює всередині терміналу (перемикання вікон може заплутати учнів), та
@@ -98,27 +93,18 @@ title: Нотатки для інструктора
   Please point out to students during setup that they can and should use
   another text editor if they're already familiar with it.
 
-- When setting up Git, be very clear what learners have to enter: it is
-  common for them to edit the instructor's details (e.g. email).  Check at
-  the end using `git config --list`.
+- Під час налаштування Git чітко вказуйте, що слухачі мають вводити: зазвичай вони редагують деталі викладача (наприклад, електронну пошту).  Зрештою, перевірте це за допомогою `git config --list`.
 
-- When setting up the default branch name, if learners have a Git version
-  older than 2.28, the default branch name can be changed for the lesson
-  using `git branch -M main` if there are currently commits in the repository,
-  or `git checkout -b main` if there are no commits/the repository is completely empty.
+- При встановленні типової назви гілки, якщо слухачі мають версію Git старішу за 2.28, назву гілки для уроку можна змінити за замовчуванням за допомогою 'git branch -M main' - коли в репозиторії є коміти, або 'git checkout -b main' - коли комітів немає/репозиторій повністю порожній.
 
 ## [Створення репозиторію](../episodes/03-create.md)
 
-- When you do `git status`, Mac users may see a `.DS_Store` file showing as
-  untracked. Це файл, який Mac OS створює в кожній директорії.
+- Коли ви вводите 'git status', користувачі Mac можуть побачити файл '.DS_Store', який відображується як не відстежуваний. Це файл, який Mac OS створює в кожному каталозі.
 
-- The challenge "Places to create repositories" tries to reinforce the idea
-  that the `.git` folder contains the whole Git repo and deleting this folder
-  undoes a `git init`. It also gives the learner the way to fix the common
+- Завдання "Місця для створення репозиторіїв" намагається посилити ідею, що каталог `.git` містить весь репозиторій Git і видалення цього каталогу скасовує `git init`. It also gives the learner the way to fix the common
   mistake of putting unwanted folders (like `Desktop`) under version control.
 
-  Instead of removing the `.git` folder directly, you can choose to move it
-  first to a safer directory and remove it from there:
+  Замість безпосереднього видалення каталогу `.git`, ви можете спочатку перемістити його в більш безпечну директорію і видалити його звідти:
 
   ```bash
   $ mv .git temp_git
@@ -131,10 +117,9 @@ title: Нотатки для інструктора
 ## [Відстеження змін](../episodes/04-changes.md)
 
 - It's important that learners do a full commit cycle by themselves (make
-  changes, `git diff`, `git add`, and `git commit`). The "`bio` repository"
-  challenge does that.
+  changes, `git diff`, `git add`, and `git commit`). Завдання "репозиторій `bio`" допоможе з цим.
 
-- This is a good moment to show a diff with a graphical diff tool. If you
+- Це слушний момент, щоб показати diff за допомогою графічного інструмента. If you
   skip it because you're short on time, show it once in GitHub.
 
 - One thing may cause confusion is recovering old versions.  Якщо замість команди `$ git checkout f22b25e mars.txt`, хтось введе `$ git checkout f22b25e`, то вони опиняться у стані "detached HEAD", що призведе до непорозуміння.
@@ -151,34 +136,21 @@ particular set of files in `.gitignore`.
 
 ## [Віддалені репозиторії у GitHub](../episodes/07-github.md)
 
-- Make it clear that Git and GitHub are not the same thing: Git is an open
-  source version control tool, GitHub is a company that hosts Git
-  repositories in the web and provides a web interface to interact with repos
-  they host.
+- Поясніть, що Git і GitHub - це не одне і те ж саме: Git - це інструмент контролю версій з відкритим кодом, GitHub - це компанія, яка розміщує Git репозиторії в Інтернеті та надає вебінтерфейс для взаємодії з репозиторіями, які вони розміщують.
 
-- It is very useful to draw a diagram showing the different repositories
-  involved.
+- Дуже корисно намалювати діаграму, що показує різні залучені репозиторії.
 
 - When pushing to a remote, the output from Git can vary slightly depending on
-  what leaners execute. The lesson displays the output from git if a learner
-  executes `git push origin main`. However, some learners might use syntax
-  suggested by GitHub for pushing to a remote with an existing repository,
-  which is `git push -u origin main`. Learners using syntax from GitHub,
-  `git push -u origin main`, will have slightly different output, including
-  the line `Branch main set up to track remote branch main from origin by rebasing.`
+  what leaners execute. Урок відображує результат з git, якщо слухач виконує `git push origin main`. Однак, деякі слухачі можуть використовувати синтаксис `git push -u origin main`, що може запропонувати GitHub, для відправлення на наявний віддалений репозиторій. Слухачі, які використовують синтаксис від GitHub,
+  `git push -u origin main`, матимуть дещо інший результат, в тому числі
+  рядок `Branch main set up to track remote branch main from origin by rebasing.`
 
 ## [Співпраця](../episodes/08-collab.md)
 
-- Decide in advance whether all the learners will work in one shared
-  repository, or whether they will work in pairs (or other small groups) in
-  separate repositories.  The former is easier to set up; the latter runs
-  more smoothly.
+- Вирішіть заздалегідь, чи всі учні працюватимуть в одному спільному репозиторії, або у парах (або інших невеликих групах) в окремих репозиторіях.  Перший варіант легше налаштувати; а другий працює більш плавно.
 
 - Role playing between two instructors can be effective when teaching the
-  collaboration and conflict sections of the lesson.  One instructor can play
-  the role of the repository owner, while the second instructor can play the
-  role of the collaborator.  If it is possible, try to use two projectors so
-  that the computer screens of both instructors can be seen.  This makes for
+  collaboration and conflict sections of the lesson.  Один інструктор може грати роль власника репозиторію, а другий інструктор може грати роль співавтора.  Якщо є можливість, спробуйте використовувати два проєктори, щоб було видно компʼютерні екрани обох інструкторів.  This makes for
   a very clear illustration to the students as to who does what.
 
 - It is also effective to pair up students during this lesson and assign one
@@ -255,8 +227,7 @@ particular set of files in `.gitignore`.
 
   Ви все ще повинні зробити `git add` та `git commit` після цього. Особливо це корисно при роботі з бінарними файлами.
 
-- Keep in mind that depending on the Git version used, the outputs for
-  `git push` and `git pull` can vary slightly.
+- Майте на увазі, що в залежності від версії Git, яку ви використовуєте, результати для `git push` та `git pull` можуть дещо відрізнятися.
 
 ## [Відкрита наука](../episodes/10-open.md)
 
