@@ -152,7 +152,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## You may need to tell Git what to do
+## Можливо, вам доведеться надати Git додаткові інструкції
 
 If you see the below in your output, Git is asking what it should do.
 
@@ -171,16 +171,16 @@ hint: or --ff-only on the command line to override the configured default per
 hint: invocation.
 ```
 
-In newer versions of Git it gives you the option of specifying different
-behaviours when a pull would merge divergent branches. In our case we want
-'the default strategy'. To use this strategy run the following command to
+У новіших версіях Git ви можете обрати різні стратегії
+поведінки у випадку, коли `git pull` призводить до злиття розбіжних гілок. У нашому випадку нам потрібна
+стандартна стратегія. To use this strategy run the following command to
 select it as the default thing git should do.
 
 ```bash
 $ git config pull.rebase false
 ```
 
-Then attempt the pull again.
+Потім спробуйте отримати зміни ще раз.
 
 ```bash
 $ git pull origin main
@@ -239,9 +239,7 @@ To https://github.com/vlad/planets.git
 * peel the avocados and put them into a bowl.
 ```
 
-To finish merging,
-we add `guacamole.md` to the changes being made by the merge
-and then commit:
+Щоб закінчити злиття, додамо `guacamole.md` до зони стейджингу, а потім зробимо коміт:
 
 ```bash
 remote: Enumerating objects: 10, done.
@@ -368,11 +366,9 @@ $ cat guacamole.md
 
 ## Відповідь
 
-Спробуймо це дослідити. Suppose Alfredo takes a picture of its guacamole and
-calls it `guacamole.jpg`.
+Спробуймо це дослідити. Припустимо, Альфредо сфотографував свій гуакамоле та зберіг фото у файлі \`guacamole.jpg'.
 
-If you do not have an image file of guacamole available, you can create
-a dummy binary file like this:
+Якщо у вас немає файлу із зображенням гуакамоле, ви можете створити фіктивний бінарний файл наступним чином:
 
 ```bash
 $ head --bytes 1024 /dev/urandom > guacamole.jpg
@@ -385,7 +381,7 @@ $ ls -lh guacamole.jpg
 
 `ls` показує, що було створено файл розміром 1 кілобайт. Він містить випадкові байти, які були зчитані зі спеціального файлу `/dev/urandom`.
 
-Now, suppose Alfredo adds `guacamole.jpg` to his repository:
+Тепер припустимо, що Альфредо додає `guacamole.jpg` до свого репозиторію:
 
 ```bash
 $ git add guacamole.jpg
@@ -398,9 +394,9 @@ $ git commit -m "Add picture of guacamole"
  create mode 100644 guacamole.jpg
 ```
 
-Suppose that Jimmy has added a similar picture in the meantime.
+Припустимо, що Джиммі тим часом додав схожу фотографію.
 His is a picture of a guacamole with nachos, but it is _also_ called `guacamole.jpg`.
-When Alfredo tries to push, he gets a familiar message:
+Коли Альфредо намагається відправити зміни до віддаленого репозиторію, він отримує вже знайоме повідомлення:
 
 ```bash
 $ git push origin main
@@ -450,9 +446,7 @@ warning: Cannot merge binary files: guacamole.jpg (HEAD vs. 439dc8c08869c342438f
 
 Git не може автоматично вставляти маркери конфлікту у зображення, як він це робить для текстових файлів. Тому замість того, щоб редагувати файл зображення, нам потрібно викликати з історії змін ту його версію, яку ми хочемо зберегти. Після цього ми можемо виконати відповідні команди `git add` та `git commit`, щоб зберегти цю версію.
 
-On the key line above, Git has conveniently given us commit identifiers
-for the two versions of `guacamole.jpg`. Our version is `HEAD`, and Jimmy's
-version is `439dc8c0...`. Якщо ми хочемо використовувати нашу версію, ми можемо застосувати `git checkout`:
+В додатковому рядку вище, Git зручно надав нам ідентифікатори коміту для обох версій `guacamole.jpg`. Наша версія - `HEAD`, а Джиммі зберіг версію `439dc8c0...`. Якщо ми хочемо використовувати нашу версію, ми можемо застосувати `git checkout`:
 
 ```bash
 $ git checkout HEAD guacamole.jpg
@@ -486,7 +480,7 @@ $ git checkout 439dc8c0 guacamole.jpg
 $ mv guacamole.jpg guacamole-nachos.jpg
 ```
 
-Then, remove the old `guacamole.jpg` and add the two new files:
+Потім видаліть стару версію файлу `guacamole.jpg` та додайте два нових файли:
 
 ```bash
 $ git rm guacamole.jpg
@@ -502,8 +496,7 @@ $ git commit -m "Use two images: just guacamole and with nachos"
  rename guacamole.jpg => guacamole-only.jpg (100%)
 ```
 
-Now both images of guacamole are checked into the repository, and `guacamole.jpg`
-no longer exists.
+Тепер обидва зображення гуакамоле містяться у репозиторії, а файл `guacamole.jpg` більше не існує.
 
 :::::::::::::::::::::::::
 
