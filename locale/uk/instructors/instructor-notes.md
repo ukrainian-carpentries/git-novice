@@ -52,9 +52,7 @@ title: Нотатки для інструктора
     may be helpful if learners need to change the `core.autocrlf\` setting
   after already having made one or more commits.
 
-- Ми не використовуємо Git GUI в цих нотатках, бо не знайшли графічний інтерфейс, який плавно встановлюється та надійно працює у трьох основних операційних системах. Крім того, нам треба, щоб учні розуміли основні команди, які виконуються.  That
-  said, instructors should demo a GUI on their desktop at some point during
-  this lesson and point learners at [this page][github-gui].
+- Ми не використовуємо Git GUI в цих нотатках, бо не знайшли графічний інтерфейс, який плавно встановлюється та надійно працює у трьох основних операційних системах. Крім того, нам треба, щоб учні розуміли основні команди, які виконуються.  Проте, інструкторам треба продемонструвати графічний інтерфейс на своєму комп'ютері в деякий момент цього уроку та вказати учням на [цю сторінку][github-gui].
 
 - Instructors should show learners graphical diff/merge tools like
   [DiffMerge][diffmerge].
