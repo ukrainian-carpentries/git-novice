@@ -36,10 +36,7 @@ $ cd recipes
 $ git init
 ```
 
-It is important to note that `git init` will create a repository that
-can include subdirectories and their files---there is no need to create
-separate repositories nested within the `recipes` repository, whether
-subdirectories are present from the beginning or added later. Крім того, зверніть увагу, що створення каталогу `recipes` та його ініціалізація як репозиторію є повністю окремими процесами.
+Майте на увазі, що `git init` створює репозиторій, до якого можна додавати підкаталоги та їх файли. Немає потреби створювати окремі репозиторії вкладені в репозиторій `recipes`, незалежно від того чи були підкаталоги присутні від початку або були додані пізніше. Крім того, зверніть увагу, що створення каталогу `recipes` та його ініціалізація як репозиторію є повністю окремими процесами.
 
 Якщо ми використаємо `ls`, щоб передивитись зміст каталогу, то здається, що нічого не змінилося:
 
