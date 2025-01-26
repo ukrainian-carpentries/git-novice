@@ -154,7 +154,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 ## Можливо, вам доведеться надати Git додаткові інструкції
 
-If you see the below in your output, Git is asking what it should do.
+Якщо у виведених даних з’являється наступне, Git запитує вас про вказівки.
 
 ```output
 hint: You have divergent branches and need to specify how to reconcile them.
@@ -173,8 +173,8 @@ hint: invocation.
 
 У новіших версіях Git ви можете обрати різні стратегії
 поведінки у випадку, коли `git pull` призводить до злиття розбіжних гілок. У нашому випадку нам потрібна
-стандартна стратегія. To use this strategy run the following command to
-select it as the default thing git should do.
+стандартна стратегія. Щоб використовувати її, виконайте наступну команду,
+яка встановить її як дію за замовчуванням.
 
 ```bash
 $ git config pull.rebase false
@@ -419,8 +419,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 $ git pull origin main
 ```
 
-When there is a conflict on an image or other binary file, git prints
-a message like this:
+Коли конфлікт виникає у зображенні або іншому бінарному файлі, git друкує таке повідомлення:
 
 ```output
 $ git pull origin main
@@ -437,8 +436,7 @@ CONFLICT (add/add): Merge conflict in guacamole.jpg
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-The conflict message here is mostly the same as it was for `guacamole.md`, but
-there is one key additional line:
+Повідомлення про конфлікт здебільшого ідентичне повідомленням для `guacamole.md`, але містить один додатковий рядок:
 
 ```output
 warning: Cannot merge binary files: guacamole.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
@@ -458,8 +456,7 @@ $ git commit -m "Use image of just guacamole instead of with nachos"
 [main 21032c3] Use image of just guacamole instead of with nachos
 ```
 
-If instead we want to use Jimmy's version, we can use `git checkout` with
-Jimmy's commit identifier, `439dc8c0`:
+Якщо замість цього ми хочемо використовувати версію Джиммі, ми можемо застосувати `git checkout` з його ідентифікатором коміту, тобто `439dc8c0`:
 
 ```bash
 $ git checkout 439dc8c0 guacamole.jpg
