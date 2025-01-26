@@ -65,9 +65,9 @@ $ git co f22b25e guacamole.md
 ## Стилізація журналу Git
 
 A good target for customization is output from the log.
-The default log is quite verbose but gives no graphical hints
-such as information about which commits were done locally
-and which were pulled from remotes.
+Типовий журнал є досить детальним, але йому бракує графічних підказок,
+таких як вказівок на те, які коміти були зроблені локально,
+а які були отримані з віддалених репозиторіїв.
 
 You can use `git log --help` and `git config --help` to look for different ways to change
 the log output.
@@ -100,9 +100,9 @@ For hints on what you might want to configure,
 go to GitHub and search for "gitconfig".
 Ви знайдете сотні репозиторіїв, у яких люди зберегли
 свої власні файли конфігурації Git.
-Sort them by the number of stars and have a look at the top few.
-If you find some you like,
-please check that they're covered by an open source license before you clone them.
+Відсортуйте їх за кількістю зірок і розгляньте кілька найкращих.
+Якщо ви знайдете ті, які вам подобаються,
+будь ласка, переконайтеся, що вони є ліцензійними з відкритим вихідним кодом, перш ніж клонувати їх.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -118,7 +118,7 @@ please check that they're covered by an open source license before you clone the
 
 Багато людей бажають відстежувати версії нетекстових файлів, таких як зображення, PDF-файли та документи Microsoft Office або LibreOffice.
 It is true that Git can handle these filetypes (which fall under the banner of "binary" file types).
-However, just because it _can_ be done doesn't mean it _should_ be done.
+Однак те, що це _можна_ зробити, не означає, що це _потрібно_ зробити.
 
 Much of Git's magic comes from being able to do line-by-line comparisons ("diffs") between files.
 This is generally easy for programming source code and marked up text.
