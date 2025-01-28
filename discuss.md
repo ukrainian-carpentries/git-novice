@@ -65,9 +65,9 @@ $ git co f22b25e guacamole.md
 ## Стилізація журналу Git
 
 A good target for customization is output from the log.
-The default log is quite verbose but gives no graphical hints
-such as information about which commits were done locally
-and which were pulled from remotes.
+Типовий журнал є досить детальним, але йому бракує графічних підказок,
+таких як вказівок на те, які коміти були зроблені локально,
+а які були отримані з віддалених репозиторіїв.
 
 You can use `git log --help` and `git config --help` to look for different ways to change
 the log output.
@@ -100,9 +100,9 @@ For hints on what you might want to configure,
 go to GitHub and search for "gitconfig".
 Ви знайдете сотні репозиторіїв, у яких люди зберегли
 свої власні файли конфігурації Git.
-Sort them by the number of stars and have a look at the top few.
-If you find some you like,
-please check that they're covered by an open source license before you clone them.
+Відсортуйте їх за кількістю зірок і розгляньте кілька найкращих.
+Якщо ви знайдете ті, які вам подобаються,
+будь ласка, переконайтеся, що вони є ліцензійними з відкритим вихідним кодом, перш ніж клонувати їх.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -116,9 +116,9 @@ please check that they're covered by an open source license before you clone the
 
 Тепер ми розглянемо це питання більш детально.
 
-Many people want to version control non-text files, such as images, PDFs and Microsoft Office or LibreOffice documents.
+Багато людей бажають відстежувати версії нетекстових файлів, таких як зображення, PDF-файли та документи Microsoft Office або LibreOffice.
 It is true that Git can handle these filetypes (which fall under the banner of "binary" file types).
-However, just because it _can_ be done doesn't mean it _should_ be done.
+Однак те, що це _можна_ зробити, не означає, що це _потрібно_ зробити.
 
 Much of Git's magic comes from being able to do line-by-line comparisons ("diffs") between files.
 This is generally easy for programming source code and marked up text.
@@ -132,7 +132,7 @@ For a basic example to show the difference it makes,
 we're going to go see what would have happened if Alfredo had tried
 using outputs from a word processor instead of plain text.
 
-Створіть нову директорію і перейдіть до неї:
+Create a new directory and go into it:
 
 ```bash
 $ mkdir recipes-nontext
@@ -148,7 +148,7 @@ $ cd recipes-nontext
 ```
 
 Save the document into the `recipes-nontext` directory with the name of `guacamole.doc`.
-Back in the terminal, run the usual commands for setting up a new Git repository:
+Поверніться в термінал та запустіть звичайні команди для налаштування нового репозиторію Git:
 
 ```bash
 $ git init
@@ -156,7 +156,7 @@ $ git add guacamole.doc
 $ git commit -m "Create a template for recipe"
 ```
 
-Потім внесіть ті ж зміни в `guacamole.doc`, які ми (або Альфредо) зробили раніше в `guacamole.md`.
+Then make the same changes to `guacamole.doc` that we (or Alfredo) previously made to `guacamole.md`.
 
 ```output
 # Ingredients
@@ -197,19 +197,18 @@ index df0654a..315bf3a 100644
 Зверніть увагу, що звичайні текстові файли дають набагато інформативніший diff.
 Ви можете побачити, які саме лінії змінилися і які були зміни.
 
-An uninformative `git diff` is not the only consequence of using Git on binary files.
+Неінформативний `git diff` не є єдиним наслідком використання Git на бінарних файлах.
 However, most of the other problems boil down to whether or not a good diff is possible.
 
-This isn't to say you should _never_ use Git on binary files.
+Це не означає, що ви _ніколи_ не повинні використовувати Git на бінарних файлах.
 A rule of thumb is that it's OK if the binary file won't change very often,
 and if it does change, you don't care about merging in small differences between versions.
 
-Ми вже бачили, як текстовий оброблений звіт провалить цей тест.
-Прикладом, який проходить перевірку, є логотип для вашої організації або проєкту.
+We've already seen how a word processed report will fail this test.
+An example that passes the test is a logo for your organization or project.
 Even though a logo will be stored in a binary format such as `jpg` or `png`,
 you can expect it will remain fairly static through the lifetime of your repository.
-On the rare occasion that branding does change,
-you will probably just want to replace the logo completely rather than merge little differences in.
+У тих рідкісних випадках, коли брендинг змінюється, ви, ймовірно, просто захочете повністю замінити логотип, а не зливати невеликі відмінності.
 
 ## Видалення файлу
 
@@ -253,8 +252,8 @@ Changes to be committed:
 
 ```
 
-Зміна була перенесена у зону стейджингу.  Now commit the removal, and remove the
-file from the repository itself.  Зауважте, що файл буде вилучено
+Зміна була перенесена у зону стейджингу.  Тепер збережіть ваш коміт та видаліть
+файл із самого репозиторію.  Зауважте, що файл буде вилучено
 у новому коміті.  Попередній коміт все одно
 матиме файл, якщо ви хочете отримати цей конкретний коміт.
 
@@ -264,9 +263,8 @@ $ git commit -m 'Remove info on Invisible ink.  It is not an edible sauce!'
 
 ## Видалення файлу за допомогою Unix
 
-Іноді ми можемо забути видалити файл через Git. If you removed the
-file with Unix `rm` instead of using `git rm`, no worries,
-Git is smart enough to notice the missing file. Let us recreate the file and
+Іноді ми можемо забути видалити файл через Git. Якщо ви видалили файл за допомогою команди Unix `rm` замість `git rm`, не хвилюйтеся —
+Git досить розумний і помітить відсутній файл. Let us recreate the file and
 commit it again.
 
 ```bash
@@ -321,7 +319,7 @@ $ git commit -m 'Remove info on invisible ink, again!'
 
 ## Перейменування файлу
 
-Another common change when working on a project is to rename a file.
+Іншою поширеною зміною під час роботи над проєктом є перейменування файлу.
 
 Створіть файл для рецепта білого соусу:
 
@@ -364,8 +362,8 @@ $ git commit -m 'Use the French name for the whitesauce'
 If you forgot to use Git and you used Unix `mv` instead
 of `git mv`, you will have a touch more work to do but Git will
 be able to deal with it. Let's try again renaming the file,
-this time with Unix `mv`. First, we need to recreate the
-`krypton.txt` file:
+this time with Unix `mv`. По-перше, нам потрібно відтворити
+файл `whitesauce.md`:
 
 ```bash
 $ echo "Very fun recipe to do" > whitesauce.md
@@ -373,7 +371,7 @@ $ git add whitesauce.md
 $ git commit -m 'Add white sauce recipe'
 ```
 
-Let us rename the file and see what Git can figured out by itself:
+Тепер перейменуємо файл і подивимося, що Git може з'ясувати самостійно:
 
 ```bash
 $ mv whitesauce.md bechamel.md
@@ -426,12 +424,10 @@ $ git commit -m 'Use the French name for the whitesauce'
 
 ## Further .gitignore concepts
 
-For additional documentation on .gitignore, please reference
-[the official git documentation](https://git-scm.com/docs/gitignore).
+Для отримання додаткової документації щодо .gitignore, будь ласка, зверніться до
+[офіційної документації git](https://git-scm.com/docs/gitignore).
 
-In the ignore exercise, learners were presented with two variations of ignoring
-nested files. Depending on the organization of your repository, one may suit
-your needs over another. Keep in mind that the way that Git travels along
+У вправі на ігнорування, слухачам було запропоновано два варіанти ігнорування вкладених файлів. Залежно від організації вашого репозиторію, одне рішення може підійти вам ліпше ніж інше. Keep in mind that the way that Git travels along
 directory paths can be confusing.
 
 Sometimes the `**` pattern comes in handy, too, which matches multiple
