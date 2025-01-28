@@ -381,7 +381,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Конфлікти</h1>
-        <p>Останнє оновлення 2025-01-24 |
+        <p>Останнє оновлення 2025-01-28 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/09-conflict.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -566,15 +566,15 @@ Auto-merging guacamole.md
 CONFLICT (content): Merge conflict in guacamole.md
 Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 </div>
-<div id="you-may-need-to-tell-git-what-to-do" class="callout">
+<div id="можливо-вам-доведеться-надати-git-додаткові-інструкції" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="you-may-need-to-tell-git-what-to-do" class="callout-inner">
-<h3 class="callout-title">You may need to tell Git what to do</h3>
+<div id="можливо-вам-доведеться-надати-git-додаткові-інструкції" class="callout-inner">
+<h3 class="callout-title">Можливо, вам доведеться надати Git додаткові інструкції</h3>
 <div class="callout-content">
-<p>If you see the below in your output, Git is asking what it should
-do.</p>
+<p>Якщо у виведених даних з’являється наступне, Git запитує вас про
+вказівки.</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -591,16 +591,17 @@ hint: preference for all repositories. You can also pass --rebase, --no-rebase,
 hint: or --ff-only on the command line to override the configured default per
 hint: invocation.</code></pre>
 </div>
-<p>In newer versions of Git it gives you the option of specifying
-different behaviours when a pull would merge divergent branches. In our
-case we want ‘the default strategy’. To use this strategy run the
-following command to select it as the default thing git should do.</p>
+<p>У новіших версіях Git ви можете обрати різні стратегії поведінки у
+випадку, коли <code>git pull</code> призводить до злиття розбіжних
+гілок. У нашому випадку нам потрібна стандартна стратегія. Щоб
+використовувати її, виконайте наступну команду, яка встановить її як дію
+за замовчуванням.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> git config pull.rebase false</span></code></pre>
 </div>
-<p>Then attempt the pull again.</p>
+<p>Потім спробуйте отримати зміни ще раз.</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -670,8 +671,8 @@ following command to select it as the default thing git should do.</p>
 ## Instructions
 * peel the avocados and put them into a bowl.</code></pre>
 </div>
-<p>To finish merging, we add <code>guacamole.md</code> to the changes
-being made by the merge and then commit:</p>
+<p>Щоб закінчити злиття, додамо <code>guacamole.md</code> до зони
+стейджингу, а потім зробимо коміт:</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -835,10 +836,10 @@ Fast-forward
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<p>Спробуймо це дослідити. Suppose Alfredo takes a picture of its
-guacamole and calls it <code>guacamole.jpg</code>.</p>
-<p>If you do not have an image file of guacamole available, you can
-create a dummy binary file like this:</p>
+<p>Спробуймо це дослідити. Припустимо, Альфредо сфотографував свій
+гуакамоле та зберіг фото у файлі `guacamole.jpg’.</p>
+<p>Якщо у вас немає файлу із зображенням гуакамоле, ви можете створити
+фіктивний бінарний файл наступним чином:</p>
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -853,8 +854,8 @@ create a dummy binary file like this:</p>
 <p><code>ls</code> показує, що було створено файл розміром 1 кілобайт.
 Він містить випадкові байти, які були зчитані зі спеціального файлу
 <code>/dev/urandom</code>.</p>
-<p>Now, suppose Alfredo adds <code>guacamole.jpg</code> to his
-repository:</p>
+<p>Тепер припустимо, що Альфредо додає <code>guacamole.jpg</code> до
+свого репозиторію:</p>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -868,10 +869,10 @@ repository:</p>
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 guacamole.jpg</code></pre>
 </div>
-<p>Suppose that Jimmy has added a similar picture in the meantime. His
-is a picture of a guacamole with nachos, but it is <em>also</em> called
-<code>guacamole.jpg</code>. When Alfredo tries to push, he gets a
-familiar message:</p>
+<p>Припустимо, що Джиммі тим часом додав схожу фотографію. На його
+фотографії зображено гуакамоле з начос, але воно <em>також</em>
+називається guacamole.jpg. Коли Альфредо намагається відправити зміни до
+віддаленого репозиторію, він отримує вже знайоме повідомлення:</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -896,8 +897,8 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.</code
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="ex">$</span> git pull origin main</span></code></pre>
 </div>
-<p>When there is a conflict on an image or other binary file, git prints
-a message like this:</p>
+<p>Коли конфлікт виникає у зображенні або іншому бінарному файлі, git
+друкує таке повідомлення:</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -914,8 +915,8 @@ Auto-merging guacamole.jpg
 CONFLICT (add/add): Merge conflict in guacamole.jpg
 Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 </div>
-<p>The conflict message here is mostly the same as it was for
-<code>guacamole.md</code>, but there is one key additional line:</p>
+<p>Повідомлення про конфлікт здебільшого ідентичне повідомленням для
+<code>guacamole.md</code>, але містить один додатковий рядок:</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -927,11 +928,11 @@ Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 яку ми хочемо зберегти. Після цього ми можемо виконати відповідні
 команди <code>git add</code> та <code>git commit</code>, щоб зберегти цю
 версію.</p>
-<p>On the key line above, Git has conveniently given us commit
-identifiers for the two versions of <code>guacamole.jpg</code>. Our
-version is <code>HEAD</code>, and Jimmy’s version is
-<code>439dc8c0...</code>. Якщо ми хочемо використовувати нашу версію, ми
-можемо застосувати <code>git checkout</code>:</p>
+<p>В додатковому рядку вище, Git зручно надав нам ідентифікатори коміту
+для обох версій <code>guacamole.jpg</code>. Наша версія -
+<code>HEAD</code>, а Джиммі зберіг версію <code>439dc8c0...</code>. Якщо
+ми хочемо використовувати нашу версію, ми можемо застосувати
+<code>git checkout</code>:</p>
 <div class="codewrapper sourceCode" id="cb43">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -944,9 +945,9 @@ version is <code>HEAD</code>, and Jimmy’s version is
 </h3>
 <pre class="output" tabindex="0"><code>[main 21032c3] Use image of just guacamole instead of with nachos</code></pre>
 </div>
-<p>If instead we want to use Jimmy’s version, we can use
-<code>git checkout</code> with Jimmy’s commit identifier,
-<code>439dc8c0</code>:</p>
+<p>Якщо замість цього ми хочемо використовувати версію Джиммі, ми можемо
+застосувати <code>git checkout</code> з його ідентифікатором коміту,
+тобто <code>439dc8c0</code>:</p>
 <div class="codewrapper sourceCode" id="cb45">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -973,8 +974,8 @@ version is <code>HEAD</code>, and Jimmy’s version is
 <span id="cb47-3"><a href="#cb47-3" tabindex="-1"></a><span class="ex">$</span> git checkout 439dc8c0 guacamole.jpg</span>
 <span id="cb47-4"><a href="#cb47-4" tabindex="-1"></a><span class="ex">$</span> mv guacamole.jpg guacamole-nachos.jpg</span></code></pre>
 </div>
-<p>Then, remove the old <code>guacamole.jpg</code> and add the two new
-files:</p>
+<p>Потім видаліть стару версію файлу <code>guacamole.jpg</code> та
+додайте два нових файли:</p>
 <div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -991,8 +992,8 @@ files:</p>
  create mode 100644 guacamole-nachos.jpg
  rename guacamole.jpg =&gt; guacamole-only.jpg (100%)</code></pre>
 </div>
-<p>Now both images of guacamole are checked into the repository, and
-<code>guacamole.jpg</code> no longer exists.</p>
+<p>Тепер обидва зображення гуакамоле містяться у репозиторії, а файл
+<code>guacamole.jpg</code> більше не існує.</p>
 </div>
 </div>
 </div>
@@ -1162,8 +1163,8 @@ files:</p>
   "url": "https://ukrainian-carpentries.github.io/git-novice/instructor/09-conflict.html",
   "identifier": "https://ukrainian-carpentries.github.io/git-novice/instructor/09-conflict.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2025-01-24",
-  "datePublished": "2025-01-24"
+  "dateModified": "2025-01-28",
+  "datePublished": "2025-01-28"
 }
 
   </script><script>

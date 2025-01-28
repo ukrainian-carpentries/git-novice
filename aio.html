@@ -574,7 +574,7 @@ LibreOffice Writer або Microsoft Word, що станеться, якщо ви
   Рішення
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li><p>Відновити чудову версію можливо тільки якщо ви створили копію
@@ -956,7 +956,7 @@ Mac), ваш комп’ютер кодує це як символ. Різні �
 </div>
 </div></section><section id="aio-03-create"><p>Content from <a href="03-create.html">Створення репозиторію</a></p>
 <hr>
-<p>Останнє оновлення 2025-01-24 |
+<p>Останнє оновлення 2025-01-28 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/03-create.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1008,13 +1008,13 @@ Mac), ваш комп’ютер кодує це як символ. Різні �
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git init</span></code></pre>
 </div>
-<p>It is important to note that <code>git init</code> will create a
-repository that can include subdirectories and their files—there is no
-need to create separate repositories nested within the
-<code>recipes</code> repository, whether subdirectories are present from
-the beginning or added later. Крім того, зверніть увагу, що створення
-каталогу <code>recipes</code> та його ініціалізація як репозиторію є
-повністю окремими процесами.</p>
+<p>Майте на увазі, що <code>git init</code> створює репозиторій, до
+якого можна додавати підкаталоги та їх файли. Немає потреби створювати
+окремі репозиторії вкладені в репозиторій <code>recipes</code>,
+незалежно від того чи були підкаталоги присутні від початку або були
+додані пізніше. Крім того, зверніть увагу, що створення каталогу
+<code>recipes</code> та його ініціалізація як репозиторію є повністю
+окремими процесами.</p>
 <p>Якщо ми використаємо <code>ls</code>, щоб передивитись зміст
 каталогу, то здається, що нічого не змінилося:</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -1135,8 +1135,9 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
 </h3>
 <div class="callout-content">
 <p>Джиммі пояснив Альфредо, що вкладений репозиторій є зайвим і може
-призвести до плутанини у майбутньому. Alfredo would like to go back to a
-single git repository. Як Альфредо може скасувати свою останню команду
+призвести до плутанини у майбутньому. Альфредо бажав би повернутися до
+попередньої організації проєкту де необхідний тільки один репозиторій
+Git. Як Альфредо може скасувати свою останню команду
 <code>git init</code> виконану у підкаталозі <code>desserts</code>?</p>
 </div>
 </div>
@@ -2998,7 +2999,7 @@ nothing to commit, working tree clean</code></pre>
   Рішення
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Якщо ви хочете ігнорувати лише вміст <code>receipts/plots</code>, ви
 можете зробити це шляхом додавання наступного рядка до вашого
@@ -3041,7 +3042,7 @@ nothing to commit, working tree clean</code></pre>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Треба додати наступні два рядки до вашого файлу
 <code>.gitignore</code>:</p>
@@ -3092,7 +3093,7 @@ nothing to commit, working tree clean</code></pre>
   Рішення
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Щоб проігнорувати все в каталозі <code>receipts/</code> без
 <code>receipts/data/</code>, можна змінити ваш<code>.gitignore</code>,
@@ -3141,7 +3142,7 @@ nothing to commit, working tree clean</code></pre>
   Рішення
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Додавання <code>receipts/data/market_position/gps/*.dat</code>
 призведе до ігнорування усіх файлів у
@@ -3183,7 +3184,7 @@ nothing to commit, working tree clean</code></pre>
   Рішення
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>Додайте наступний рядок до файлу <code>.gitignore</code>:</p>
 <div class="codewrapper">
@@ -3223,7 +3224,7 @@ nothing to commit, working tree clean</code></pre>
   Рішення
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>Оператор <code>!</code> скасує запис з попередньо визначеного шаблону
 ігнорування. Оскільки запис <code>! *.csv</code> скасовує всі попередні
@@ -3266,7 +3267,7 @@ nothing to commit, working tree clean</code></pre>
   Рішення
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>додайте або <code>log_*</code> або <code>log*</code> як новий
@@ -4331,7 +4332,7 @@ Fast-forward
 </div>
 </div></section><section id="aio-09-conflict"><p>Content from <a href="09-conflict.html">Конфлікти</a></p>
 <hr>
-<p>Останнє оновлення 2025-01-24 |
+<p>Останнє оновлення 2025-01-28 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/09-conflict.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4512,15 +4513,15 @@ Auto-merging guacamole.md
 CONFLICT (content): Merge conflict in guacamole.md
 Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 </div>
-<div id="you-may-need-to-tell-git-what-to-do" class="callout">
+<div id="можливо-вам-доведеться-надати-git-додаткові-інструкції" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="you-may-need-to-tell-git-what-to-do" class="callout-inner">
-<h3 class="callout-title">You may need to tell Git what to do</h3>
+<div id="можливо-вам-доведеться-надати-git-додаткові-інструкції" class="callout-inner">
+<h3 class="callout-title">Можливо, вам доведеться надати Git додаткові інструкції</h3>
 <div class="callout-content">
-<p>If you see the below in your output, Git is asking what it should
-do.</p>
+<p>Якщо у виведених даних з’являється наступне, Git запитує вас про
+вказівки.</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4537,16 +4538,17 @@ hint: preference for all repositories. You can also pass --rebase, --no-rebase,
 hint: or --ff-only on the command line to override the configured default per
 hint: invocation.</code></pre>
 </div>
-<p>In newer versions of Git it gives you the option of specifying
-different behaviours when a pull would merge divergent branches. In our
-case we want ‘the default strategy’. To use this strategy run the
-following command to select it as the default thing git should do.</p>
+<p>У новіших версіях Git ви можете обрати різні стратегії поведінки у
+випадку, коли <code>git pull</code> призводить до злиття розбіжних
+гілок. У нашому випадку нам потрібна стандартна стратегія. Щоб
+використовувати її, виконайте наступну команду, яка встановить її як дію
+за замовчуванням.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> git config pull.rebase false</span></code></pre>
 </div>
-<p>Then attempt the pull again.</p>
+<p>Потім спробуйте отримати зміни ще раз.</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4616,8 +4618,8 @@ following command to select it as the default thing git should do.</p>
 ## Instructions
 * peel the avocados and put them into a bowl.</code></pre>
 </div>
-<p>To finish merging, we add <code>guacamole.md</code> to the changes
-being made by the merge and then commit:</p>
+<p>Щоб закінчити злиття, додамо <code>guacamole.md</code> до зони
+стейджингу, а потім зробимо коміт:</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4785,10 +4787,10 @@ Fast-forward
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<p>Спробуймо це дослідити. Suppose Alfredo takes a picture of its
-guacamole and calls it <code>guacamole.jpg</code>.</p>
-<p>If you do not have an image file of guacamole available, you can
-create a dummy binary file like this:</p>
+<p>Спробуймо це дослідити. Припустимо, Альфредо сфотографував свій
+гуакамоле та зберіг фото у файлі `guacamole.jpg’.</p>
+<p>Якщо у вас немає файлу із зображенням гуакамоле, ви можете створити
+фіктивний бінарний файл наступним чином:</p>
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4803,8 +4805,8 @@ create a dummy binary file like this:</p>
 <p><code>ls</code> показує, що було створено файл розміром 1 кілобайт.
 Він містить випадкові байти, які були зчитані зі спеціального файлу
 <code>/dev/urandom</code>.</p>
-<p>Now, suppose Alfredo adds <code>guacamole.jpg</code> to his
-repository:</p>
+<p>Тепер припустимо, що Альфредо додає <code>guacamole.jpg</code> до
+свого репозиторію:</p>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4818,10 +4820,10 @@ repository:</p>
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 guacamole.jpg</code></pre>
 </div>
-<p>Suppose that Jimmy has added a similar picture in the meantime. His
-is a picture of a guacamole with nachos, but it is <em>also</em> called
-<code>guacamole.jpg</code>. When Alfredo tries to push, he gets a
-familiar message:</p>
+<p>Припустимо, що Джиммі тим часом додав схожу фотографію. На його
+фотографії зображено гуакамоле з начос, але воно <em>також</em>
+називається guacamole.jpg. Коли Альфредо намагається відправити зміни до
+віддаленого репозиторію, він отримує вже знайоме повідомлення:</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4846,8 +4848,8 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.</code
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="ex">$</span> git pull origin main</span></code></pre>
 </div>
-<p>When there is a conflict on an image or other binary file, git prints
-a message like this:</p>
+<p>Коли конфлікт виникає у зображенні або іншому бінарному файлі, git
+друкує таке повідомлення:</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4864,8 +4866,8 @@ Auto-merging guacamole.jpg
 CONFLICT (add/add): Merge conflict in guacamole.jpg
 Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 </div>
-<p>The conflict message here is mostly the same as it was for
-<code>guacamole.md</code>, but there is one key additional line:</p>
+<p>Повідомлення про конфлікт здебільшого ідентичне повідомленням для
+<code>guacamole.md</code>, але містить один додатковий рядок:</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4877,11 +4879,11 @@ Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 яку ми хочемо зберегти. Після цього ми можемо виконати відповідні
 команди <code>git add</code> та <code>git commit</code>, щоб зберегти цю
 версію.</p>
-<p>On the key line above, Git has conveniently given us commit
-identifiers for the two versions of <code>guacamole.jpg</code>. Our
-version is <code>HEAD</code>, and Jimmy’s version is
-<code>439dc8c0...</code>. Якщо ми хочемо використовувати нашу версію, ми
-можемо застосувати <code>git checkout</code>:</p>
+<p>В додатковому рядку вище, Git зручно надав нам ідентифікатори коміту
+для обох версій <code>guacamole.jpg</code>. Наша версія -
+<code>HEAD</code>, а Джиммі зберіг версію <code>439dc8c0...</code>. Якщо
+ми хочемо використовувати нашу версію, ми можемо застосувати
+<code>git checkout</code>:</p>
 <div class="codewrapper sourceCode" id="cb43">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4894,9 +4896,9 @@ version is <code>HEAD</code>, and Jimmy’s version is
 </h3>
 <pre class="output" tabindex="0"><code>[main 21032c3] Use image of just guacamole instead of with nachos</code></pre>
 </div>
-<p>If instead we want to use Jimmy’s version, we can use
-<code>git checkout</code> with Jimmy’s commit identifier,
-<code>439dc8c0</code>:</p>
+<p>Якщо замість цього ми хочемо використовувати версію Джиммі, ми можемо
+застосувати <code>git checkout</code> з його ідентифікатором коміту,
+тобто <code>439dc8c0</code>:</p>
 <div class="codewrapper sourceCode" id="cb45">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4923,8 +4925,8 @@ version is <code>HEAD</code>, and Jimmy’s version is
 <span id="cb47-3"><a href="#cb47-3" tabindex="-1"></a><span class="ex">$</span> git checkout 439dc8c0 guacamole.jpg</span>
 <span id="cb47-4"><a href="#cb47-4" tabindex="-1"></a><span class="ex">$</span> mv guacamole.jpg guacamole-nachos.jpg</span></code></pre>
 </div>
-<p>Then, remove the old <code>guacamole.jpg</code> and add the two new
-files:</p>
+<p>Потім видаліть стару версію файлу <code>guacamole.jpg</code> та
+додайте два нових файли:</p>
 <div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4941,8 +4943,8 @@ files:</p>
  create mode 100644 guacamole-nachos.jpg
  rename guacamole.jpg =&gt; guacamole-only.jpg (100%)</code></pre>
 </div>
-<p>Now both images of guacamole are checked into the repository, and
-<code>guacamole.jpg</code> no longer exists.</p>
+<p>Тепер обидва зображення гуакамоле містяться у репозиторії, а файл
+<code>guacamole.jpg</code> більше не існує.</p>
 </div>
 </div>
 </div>
@@ -5822,7 +5824,7 @@ Git, що треба ігнорувати ці файли та директор�
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Це можна зробити в Rstudio наступним чином:</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -5901,8 +5903,8 @@ Git, що треба ігнорувати ці файли та директор�
   "url": "https://ukrainian-carpentries.github.io/git-novice/aio.html",
   "identifier": "https://ukrainian-carpentries.github.io/git-novice/aio.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2025-01-24",
-  "datePublished": "2025-01-24"
+  "dateModified": "2025-01-28",
+  "datePublished": "2025-01-28"
 }
 
   </script><script>

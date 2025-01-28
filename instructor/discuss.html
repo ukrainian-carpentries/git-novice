@@ -377,7 +377,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Обговорення</h1>
-        <p>Останнє оновлення 2025-01-24 |
+        <p>Останнє оновлення 2025-01-28 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/learners/discuss.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -453,10 +453,10 @@
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> git co f22b25e guacamole.md</span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="стилізація-журналу-git">Стилізація журналу Git<a class="anchor" aria-label="anchor" href="#%D1%81%D1%82%D0%B8%D0%BB%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%8F-%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%83-git"></a></h2>
-<hr class="half-width"><p>A good target for customization is output from the log. The default
-log is quite verbose but gives no graphical hints such as information
-about which commits were done locally and which were pulled from
-remotes.</p>
+<hr class="half-width"><p>A good target for customization is output from the log. Типовий
+журнал є досить детальним, але йому бракує графічних підказок, таких як
+вказівок на те, які коміти були зроблені локально, а які були отримані з
+віддалених репозиторіїв.</p>
 <p>You can use <code>git log --help</code> and
 <code>git config --help</code> to look for different ways to change the
 log output. Спробуйте наступні команди та подивіться, який ефект вони
@@ -490,10 +490,10 @@ log output. Спробуйте наступні команди та подиві
 changes is to store your <code>.gitconfig</code> using Git.</p>
 <p>For hints on what you might want to configure, go to GitHub and
 search for “gitconfig”. Ви знайдете сотні репозиторіїв, у яких люди
-зберегли свої власні файли конфігурації Git. Sort them by the number of
-stars and have a look at the top few. If you find some you like, please
-check that they’re covered by an open source license before you clone
-them.</p>
+зберегли свої власні файли конфігурації Git. Відсортуйте їх за кількістю
+зірок і розгляньте кілька найкращих. Якщо ви знайдете ті, які вам
+подобаються, будь ласка, переконайтеся, що вони є ліцензійними з
+відкритим вихідним кодом, перш ніж клонувати їх.</p>
 </div>
 </div>
 </div>
@@ -502,11 +502,11 @@ them.</p>
 робить Git коли виникає конфлікт у зображенні або якомусь іншому
 нетекстовому файлі, який зберігається у системі контролю версій?”</p>
 <p>Тепер ми розглянемо це питання більш детально.</p>
-<p>Many people want to version control non-text files, such as images,
-PDFs and Microsoft Office or LibreOffice documents. It is true that Git
-can handle these filetypes (which fall under the banner of “binary” file
-types). However, just because it <em>can</em> be done doesn’t mean it
-<em>should</em> be done.</p>
+<p>Багато людей бажають відстежувати версії нетекстових файлів, таких як
+зображення, PDF-файли та документи Microsoft Office або LibreOffice. It
+is true that Git can handle these filetypes (which fall under the banner
+of “binary” file types). Однак те, що це <em>можна</em> зробити, не
+означає, що це <em>потрібно</em> зробити.</p>
 <p>Much of Git’s magic comes from being able to do line-by-line
 comparisons (“diffs”) between files. This is generally easy for
 programming source code and marked up text. Для нетекстових файлів, diff
@@ -517,7 +517,7 @@ programming source code and marked up text. Для нетекстових фай
 <p>For a basic example to show the difference it makes, we’re going to
 go see what would have happened if Alfredo had tried using outputs from
 a word processor instead of plain text.</p>
-<p>Створіть нову директорію і перейдіть до неї:</p>
+<p>Create a new directory and go into it:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -534,8 +534,8 @@ Writer, щоб створити новий документ. Введіть то
 <span><span class="co"># Instructions</span></span></code></pre>
 </div>
 <p>Save the document into the <code>recipes-nontext</code> directory
-with the name of <code>guacamole.doc</code>. Back in the terminal, run
-the usual commands for setting up a new Git repository:</p>
+with the name of <code>guacamole.doc</code>. Поверніться в термінал та
+запустіть звичайні команди для налаштування нового репозиторію Git:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -543,8 +543,8 @@ the usual commands for setting up a new Git repository:</p>
 <span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="ex">$</span> git add guacamole.doc</span>
 <span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Create a template for recipe"</span></span></code></pre>
 </div>
-<p>Потім внесіть ті ж зміни в <code>guacamole.doc</code>, які ми (або
-Альфредо) зробили раніше в <code>guacamole.md</code>.</p>
+<p>Then make the same changes to <code>guacamole.doc</code> that we (or
+Alfredo) previously made to <code>guacamole.md</code>.</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -587,20 +587,20 @@ index df0654a..315bf3a 100644
 <p>Зверніть увагу, що звичайні текстові файли дають набагато
 інформативніший diff. Ви можете побачити, які саме лінії змінилися і які
 були зміни.</p>
-<p>An uninformative <code>git diff</code> is not the only consequence of
-using Git on binary files. However, most of the other problems boil down
-to whether or not a good diff is possible.</p>
-<p>This isn’t to say you should <em>never</em> use Git on binary files.
-A rule of thumb is that it’s OK if the binary file won’t change very
-often, and if it does change, you don’t care about merging in small
-differences between versions.</p>
-<p>Ми вже бачили, як текстовий оброблений звіт провалить цей тест.
-Прикладом, який проходить перевірку, є логотип для вашої організації або
-проєкту. Even though a logo will be stored in a binary format such as
+<p>Неінформативний <code>git diff</code> не є єдиним наслідком
+використання Git на бінарних файлах. However, most of the other problems
+boil down to whether or not a good diff is possible.</p>
+<p>Це не означає, що ви <em>ніколи</em> не повинні використовувати Git
+на бінарних файлах. A rule of thumb is that it’s OK if the binary file
+won’t change very often, and if it does change, you don’t care about
+merging in small differences between versions.</p>
+<p>We’ve already seen how a word processed report will fail this test.
+An example that passes the test is a logo for your organization or
+project. Even though a logo will be stored in a binary format such as
 <code>jpg</code> or <code>png</code>, you can expect it will remain
-fairly static through the lifetime of your repository. On the rare
-occasion that branding does change, you will probably just want to
-replace the logo completely rather than merge little differences in.</p>
+fairly static through the lifetime of your repository. У тих рідкісних
+випадках, коли брендинг змінюється, ви, ймовірно, просто захочете
+повністю замінити логотип, а не зливати невеликі відмінності.</p>
 </section><section><h2 class="section-heading" id="видалення-файлу">Видалення файлу<a class="anchor" aria-label="anchor" href="#%D0%B2%D0%B8%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D1%83"></a></h2>
 <hr class="half-width"><p>Додавання та зміна файлів - це не єдині дії, які можна виконати під
 час роботи над проєктом. It might be required to remove a file from the
@@ -643,20 +643,20 @@ Changes to be committed:
    deleted:    invisible.md
 </code></pre>
 </div>
-<p>Зміна була перенесена у зону стейджингу. Now commit the removal, and
-remove the file from the repository itself. Зауважте, що файл буде
-вилучено у новому коміті. Попередній коміт все одно матиме файл, якщо ви
-хочете отримати цей конкретний коміт.</p>
+<p>Зміна була перенесена у зону стейджингу. Тепер збережіть ваш коміт та
+видаліть файл із самого репозиторію. Зауважте, що файл буде вилучено у
+новому коміті. Попередній коміт все одно матиме файл, якщо ви хочете
+отримати цей конкретний коміт.</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Remove info on Invisible ink.  It is not an edible sauce!'</span></span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="видалення-файлу-за-допомогою-unix">Видалення файлу за допомогою Unix<a class="anchor" aria-label="anchor" href="#%D0%B2%D0%B8%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D1%83-%D0%B7%D0%B0-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BC%D0%BE%D0%B3%D0%BE%D1%8E-unix"></a></h2>
-<hr class="half-width"><p>Іноді ми можемо забути видалити файл через Git. If you removed the
-file with Unix <code>rm</code> instead of using <code>git rm</code>, no
-worries, Git is smart enough to notice the missing file. Let us recreate
-the file and commit it again.</p>
+<hr class="half-width"><p>Іноді ми можемо забути видалити файл через Git. Якщо ви видалили файл
+за допомогою команди Unix <code>rm</code> замість <code>git rm</code>,
+не хвилюйтеся — Git досить розумний і помітить відсутній файл. Let us
+recreate the file and commit it again.</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -711,8 +711,8 @@ committed.</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Remove info on invisible ink, again!'</span></span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="перейменування-файлу">Перейменування файлу<a class="anchor" aria-label="anchor" href="#%D0%BF%D0%B5%D1%80%D0%B5%D0%B9%D0%BC%D0%B5%D0%BD%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D1%83"></a></h2>
-<hr class="half-width"><p>Another common change when working on a project is to rename a
-file.</p>
+<hr class="half-width"><p>Іншою поширеною зміною під час роботи над проєктом є перейменування
+файлу.</p>
 <p>Створіть файл для рецепта білого соусу:</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -754,8 +754,8 @@ Changes to be committed:
 <hr class="half-width"><p>If you forgot to use Git and you used Unix <code>mv</code> instead of
 <code>git mv</code>, you will have a touch more work to do but Git will
 be able to deal with it. Let’s try again renaming the file, this time
-with Unix <code>mv</code>. First, we need to recreate the
-<code>krypton.txt</code> file:</p>
+with Unix <code>mv</code>. По-перше, нам потрібно відтворити файл
+<code>whitesauce.md</code>:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -763,8 +763,8 @@ with Unix <code>mv</code>. First, we need to recreate the
 <span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="ex">$</span> git add whitesauce.md</span>
 <span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Add white sauce recipe'</span></span></code></pre>
 </div>
-<p>Let us rename the file and see what Git can figured out by
-itself:</p>
+<p>Тепер перейменуємо файл і подивимося, що Git може з’ясувати
+самостійно:</p>
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -816,12 +816,14 @@ Changes to be committed:
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Use the French name for the whitesauce'</span></span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="further--gitignore-concepts">Further .gitignore concepts<a class="anchor" aria-label="anchor" href="#further--gitignore-concepts"></a></h2>
-<hr class="half-width"><p>For additional documentation on .gitignore, please reference <a href="https://git-scm.com/docs/gitignore" class="external-link">the official git
-documentation</a>.</p>
-<p>In the ignore exercise, learners were presented with two variations
-of ignoring nested files. Depending on the organization of your
-repository, one may suit your needs over another. Keep in mind that the
-way that Git travels along directory paths can be confusing.</p>
+<hr class="half-width"><p>Для отримання додаткової документації щодо .gitignore, будь ласка,
+зверніться до <a href="https://git-scm.com/docs/gitignore" class="external-link">офіційної
+документації git</a>.</p>
+<p>У вправі на ігнорування, слухачам було запропоновано два варіанти
+ігнорування вкладених файлів. Залежно від організації вашого
+репозиторію, одне рішення може підійти вам ліпше ніж інше. Keep in mind
+that the way that Git travels along directory paths can be
+confusing.</p>
 <p>Sometimes the <code>**</code> pattern comes in handy, too, which
 matches multiple directory levels. Наприклад,
 <code>**/results/plots/*</code> would make git ignore the
@@ -934,8 +936,8 @@ results/*             # ігноруйте файли в директорії
   "url": "https://ukrainian-carpentries.github.io/git-novice/instructor/discuss.html",
   "identifier": "https://ukrainian-carpentries.github.io/git-novice/instructor/discuss.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2025-01-24",
-  "datePublished": "2025-01-24"
+  "dateModified": "2025-01-28",
+  "datePublished": "2025-01-28"
 }
 
   </script><script>

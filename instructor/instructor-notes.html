@@ -518,29 +518,25 @@ Git, безумовно, є найскладнішим інструментом.
 уроку.</p></li>
 <li><p>Малюнки особливо корисні у цьому уроці: якщо у вас є дошка, <a href="https://marklodato.github.io/visual-git-guide/index-en.html" class="external-link">користуйтеся
 нею</a>!</p></li>
-<li><p>Version control is usually not the first subject in a workshop,
-so get learners to create a GitHub account after the session before.
-Нагадайте слухачам, що ім`я користувача та адреса електронної пошти, яку
-вони використовують для GitHub (та налаштовують під час конфігурації
-Git), за замовчуванням будуть наявні для загального перегляду. However,
-there are many reasons why a learner may not want their personal
-information viewable, and GitHub has <a href="https://help.github.com/articles/keeping-your-email-address-private/" class="external-link">resources
+<li><p>Контроль версій, зазвичай, не перша тема, яка розглядається на
+семінарі, тому заохочуйте учнів створити обліковий запис GitHub
+заздалегідь, наприклад після попередньої сесії. Нагадайте слухачам, що
+ім`я користувача та адреса електронної пошти, яку вони використовують
+для GitHub (та налаштовують під час конфігурації Git), за замовчуванням
+будуть наявні для загального перегляду. However, there are many reasons
+why a learner may not want their personal information viewable, and
+GitHub has <a href="https://help.github.com/articles/keeping-your-email-address-private/" class="external-link">resources
 for keeping an email address private</a>.</p></li>
-<li><p>If some learners are using Windows, there will inevitably be
-issues merging files with different line endings. (Even if everyone’s on
-some flavor of Unix, different editors may or may not add a newline to
-the last line of a file.) Take a moment to explain these issues, since
-learners will almost certainly trip over them again. If learners are
-running into line ending problems, GitHub has a <a href="https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings" class="external-link">page</a>
-that helps with troubleshooting. Specifically, the <a href="https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings#refreshing-a-repository-after-changing-line-endings" class="external-link">section
-on refreshing a repository</a> may be helpful if learners need to change
-the <code>core.autocrlf</code> setting after already having made one or
-more commits.</p></li>
-<li><p>We don’t use a Git GUI in these notes because we haven’t found
-one that installs easily and runs reliably on the three major operating
-systems, and because we want learners to understand what commands are
-being run. That said, instructors should demo a GUI on their desktop at
-some point during this lesson and point learners at <a href="https://git-scm.com/downloads/guis" class="external-link">this page</a>.</p></li>
+<li><p>Якщо деякі слухачі використовують Windows, неминуче виникнуть
+проблеми з
+об<code>єднанням файлів із різними закінченнями рядків.  (Even if everyone's on     some flavor of Unix, different editors may or may not add a     newline to the last line of a file.) Take a moment to explain     these issues, since learners will almost certainly trip over them     again.  If learners are running into line ending problems, GitHub     has a [page][github-line-endings] that helps with troubleshooting.     Specifically, the [section on refreshing a repository][github-line-endings-refresh]     may be helpful if learners need to change the</code>core.autocrlf`
+setting after already having made one or more commits.</p></li>
+<li><p>Ми не використовуємо Git GUI в цих нотатках, бо не знайшли
+графічний інтерфейс, який плавно встановлюється та надійно працює у
+трьох основних операційних системах. Крім того, нам треба, щоб учні
+розуміли основні команди, які виконуються. Проте, інструкторам треба
+продемонструвати графічний інтерфейс на своєму комп’ютері в деякий
+момент цього уроку та вказати учням на <a href="https://git-scm.com/downloads/guis" class="external-link">цю сторінку</a>.</p></li>
 <li><p>Instructors should show learners graphical diff/merge tools like
 <a href="https://sourcegear.com/diffmerge/" class="external-link">DiffMerge</a>.</p></li>
 <li><p>When appropriate, explain that we teach Git rather than CVS,
@@ -556,11 +552,10 @@ now.</p></li>
 command-line Git demo, with <a href="https://github.com/jlord/git-it-electron" class="external-link">git-it-electron</a> its
 GitHub Desktop successor.</li>
 <li>
-<a href="https://www.codeschool.com/" class="external-link">Code School</a> має
-безкоштовний інтерактивний курс <a href="https://try.github.io" class="external-link">Try
-Git</a>.</li>
-<li>for instructors, <a href="https://tom.preston-werner.com/2009/05/19/the-git-parable.html" class="external-link">the
-Git parable</a> is useful background reading</li>
+<a href="https://www.codeschool.com/" class="external-link">Code School</a> has a free
+interactive course, <a href="https://try.github.io" class="external-link">Try Git</a>.</li>
+<li>для викладачів корисною довідковою літературою є <a href="https://tom.preston-werner.com/2009/05/19/the-git-parable.html" class="external-link">Git
+parable</a>.</li>
 </ul>
 </li>
 </ul></section><section><h2 class="section-heading" id="автоматизований-контроль-версії">
@@ -574,20 +569,20 @@ is the simplest form of version control.</p></li>
 for them before diving into the watch-and-do practicals. Most of them
 will have tried to co-author papers by emailing files back and forth, or
 will have biked into the office only to realize that the USB key with
-last night’s work is still on the kitchen table. Instructors can also
-make jokes about directories with names like “final version”, “final
-version revised”, “final version with reviewer three’s corrections”,
-“really final version”, and, “come on this really has to be the last
-version” to motivate version control as a better way to collaborate and
-as a better way to back work up.</p></li>
+last night’s work is still on the kitchen table. Інструктори також
+можуть жартувати про каталоги з назвами на кшталт “остаточна версія”,
+“переглянута остаточна версія”, “остаточна версія з трьома
+виправленнями”, “дійсно остаточна версія”, та “це вже дійсно має бути
+остання версія”, щоб заохочувати контроль версій як ліпший спосіб для
+співпраці та резервного копіювання роботи.</p></li>
 </ul></section><section><h2 class="section-heading" id="налаштування-git">
 <a href="02-setup.html">Налаштування Git</a><a class="anchor" aria-label="anchor" href="#%D0%BD%D0%B0%D0%BB%D0%B0%D1%88%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F-git"></a>
 </h2>
 <hr class="half-width">
 <ul>
 <li>
-<p>We suggest instructors and students use <code>nano</code> as the
-text editor for this lessons because</p>
+<p>Ми радимо інструкторам та слухачам використовувати
+<code>nano</code> як текстовий редактор для цих уроків, тому що</p>
 <ul>
 <li>він працює у всіх трьох основних операційних системах</li>
 <li>він працює всередині терміналу (перемикання вікон може заплутати
@@ -597,31 +592,32 @@ text editor for this lessons because</p>
 <p>Please point out to students during setup that they can and should
 use another text editor if they’re already familiar with it.</p>
 </li>
-<li><p>When setting up Git, be very clear what learners have to enter:
-it is common for them to edit the instructor’s details (e.g. email).
-Check at the end using <code>git config --list</code>.</p></li>
-<li><p>When setting up the default branch name, if learners have a Git
-version older than 2.28, the default branch name can be changed for the
-lesson using <code>git branch -M main</code> if there are currently
-commits in the repository, or <code>git checkout -b main</code> if there
-are no commits/the repository is completely empty.</p></li>
+<li><p>Під час налаштування Git чітко вказуйте, що слухачі мають
+вводити: зазвичай вони редагують деталі викладача (наприклад, електронну
+пошту). Зрештою, перевірте це за допомогою
+<code>git config --list</code>.</p></li>
+<li><p>При встановленні типової назви гілки, якщо слухачі мають версію
+Git старішу за 2.28, назву гілки для уроку можна змінити за
+замовчуванням за допомогою ‘git branch -M main’ - коли в репозиторії є
+коміти, або ‘git checkout -b main’ - коли комітів немає/репозиторій
+повністю порожній.</p></li>
 </ul></section><section><h2 class="section-heading" id="створення-репозиторію">
 <a href="03-create.html">Створення репозиторію</a><a class="anchor" aria-label="anchor" href="#%D1%81%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D1%96%D1%8E"></a>
 </h2>
 <hr class="half-width">
 <ul>
-<li><p>When you do <code>git status</code>, Mac users may see a
-<code>.DS_Store</code> file showing as untracked. Це файл, який Mac OS
-створює в кожній директорії.</p></li>
+<li><p>Коли ви вводите ‘git status’, користувачі Mac можуть побачити
+файл ‘.DS_Store’, який відображується як не відстежуваний. Це файл, який
+Mac OS створює в кожному каталозі.</p></li>
 <li>
-<p>The challenge “Places to create repositories” tries to reinforce
-the idea that the <code>.git</code> folder contains the whole Git repo
-and deleting this folder undoes a <code>git init</code>. It also gives
+<p>Завдання “Місця для створення репозиторіїв” намагається посилити
+ідею, що каталог <code>.git</code> містить весь репозиторій Git і
+видалення цього каталогу скасовує <code>git init</code>. It also gives
 the learner the way to fix the common mistake of putting unwanted
 folders (like <code>Desktop</code>) under version control.</p>
-<p>Instead of removing the <code>.git</code> folder directly, you can
-choose to move it first to a safer directory and remove it from
-there:</p>
+<p>Замість безпосереднього видалення каталогу <code>.git</code>, ви
+можете спочатку перемістити його в більш безпечну директорію і видалити
+його звідти:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -640,11 +636,11 @@ inside another repo. Для додаткової дискусії на цю те
 <ul>
 <li><p>It’s important that learners do a full commit cycle by themselves
 (make changes, <code>git diff</code>, <code>git add</code>, and
-<code>git commit</code>). The “<code>bio</code> repository” challenge
-does that.</p></li>
-<li><p>This is a good moment to show a diff with a graphical diff tool.
-If you skip it because you’re short on time, show it once in
-GitHub.</p></li>
+<code>git commit</code>). Завдання “репозиторій <code>bio</code>”
+допоможе з цим.</p></li>
+<li><p>Це слушний момент, щоб показати diff за допомогою графічного
+інструмента. If you skip it because you’re short on time, show it once
+in GitHub.</p></li>
 <li><p>One thing may cause confusion is recovering old versions. Якщо
 замість команди <code>$ git checkout f22b25e mars.txt</code>, хтось
 введе <code>$ git checkout f22b25e</code>, то вони опиняться у стані
@@ -666,37 +662,37 @@ ignore a particular set of files in <code>.gitignore</code>.</p>
 </h2>
 <hr class="half-width">
 <ul>
-<li><p>Make it clear that Git and GitHub are not the same thing: Git is
-an open source version control tool, GitHub is a company that hosts Git
-repositories in the web and provides a web interface to interact with
-repos they host.</p></li>
-<li><p>It is very useful to draw a diagram showing the different
-repositories involved.</p></li>
+<li><p>Поясніть, що Git і GitHub - це не одне і те ж саме: Git - це
+інструмент контролю версій з відкритим кодом, GitHub - це компанія, яка
+розміщує Git репозиторії в Інтернеті та надає вебінтерфейс для взаємодії
+з репозиторіями, які вони розміщують.</p></li>
+<li><p>Дуже корисно намалювати діаграму, що показує різні залучені
+репозиторії.</p></li>
 <li><p>When pushing to a remote, the output from Git can vary slightly
-depending on what leaners execute. The lesson displays the output from
-git if a learner executes <code>git push origin main</code>. However,
-some learners might use syntax suggested by GitHub for pushing to a
-remote with an existing repository, which is
-<code>git push -u origin main</code>. Learners using syntax from GitHub,
-<code>git push -u origin main</code>, will have slightly different
-output, including the line
+depending on what leaners execute. Урок відображує результат з git, якщо
+слухач виконує <code>git push origin main</code>. Однак, деякі слухачі
+можуть використовувати синтаксис <code>git push -u origin main</code>,
+що може запропонувати GitHub, для відправлення на наявний віддалений
+репозиторій. Слухачі, які використовують синтаксис від GitHub,
+<code>git push -u origin main</code>, матимуть дещо інший результат, в
+тому числі рядок
 <code>Branch main set up to track remote branch main from origin by rebasing.</code></p></li>
 </ul></section><section><h2 class="section-heading" id="співпраця">
 <a href="08-collab.html">Співпраця</a><a class="anchor" aria-label="anchor" href="#%D1%81%D0%BF%D1%96%D0%B2%D0%BF%D1%80%D0%B0%D1%86%D1%8F"></a>
 </h2>
 <hr class="half-width">
 <ul>
-<li><p>Decide in advance whether all the learners will work in one
-shared repository, or whether they will work in pairs (or other small
-groups) in separate repositories. The former is easier to set up; the
-latter runs more smoothly.</p></li>
+<li><p>Вирішіть заздалегідь, чи всі учні працюватимуть в одному
+спільному репозиторії, або у парах (або інших невеликих групах) в
+окремих репозиторіях. Перший варіант легше налаштувати; а другий працює
+більш плавно.</p></li>
 <li><p>Role playing between two instructors can be effective when
-teaching the collaboration and conflict sections of the lesson. One
-instructor can play the role of the repository owner, while the second
-instructor can play the role of the collaborator. If it is possible, try
-to use two projectors so that the computer screens of both instructors
-can be seen. This makes for a very clear illustration to the students as
-to who does what.</p></li>
+teaching the collaboration and conflict sections of the lesson. Один
+інструктор може грати роль власника репозиторію, а другий інструктор
+може грати роль співавтора. Якщо є можливість, спробуйте використовувати
+два проєктори, щоб було видно компʼютерні екрани обох інструкторів. This
+makes for a very clear illustration to the students as to who does
+what.</p></li>
 <li><p>It is also effective to pair up students during this lesson and
 assign one member of the pair to take the role of the owner and the
 other the role of the collaborator. In this setup, challenges can
@@ -730,16 +726,15 @@ remote URL when adding a remote, so they cannot <code>push</code>. You
 can diagnose this with <code>git remote -v</code> and checking carefully
 for typos.</p>
 <ul>
-<li>To fix a wrong alias, you can do
+<li>Щоб виправити помилковий псевдонім, скористайтеся командою
 <code>git remote rename &lt;old&gt; &lt;new&gt;</code>.</li>
-<li>To fix a wrong URL, you can do
+<li>Щоб виправити помилковий URL, ви можете виконати
 <code>git remote set-url &lt;alias&gt; &lt;newurl&gt;</code>.</li>
 </ul>
 </li>
 <li><p>Before cloning the repo, be sure that nobody is inside another
-repo. Найкращий спосіб досягти цього - перейти на
-<code>Робочий стіл</code> перед клонуванням:
-<code>cd &amp;&amp; cd Desktop</code>.</p></li>
+repo. Найкращий спосіб досягти цього - перейти на робочий стіл перед
+клонуванням: <code>cd &amp;&amp; cd Desktop</code>.</p></li>
 <li>
 <p>If both repos are in the <code>Desktop</code>, have them to clone
 their collaborator repo under a given directory using a second
@@ -750,11 +745,11 @@ argument:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git clone https://github.com/vlad/planets.git vlad-planet</span></code></pre>
 </div>
 </li>
-<li><p>Найпоширенішою помилкою є те, що учні <code>відправляють</code>
-зміни перед тим, як <code>отримати</code> їх. If they <code>pull</code>
-afterward, they may get a conflict.</p></li>
-<li><p>Conflicts, sometimes weird, will start to arise. Зберігайте
-спокій: конфлікти розглядаються у наступному епізоді.</p></li>
+<li><p>The most common mistake is that learners <code>push</code> before
+<code>pull</code>ing. If they <code>pull</code> afterward, they may get
+a conflict.</p></li>
+<li><p>Іноді можуть виникнути дивні конфлікти. Зберігайте спокій:
+конфлікти розглядаються у наступному епізоді.</p></li>
 <li><p>Learners may have slightly different output from
 <code>git push</code> and <code>git pull</code> depending on the version
 of git, and if upstream (<code>-u</code>) is used.</p></li>
@@ -776,30 +771,31 @@ computer at work:
 <li>At the office, you make a change, commit and push.</li>
 <li>At your laptop repo, you (forget to pull and) make a change, commit
 and try to push.</li>
-<li>
-<code>git pull</code> now and show the conflict.</li>
+<li>Тепер введіть <code>git pull</code> та покажіть як виглядає
+конфлікт.</li>
 </ul>
 </li>
-<li><p>Learners usually forget to <code>git add</code> the file after
-fixing the conflict and just (try to) commit. You can diagnose this with
-<code>git status</code>.</p></li>
+<li><p>Учні зазвичай забувають <code>git add</code> файл після
+виправлення конфлікту та просто (намагаються) зробити коміт. Ви можете
+це продіагностувати за допомогою <code>git status</code>.</p></li>
 <li>
-<p>Памʼятайте, що можна відкинути одного з двох батьків злиття:</p>
+<p>Remember that you can discard one of the two parents of the
+merge:</p>
 <ul>
-<li>відкинути віддалений файл,
+<li>discard the remote file,
 <code>git checkout --ours conflicted_file.txt</code>
 </li>
 <li>відкинути локальний файл,
 <code>git checkout --theirs conflicted_file.txt</code>
 </li>
 </ul>
-<p>Ви все ще повинні зробити <code>git add</code> та
-<code>git commit</code> після цього. Особливо це корисно при роботі з
-бінарними файлами.</p>
+<p>You still have to <code>git add</code> and <code>git commit</code>
+after this. This is particularly useful when working with binary
+files.</p>
 </li>
-<li><p>Keep in mind that depending on the Git version used, the outputs
-for <code>git push</code> and <code>git pull</code> can vary
-slightly.</p></li>
+<li><p>Майте на увазі, що в залежності від версії Git, яку ви
+використовуєте, результати для <code>git push</code> та
+<code>git pull</code> можуть дещо відрізнятися.</p></li>
 </ul></section><section><h2 class="section-heading" id="відкрита-наука">
 <a href="10-open.html">Відкрита наука</a><a class="anchor" aria-label="anchor" href="#%D0%B2%D1%96%D0%B4%D0%BA%D1%80%D0%B8%D1%82%D0%B0-%D0%BD%D0%B0%D1%83%D0%BA%D0%B0"></a>
 </h2>
@@ -809,9 +805,8 @@ slightly.</p></li>
 <hr class="half-width">
 <p>We teach about licensing because questions about who owns what, or
 can use what, arise naturally once we start talking about using public
-services like GitHub to store files. Also, the discussion gives learners
-a chance to catch their breath after what is often a frustrating couple
-of hours.</p>
+services like GitHub to store files. Крім того, обговорення дає учням
+можливість перевести подих після тривалого навантаження.</p>
 <p>The Creative Commons family of licenses is recommended for many types
 of works (including software documentation and images used in software)
 but not software itself. Creative Commons <a href="https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software" class="external-link">recommends</a>
@@ -889,8 +884,8 @@ on GitHub. Хоча ми заохочуємо відкриту науку, ін�
   "url": "https://ukrainian-carpentries.github.io/git-novice/instructor/instructor-notes.html",
   "identifier": "https://ukrainian-carpentries.github.io/git-novice/instructor/instructor-notes.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2025-01-24",
-  "datePublished": "2025-01-24"
+  "dateModified": "2025-01-28",
+  "datePublished": "2025-01-28"
 }
 
   </script><script>
