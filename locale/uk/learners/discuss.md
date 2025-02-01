@@ -117,7 +117,7 @@ go to GitHub and search for "gitconfig".
 Тепер ми розглянемо це питання більш детально.
 
 Багато людей бажають відстежувати версії нетекстових файлів, таких як зображення, PDF-файли та документи Microsoft Office або LibreOffice.
-It is true that Git can handle these filetypes (which fall under the banner of "binary" file types).
+Насправді Git може обробляти ці типи файлів (які потрапляють у категорію "бінарних" файлів).
 Однак те, що це _можна_ зробити, не означає, що це _потрібно_ зробити.
 
 Much of Git's magic comes from being able to do line-by-line comparisons ("diffs") between files.
