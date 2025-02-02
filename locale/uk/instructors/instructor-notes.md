@@ -129,8 +129,7 @@ title: Нотатки для інструктора
 
 ## [Ігнорування файлів](../episodes/06-ignore.md)
 
-Just remember that you can use wildcards and regular expressions to ignore a
-particular set of files in `.gitignore`.
+Просто пам'ятайте, що ви можете використовувати шаблони та регулярні вирази, щоб ігнорувати певний набір файлів в `.gitignore`.
 
 ## [Віддалені репозиторії у GitHub](../episodes/07-github.md)
 
