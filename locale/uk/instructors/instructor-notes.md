@@ -54,8 +54,7 @@ title: Нотатки для інструктора
 
 - Ми не використовуємо Git GUI в цих нотатках, бо не знайшли графічний інтерфейс, який плавно встановлюється та надійно працює у трьох основних операційних системах. Крім того, нам треба, щоб учні розуміли основні команди, які виконуються.  Проте, інструкторам треба продемонструвати графічний інтерфейс на своєму комп'ютері в деякий момент цього уроку та вказати учням на [цю сторінку][github-gui].
 
-- Instructors should show learners graphical diff/merge tools like
-  [DiffMerge][diffmerge].
+- Інструктори повинні продемонструвати слухачам графічні інструменти для аналізу і злиття змін, такі як [DiffMerge][diffmerge].
 
 - When appropriate, explain that we teach Git rather than CVS, Subversion, or
   Mercurial primarily because of GitHub's growing popularity: CVS and
@@ -71,8 +70,7 @@ title: Нотатки для інструктора
 
 ## [Автоматизований контроль версії](../episodes/01-basics.md)
 
-- Ask, "Who uses 'undo' in their editor?" Всі скажуть: "Я". 'Undo' is the simplest
-  form of version control.
+- Запитайте, "Хто використовує функцію скасування (undo) у своєму редакторі?" Всі скажуть: "Я". Скасування - це найпростіша форма контролю версій.
 
 - Give learners a five-minute overview of what version control does for them
   before diving into the watch-and-do practicals.  Most of them will have
