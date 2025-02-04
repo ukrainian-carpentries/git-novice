@@ -112,8 +112,7 @@ title: Нотатки для інструктора
 
 ## [Відстеження змін](../episodes/04-changes.md)
 
-- It's important that learners do a full commit cycle by themselves (make
-  changes, `git diff`, `git add`, and `git commit`). Завдання "репозиторій `bio`" допоможе з цим.
+- Важливо, щоб слухачі самостійно зробили повний цикл коміту (внесли зміни та виконали `git diff`, `git add`, та `git commit`). Завдання "репозиторій `bio`" допоможе з цим.
 
 - Це слушний момент, щоб показати diff за допомогою графічного інструмента. If you
   skip it because you're short on time, show it once in GitHub.
@@ -135,8 +134,7 @@ title: Нотатки для інструктора
 
 - Дуже корисно намалювати діаграму, що показує різні залучені репозиторії.
 
-- When pushing to a remote, the output from Git can vary slightly depending on
-  what leaners execute. Урок відображує результат з git, якщо слухач виконує `git push origin main`. Однак, деякі слухачі можуть використовувати синтаксис `git push -u origin main`, що може запропонувати GitHub, для відправлення на наявний віддалений репозиторій. Слухачі, які використовують синтаксис від GitHub,
+- При надсиланні змін до віддаленого репозиторію, вихідні дані з Git можуть дещо відрізнятися в залежності від того, що виконують слухачі. Урок відображує результат з git, якщо слухач виконує `git push origin main`. Однак, деякі слухачі можуть використовувати синтаксис `git push -u origin main`, що може запропонувати GitHub, для відправлення на наявний віддалений репозиторій. Слухачі, які використовують синтаксис від GitHub,
   `git push -u origin main`, матимуть дещо інший результат, в тому числі
   рядок `Branch main set up to track remote branch main from origin by rebasing.`
 
