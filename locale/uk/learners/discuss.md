@@ -69,8 +69,7 @@ $ git co f22b25e guacamole.md
 таких як вказівок на те, які коміти були зроблені локально,
 а які були отримані з віддалених репозиторіїв.
 
-You can use `git log --help` and `git config --help` to look for different ways to change
-the log output.
+Ви можете використовувати `git log --help` та `git config --help`, щоб знайти різні способи для змін вигляду журналу.
 Спробуйте наступні команди та подивіться, який ефект вони матимуть:
 
 ```bash
@@ -96,8 +95,8 @@ $ git config --global --unset format.pretty
 Ви можете використовувати опцію `--unset` для видалення небажаних параметрів з `.gitconfig`.
 Another way to roll back changes is to store your `.gitconfig` using Git.
 
-For hints on what you might want to configure,
-go to GitHub and search for "gitconfig".
+Щоб отримати поради по те, що ще ви можете налаштувати,
+перейдіть до GitHub і у вікні пошуку введіть "gitconfig".
 Ви знайдете сотні репозиторіїв, у яких люди зберегли
 свої власні файли конфігурації Git.
 Відсортуйте їх за кількістю зірок і розгляньте кілька найкращих.
@@ -132,7 +131,7 @@ For a basic example to show the difference it makes,
 we're going to go see what would have happened if Alfredo had tried
 using outputs from a word processor instead of plain text.
 
-Create a new directory and go into it:
+Створіть новий каталог і перейдіть до нього:
 
 ```bash
 $ mkdir recipes-nontext
@@ -147,7 +146,7 @@ $ cd recipes-nontext
 # Instructions
 ```
 
-Save the document into the `recipes-nontext` directory with the name of `guacamole.doc`.
+Збережіть документ із назвою `guacamole.doc` у каталозі `recipes-nontext`.
 Поверніться в термінал та запустіть звичайні команди для налаштування нового репозиторію Git:
 
 ```bash
@@ -156,7 +155,7 @@ $ git add guacamole.doc
 $ git commit -m "Create a template for recipe"
 ```
 
-Then make the same changes to `guacamole.doc` that we (or Alfredo) previously made to `guacamole.md`.
+Потім внесіть в `guacamole.doc` ті ж зміни, які ми (або Альфредо) зробили раніше в `guacamole.md`.
 
 ```output
 # Ingredients
@@ -205,7 +204,7 @@ A rule of thumb is that it's OK if the binary file won't change very often,
 and if it does change, you don't care about merging in small differences between versions.
 
 We've already seen how a word processed report will fail this test.
-An example that passes the test is a logo for your organization or project.
+Прикладом, який проходить перевірку, є логотип вашої організації або проєкту.
 Even though a logo will be stored in a binary format such as `jpg` or `png`,
 you can expect it will remain fairly static through the lifetime of your repository.
 У тих рідкісних випадках, коли брендинг змінюється, ви, ймовірно, просто захочете повністю замінити логотип, а не зливати невеликі відмінності.
@@ -213,8 +212,8 @@ you can expect it will remain fairly static through the lifetime of your reposit
 ## Видалення файлу
 
 Додавання та зміна файлів - це не єдині дії, які можна виконати
-під час роботи над проєктом.  It might be required to remove a file
-from the repository.
+під час роботи над проєктом.  Також може знадобитись видалити файл
+з репозиторію.
 
 Створіть новий файл для невидимих чорнил:
 
@@ -222,7 +221,7 @@ from the repository.
 $ echo "This is where we keep the secret sauce" > invisible.md
 ```
 
-Now add to the repository like you have learned earlier:
+Тепер додайте його до репозиторію, як ви навчилися раніше:
 
 ```bash
 $ git add invisible.md
@@ -273,7 +272,7 @@ $ git add secret.md
 $ git commit -m 'Add invisible ink again'
 ```
 
-Now we remove the file with Unix `rm`:
+Тепер видалимо файл за допомогою команди `rm`:
 
 ```bash
 $ rm secret.md
@@ -334,7 +333,7 @@ $ git add whitesauce.md
 $ git commit -m 'Add white sauce recipe'
 ```
 
-We all know that white sauce has a more sophisticated name.
+Всі ми знаємо, що білий соус має більш витончене ім'я.
 
 Змініть назву файлу з `whitesauce.md` на `bechamel.md` за допомогою Git:
 
@@ -361,8 +360,8 @@ $ git commit -m 'Use the French name for the whitesauce'
 
 If you forgot to use Git and you used Unix `mv` instead
 of `git mv`, you will have a touch more work to do but Git will
-be able to deal with it. Let's try again renaming the file,
-this time with Unix `mv`. По-перше, нам потрібно відтворити
+be able to deal with it. Спробуймо ще раз перейменувати файл, але
+цього разу за допомогою команди Unix `mv`. По-перше, нам потрібно відтворити
 файл `whitesauce.md`:
 
 ```bash
@@ -422,7 +421,7 @@ Changes to be committed:
 $ git commit -m 'Use the French name for the whitesauce'
 ```
 
-## Further .gitignore concepts
+## Додаткові тонкощі використання .gitignore
 
 Для отримання додаткової документації щодо .gitignore, будь ласка, зверніться до
 [офіційної документації git](https://git-scm.com/docs/gitignore).
