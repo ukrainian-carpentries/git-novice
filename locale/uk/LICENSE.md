@@ -6,21 +6,19 @@ title: Ліцензії
 
 All Carpentries (Software Carpentry, Data Carpentry, and Library Carpentry)
 instructional material is made available under the [Creative Commons
-Attribution license][cc-by-human]. The following is a human-readable summary of
-(and not a substitute for) the [full legal text of the CC BY 4.0
-license][cc-by-legal].
+Attribution license][cc-by-human]. Нижче наведено придатний для читання людиною короткий виклад (а не заміна) [повного юридичного тексту ліцензії CC BY 4.0][cc-by-legal].
 
 You are free:
 
 - to **Share**---copy and redistribute the material in any medium or format
 - to **Adapt**---remix, transform, and build upon the material
 
-for any purpose, even commercially.
+для будь-яких цілей, навіть комерційних.
 
 The licensor cannot revoke these freedoms as long as you follow the license
 terms.
 
-Under the following terms:
+На наступних умовах:
 
 - **Attribution**---You must give appropriate credit (mentioning that your work
   is derived from work that is Copyright (c) The Carpentries and, where
@@ -31,15 +29,14 @@ Under the following terms:
 
 - **No additional restrictions**---You may not apply legal terms or
   technological measures that legally restrict others from doing anything the
-  license permits.  With the understanding that:
+  license permits.  З розумінням того, що:
 
-Notices:
+Примітки:
 
 - You do not have to comply with the license for elements of the material in
   the public domain or where your use is permitted by an applicable exception
   or limitation.
-- No warranties are given. The license may not give you all of the permissions
-  necessary for your intended use. For example, other rights such as publicity,
+- Не надається жодних гарантій. Ліцензія може не надавати всіх необхідних дозволів, необхідних для вашого використання матеріалу. For example, other rights such as publicity,
   privacy, or moral rights may limit how you use the material.
 
 ## Software
