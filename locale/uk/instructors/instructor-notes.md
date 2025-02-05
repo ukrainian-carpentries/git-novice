@@ -38,9 +38,7 @@ title: Нотатки для інструктора
 
 - Контроль версій, зазвичай, не перша тема, яка розглядається на семінарі, тому заохочуйте учнів створити обліковий запис GitHub заздалегідь, наприклад після попередньої сесії.
   Нагадайте слухачам, що ім\`я користувача та адреса електронної пошти, яку вони використовують для GitHub (та налаштовують під час конфігурації Git), за замовчуванням будуть наявні для загального перегляду.
-  However, there are many reasons why a learner may not want their personal
-  information viewable, and GitHub has [resources for keeping an email address
-  private][github-privacy].
+  Однак є багато причин, чому слухач може віддати перевагу зберіганню конфіденційності своєї особистої інформації, для чого GitHub надає [наступні ресурси][github-privacy].
 
 - Якщо деякі слухачі використовують Windows, неминуче виникнуть проблеми з об`єднанням файлів із різними закінченнями рядків.  (Even if everyone's on
     some flavor of Unix, different editors may or may not add a
@@ -56,27 +54,20 @@ title: Нотатки для інструктора
 
 - Інструктори повинні продемонструвати слухачам графічні інструменти для аналізу і злиття змін, такі як [DiffMerge][diffmerge].
 
-- When appropriate, explain that we teach Git rather than CVS, Subversion, or
-  Mercurial primarily because of GitHub's growing popularity: CVS and
-  Subversion are now seen as legacy systems, and Mercurial isn't nearly as
-  widely used in the sciences right now.
+- При необхідності поясніть, що ми перш за все навчаємо використовувати Git, а не CVS, Subversion, або Mercurial насамперед через зростання популярності GitHub. CVS та Subversion тепер вважаються застарілими системами, а Mercurial наразі не так широко використовується у наукових галузях.
 
 - Додаткові ресурси:
 
   - [git-it] is a self-paced command-line Git demo,
     with [git-it-electron] its GitHub Desktop successor.
-  - [Code School][code-school] has a free interactive course, [Try Git][try-git].
+  - [Code School][code-school] пропонує безкоштовний інтерактивний курс [Try Git][try-git].
   - для викладачів корисною довідковою літературою є [Git parable][git-parable].
 
 ## [Автоматизований контроль версії](../episodes/01-basics.md)
 
 - Запитайте, "Хто використовує функцію скасування (undo) у своєму редакторі?" Всі скажуть: "Я". Скасування - це найпростіша форма контролю версій.
 
-- Give learners a five-minute overview of what version control does for them
-  before diving into the watch-and-do practicals.  Most of them will have
-  tried to co-author papers by emailing files back and forth, or will have
-  biked into the office only to realize that the USB key with last night's
-  work is still on the kitchen table.  Інструктори також можуть жартувати про каталоги з назвами на кшталт "остаточна версія", "переглянута остаточна версія", "остаточна версія з трьома виправленнями", "дійсно остаточна версія", та "це вже дійсно має бути остання версія", щоб заохочувати контроль версій як ліпший спосіб для співпраці та резервного копіювання роботи.
+- Надайте слухачам п'ятихвилинний огляд того, що для них може зробити система контролю версій, перш ніж перейти до практичних "повторюйте за мною" вправ.  Більшість з них натрапили на труднощі зі співавторством, надсилаючи файли електронною поштою. Дехто буде знайом із такою ситуацією: приїжджаєш до офісу лише для того, щоб зрозуміти, що USB-ключ із роботою минулої ночі все ще вдома.  Інструктори також можуть жартувати про каталоги з назвами на кшталт "остаточна версія", "переглянута остаточна версія", "остаточна версія з трьома виправленнями", "дійсно остаточна версія", та "це вже дійсно має бути остання версія", щоб заохочувати контроль версій як ліпший спосіб для співпраці та резервного копіювання роботи.
 
 ## [Налаштування Git](../episodes/02-setup.md)
 
@@ -84,10 +75,9 @@ title: Нотатки для інструктора
 
   - він працює у всіх трьох основних операційних системах
   - він працює всередині терміналу (перемикання вікон може заплутати учнів), та
-  - it has shortcut help at the bottom of the window.
+  - він містить у нижній частині вікна довідку з клавіатурними скороченнями.
 
-  Please point out to students during setup that they can and should use
-  another text editor if they're already familiar with it.
+  Будь ласка, нагадайте слухачам під час налаштування, що вони можуть (і навіть мають) використовувати інший текстовий редактор, якщо вони вже з ним знайомі.
 
 - Під час налаштування Git чітко вказуйте, що слухачі мають вводити: зазвичай вони редагують деталі викладача (наприклад, електронну пошту).  Зрештою, перевірте це за допомогою `git config --list`.
 
@@ -97,8 +87,7 @@ title: Нотатки для інструктора
 
 - Коли ви вводите 'git status', користувачі Mac можуть побачити файл '.DS_Store', який відображується як не відстежуваний. Це файл, який Mac OS створює в кожному каталозі.
 
-- Завдання "Місця для створення репозиторіїв" намагається посилити ідею, що каталог `.git` містить весь репозиторій Git і видалення цього каталогу скасовує `git init`. It also gives the learner the way to fix the common
-  mistake of putting unwanted folders (like `Desktop`) under version control.
+- Завдання "Місця для створення репозиторіїв" намагається посилити ідею, що каталог `.git` містить весь репозиторій Git і видалення цього каталогу скасовує `git init`. Це також дає слухачеві можливість виправити поширену помилку, пов'язану з додаванням небажаних каталогів (наприклад, `Робочий стіл`) до контролю версій.
 
   Замість безпосереднього видалення каталогу `.git`, ви можете спочатку перемістити його в більш безпечну директорію і видалити його звідти:
 
@@ -107,22 +96,20 @@ title: Нотатки для інструктора
   $ rm -rf  temp_git
   ```
 
-  The challenge suggests that it is a bad idea to create a Git repo inside another repo.
+  Завдання натякає на те, що створення репозиторію Git всередині іншого є поганою ідеєю.
   Для додаткової дискусії на цю тему, будь ласка, дивіться [це питання][repos-in-repos].
 
 ## [Відстеження змін](../episodes/04-changes.md)
 
 - Важливо, щоб слухачі самостійно зробили повний цикл коміту (внесли зміни та виконали `git diff`, `git add`, та `git commit`). Завдання "репозиторій `bio`" допоможе з цим.
 
-- Це слушний момент, щоб показати diff за допомогою графічного інструмента. If you
-  skip it because you're short on time, show it once in GitHub.
+- Це слушний момент, щоб показати diff за допомогою графічного інструмента. Якщо ви пропустите це через брак часу, пізніше продемонструйте його лише у GitHub.
 
-- One thing may cause confusion is recovering old versions.  Якщо замість команди `$ git checkout f22b25e mars.txt`, хтось введе `$ git checkout f22b25e`, то вони опиняться у стані "detached HEAD", що призведе до непорозуміння.
-  It's then possible to keep on committing, but things like `git push origin main` a bit later will not give easily comprehensible results.  It also
+- Одна річ, яка може викликати плутанину - це відновлення старих версій.  Якщо замість команди `$ git checkout f22b25e mars.txt`, хтось введе `$ git checkout f22b25e`, то вони опиняться у стані "detached HEAD", що призведе до непорозуміння.
+  Після цього можна продовжувати робити коміти, але такі команди, як `git push origin main` вже не надаватимуть зрозумілих результатів.  It also
   makes it look like commits can be lost.  Щоб "повторно прикріпити" HEAD, використовуйте `git checkout main`.
 
-- This is a good moment to show a log within a Git GUI. If you skip it
-  because you're short on time, show it once in GitHub.
+- This is a good moment to show a log within a Git GUI. Якщо ви пропустите це через брак часу, пізніше продемонструйте його лише у GitHub.
 
 ## [Ігнорування файлів](../episodes/06-ignore.md)
 
