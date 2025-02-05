@@ -93,7 +93,7 @@ $ git config --global --unset format.pretty
 ## Скасування змін конфігурації Git
 
 Ви можете використовувати опцію `--unset` для видалення небажаних параметрів з `.gitconfig`.
-Another way to roll back changes is to store your `.gitconfig` using Git.
+Ще один спосіб скасувати зміни — зберегти ваш `.gitconfig` за допомогою Git.
 
 Щоб отримати поради по те, що ще ви можете налаштувати,
 перейдіть до GitHub і у вікні пошуку введіть "gitconfig".
@@ -127,9 +127,7 @@ This is generally easy for programming source code and marked up text.
 Це по-різному впливає на продуктивність Git та ускладнює
 порівняння різних версій вашого проєкту.
 
-For a basic example to show the difference it makes,
-we're going to go see what would have happened if Alfredo had tried
-using outputs from a word processor instead of plain text.
+Щоб показати різницю ми роздивимося базовий приклад: що б сталося, якби Альфредо спробував використати файл, створений у текстовому процесорі замість звичайного неформатованого тексту.
 
 Створіть новий каталог і перейдіть до нього:
 
@@ -197,7 +195,7 @@ index df0654a..315bf3a 100644
 Ви можете побачити, які саме лінії змінилися і які були зміни.
 
 Неінформативний `git diff` не є єдиним наслідком використання Git на бінарних файлах.
-However, most of the other problems boil down to whether or not a good diff is possible.
+Однак більшість інших питань зводяться до того, чи можливий інформативний diff взагалі.
 
 Це не означає, що ви _ніколи_ не повинні використовувати Git на бінарних файлах.
 A rule of thumb is that it's OK if the binary file won't change very often,
@@ -205,8 +203,8 @@ and if it does change, you don't care about merging in small differences between
 
 We've already seen how a word processed report will fail this test.
 Прикладом, який проходить перевірку, є логотип вашої організації або проєкту.
-Even though a logo will be stored in a binary format such as `jpg` or `png`,
-you can expect it will remain fairly static through the lifetime of your repository.
+Попри те, що логотип зберігається у бінарному форматі, такому як `jpg` або `png`,
+ви можете розраховувати, що він залишиться відносно незмінним протягом усього терміну життя вашого репозиторію.
 У тих рідкісних випадках, коли брендинг змінюється, ви, ймовірно, просто захочете повністю замінити логотип, а не зливати невеликі відмінності.
 
 ## Видалення файлу
@@ -234,8 +232,7 @@ On branch main
 nothing to commit, working directory clean
 ```
 
-Невидиме чорнило не є справжньою їжею.  Це була погана ідея.  Let us remove
-it from the disk and let Git know about it:
+Невидиме чорнило не є справжньою їжею.  Це була погана ідея.  Видалімо файл із проєкту та повідомимо про це Git:
 
 ```bash
 $ git rm invisible.md
@@ -263,8 +260,7 @@ $ git commit -m 'Remove info on Invisible ink.  It is not an edible sauce!'
 ## Видалення файлу за допомогою Unix
 
 Іноді ми можемо забути видалити файл через Git. Якщо ви видалили файл за допомогою команди Unix `rm` замість `git rm`, не хвилюйтеся —
-Git досить розумний і помітить відсутній файл. Let us recreate the file and
-commit it again.
+Git досить розумний і помітить відсутній файл. Відтворімо файл і зробимо його коміт знову.
 
 ```bash
 $ echo "This is another way to make invisible ink" > secret.md
@@ -309,8 +305,7 @@ Changes to be committed:
 
 ```
 
-The change that was made in Unix has now been staged and needs to be
-committed.
+Зміна, яка була зроблена в Unix, тепер була перенесена в зону стейджингу, де її треба зберегти у коміті.
 
 ```bash
 $ git commit -m 'Remove info on invisible ink, again!'
@@ -358,9 +353,7 @@ $ git commit -m 'Use the French name for the whitesauce'
 
 ## Перейменування файлу за допомогою Unix
 
-If you forgot to use Git and you used Unix `mv` instead
-of `git mv`, you will have a touch more work to do but Git will
-be able to deal with it. Спробуймо ще раз перейменувати файл, але
+Якщо ви замість Git команди `git mv` використовували Unix `mv`, то у вас буде трохи більше роботи, але Git все одно зможе з цим впоратися. Спробуймо ще раз перейменувати файл, але
 цього разу за допомогою команди Unix `mv`. По-перше, нам потрібно відтворити
 файл `whitesauce.md`:
 
