@@ -142,23 +142,16 @@ title: Нотатки для інструктора
 
 - Вирішіть заздалегідь, чи всі учні працюватимуть в одному спільному репозиторії, або у парах (або інших невеликих групах) в окремих репозиторіях.  Перший варіант легше налаштувати; а другий працює більш плавно.
 
-- Рольова гра між двома інструкторами може бути ефективним методом навчання співпраці та розв’язанню конфліктів.  Один інструктор може грати роль власника репозиторію, а другий інструктор може грати роль співавтора.  Якщо є можливість, спробуйте використовувати два проєктори, щоб було видно компʼютерні екрани обох інструкторів.  This makes for
-  a very clear illustration to the students as to who does what.
+- Рольова гра між двома інструкторами може бути ефективним методом навчання співпраці та розв’язанню конфліктів.  Один інструктор може грати роль власника репозиторію, а другий інструктор може грати роль співавтора.  Якщо є можливість, спробуйте використовувати два проєктори, щоб було видно компʼютерні екрани обох інструкторів.  Це чітко покаже слухачам хто що робить.
 
-- It is also effective to pair up students during this lesson and assign one
-  member of the pair to take the role of the owner and the other the role of
-  the collaborator.  In this setup, challenges can include asking the
+- Також ефективно під час цього уроку поєднувати учнів у пари та призначати їм ролі власника та співавтора.  In this setup, challenges can include asking the
   collaborator to make a change, commit it, and push the change to the remote
   repository so that the owner can then retrieve it, and vice-versa.  The
   role playing between the instructors can get a bit "dramatic" in the
   conflicts part of the lesson if the instructors want to inject some humor
   into the room.
 
-- If you don't have two projectors, have two instructors at the front of the
-  room.  Each instructor does their piece of the collaboration demonstration
-  on their own computer and then passes the projector cord back and forth
-  with the other instructor when it's time for them to do the other part of
-  the collaborative workflow.  It takes less than 10 seconds for each
+- Якщо у вас немає двох проєкторів, подібний ефект можна досягти за допомогою двох інструкторів.  Кожен інструктор розповідає про свою частину на власному компʼютері, а потім передає шнур проєктора іншому коли настає його черга.  It takes less than 10 seconds for each
   switchover, so it doesn't interrupt the flow of the lesson.
   And of course it helps to give each of the instructors a different-colored
   hat, or put different-colored sticky notes on their foreheads.
@@ -172,13 +165,12 @@ title: Нотатки для інструктора
   ```
 
 - It's very common that learners mistype the remote alias or the remote URL
-  when adding a remote, so they cannot `push`. You can diagnose this with
-  `git remote -v` and checking carefully for typos.
+  when adding a remote, so they cannot `push`. Ви можете уникнути цього за допомогою виконання `git remote -v` і ретельної перевірки результату.
 
   - Щоб виправити помилковий псевдонім, скористайтеся командою `git remote rename <old> <new>`.
   - Щоб виправити помилковий URL, ви можете виконати `git remote set-url <alias> <newurl>`.
 
-- Before cloning the repo, be sure that nobody is inside another repo. Найкращий спосіб досягти цього - перейти на робочий стіл перед клонуванням: `cd && cd Desktop`.
+- Перш ніж клонувати репозиторій, переконайтеся, що ніхто зі слухачів не знаходиться всередині іншого репозиторію. Найкращий спосіб досягти цього - перейти на робочий стіл перед клонуванням: `cd && cd Desktop`.
 
 - If both repos are in the `Desktop`, have them to clone their collaborator
   repo under a given directory using a second argument:
