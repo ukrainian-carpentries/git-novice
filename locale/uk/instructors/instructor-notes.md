@@ -179,8 +179,7 @@ title: Нотатки для інструктора
   $ git clone https://github.com/vlad/planets.git vlad-planet
   ```
 
-- The most common mistake is that learners `push` before `pull`ing. If they
-  `pull` afterward, they may get a conflict.
+- Найпоширенішою помилкою є те, що слухачі відправляють свої зміни (`git push`) перед тим, як отримати інші зміни з віддаленого репозиторію (`git pull`). Якщо вони виконують `pull` після `push`, може виникнути конфлікт.
 
 - Іноді можуть виникнути дивні конфлікти. Зберігайте спокій: конфлікти розглядаються у наступному епізоді.
 
@@ -192,7 +191,7 @@ title: Нотатки для інструктора
 - Очікуйте, що учні зроблять помилки. Очікуйте, що ви можете зробити помилки.
   Це відбувається тому, що урок триває вже достатньо довго і всі втомилися.
 
-- If you're the only instructor, the best way to create a conflict is:
+- Якщо ви єдиний інструктор, найкращий спосіб створити конфлікт є наступним:
 
   - Clone your repo in a different directory, pretending is your computer at
     work: `git clone https://github.com/alflin/recipes.git recipes-at-work`.
@@ -205,8 +204,8 @@ title: Нотатки для інструктора
 
 - Remember that you can discard one of the two parents of the merge:
 
-  - discard the remote file, `git checkout --ours conflicted_file.txt`
-  - відкинути локальний файл, `git checkout --theirs conflicted_file.txt`
+  - скасувати зміни у віддаленому файлі, `git checkout --ours conflicted_file.txt`
+  - скасувати зміни у локальному файлі, `git checkout --theirs conflicted_file.txt`
 
   You still have to `git add` and `git commit` after this. This is
   particularly useful when working with binary files.
@@ -217,9 +216,7 @@ title: Нотатки для інструктора
 
 ## [Ліцензування](../episodes/11-licensing.md)
 
-We teach about licensing because questions about who owns what, or can use
-what, arise naturally once we start talking about using public services like
-GitHub to store files. Крім того, обговорення дає учням можливість перевести подих після тривалого навантаження.
+Ми розповідаємо про ліцензування, тому що завжди виникатимуть питання про права володіння: хто володіє чим, або що можна використовувати. Ці питання з'являються як тільки ми починаємо говорити про використання публічних послуг як GitHub для зберігання файлів. Крім того, обговорення дає учням можливість перевести подих після тривалого навантаження.
 
 The Creative Commons family of licenses is recommended for many types of
 works (including software documentation and images used in software) but not
