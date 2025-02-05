@@ -106,10 +106,9 @@ title: Нотатки для інструктора
 - Це слушний момент, щоб показати diff за допомогою графічного інструмента. Якщо ви пропустите це через брак часу, пізніше продемонструйте його лише у GitHub.
 
 - Одна річ, яка може викликати плутанину - це відновлення старих версій.  Якщо замість команди `$ git checkout f22b25e mars.txt`, хтось введе `$ git checkout f22b25e`, то вони опиняться у стані "detached HEAD", що призведе до непорозуміння.
-  Після цього можна продовжувати робити коміти, але такі команди, як `git push origin main` вже не надаватимуть зрозумілих результатів.  It also
-  makes it look like commits can be lost.  Щоб "повторно прикріпити" HEAD, використовуйте `git checkout main`.
+  Після цього можна продовжувати робити коміти, але такі команди, як `git push origin main` вже не надаватимуть зрозумілих результатів.  Це також створює враження, що коміти можуть бути втрачені.  Щоб "повторно прикріпити" HEAD, використовуйте `git checkout main`.
 
-- This is a good moment to show a log within a Git GUI. Якщо ви пропустите це через брак часу, пізніше продемонструйте його лише у GitHub.
+- Це слушний момент, щоб показати журнал у графічному інтерфейсі Git. Якщо ви пропустите це через брак часу, пізніше продемонструйте його лише у GitHub.
 
 ## [Ігнорування файлів](../episodes/06-ignore.md)
 
@@ -133,34 +132,25 @@ title: Нотатки для інструктора
 
 - Також ефективно під час цього уроку поєднувати учнів у пари та призначати їм ролі власника та співавтора.  In this setup, challenges can include asking the
   collaborator to make a change, commit it, and push the change to the remote
-  repository so that the owner can then retrieve it, and vice-versa.  The
-  role playing between the instructors can get a bit "dramatic" in the
-  conflicts part of the lesson if the instructors want to inject some humor
-  into the room.
+  repository so that the owner can then retrieve it, and vice-versa.  Рольова гра між викладачами може стати досить "драматичною" під час частини уроку, присвяченої розв’язанню конфліктів, особливо якщо викладачі вирішать додати трохи гумору до уроку.
 
-- Якщо у вас немає двох проєкторів, подібний ефект можна досягти за допомогою двох інструкторів.  Кожен інструктор розповідає про свою частину на власному компʼютері, а потім передає шнур проєктора іншому коли настає його черга.  It takes less than 10 seconds for each
-  switchover, so it doesn't interrupt the flow of the lesson.
-  And of course it helps to give each of the instructors a different-colored
-  hat, or put different-colored sticky notes on their foreheads.
+- Якщо у вас немає двох проєкторів, подібний ефект можна досягти за допомогою двох інструкторів.  Кожен інструктор розповідає про свою частину на власному компʼютері, а потім передає шнур проєктора іншому коли настає його черга.  Кожне перемикання проєктора займає менше ніж 10 секунд, тому це не порушить хід уроку.
+  Для покращення гри корисно дати кожному з інструкторів кольорові капелюхи або наліпки на лоба.
 
-- If you're the only instructor, the best way to create is clone the two
-  repos in your Desktop, but under different names, e.g., pretend one is your
-  computer at work:
+- Якщо ви єдиний інструктор, найкращим підходом буде клонувати два репозиторії на робочому столі, але під різними назвами. Наприклад, уявіть, що один з них є вашим робочим комп'ютером:
 
   ```bash
   $ git clone https://github.com/vlad/planets.git planets-at-work
   ```
 
-- It's very common that learners mistype the remote alias or the remote URL
-  when adding a remote, so they cannot `push`. Ви можете уникнути цього за допомогою виконання `git remote -v` і ретельної перевірки результату.
+- Під час додавання віддаленого репозиторію, поширеною помилкою є неправильне введення псевдоніму або URL-адреси, що може завадити їм виконати `git push`. Ви можете уникнути цього за допомогою виконання `git remote -v` і ретельної перевірки результату.
 
   - Щоб виправити помилковий псевдонім, скористайтеся командою `git remote rename <old> <new>`.
   - Щоб виправити помилковий URL, ви можете виконати `git remote set-url <alias> <newurl>`.
 
 - Перш ніж клонувати репозиторій, переконайтеся, що ніхто зі слухачів не знаходиться всередині іншого репозиторію. Найкращий спосіб досягти цього - перейти на робочий стіл перед клонуванням: `cd && cd Desktop`.
 
-- If both repos are in the `Desktop`, have them to clone their collaborator
-  repo under a given directory using a second argument:
+- Якщо обидва репозиторії знаходяться на робочому столі, у такому разі слухачам треба клонувати репозиторій свого співавтора в певний каталог за допомогою додаткового аргументу:
 
   ```bash
   $ git clone https://github.com/vlad/planets.git vlad-planet
@@ -170,8 +160,7 @@ title: Нотатки для інструктора
 
 - Іноді можуть виникнути дивні конфлікти. Зберігайте спокій: конфлікти розглядаються у наступному епізоді.
 
-- Learners may have slightly different output from `git push` and `git pull`
-  depending on the version of git, and if upstream (`-u`) is used.
+- Слухачі іноді матимуть дещо інші результати від команд `git push` та `git pull`, залежно від версії git і того, чи використовується опція `-u` (upstream).
 
 ## [Конфлікти](../episodes/09-conflict.md)
 
@@ -180,8 +169,7 @@ title: Нотатки для інструктора
 
 - Якщо ви єдиний інструктор, найкращий спосіб створити конфлікт є наступним:
 
-  - Clone your repo in a different directory, pretending is your computer at
-    work: `git clone https://github.com/alflin/recipes.git recipes-at-work`.
+  - Клонуйте свій репозиторій в інший каталог, вдаючи, що це ваш комп’ютер на роботі: `git clone https://github.com/alflin/recipes.git recipes-at-work`.
   - At the office, you make a change, commit and push.
   - At your laptop repo, you (forget to pull and) make a change, commit and
     try to push.
@@ -189,12 +177,12 @@ title: Нотатки для інструктора
 
 - Учні зазвичай забувають `git add` файл після виправлення конфлікту та просто (намагаються) зробити коміт. Ви можете це продіагностувати за допомогою `git status`.
 
-- Remember that you can discard one of the two parents of the merge:
+- Памʼятайте, що можливо скасувати зміни в одній з двох версій, що зливаються:
 
   - скасувати зміни у віддаленому файлі, `git checkout --ours conflicted_file.txt`
   - скасувати зміни у локальному файлі, `git checkout --theirs conflicted_file.txt`
 
-  You still have to `git add` and `git commit` after this. This is
+  Після цього вам все одно потрібно зробити `git add` та `git commit`. This is
   particularly useful when working with binary files.
 
 - Майте на увазі, що в залежності від версії Git, яку ви використовуєте, результати для `git push` та `git pull` можуть дещо відрізнятися.
@@ -205,17 +193,14 @@ title: Нотатки для інструктора
 
 Ми розповідаємо про ліцензування, тому що завжди виникатимуть питання про права володіння: хто володіє чим, або що можна використовувати. Ці питання з'являються як тільки ми починаємо говорити про використання публічних послуг як GitHub для зберігання файлів. Крім того, обговорення дає учням можливість перевести подих після тривалого навантаження.
 
-The Creative Commons family of licenses is recommended for many types of
-works (including software documentation and images used in software) but not
-software itself. Creative Commons [recommends][cc-faq-software] a
+Ліцензії Creative Commons рекомендуються для багатьох типів робіт (зокрема для програмної документації та зображень, які використовуються в програмному забезпеченні), але не для програмного забезпечення. Creative Commons [recommends][cc-faq-software] a
 software-specific license instead.
 
 ## [Цитування](../episodes/12-citation.md)
 
 ## [Хостинг](../episodes/13-hosting.md)
 
-A common concern for learners is having their work publicly available on
-GitHub.  Хоча ми заохочуємо відкриту науку, іноді приватні репозиторії є єдиним варіантом. Завжди цікаво згадати варіанти розміщення приватних репозиторіїв.
+Спільним занепокоєнням серед слухачів є те, що їхня робота буде загальнодоступною на GitHub.  Хоча ми заохочуємо відкриту науку, іноді приватні репозиторії є єдиним варіантом. Завжди цікаво згадати варіанти розміщення приватних репозиторіїв.
 
 [github]: https://github.com/
 [drawings]: https://marklodato.github.io/visual-git-guide/index-en.html
