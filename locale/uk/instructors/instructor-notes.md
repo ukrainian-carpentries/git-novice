@@ -58,8 +58,7 @@ title: Нотатки для інструктора
 
 - Додаткові ресурси:
 
-  - [git-it] is a self-paced command-line Git demo,
-    with [git-it-electron] its GitHub Desktop successor.
+  - [git-it] — це навчальна програма з Git, яка працює у терміналі, а [git-it-electron] — це її наступна версія, яка має графічний інтерфейс користувача.
   - [Code School][code-school] пропонує безкоштовний інтерактивний курс [Try Git][try-git].
   - для викладачів корисною довідковою літературою є [Git parable][git-parable].
 
