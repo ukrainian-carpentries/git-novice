@@ -19,9 +19,7 @@ title: Ліцензії
 
 - **Зазначення Авторства**---Ви маєте вказати автора (зазначивши, що ваша робота є похідною від роботи, яка захищена авторським правом Copyright (c) The Carpentries, та, де це можливо, зробити посилання на \<https\://carpentries.org/>), надати [посилання на ліцензію][cc-by-human], та вказати, чи було внесено зміни. Ви можете зробити це будь-яким розумним чином, але не таким чином, щоб припустити, що ліцензіар підтримує чи схвалює вас або ваше використання матеріалу.
 
-- **No additional restrictions**---You may not apply legal terms or
-  technological measures that legally restrict others from doing anything the
-  license permits.  З розумінням того, що:
+- **Без додаткових обмежень** -- Ви не маєте права висувати додаткові умови або застосовувати технологічні заходи, які юридично обмежують іншим можливість робити все, що дозволяє ліцензія.  З розумінням того, що:
 
 Примітки:
 
@@ -44,18 +42,12 @@ so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+ПРОГРАМНЕ ЗАБЕЗПЕЧЕННЯ НАДАЄТЬСЯ "ЯК Є", БЕЗ БУДЬ-ЯКИХ ГАРАНТІЙ, ЯВНИХ АБО НЕЯВНИХ, ВКЛЮЧАЮЧИ, АЛЕ НЕ ОБМЕЖУЮЧИСЬ ГАРАНТІЯМИ ПРИДАТНОСТІ ДЛЯ ПРОДАЖУ, ПРИДАТНОСТІ ДЛЯ ПЕВНОЇ МЕТИ ТА НЕПОРУШЕННЯ АВТОРСЬКИХ ПРАВ. ЗА ЖОДНИХ ОБСТАВИН АВТОРИ АБО ВЛАСНИКИ АВТОРСЬКИХ ПРАВ НЕ НЕСУТЬ ВІДПОВІДАЛЬНОСТІ ЗА БУДЬ-ЯКІ ПРЕТЕНЗІЇ, ЗБИТКИ АБО ІНШУ ВІДПОВІДАЛЬНІСТЬ, ЧИ ТО В РАМКАХ, ДОГОВОРУ, ДЕЛІКТУ АБО ІНШИМ ЧИНОМ, ЩО ВИНИКАЮТЬ З, ВНАСЛІДОК АБО У ЗВ'ЯЗКУ З ПРОГРАМНИМ ЗАБЕЗПЕЧЕННЯМ, ЙОГО ВИКОРИСТАННЯМ АБО ІНШИМИ ОПЕРАЦІЯМИ З ПРОГРАМНИМ ЗАБЕЗПЕЧЕННЯМ.
 
-## Trademark
+## Торговельна марка
 
-"The Carpentries", "Software Carpentry", "Data Carpentry", and "Library
-Carpentry" and their respective logos are registered trademarks of [Community
+"The Carpentries", "Software Carpentry", "Data Carpentry", "Library
+Carpentry" та їхні відповідні логотипи є зареєстрованими торговими марками [Community
 Initiatives][ci].
 
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
