@@ -119,8 +119,8 @@ $ git config --global --unset format.pretty
 Насправді Git може обробляти ці типи файлів (які потрапляють у категорію "бінарних" файлів).
 Однак те, що це _можна_ зробити, не означає, що це _потрібно_ зробити.
 
-Much of Git's magic comes from being able to do line-by-line comparisons ("diffs") between files.
-This is generally easy for programming source code and marked up text.
+Значна частина "магії" Git походить від його здатності порівнювати файли рядок за рядком (тобто, отримувати "diffs").
+Загалом це легко для вихідного коду програм та розміченого тексту.
 Для нетекстових файлів, diff зазвичай може виявляти лише те, що файли змінилися
 але не можуть сказати, як і де.
 
@@ -176,7 +176,7 @@ index 53a66fd..6e988e9 100644
 Binary files a/guacamole.doc and b/guacamole.doc differ
 ```
 
-Compare this to the earlier `git diff` obtained when using text files:
+Порівняйте це з попереднім `git diff`, який ми бачили коли використовували текстові файли:
 
 ```output
 diff --git a/guacamole.md b/guacamole.md
@@ -201,7 +201,7 @@ index df0654a..315bf3a 100644
 A rule of thumb is that it's OK if the binary file won't change very often,
 and if it does change, you don't care about merging in small differences between versions.
 
-We've already seen how a word processed report will fail this test.
+Ми вже бачили, що згідно з цим правилом звіт, написаний у текстовому процесорі, неефективно зберігати у Git.
 Прикладом, який проходить перевірку, є логотип вашої організації або проєкту.
 Попри те, що логотип зберігається у бінарному форматі, такому як `jpg` або `png`,
 ви можете розраховувати, що він залишиться відносно незмінним протягом усього терміну життя вашого репозиторію.
