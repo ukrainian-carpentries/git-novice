@@ -423,8 +423,7 @@ $ git commit -m 'Use the French name for the whitesauce'
 directory paths can be confusing.
 
 Sometimes the `**` pattern comes in handy, too, which matches multiple
-directory levels. Наприклад, `**/results/plots/*` would make git ignore the
-`results/plots` directory in any root directory.
+directory levels. Наприклад, шаблон `**/results/plots/*` вкаже git ігнорувати каталог `results/plots` будь-де у дереві підкаталогів.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
