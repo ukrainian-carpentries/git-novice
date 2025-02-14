@@ -377,7 +377,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Обговорення</h1>
-        <p>Останнє оновлення 2025-02-05 |
+        <p>Останнє оновлення 2025-02-14 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/learners/discuss.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -505,10 +505,10 @@ GitHub і у вікні пошуку введіть “gitconfig”. Ви зна
 Насправді Git може обробляти ці типи файлів (які потрапляють у категорію
 “бінарних” файлів). Однак те, що це <em>можна</em> зробити, не означає,
 що це <em>потрібно</em> зробити.</p>
-<p>Much of Git’s magic comes from being able to do line-by-line
-comparisons (“diffs”) between files. This is generally easy for
-programming source code and marked up text. Для нетекстових файлів, diff
-зазвичай може виявляти лише те, що файли змінилися але не можуть
+<p>Значна частина “магії” Git походить від його здатності порівнювати
+файли рядок за рядком (тобто, отримувати “diffs”). Загалом це легко для
+вихідного коду програм та розміченого тексту. Для нетекстових файлів,
+diff зазвичай може виявляти лише те, що файли змінилися але не можуть
 сказати, як і де.</p>
 <p>Це по-різному впливає на продуктивність Git та ускладнює порівняння
 різних версій вашого проєкту.</p>
@@ -566,8 +566,8 @@ Git думає про них:</p>
 index 53a66fd..6e988e9 100644
 Binary files a/guacamole.doc and b/guacamole.doc differ</code></pre>
 </div>
-<p>Compare this to the earlier <code>git diff</code> obtained when using
-text files:</p>
+<p>Порівняйте це з попереднім <code>git diff</code>, який ми бачили коли
+використовували текстові файли:</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -592,14 +592,15 @@ index df0654a..315bf3a 100644
 на бінарних файлах. A rule of thumb is that it’s OK if the binary file
 won’t change very often, and if it does change, you don’t care about
 merging in small differences between versions.</p>
-<p>We’ve already seen how a word processed report will fail this test.
-Прикладом, який проходить перевірку, є логотип вашої організації або
-проєкту. Попри те, що логотип зберігається у бінарному форматі, такому
-як <code>jpg</code> або <code>png</code>, ви можете розраховувати, що
-він залишиться відносно незмінним протягом усього терміну життя вашого
-репозиторію. У тих рідкісних випадках, коли брендинг змінюється, ви,
-ймовірно, просто захочете повністю замінити логотип, а не зливати
-невеликі відмінності.</p>
+<p>Ми вже бачили, що згідно з цим правилом звіт, написаний у текстовому
+процесорі, неефективно зберігати у Git. Прикладом, який проходить
+перевірку, є логотип вашої організації або проєкту. Попри те, що логотип
+зберігається у бінарному форматі, такому як <code>jpg</code> або
+<code>png</code>, ви можете розраховувати, що він залишиться відносно
+незмінним протягом усього терміну життя вашого репозиторію. У тих
+рідкісних випадках, коли брендинг змінюється, ви, ймовірно, просто
+захочете повністю замінити логотип, а не зливати невеликі
+відмінності.</p>
 </section><section><h2 class="section-heading" id="видалення-файлу">Видалення файлу<a class="anchor" aria-label="anchor" href="#%D0%B2%D0%B8%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D1%83"></a></h2>
 <hr class="half-width"><p>Додавання та зміна файлів - це не єдині дії, які можна виконати під
 час роботи над проєктом. Також може знадобитись видалити файл з
@@ -862,7 +863,7 @@ matches multiple directory levels. Наприклад,
   Рішення
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Для цього ваш .gitignore буде виглядати так:</p>
 <div class="codewrapper">
@@ -935,8 +936,8 @@ results/*             # ігноруйте файли в директорії
   "url": "https://ukrainian-carpentries.github.io/git-novice/discuss.html",
   "identifier": "https://ukrainian-carpentries.github.io/git-novice/discuss.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2025-02-05",
-  "datePublished": "2025-02-11"
+  "dateModified": "2025-02-14",
+  "datePublished": "2025-02-14"
 }
 
   </script><script>
