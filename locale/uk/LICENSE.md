@@ -17,9 +17,7 @@ title: Ліцензії
 
 На наступних умовах:
 
-- **Зазначення Авторства**---Ви маєте вказати автора (зазначивши, що ваша робота є похідною від роботи, яка захищена авторським правом Copyright (c) The Carpentries, та, де це можливо, зробити посилання на \<https\://carpentries.org/>), надати [посилання на ліцензію][cc-by-human], та вказати, чи було внесено зміни. You may do so in
-  any reasonable manner, but not in any way that suggests the licensor endorses
-  you or your use.
+- **Зазначення Авторства**---Ви маєте вказати автора (зазначивши, що ваша робота є похідною від роботи, яка захищена авторським правом Copyright (c) The Carpentries, та, де це можливо, зробити посилання на \<https\://carpentries.org/>), надати [посилання на ліцензію][cc-by-human], та вказати, чи було внесено зміни. Ви можете зробити це будь-яким розумним чином, але не таким чином, щоб припустити, що ліцензіар підтримує чи схвалює вас або ваше використання матеріалу.
 
 - **No additional restrictions**---You may not apply legal terms or
   technological measures that legally restrict others from doing anything the
