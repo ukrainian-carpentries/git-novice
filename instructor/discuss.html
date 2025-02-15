@@ -377,7 +377,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Обговорення</h1>
-        <p>Останнє оновлення 2025-02-14 |
+        <p>Останнє оновлення 2025-02-15 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/learners/discuss.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -591,9 +591,10 @@ index df0654a..315bf3a 100644
 використання Git на бінарних файлах. Однак більшість інших питань
 зводяться до того, чи можливий інформативний diff взагалі.</p>
 <p>Це не означає, що ви <em>ніколи</em> не повинні використовувати Git
-на бінарних файлах. A rule of thumb is that it’s OK if the binary file
-won’t change very often, and if it does change, you don’t care about
-merging in small differences between versions.</p>
+на бінарних файлах. Суть полягає в тому, що якщо ви маєте бінарний файл,
+який не змінюється часто (а навіть коли змінюється, то злиття дрібних
+відмінностей між його різними версіями не потрібне), то у такому випадку
+його цілком можливо зберігати у репозиторії.</p>
 <p>Ми вже бачили, що згідно з цим правилом звіт, написаний у текстовому
 процесорі, неефективно зберігати у Git. Прикладом, який проходить
 перевірку, є логотип вашої організації або проєкту. Попри те, що логотип
@@ -823,13 +824,13 @@ Changes to be committed:
 документації git</a>.</p>
 <p>У вправі на ігнорування, слухачам було запропоновано два варіанти
 ігнорування вкладених файлів. Залежно від організації вашого
-репозиторію, одне рішення може підійти вам ліпше ніж інше. Keep in mind
-that the way that Git travels along directory paths can be
-confusing.</p>
-<p>Sometimes the <code>**</code> pattern comes in handy, too, which
-matches multiple directory levels. Наприклад,
-<code>**/results/plots/*</code> would make git ignore the
-<code>results/plots</code> directory in any root directory.</p>
+репозиторію, одне рішення може підійти вам ліпше ніж інше. Майте на
+увазі, що методи Git для навігації в структурі каталогів проєкту іноді
+може бути важко зрозуміти.</p>
+<p>Іноді також може знадобитись шаблон ‘**’, оскільки він відповідає
+будь-якій кількості рівнів підкаталогів. Наприклад, шаблон
+<code>**/results/plots/*</code> вкаже git ігнорувати каталог
+<code>results/plots</code> будь-де у дереві підкаталогів.</p>
 <div id="ігнорування-вкладених-файлів-завдання" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -865,7 +866,7 @@ matches multiple directory levels. Наприклад,
   Рішення
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Для цього ваш .gitignore буде виглядати так:</p>
 <div class="codewrapper">
@@ -938,8 +939,8 @@ results/*             # ігноруйте файли в директорії
   "url": "https://ukrainian-carpentries.github.io/git-novice/instructor/discuss.html",
   "identifier": "https://ukrainian-carpentries.github.io/git-novice/instructor/discuss.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2025-02-14",
-  "datePublished": "2025-02-14"
+  "dateModified": "2025-02-15",
+  "datePublished": "2025-02-15"
 }
 
   </script><script>
