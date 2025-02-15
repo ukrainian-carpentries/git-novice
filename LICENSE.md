@@ -19,43 +19,27 @@ title: Ліцензії
 
 - **Зазначення Авторства**---Ви маєте вказати автора (зазначивши, що ваша робота є похідною від роботи, яка захищена авторським правом Copyright (c) The Carpentries, та, де це можливо, зробити посилання на \<https\://carpentries.org/>), надати [посилання на ліцензію][cc-by-human], та вказати, чи було внесено зміни. Ви можете зробити це будь-яким розумним чином, але не таким чином, щоб припустити, що ліцензіар підтримує чи схвалює вас або ваше використання матеріалу.
 
-- **No additional restrictions**---You may not apply legal terms or
-  technological measures that legally restrict others from doing anything the
-  license permits.  З розумінням того, що:
+- **Без додаткових обмежень** -- Ви не маєте права висувати додаткові умови або застосовувати технологічні заходи, які юридично обмежують іншим можливість робити все, що дозволяє ліцензія.  З розумінням того, що:
 
 Примітки:
 
 - Ви не зобов’язані дотримуватися ліцензії щодо елементів матеріалу, які є суспільним надбанням або де ваше використання дозволено застосовним винятком чи обмеженням.
 - Не надається жодних гарантій. Ліцензія може не надавати всіх необхідних дозволів, необхідних для вашого використання матеріалу. Наприклад, інші права, такі як публічність, конфіденційність або особисті немайнові права можуть обмежувати ваші можливості використовувати матеріал.
 
-## Software
+## Програмне забезпечення
 
-Except where otherwise noted, the example programs and other software provided
-by The Carpentries are made available under the [OSI][osi]-approved [MIT
-license][mit-license].
+Якщо не зазначено інше, приклади програм та інше програмне забезпечення надані Software Carpentry та Data Carpentry, доступні згідно з [ліцензією MIT][mit-license], схваленою [OSI][osi].
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-of the Software, and to permit persons to whom the Software is furnished to do
-so, subject to the following conditions:
+Дозвіл надається безкоштовно будь-якій особі, яка отримує копію цього програмного забезпечення та пов'язаних з ним файлів документації ("Програмне забезпечення"). Їм дозволено без обмежень використовувати, копіювати, модифікувати, публікувати, розповсюджувати, субліцензувати та/або продавати копії Програмного забезпечення. Крім того, вони можуть надавати дозволи іншим особам, яким надано Програмне забезпечення, робити те ж саме, відповідно до наступних умов:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Наведене вище повідомлення про авторські права та цей дозвіл мають міститися в усіх копіях або значних частинах Програмного забезпечення.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+ПРОГРАМНЕ ЗАБЕЗПЕЧЕННЯ НАДАЄТЬСЯ "ЯК Є", БЕЗ БУДЬ-ЯКИХ ГАРАНТІЙ, ЯВНИХ АБО НЕЯВНИХ, ВКЛЮЧАЮЧИ, АЛЕ НЕ ОБМЕЖУЮЧИСЬ ГАРАНТІЯМИ ПРИДАТНОСТІ ДЛЯ ПРОДАЖУ, ПРИДАТНОСТІ ДЛЯ ПЕВНОЇ МЕТИ ТА НЕПОРУШЕННЯ АВТОРСЬКИХ ПРАВ. ЗА ЖОДНИХ ОБСТАВИН АВТОРИ АБО ВЛАСНИКИ АВТОРСЬКИХ ПРАВ НЕ НЕСУТЬ ВІДПОВІДАЛЬНОСТІ ЗА БУДЬ-ЯКІ ПРЕТЕНЗІЇ, ЗБИТКИ АБО ІНШУ ВІДПОВІДАЛЬНІСТЬ, ЧИ ТО В РАМКАХ, ДОГОВОРУ, ДЕЛІКТУ АБО ІНШИМ ЧИНОМ, ЩО ВИНИКАЮТЬ З, ВНАСЛІДОК АБО У ЗВ'ЯЗКУ З ПРОГРАМНИМ ЗАБЕЗПЕЧЕННЯМ, ЙОГО ВИКОРИСТАННЯМ АБО ІНШИМИ ОПЕРАЦІЯМИ З ПРОГРАМНИМ ЗАБЕЗПЕЧЕННЯМ.
 
-## Trademark
+## Торговельна марка
 
-"The Carpentries", "Software Carpentry", "Data Carpentry", and "Library
-Carpentry" and their respective logos are registered trademarks of [Community
+"The Carpentries", "Software Carpentry", "Data Carpentry", "Library
+Carpentry" та їхні відповідні логотипи є зареєстрованими торговими марками [Community
 Initiatives][ci].
 
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
