@@ -28,9 +28,7 @@ title: Ліцензії
 
 ## Програмне забезпечення
 
-Except where otherwise noted, the example programs and other software provided
-by The Carpentries are made available under the [OSI][osi]-approved [MIT
-license][mit-license].
+Якщо не зазначено інше, приклади програм та інше програмне забезпечення надані Software Carpentry та Data Carpentry, доступні згідно з [ліцензією MIT][mit-license], схваленою [OSI][osi].
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -39,8 +37,7 @@ use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
 of the Software, and to permit persons to whom the Software is furnished to do
 so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Наведене вище повідомлення про авторські права та цей дозвіл мають міститися в усіх копіях або значних частинах Програмного забезпечення.
 
 ПРОГРАМНЕ ЗАБЕЗПЕЧЕННЯ НАДАЄТЬСЯ "ЯК Є", БЕЗ БУДЬ-ЯКИХ ГАРАНТІЙ, ЯВНИХ АБО НЕЯВНИХ, ВКЛЮЧАЮЧИ, АЛЕ НЕ ОБМЕЖУЮЧИСЬ ГАРАНТІЯМИ ПРИДАТНОСТІ ДЛЯ ПРОДАЖУ, ПРИДАТНОСТІ ДЛЯ ПЕВНОЇ МЕТИ ТА НЕПОРУШЕННЯ АВТОРСЬКИХ ПРАВ. ЗА ЖОДНИХ ОБСТАВИН АВТОРИ АБО ВЛАСНИКИ АВТОРСЬКИХ ПРАВ НЕ НЕСУТЬ ВІДПОВІДАЛЬНОСТІ ЗА БУДЬ-ЯКІ ПРЕТЕНЗІЇ, ЗБИТКИ АБО ІНШУ ВІДПОВІДАЛЬНІСТЬ, ЧИ ТО В РАМКАХ, ДОГОВОРУ, ДЕЛІКТУ АБО ІНШИМ ЧИНОМ, ЩО ВИНИКАЮТЬ З, ВНАСЛІДОК АБО У ЗВ'ЯЗКУ З ПРОГРАМНИМ ЗАБЕЗПЕЧЕННЯМ, ЙОГО ВИКОРИСТАННЯМ АБО ІНШИМИ ОПЕРАЦІЯМИ З ПРОГРАМНИМ ЗАБЕЗПЕЧЕННЯМ.
 
