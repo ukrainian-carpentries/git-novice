@@ -51,9 +51,12 @@ exercises: 0
 自動化されたバージョン管理システムは最近発明されたものではありません。
 [RCS](https://ja.wikipedia.org/wiki/Revision_Control_System)、[CVS](https://ja.wikipedia.org/wiki/Concurrent_Versions_System)、[Subversion](https://ja.wikipedia.org/wiki/Apache_Subversion)などのツールは1980年前半から存在しており、多くの会社に使われていました。
 しかし、これらのツールでは出来る事に制限があり、多くはもう時代遅れとされています。
-現代使われているシステム、例えばGitや[Mercurial](https://swcarpentry.github.io/hg-novice/)、は _分散_されています。というのは、特定のサーバーを必要とせずにシステムをホストする事が出来るという事です。
-現代のシステムには大変便利で効果的な「merge（マージ）」機能が備われており、同じファイルを 複数人で作業する事が可能になりました。
+More modern systems, such as [Git](https://en.wikipedia.org/wiki/Git) and [Mercurial](https://en.wikipedia.org/wiki/Mercurial),
+are _distributed_, meaning that they do not need a centralized server to host the repository.
+These modern systems also include powerful merging tools that make it possible for multiple authors to work on
+the same files concurrently.
 
+For those interested, The Carpentries has a [Version Control with Mercurial](https://swcarpentry.github.io/hg-novice/) lesson (2013-2018), which provides additional context and historical perspective.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
