@@ -27,7 +27,7 @@ You should be in the `recipes` directory.
 $ cd ~/Desktop/recipes
 ```
 
-Let's create a file called `guacamole.md` that contains the basic structure of a recipe.
+Let's create a file called `guacamole.md` that contains the basic structure of our first recipe.
 We'll use `nano` to edit the file;
 you can use whatever editor you like.
 In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
@@ -118,11 +118,11 @@ To get it to do that,
 we need to run one more command:
 
 ```bash
-$ git commit -m "Create a template for recipe"
+$ git commit -m "Create initial structure for a Guacamole recipe"
 ```
 
 ```output
-[main (root-commit) f22b25e] Create a template for recipe
+[main (root-commit) f22b25e] Create initial structure for a Guacamole recipe
  1 file changed, 1 insertion(+)
  create mode 100644 guacamole.md
 ```
@@ -167,7 +167,7 @@ commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Create a template for recipe
+    Create initial structure for a Guacamole recipe
 ```
 
 `git log` lists all commits  made to a repository in reverse chronological order.
@@ -276,8 +276,7 @@ If we break it down into pieces:
 After reviewing our change, it's time to commit it:
 
 ```bash
-$ git commit -m "Add basic guacamole's ingredients"
-$ git status
+$ git commit -m "Add ingredients for basic guacamole"
 ```
 
 ```output
@@ -297,11 +296,11 @@ Let's fix that:
 
 ```bash
 $ git add guacamole.md
-$ git commit -m "Add basic guacamole's ingredients"
+$ git commit -m "Add ingredients for basic guacamole"
 ```
 
 ```output
-[main 34961b1] Add basic guacamole's ingredient
+[main 34961b1] Add ingredients for basic guacamole
  1 file changed, 3 insertions(+)
 ```
 
@@ -466,13 +465,13 @@ commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add basic guacamole's ingredients
+    Add ingredients for basic guacamole
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Create a template for recipe
+    Create initial structure for a Guacamole recipe
 ```
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -536,8 +535,8 @@ $ git log --oneline
 
 ```output
 005937f (HEAD -> main) Modify guacamole to the traditional recipe
-34961b1 Add basic guacamole's ingredients
-f22b25e Create a template for recipe
+34961b1 Add ingredients for basic guacamole
+f22b25e Create initial structure for a Guacamole recipe
 ```
 
 You can also combine the `--oneline` option with others. One useful
@@ -552,8 +551,8 @@ $ git log --oneline --graph
 
 ```output
 * 005937f (HEAD -> main) Modify guacamole to the traditional recipe
-* 34961b1 Add basic guacamole's ingredients
-* f22b25e Create a template for recipe
+* 34961b1 Add ingredients for basic guacamole
+* f22b25e Create initial structure for a Guacamole recipe
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -577,21 +576,13 @@ Two important facts you should know about directories in Git.
   Note, our newly created empty directory `cakes` does not appear in
   the list of untracked files even if we explicitly add it (*via* `git add`) to our
   repository. This is the reason why you will sometimes see `.gitkeep` files
-  in otherwise empty directories. Unlike `.gitignore`, these files are not special
-  and their sole purpose is to populate a directory so that Git adds it to
-  the repository. In fact, you can name such files anything you like.
+  in otherwise empty directories. The sole purpose of `.gitkeep` files is to populate a directory so that Git adds it to the repository. The name `.gitkeep` is just a convention, and in fact, you can name these files anything you like.
 
 2. If you create a directory in your Git repository and populate it with files,
-  you can add all files in the directory at once by:
+  you can add all the files in the directory at once by referring to the directory in your `git add` command. Try it for yourself:
   
   ```bash
-  $ git add <directory-with-files>
-  ```
-  
-  Try it for yourself:
-  
-  ```bash
-  $ touch cakes/brownie cakes/lemon_drizzle
+  $ touch cakes/brownie_cakes/lemon_drizzle
   $ git status
   $ git add cakes
   $ git status
