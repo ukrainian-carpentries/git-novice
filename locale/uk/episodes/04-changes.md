@@ -27,7 +27,7 @@ exercises: 0
 $ cd ~/Desktop/recipes
 ```
 
-Тепер створимо файл під назвою `guacamole.md` з нашим рецептом.
+Let's create a file called `guacamole.md` that contains the basic structure of our first recipe.
 Ми будемо використовувати редактор `nano` для редагування файлу; ви можете використовувати будь-який редактор, який вам подобається.
 Зокрема, це не обовʼязково повинен бути `core.editor`, який ви раніше вказали глобально. Але пам'ятайте, що команда bash для створення або редагування нового файлу буде залежати від обраного редактора (який не обов'язково буде `nano`). Для довідки щодо текстових редакторів, дивіться ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor/) в уроці [The Unix Shell](https://swcarpentry.github.io/shell-novice/).
 
@@ -113,11 +113,11 @@ Git тепер знає, що він повинен стежити за файл
 Щоб зробити це, нам потрібно виконати ще одну команду:
 
 ```bash
-$ git commit -m "Create a template for recipe"
+$ git commit -m "Create initial structure for a Guacamole recipe"
 ```
 
 ```output
-[main (root-commit) f22b25e] Create a template for recipe
+[main (root-commit) f22b25e] Create initial structure for a Guacamole recipe
  1 file changed, 1 insertion(+)
  create mode 100644 guacamole.md
 ```
@@ -155,7 +155,7 @@ commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Create a template for recipe
+    Create initial structure for a Guacamole recipe
 ```
 
 `git log` виводить перелік усіх комітів, які були внесені до репозиторію, у зворотному хронологічному порядку.
@@ -239,8 +239,7 @@ index df0654a..315bf3a 100644
 Після того, як ми переглянули наші зміни, прийшов час зберегти їх:
 
 ```bash
-$ git commit -m "Add basic guacamole's ingredients"
-$ git status
+$ git commit -m "Add ingredients for basic guacamole"
 ```
 
 ```output
@@ -259,11 +258,11 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ```bash
 $ git add guacamole.md
-$ git commit -m "Add basic guacamole's ingredients"
+$ git commit -m "Add ingredients for basic guacamole"
 ```
 
 ```output
-[main 34961b1] Add basic guacamole's ingredient
+[main 34961b1] Add ingredients for basic guacamole
  1 file changed, 3 insertions(+)
 ```
 
@@ -392,13 +391,13 @@ commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add basic guacamole's ingredients
+    Add ingredients for basic guacamole
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Create a template for recipe
+    Create initial structure for a Guacamole recipe
 ```
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -449,8 +448,8 @@ $ git log --oneline
 
 ```output
 005937f (HEAD -> main) Modify guacamole to the traditional recipe
-34961b1 Add basic guacamole's ingredients
-f22b25e Create a template for recipe
+34961b1 Add ingredients for basic guacamole
+f22b25e Create initial structure for a Guacamole recipe
 ```
 
 Ви також можете комбінувати опцію `--oneline` з іншими опціями. Наступна корисна комбінація використовує опцію `--graph` для графічного зображення історії комітів за допомогою псевдографіки, вказуючи при цьому які коміти пов'язані з поточним `HEAD`, поточною гілкою `main`, або [іншими обʼєктами у репозиторії][git-references]':
@@ -461,8 +460,8 @@ $ git log --oneline --graph
 
 ```output
 * 005937f (HEAD -> main) Modify guacamole to the traditional recipe
-* 34961b1 Add basic guacamole's ingredients
-* f22b25e Create a template for recipe
+* 34961b1 Add ingredients for basic guacamole
+* f22b25e Create initial structure for a Guacamole recipe
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -483,15 +482,10 @@ $ git add cakes
 $ git status
 ```
 
-Зауважте, наш новостворений порожній каталог `cakes` не зʼявляється в переліку невідстежуваних файлів, навіть якщо ми конкретно додали його (_через_ `git add`) до нашого репозиторію. Ось чому ви іноді бачите файли `.gitkeep` в інших порожніх каталогах. На відміну від `.gitignore`, ці файли не є особливими і їх єдиною метою є заповнити каталог, щоб Git додав його до репозиторію. Насправді ви можете назвати такі файли до вашої вподоби.
+Зауважте, наш новостворений порожній каталог `cakes` не зʼявляється в переліку невідстежуваних файлів, навіть якщо ми конкретно додали його (_через_ `git add`) до нашого репозиторію. Ось чому ви іноді бачите файли `.gitkeep` в інших порожніх каталогах. The sole purpose of `.gitkeep` files is to populate a directory so that Git adds it to the repository. The name `.gitkeep` is just a convention, and in fact, you can name these files anything you like.
 
-2. Якщо ви створюєте каталог у вашому репозиторії Git і заповнюєте його файлами, ви можете додати всі файли в каталозі одразу:
-
-```bash
-$ git add <directory-with-files>
-```
-
-Спробуйте власноруч:
+2. If you create a directory in your Git repository and populate it with files,
+   you can add all the files in the directory at once by referring to the directory in your `git add` command. Try it for yourself:
 
 ```bash
 $ touch cakes/brownie_cakes/lemon_drizzle
@@ -500,7 +494,7 @@ $ git add cakes
 $ git status
 ```
 
-Перш ніж рухатися далі, ми збережемо ці зміни.
+Before moving on, we will commit these changes.
 
 ```bash
 $ git commit -m "Add some initial cakes"
@@ -508,15 +502,19 @@ $ git commit -m "Add some initial cakes"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Для повторення: коли ми хочемо додати зміни до нашого репозиторію, спочатку нам потрібно додати змінені файли в зону стейджингу (`git add`) а потім зберегти заплановані зміни до репозиторію (`git commit`):
+To recap, when we want to add changes to our repository,
+we first need to add the changed files to the staging area
+(`git add`) and then commit the staged changes to the
+repository (`git commit`):
 
-![](fig/git-committing.svg){alt='Два документи окремо додаються до зони стейджингу за допомогою git add, а потім об'єднуються в один коміт за допомогою git commit'}
+![](fig/git-committing.svg){alt='A diagram showing two documents being separately staged using git add, before being combined into one commit using git commit'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Вибір повідомлення коміту
+## Choosing a Commit Message
 
-Яке з наступних повідомлень буде найдоречнішим для останнього коміту до `guacamole.md`?
+Which of the following commit messages would be most appropriate for the
+last commit made to `guacamole.md`?
 
 1. "Changes"
 2. "Changed lemon for lime"
@@ -524,9 +522,11 @@ $ git commit -m "Add some initial cakes"
 
 :::::::::::::::  solution
 
-## Рішення
+## Solution
 
-Відповідь 1 є недостатньо детальною, а мета коміту неясна; відповідь 2 дублює результат команди "git diff" яка покаже зміни, зроблені у цьому коміті; відповідь 3 - оптимальна: коротка, інформативна, та імперативна.
+Answer 1 is not descriptive enough, and the purpose of the commit is unclear;
+and answer 2 is redundant to using "git diff" to see what changed in this commit;
+but answer 3 is good: short, descriptive, and imperative.
 
 :::::::::::::::::::::::::
 
@@ -534,9 +534,10 @@ $ git commit -m "Add some initial cakes"
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Збереження змін у Git
+## Committing Changes to Git
 
-Яка(які) з наведених нижче команд збережуть зміни у файлі `myfile.txt` до мого локального Git репозиторію?
+Which command(s) below would save the changes of `myfile.txt`
+to my local Git repository?
 
 1. ```bash
    $ git commit -m "my recent changes"
@@ -555,15 +556,15 @@ $ git commit -m "Add some initial cakes"
 
 :::::::::::::::  solution
 
-## Рішення
+## Solution
 
-1. Створить коміт, лише якщо файли вже були у зоні стейджінгу.
+1. Would only create a commit if files have already been staged.
 
-2. Намагатиметься створити новий репозиторій.
+2. Would try to create a new repository.
 
-3. Правильна відповідь: спочатку додайте файл до зони стейджингу, потім зробіть коміт.
+3. Is correct: first add the file to the staging area, then commit.
 
-4. Спробує записати коміт файлу з назвою "my recent changes" з повідомленням myfile.txt.
+4. Would try to commit a file "my recent changes" with the message myfile.txt.
 
 :::::::::::::::::::::::::
 
@@ -571,19 +572,23 @@ $ git commit -m "Add some initial cakes"
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Коміт декількох файлів
+## Committing Multiple Files
 
-Зона стейджингу може зберігати зміни в будь-якій кількості файлів, які ви хочете записати в один коміт.
+The staging area can hold changes from any number of files
+that you want to commit as a single snapshot.
 
-1. Додайте до `guacamole.md` текст про приблизну ціну інгредієнтів.
-2. Створіть новий файл `groceries.md` зі списком товарів та їх цінами на різних ринках.
-3. Додайте зміни в обох файлах до зони стейджінгу, та зробіть коміт цих змін.
+1. Add some text to `guacamole.md` noting the rough price of the
+   ingredients.
+2. Create a new file `groceries.md` with a list of products and
+   their prices for different markets.
+3. Add changes from both files to the staging area,
+   and commit those changes.
 
 :::::::::::::::  solution
 
-## Рішення
+## Solution
 
-Спочатку ми оновимо файли `guacamole.md` та `groceries.md`:
+First we make our changes to the `guacamole.md` and `groceries.md` files:
 
 ```bash
 $ nano guacamole.md
@@ -610,20 +615,20 @@ $ cat groceries.md
 * salt: 2 per kg
 ```
 
-Тепер ви можете додати обидва файли до зони стейджингу. Ми можемо зробити це однією командою:
+Now you can add both files to the staging area. We can do that in one line:
 
 ```bash
 $ git add guacamole.md groceries.md
 ```
 
-Або кількома:
+Or with multiple commands:
 
 ```bash
 $ git add guacamole.md
 $ git add groceries.md
 ```
 
-Тепер файли готові до коміту. Ви можете перевірити це за допомогою `git status`. Якщо ви готові зробити коміт, використайте:
+Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
 
 ```bash
 $ git commit -m "Write prices for ingredients and their source"
@@ -642,46 +647,49 @@ $ git commit -m "Write prices for ingredients and their source"
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Вправа: репозиторій з вашою автобіографією
+## `bio` Repository
 
-- Створіть новий репозиторій Git на вашому компʼютері під назвою `bio`.
-- Напишіть три рядки своєї біографії у файлі під назвою `me.txt`, та зробіть коміт цих змін.
-- Змініть один з рядків та додайте четвертий рядок.
-- Покажіть відмінності між оновленим файлом та його попередньою версією.
+- Create a new Git repository on your computer called `bio`.
+- Write a three-line biography for yourself in a file called `me.txt`,
+  commit your changes
+- Modify one line, add a fourth line
+- Display the differences
+  between its updated state and its original state.
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-За потреби вийдіть з каталогу `recipes`:
+If needed, move out of the `recipes` folder:
 
 ```bash
 $ cd ..
 ```
 
-Створіть новий каталог `bio` та перейдіть до нього:
+Create a new folder called `bio` and 'move' into it:
 
 ```bash
 $ mkdir bio
 $ cd bio
 ```
 
-Ініціалізуйте репозиторій Git:
+Initialise git:
 
 ```bash
 $ git init
 ```
 
-Створіть файл `me.txt` з вашою біографією, використовуючи `nano` або інший текстовий редактор.
-Коли будете готові, додайте його до зони стейджингу та запишіть коміт до репозиторію:
+Create your biography file `me.txt` using `nano` or another text editor.
+Once in place, add and commit it to the repository:
 
 ```bash
 $ git add me.txt
 $ git commit -m "Add biography file"
 ```
 
-Змініть файл як вказано (змініть один рядок, додайте четвертий рядок).
-Для того, щоб показати зміни між оновленим файлом та його попередньою версією, використайте `git diff`:
+Modify the file as described (modify one line, add a fourth line).
+To display the differences
+between its updated state and its original state, use `git diff`:
 
 ```bash
 $ git diff me.txt
@@ -696,10 +704,10 @@ $ git diff me.txt
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git status` показує стан репозиторію.
-- Файли можуть зберігатися в робочому каталозі проєкту (де їх бачать користувачі), зоні стейджингу (де будується наступний коміт) і локальному репозиторії (де коміти зберігаються постійно).
-- `git add` додає файли до зони стейджингу.
-- `git commit` зберігає все, що міститься у зоні стейджингу, як новий коміт у локальному репозиторії.
-- Повідомлення коміту треба складати так, щоб воно чітко описувало ваші зміни.
+- `git status` shows the status of a repository.
+- Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded).
+- `git add` puts files in the staging area.
+- `git commit` saves the staged content as a new commit in the local repository.
+- Write a commit message that accurately describes your changes.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
