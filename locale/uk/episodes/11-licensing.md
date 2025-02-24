@@ -18,7 +18,7 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Коли репозиторій з вихідним кодом, рукописом або іншими творчими роботами стає публічним, він повинен містити у головному каталозі репозиторію файл під назвою `LICENSE` або `LICENSE.txt`, у якому чітко вказано, під якою ліцензією надається контент. Це пояснюється тим, що творчі роботи автоматично мають право на захист інтелектуальної власності (і, отже, авторських прав). Повторне використання творчих робіт без ліцензії є небезпечним, оскільки правовласники можуть подати на вас до суду за порушення авторських прав.
+As an open source project, Software Carpentry relies on volunteers to create our lessons and includes a file named `LICENSE` or `LICENSE.txt` file in all public lesson repositories. This file is used to specify that all materials are freely available under the Creative Commons Attribution license. Without a file that clearly states under which license any public source code, manuscript or other creative works is being made available, the default copyright laws apply. To learn more about licensing and open source, you can read more about [Github's description of licenses] and the [legal grounds for open source licensing].
 
 Ліцензія вирішує цю проблему, надаючи іншим особам (ліцензіатам) права, яких вони в іншому випадку не мали б. Те, які права надаються, і за яких умов, може відрізнятися, але часто не дуже, у різних ліцензіях. На практиці, деякі ліцензії на сьогодні є найпопулярнішими, і [choosealicense.com](https://choosealicense.com/) може допомогти вам знайти поширену ліцензію, яка відповідає вашим потребам.  Важливими міркуваннями є:
 
@@ -59,12 +59,14 @@ exercises: 0
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 [software-licensing]: https://doi.org/10.1371/journal.pcbi.1002598
+[Github's description of licenses]: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository
+[legal grounds for open source licensing]: https://opensource.guide/legal/#are-public-github-projects-open-source
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Файли з імʼям `LICENSE`, `LICENSE.md`, або `LICENSE.txt` часто використовуються у репозиторіях, щоб вказати, як їх вміст може застосовуватися іншими.
-- Розробники, які інтегрують програмне забезпечення з ліцензією General Public License (GPL) у своє власне, також повинні зробити своє програмне забезпечення відкритим під ліцензією GPL. Більшість інших відкритих ліцензій цього не вимагають.
-- Сімейство ліцензій Creative Commons дозволяє авторам гнучко комбінувати вимоги та обмеження щодо зазначення авторства, створення похідних творів, подальшого поширення та комерціалізації.
-- Люди, які не є юристами, не повинні намагатися писати ліцензії з нуля.
+- The `LICENSE`, `LICENSE.md`, or `LICENSE.txt` file is often used in a repository to indicate how the contents of the repo may be used by others.
+- People who incorporate General Public License (GPL'd) software into their own software must make the derived software also open under the GPL license if they decide to share it; most other open licenses do not require this.
+- The Creative Commons family of licenses allow people to mix and match requirements and restrictions on attribution, creation of derivative works, further sharing, and commercialization.
+- People who are not lawyers should not try to write licenses from scratch.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
