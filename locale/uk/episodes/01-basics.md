@@ -46,9 +46,12 @@ exercises: 0
 Автоматизовані системи управління версіями не є чимось новим.
 Інструменти, такі як [RCS](https://en.wikipedia.org/wiki/Revision_Control_System), [CVS](https://en.wikipedia.org/wiki/Concurrent_Versions_System), або [Subversion](https://en.wikipedia.org/wiki/Apache_Subversion) існують з початку 1980-х років і використовуються багатьма великими компаніями.
 Однак багато з них зараз вважаються застарілими системами через різні обмеження у своїх можливостях.
-Більш сучасні системи, такі як Git та [Mercurial](https://swcarpentry.github.io/hg-novice/), є розподіленими , що означає, що їм не потрібен централізований сервер для розміщення репозиторію.
-Ці сучасні системи також включають потужні інструменти злиття змін (merging), які дозволяють багатьом авторам працювати над одними й тими ж файлами одночасно.
+More modern systems, such as [Git](https://en.wikipedia.org/wiki/Git) and [Mercurial](https://en.wikipedia.org/wiki/Mercurial),
+are _distributed_, meaning that they do not need a centralized server to host the repository.
+These modern systems also include powerful merging tools that make it possible for multiple authors to work on
+the same files concurrently.
 
+For those interested, The Carpentries has a [Version Control with Mercurial](https://swcarpentry.github.io/hg-novice/) lesson (2013-2018), which provides additional context and historical perspective.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
