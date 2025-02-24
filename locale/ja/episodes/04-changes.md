@@ -27,7 +27,7 @@ You should be in the `recipes` directory.
 $ cd ~/Desktop/recipes
 ```
 
-Let's create a file called `guacamole.md` that contains the basic structure of a recipe.
+Let's create a file called `guacamole.md` that contains the basic structure of our first recipe.
 `nano` （もしくは好きなテキストエディタ）でファイルを編集しましょう。
 以前 `core.editor` で設定したエディタとは別のエディタで編集しても大丈夫です。 But remember, the steps to create or edit a new file will depend on the editor you choose (it might not be nano). テキストエディタについて復習したい方は、[Unix シェル](https://swcarpentry.github.io/shell-novice/) の [どのエディタ？](https://swcarpentry.github.io/shell-novice/03-create/) のレッスンを見てみてください。
 
@@ -117,11 +117,11 @@ but it hasn't recorded these changes as a commit yet.
 これをするには、もう一つコマンドを使う必要があります：
 
 ```bash
-$ git commit -m "Create a template for recipe"
+$ git commit -m "Create initial structure for a Guacamole recipe"
 ```
 
 ```output
-[main (root-commit) f22b25e] Create a template for recipe
+[main (root-commit) f22b25e] Create initial structure for a Guacamole recipe
  1 file changed, 1 insertion(+)
  create mode 100644 guacamole.md
 ```
@@ -162,7 +162,7 @@ commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Create a template for recipe
+    Create initial structure for a Guacamole recipe
 ```
 
 `git log` は、リポジトリに施された全てのコミットを最新のものから順に表示します。
@@ -248,8 +248,7 @@ index df0654a..315bf3a 100644
 変更点を確認したら、コミットしましょう：
 
 ```bash
-$ git commit -m "Add basic guacamole's ingredients"
-$ git status
+$ git commit -m "Add ingredients for basic guacamole"
 ```
 
 ```output
@@ -269,11 +268,11 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ```bash
 $ git add guacamole.md
-$ git commit -m "Add basic guacamole's ingredients"
+$ git commit -m "Add ingredients for basic guacamole"
 ```
 
 ```output
-[main 34961b1] Add basic guacamole's ingredient
+[main 34961b1] Add ingredients for basic guacamole
  1 file changed, 3 insertions(+)
 ```
 
@@ -407,13 +406,13 @@ commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add basic guacamole's ingredients
+    Add ingredients for basic guacamole
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Create a template for recipe
+    Create initial structure for a Guacamole recipe
 ```
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -463,8 +462,8 @@ $ git log --oneline
 
 ```output
 005937f (HEAD -> main) Modify guacamole to the traditional recipe
-34961b1 Add basic guacamole's ingredients
-f22b25e Create a template for recipe
+34961b1 Add ingredients for basic guacamole
+f22b25e Create initial structure for a Guacamole recipe
 ```
 
 `--oneline` オプションを他のオプションと組み合わせることもできます。 便利な組み合わせの一つとして、 `--graph` を追加すると、コミット履歴をテキストベースのグラフとして表示し、どのコミットが現在の `HEAD`、現在のブランチ `main`、あるいは[その他の Git リファレンス][git-references]に関連しているかを示すことができます：
@@ -475,8 +474,8 @@ $ git log --oneline --graph
 
 ```output
 * 005937f (HEAD -> main) Modify guacamole to the traditional recipe
-* 34961b1 Add basic guacamole's ingredients
-* f22b25e Create a template for recipe
+* 34961b1 Add ingredients for basic guacamole
+* f22b25e Create initial structure for a Guacamole recipe
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -499,24 +498,19 @@ $ git status
 
 Note, our newly created empty directory `cakes` does not appear in
 the list of untracked files even if we explicitly add it (_via_ `git add`) to our
-repository. たまに `.gitkeep` ファイルが空のディレクトリ内にあるのは、このためです。 `.gitignore`とは違って、このファイルは特別でも何でもなく、空のディレクトリを Git のリポジトリに追加、そして追跡させるためだけに置いてあるだけです。 なので、別の名前のファイルでも同じことができます。
+repository. たまに `.gitkeep` ファイルが空のディレクトリ内にあるのは、このためです。 The sole purpose of `.gitkeep` files is to populate a directory so that Git adds it to the repository. The name `.gitkeep` is just a convention, and in fact, you can name these files anything you like.
 
-2. Git リポジトリ内でディレクトリを作成し、複数のファイルをそのディレクトリに入れたい場合、ディレクトリ内のファイルをひとまとめに追加する事ができます：
-
-```bash
-$ git add <directory-with-files>
-```
-
-自分で試してみてください：
+2. If you create a directory in your Git repository and populate it with files,
+   you can add all the files in the directory at once by referring to the directory in your `git add` command. Try it for yourself:
 
 ```bash
-$ touch cakes/brownie cakes/lemon_drizzle
+$ touch cakes/brownie_cakes/lemon_drizzle
 $ git status
 $ git add cakes
 $ git status
 ```
 
-次に進む前に、これらの変更をコミットしましょう。
+Before moving on, we will commit these changes.
 
 ```bash
 $ git commit -m "Add some initial cakes"
@@ -524,13 +518,16 @@ $ git commit -m "Add some initial cakes"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-まとめると、変更内容をリポジトリに追加したい時は`git add` で変更点をステージングエリアに移してから、`git commit` でステージングエリアの変更点をリポジトリに保存します：
+To recap, when we want to add changes to our repository,
+we first need to add the changed files to the staging area
+(`git add`) and then commit the staged changes to the
+repository (`git commit`):
 
 ![](fig/git-committing.svg){alt='A diagram showing two documents being separately staged using git add, before being combined into one commit using git commit'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## コミットメッセージを決める
+## Choosing a Commit Message
 
 Which of the following commit messages would be most appropriate for the
 last commit made to `guacamole.md`?
@@ -541,9 +538,11 @@ last commit made to `guacamole.md`?
 
 :::::::::::::::  solution
 
-## 解答
+## Solution
 
-１つ目のメッセージは短すぎてコミットの内容が何なのかわかりにくいです。２つ目は`git diff`で何が変わったのかが分かるので、長い割にはあまり意味がありません。３つ目は、短く、簡潔で、分かりやすいメッセージです。
+Answer 1 is not descriptive enough, and the purpose of the commit is unclear;
+and answer 2 is redundant to using "git diff" to see what changed in this commit;
+but answer 3 is good: short, descriptive, and imperative.
 
 :::::::::::::::::::::::::
 
@@ -551,9 +550,10 @@ last commit made to `guacamole.md`?
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Git に変更点をコミットする
+## Committing Changes to Git
 
-以下の内、`myfile.txt` を Git リポジトリに保存するためのコマンドはどれでしょう？
+Which command(s) below would save the changes of `myfile.txt`
+to my local Git repository?
 
 1. ```bash
    $ git commit -m "my recent changes"
@@ -572,15 +572,15 @@ last commit made to `guacamole.md`?
 
 :::::::::::::::  solution
 
-## 解答
+## Solution
 
-1. ファイルがステージングエリアにない限り、コミットできません。
+1. Would only create a commit if files have already been staged.
 
-2. 新しくリポジトリを作ろうとします。
+2. Would try to create a new repository.
 
-3. 正しい回答です。まずファイルをステージングエリアに追加し、それからコミットします。
+3. Is correct: first add the file to the staging area, then commit.
 
-4. "my recent changes" というファイルを myfile.txt というメッセージでコミットしようとします。
+4. Would try to commit a file "my recent changes" with the message myfile.txt.
 
 :::::::::::::::::::::::::
 
@@ -588,9 +588,10 @@ last commit made to `guacamole.md`?
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## 複数のファイルをコミットする
+## Committing Multiple Files
 
-一つのコミットに対し、ステージングエリアは複数のファイルの変更点を保持する事ができます。
+The staging area can hold changes from any number of files
+that you want to commit as a single snapshot.
 
 1. Add some text to `guacamole.md` noting the rough price of the
    ingredients.
@@ -601,7 +602,7 @@ last commit made to `guacamole.md`?
 
 :::::::::::::::  solution
 
-## 解答
+## Solution
 
 First we make our changes to the `guacamole.md` and `groceries.md` files:
 
