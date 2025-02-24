@@ -60,7 +60,7 @@ index b36abfd..0848c8d 100644
 +An ill-considered change
 ```
 
-これは、 `HEAD` を省略した場合 (試してみてください) に得られるものと同じです。  これの本当の利点は、以前のコミットを参照できることです。  それを行うには、`HEAD` より前のコミットを参照するために `~1` (「~」は「チルダ」、発音は [**til**-d_uh_]) を追加します。
+Note that `HEAD` is the default option for `git diff`, so omitting it will not change the command's output at all (give it a try). However, the real power of `git diff` lies in its ability to compare with previous commits. For example, by adding `~1` (where "~" is "tilde", pronounced [**til**\-d_uh_]), we can look at the commit before `HEAD`.
 
 ```bash
 $ git diff HEAD~1 guacamole.md
@@ -371,9 +371,7 @@ So, when `git commit -m "My opinions about the red sauce"` is executed,
 the version of `ketchup.md` committed to the repository is the one from the staging area and
 has only one line.
 
-At this time, the working copy still has the second line (and
-
-`git status` will show that the file is modified). However, `git restore ketchup.md`
+At this time, the working copy still has the second line (and `git status` will show that the file is modified). However, `git restore ketchup.md`
 replaces the working copy with the most recently committed version of `ketchup.md`.
 So, `cat ketchup.md` will output
 
