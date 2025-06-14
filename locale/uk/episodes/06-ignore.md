@@ -53,7 +53,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 $ nano .gitignore
 ```
 
-Type the text below into the `.gitignore` file:
+Введіть наведений нижче текст у файл `guacamole.md`:
 
 ```
 *.png
@@ -207,9 +207,7 @@ You would add the following two lines to your .gitignore:
 
 The exclamation point operator will include a previously excluded entry.
 
-Note also that, if you've previously committed `.png` files in this
-lesson, they will not be ignored with this new rule. Only future additions
-of `.png` files to the root directory will be ignored.
+Зауважте також, що якщо ви вже зберегли файли `.png` у комітах у цьому уроці, вони не будуть проігноровані цим новим правилом. Тільки майбутні додавання `.png` файлів до кореневого каталогу будуть проігноровані.
 
 :::::::::::::::::::::::::
 
@@ -266,8 +264,7 @@ receipts/data/market_position/gps/info.txt
 receipts/plots
 ```
 
-What's the shortest `.gitignore` rule you could write to ignore all `.dat`
-files in `receipts/data/market_position/gps`? Do not ignore the `info.txt`.
+Яке найкоротше правило ви можете додати до `.gitignore`, щоб ігнорувати всі файли з розширенням `.dat` у каталозі `receipts/data/market_position/gps`? Do not ignore the `info.txt`.
 
 :::::::::::::::  solution
 
@@ -372,3 +369,5 @@ You want to keep them but you do not want to track them through `git`.
 - You can list specific files or folders to be ignored by Git, or you can include files that would normally be ignored.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
