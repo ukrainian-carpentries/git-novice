@@ -353,8 +353,8 @@ $ git commit -m 'Use the French name for the whitesauce'
 ## Перейменування файлу за допомогою Unix
 
 Якщо ви замість Git команди `git mv` використовували Unix `mv`, то у вас буде трохи більше роботи, але Git все одно зможе з цим впоратися. Спробуймо ще раз перейменувати файл, але
-цього разу за допомогою команди Unix `mv`. First, we need to recreate the
-`whitesauce.md` file:
+цього разу за допомогою команди Unix `mv`. По-перше, нам потрібно відтворити
+файл `whitesauce.md`:
 
 ```bash
 $ echo "Very fun recipe to do" > whitesauce.md
@@ -362,7 +362,7 @@ $ git add whitesauce.md
 $ git commit -m 'Add white sauce recipe'
 ```
 
-Let us rename the file and see what Git can figure out by itself:
+Тепер перейменуємо файл і подивимося, що Git може з'ясувати самостійно:
 
 ```bash
 $ mv whitesauce.md bechamel.md
@@ -459,3 +459,5 @@ results/*             # ігноруйте файли в директорії
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
