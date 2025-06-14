@@ -27,7 +27,7 @@ exercises: 0
 $ cd ~/Desktop/recipes
 ```
 
-Let's create a file called `guacamole.md` that contains the basic structure of our first recipe.
+Тепер створимо файл під назвою `guacamole.md` з нашим рецептом.
 Ми будемо використовувати редактор `nano` для редагування файлу; ви можете використовувати будь-який редактор, який вам подобається.
 Зокрема, це не обовʼязково повинен бути `core.editor`, який ви раніше вказали глобально. Але пам'ятайте, що команда bash для створення або редагування нового файлу буде залежати від обраного редактора (який не обов'язково буде `nano`). Для довідки щодо текстових редакторів, дивіться ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor/) в уроці [The Unix Shell](https://swcarpentry.github.io/shell-novice/).
 
@@ -485,7 +485,7 @@ $ git status
 Зауважте, наш новостворений порожній каталог `cakes` не зʼявляється в переліку невідстежуваних файлів, навіть якщо ми конкретно додали його (_через_ `git add`) до нашого репозиторію. Ось чому ви іноді бачите файли `.gitkeep` в інших порожніх каталогах. The sole purpose of `.gitkeep` files is to populate a directory so that Git adds it to the repository. The name `.gitkeep` is just a convention, and in fact, you can name these files anything you like.
 
 2. If you create a directory in your Git repository and populate it with files,
-  you can add all the files in the directory at once by referring to the directory in your `git add` command. Try it for yourself:
+  you can add all the files in the directory at once by referring to the directory in your `git add` command. Спробуйте власноруч:
 
 ```bash
 $ touch cakes/brownie_cakes/lemon_drizzle
@@ -494,7 +494,7 @@ $ git add cakes
 $ git status
 ```
 
-Before moving on, we will commit these changes.
+Перш ніж рухатися далі, ми збережемо ці зміни.
 
 ```bash
 $ git commit -m "Add some initial cakes"
@@ -511,10 +511,9 @@ repository (`git commit`):
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Choosing a Commit Message
+## Вибір повідомлення коміту
 
-Which of the following commit messages would be most appropriate for the
-last commit made to `guacamole.md`?
+Яке з наступних повідомлень буде найдоречнішим для останнього коміту до `guacamole.md`?
 
 1. "Changes"
 2. "Changed lemon for lime"
@@ -522,11 +521,9 @@ last commit made to `guacamole.md`?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-Answer 1 is not descriptive enough, and the purpose of the commit is unclear;
-and answer 2 is redundant to using "git diff" to see what changed in this commit;
-but answer 3 is good: short, descriptive, and imperative.
+Відповідь 1 є недостатньо детальною, а мета коміту неясна; відповідь 2 дублює результат команди "git diff" яка покаже зміни, зроблені у цьому коміті; відповідь 3 - оптимальна: коротка, інформативна, та імперативна.
 
 :::::::::::::::::::::::::
 
@@ -534,10 +531,9 @@ but answer 3 is good: short, descriptive, and imperative.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Committing Changes to Git
+## Збереження змін у Git
 
-Which command(s) below would save the changes of `myfile.txt`
-to my local Git repository?
+Яка(які) з наведених нижче команд збережуть зміни у файлі `myfile.txt` до мого локального Git репозиторію?
 
 1. ```bash
   $ git commit -m "my recent changes"
@@ -556,15 +552,15 @@ to my local Git repository?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-1. Would only create a commit if files have already been staged.
+1. Створить коміт, лише якщо файли вже були у зоні стейджінгу.
 
-2. Would try to create a new repository.
+2. Намагатиметься створити новий репозиторій.
 
-3. Is correct: first add the file to the staging area, then commit.
+3. Правильна відповідь: спочатку додайте файл до зони стейджингу, потім зробіть коміт.
 
-4. Would try to commit a file "my recent changes" with the message myfile.txt.
+4. Спробує записати коміт файлу з назвою "my recent changes" з повідомленням myfile.txt.
 
 :::::::::::::::::::::::::
 
@@ -572,23 +568,20 @@ to my local Git repository?
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Committing Multiple Files
+## Коміт декількох файлів
 
 The staging area can hold changes from any number of files
 that you want to commit as a single snapshot.
 
-1. Add some text to `guacamole.md` noting the rough price of the
-  ingredients.
-2. Create a new file `groceries.md` with a list of products and
-  their prices for different markets.
-3. Add changes from both files to the staging area,
-  and commit those changes.
+1. Додайте до `guacamole.md` текст про приблизну ціну інгредієнтів.
+2. Створіть новий файл `groceries.md` зі списком товарів та їх цінами на різних ринках.
+3. Додайте зміни в обох файлах до зони стейджінгу, та зробіть коміт цих змін.
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-First we make our changes to the `guacamole.md` and `groceries.md` files:
+Спочатку ми оновимо файли `guacamole.md` та `groceries.md`:
 
 ```bash
 $ nano guacamole.md
@@ -615,20 +608,20 @@ $ cat groceries.md
 * salt: 2 per kg
 ```
 
-Now you can add both files to the staging area. We can do that in one line:
+Тепер ви можете додати обидва файли до зони стейджингу. Ми можемо зробити це однією командою:
 
 ```bash
 $ git add guacamole.md groceries.md
 ```
 
-Or with multiple commands:
+Або кількома:
 
 ```bash
 $ git add guacamole.md
 $ git add groceries.md
 ```
 
-Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
+Тепер файли готові до коміту. Ви можете перевірити це за допомогою `git status`. Якщо ви готові зробити коміт, використайте:
 
 ```bash
 $ git commit -m "Write prices for ingredients and their source"
@@ -649,47 +642,44 @@ $ git commit -m "Write prices for ingredients and their source"
 
 ## `bio` Repository
 
-- Create a new Git repository on your computer called `bio`.
-- Write a three-line biography for yourself in a file called `me.txt`,
-  commit your changes
-- Modify one line, add a fourth line
-- Display the differences
-  between its updated state and its original state.
+- Створіть новий репозиторій Git на вашому компʼютері під назвою `bio`.
+- Напишіть три рядки своєї біографії у файлі під назвою `me.txt`, та зробіть коміт цих змін.
+- Змініть один з рядків та додайте четвертий рядок.
+- Покажіть відмінності між оновленим файлом та його попередньою версією.
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-If needed, move out of the `recipes` folder:
+За потреби вийдіть з каталогу `recipes`:
 
 ```bash
 $ cd ..
 ```
 
-Create a new folder called `bio` and 'move' into it:
+Створіть новий каталог `bio` та перейдіть до нього:
 
 ```bash
 $ mkdir bio
 $ cd bio
 ```
 
-Initialise git:
+Ініціалізуйте репозиторій Git:
 
 ```bash
 $ git init
 ```
 
-Create your biography file `me.txt` using `nano` or another text editor.
-Once in place, add and commit it to the repository:
+Створіть файл `me.txt` з вашою біографією, використовуючи `nano` або інший текстовий редактор.
+Коли будете готові, додайте його до зони стейджингу та запишіть коміт до репозиторію:
 
 ```bash
 $ git add me.txt
 $ git commit -m "Add biography file"
 ```
 
-Modify the file as described (modify one line, add a fourth line).
-To display the differences
-between its updated state and its original state, use `git diff`:
+Змініть файл як вказано (змініть один рядок, додайте четвертий рядок).
+Для того, щоб показати зміни між оновленим файлом та його попередньою версією, використайте `git diff`:
 
 ```bash
 $ git diff me.txt
@@ -704,10 +694,10 @@ $ git diff me.txt
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git status` shows the status of a repository.
-- Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded).
-- `git add` puts files in the staging area.
-- `git commit` saves the staged content as a new commit in the local repository.
-- Write a commit message that accurately describes your changes.
+- `git status` показує стан репозиторію.
+- Файли можуть зберігатися в робочому каталозі проєкту (де їх бачать користувачі), зоні стейджингу (де будується наступний коміт) і локальному репозиторії (де коміти зберігаються постійно).
+- `git add` додає файли до зони стейджингу.
+- `git commit` зберігає все, що міститься у зоні стейджингу, як новий коміт у локальному репозиторії.
+- Повідомлення коміту треба складати так, щоб воно чітко описувало ваші зміни.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
