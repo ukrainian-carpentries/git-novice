@@ -234,7 +234,7 @@ index df0654a..315bf3a 100644
 2. Другий рядок повідомляє які саме версії файлу Git порівнює; `df0654a` та `315bf3a` є унікальними ідентифікаторами цих версій.
 3. Третій та четвертий рядки ще раз показують назву файлу, що змінюється.
 4. Решта рядків найцікавіші, вони показують нам фактичні відмінності і рядки, у яких вони відбуваються.
-   Зокрема, значок `+` в першому стовпці вказує де ми додали рядок.
+  Зокрема, значок `+` в першому стовпці вказує де ми додали рядок.
 
 Після того, як ми переглянули наші зміни, прийшов час зберегти їх:
 
@@ -473,7 +473,7 @@ $ git log --oneline --graph
 Дві важливі речі, які ви повинні знати про каталоги в Git.
 
 1. Git не відстежує каталоги самостійно, тільки файли всередині них.
-   Спробуйте власноруч:
+  Спробуйте власноруч:
 
 ```bash
 $ mkdir cakes
@@ -485,7 +485,7 @@ $ git status
 Зауважте, наш новостворений порожній каталог `cakes` не зʼявляється в переліку невідстежуваних файлів, навіть якщо ми конкретно додали його (_через_ `git add`) до нашого репозиторію. Ось чому ви іноді бачите файли `.gitkeep` в інших порожніх каталогах. The sole purpose of `.gitkeep` files is to populate a directory so that Git adds it to the repository. The name `.gitkeep` is just a convention, and in fact, you can name these files anything you like.
 
 2. If you create a directory in your Git repository and populate it with files,
-   you can add all the files in the directory at once by referring to the directory in your `git add` command. Try it for yourself:
+  you can add all the files in the directory at once by referring to the directory in your `git add` command. Try it for yourself:
 
 ```bash
 $ touch cakes/brownie_cakes/lemon_drizzle
@@ -540,19 +540,19 @@ Which command(s) below would save the changes of `myfile.txt`
 to my local Git repository?
 
 1. ```bash
-   $ git commit -m "my recent changes"
-   ```
+  $ git commit -m "my recent changes"
+  ```
 2. ```bash
-   $ git init myfile.txt
-   $ git commit -m "my recent changes"
-   ```
+  $ git init myfile.txt
+  $ git commit -m "my recent changes"
+  ```
 3. ```bash
-   $ git add myfile.txt
-   $ git commit -m "my recent changes"
-   ```
+  $ git add myfile.txt
+  $ git commit -m "my recent changes"
+  ```
 4. ```bash
-   $ git commit -m myfile.txt "my recent changes"
-   ```
+  $ git commit -m myfile.txt "my recent changes"
+  ```
 
 :::::::::::::::  solution
 
@@ -578,11 +578,11 @@ The staging area can hold changes from any number of files
 that you want to commit as a single snapshot.
 
 1. Add some text to `guacamole.md` noting the rough price of the
-   ingredients.
+  ingredients.
 2. Create a new file `groceries.md` with a list of products and
-   their prices for different markets.
+  their prices for different markets.
 3. Add changes from both files to the staging area,
-   and commit those changes.
+  and commit those changes.
 
 :::::::::::::::  solution
 
