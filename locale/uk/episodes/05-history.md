@@ -257,7 +257,7 @@ $ cat guacamole.md
 
 Отже, якщо скласти це все разом, то Git працює як зображено у цьому коміксі:
 
-![https://figshare.com/articles/How\_Git\_works\_a\_cartoon/1328266](fig/git_staging.svg){alt='Як працює git: зміни додаються до зони стейджингу (git add), зберігаються у репозиторії (git commit), та можуть бути відновлені з репозиторію (git checkout)'}
+![https://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg){alt='Як працює git: зміни додаються до зони стейджингу (git add), зберігаються у репозиторії (git commit), та можуть бути відновлені з репозиторію (git checkout)'}
 
 Той факт, що файли можна відновлювати окремо, сприяє змінам в організації роботи.
 Якщо все знаходиться в одному величезному документі, буде важко (але не неможливо) скасувати зміни у вступі без скасування також змін, внесених пізніше до висновку.
@@ -347,18 +347,18 @@ $ cat ketchup.md # this will print the content of ketchup.md on screen
 ```
 
 1. ```output
-   ketchup enhances pasta dishes
-   ```
+  ketchup enhances pasta dishes
+  ```
 2. ```output
-   I like tomatoes, therefore I like ketchup
-   ```
+  I like tomatoes, therefore I like ketchup
+  ```
 3. ```output
-   I like tomatoes, therefore I like ketchup
-   ketchup enhances pasta dishes
-   ```
+  I like tomatoes, therefore I like ketchup
+  ketchup enhances pasta dishes
+  ```
 4. ```output
-   Помилка, оскільки ви змінили ketchup.md, але не виконали коміт
-   ```
+  Помилка, оскільки ви змінили ketchup.md, але не виконали коміт
+  ```
 
 :::::::::::::::  solution
 
@@ -371,7 +371,7 @@ $ cat ketchup.md # this will print the content of ketchup.md on screen
 
 Тож, коли виконується команда `git commit -m "My opinions about the red sauce"`, зафіксованою версією `ketchup.md` є та, яка знаходиться в зони стейджингу та буде мати тільки один рядок.
 
-At this time, the working copy still has the second line (and `git status` will show that the file is modified). However, `git restore ketchup.md`
+На цей час робоча копія файлу ще має другий рядок (і тому `git status` покаже, що файл змінено). However, `git restore ketchup.md`
 replaces the working copy with the most recently committed version of `ketchup.md`.
 So, `cat ketchup.md` will output
 
