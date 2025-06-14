@@ -59,7 +59,7 @@ index b36abfd..0848c8d 100644
 +An ill-considered change
 ```
 
-Note that `HEAD` is the default option for `git diff`, so omitting it will not change the command's output at all (give it a try). However, the real power of `git diff` lies in its ability to compare with previous commits. For example, by adding `~1` (where "~" is "tilde", pronounced [**til**\-d_uh_]), we can look at the commit before `HEAD`.
+Note that `HEAD` is the default option for `git diff`, so omitting it will not change the command's output at all (give it a try). However, the real power of `git diff` lies in its ability to compare with previous commits. Наприклад, додаючи `~1` (де "~" - це тільда), ми посилаємось на коміт зроблений безпосередньо перед `HEAD`.
 
 ```bash
 $ git diff HEAD~1 guacamole.md
@@ -371,9 +371,8 @@ $ cat ketchup.md # this will print the content of ketchup.md on screen
 
 Тож, коли виконується команда `git commit -m "My opinions about the red sauce"`, зафіксованою версією `ketchup.md` є та, яка знаходиться в зони стейджингу та буде мати тільки один рядок.
 
-На цей час робоча копія файлу ще має другий рядок (і тому `git status` покаже, що файл змінено). However, `git restore ketchup.md`
-replaces the working copy with the most recently committed version of `ketchup.md`.
-So, `cat ketchup.md` will output
+На цей час робоча копія файлу ще має другий рядок (і тому `git status` покаже, що файл змінено). Однак `git restore ketchup.md` замінить робочу копію останньою збереженою версією `ketchup.md`.
+В результаті, `cat ketchup.md` покаже:
 
 ```output
 I like tomatoes, therefore I like ketchup
@@ -385,7 +384,7 @@ I like tomatoes, therefore I like ketchup
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Checking Understanding of `git diff`
+## Перевіримо розуміння `git diff`
 
 Consider this command: `git diff HEAD~9 guacamole.md`. What do you predict this command
 will do if you execute it? What happens when you do execute it? Why?
@@ -407,7 +406,7 @@ then use `git restore` to see if you can remove your change.
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 After adding a change, `git restore` can not be used directly.
 Let's look at the output of `git status`:
