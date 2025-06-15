@@ -386,30 +386,25 @@ I like tomatoes, therefore I like ketchup
 
 ## Перевіримо розуміння `git diff`
 
-Consider this command: `git diff HEAD~9 guacamole.md`. What do you predict this command
-will do if you execute it? What happens when you do execute it? Why?
+Розглянемо команду `git diff HEAD~9 guacamole.md`. Що ви очікуєте від цієї команди після виконання? Що насправді відбувається, коли ви запускаєте її? Чому?
 
-Try another command, `git diff [ID] guacamole.md`, where [ID] is replaced with
-the unique identifier for your most recent commit. What do you think will happen,
-and what does happen?
+Спробуйте іншу команду, `git diff [ID] guacamole.md`, де [ID] замінено на унікальний ідентифікатор вашого останнього коміту. Що ви очікуєте, і що насправді станеться?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Getting Rid of Staged Changes
+## Скасування змін у зоні стейджингу
 
-`git restore` can be used to restore a previous commit when unstaged changes have
-been made, but will it also work for changes that have been staged but not committed?
-Make a change to `guacamole.md`, add that change using `git add`,
-then use `git restore` to see if you can remove your change.
+Команда `git restore` може бути використана для відновлення попереднього коміту, коли зміни ще не додані до зони стейджингу. Але чи спрацює вона зі змінами, які були додані до зони стейджингу, але ще не збережені у коміті?
+Зробіть зміни у `guacamole.md`, додайте їх до зони стейджингу за допомогою `git add`, а потім використайте `git restore`, щоб перевірити чи можете ви скасувати свої зміни.
 
 :::::::::::::::  solution
 
 ## Відповідь
 
 After adding a change, `git restore` can not be used directly.
-Let's look at the output of `git status`:
+Подивіться на результат `git status`:
 
 ```output
 On branch main
@@ -419,20 +414,16 @@ Changes to be committed:
 
 ```
 
-Note that if you don't have the same output
-you may either have forgotten to change the file,
-or you have added it _and_ committed it.
+Зауважте, якщо ваш результат відрізняється, то можливо ви забули змінити файл, або вже додали його до зони стейджингу _та_ зробили коміт.
 
-Using the command `git restore guacamole.md` now does not give an error,
-but it does not restore the file either.
-Git helpfully tells us that we need to use `git restore --staged` first
-to unstage the file:
+Використання команди `git restore guacamole.md` тепер не викликає помилки, але також не відновлює файл.
+Git друкує корисне повідомлення - нам потрібно спочатку використати `git restore --staged`, щоб видалити файл з зони стейджингу:
 
 ```bash
 $ git restore --staged guacamole.md
 ```
 
-Now, `git status` gives us:
+Тепер `git status` зображує наступне:
 
 ```bash
 $ git status
@@ -448,8 +439,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-This means we can now use `git restore` to restore the file
-to the previous commit:
+Це означає, що тепер ми можемо використовувати `git restore` для відновлення файлу до попереднього коміту:
 
 ```bash
 $ git restore guacamole.md
@@ -467,29 +457,26 @@ nothing to commit, working tree clean
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Explore and Summarize Histories
+## Перегляд і пошук в історії
 
-Exploring history is an important part of Git, and often it is a challenge to find
-the right commit ID, especially if the commit is from several months ago.
+Перегляд історії є важливим аспектом роботи з Git, але зазвичай знайти правильний ідентифікатор коміту може бути важко, особливо якщо він був зроблений декілька місяців тому.
 
-Imagine the `recipes` project has more than 50 files.
-You would like to find a commit that modifies some specific text in `guacamole.md`.
-When you type `git log`, a very long list appeared.
-How can you narrow down the search?
+Уявіть, що проєкт `recipes` містить понад 50 файлів.
+Вам потрібно знайти коміт, який змінює певний текст у `guacamole.md`.
+Коли ви вводите `git log`, з'являється дуже довгий список.
+Як можна звузити коло пошуку?
 
-Recall that the `git diff` command allows us to explore one specific file,
-e.g., `git diff guacamole.md`. We can apply a similar idea here.
+Пам’ятайте, що команда `git diff` дозволяє перевіряти зміни в певному файлі, наприклад, `git diff guacamole.md`. Ми можемо застосувати подібну ідею тут.
 
 ```bash
 $ git log guacamole.md
 ```
 
-Unfortunately some of these commit messages are very ambiguous, e.g., `update files`.
-How can you search through these files?
+На жаль, деякі повідомлення комітів дуже неоднозначні, наприклад, `update files`.
+Як же переглянути усі ці версії файлу?
 
-Both `git diff` and `git log` are very useful and they summarize a different part of the history
-for you.
-Is it possible to combine both? Let's try the following:
+Обидві команди `git diff` та `git log` дуже корисні для отримання звітів про різні частини історії проєкту.
+Але чи можна об'єднати їх результат в одну команду? Спробуймо наступне:
 
 ```bash
 $ git log --patch guacamole.md
@@ -498,7 +485,7 @@ $ git log --patch guacamole.md
 You should get a long list of output, and you should be able to see both commit messages and
 the difference between each commit.
 
-Question: What does the following command do?
+Питання: Що робить наступна команда?
 
 ```bash
 $ git log --patch HEAD~9 *.md
@@ -508,7 +495,7 @@ $ git log --patch HEAD~9 *.md
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git diff` displays differences between commits.
-- `git restore` recovers old versions of files.
+- `git diff` показує відмінності між комітами.
+- `git restore` відновлює старі версії файлів.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
