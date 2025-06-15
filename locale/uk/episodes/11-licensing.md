@@ -65,8 +65,8 @@ As an open source project, Software Carpentry relies on volunteers to create our
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - The `LICENSE`, `LICENSE.md`, or `LICENSE.txt` file is often used in a repository to indicate how the contents of the repo may be used by others.
-- People who incorporate General Public License (GPL'd) software into their own software must make the derived software also open under the GPL license if they decide to share it; most other open licenses do not require this.
-- The Creative Commons family of licenses allow people to mix and match requirements and restrictions on attribution, creation of derivative works, further sharing, and commercialization.
-- People who are not lawyers should not try to write licenses from scratch.
+- Розробники, які інтегрують програмне забезпечення з ліцензією General Public License (GPL) у своє власне, також повинні зробити своє програмне забезпечення відкритим під ліцензією GPL. Більшість інших відкритих ліцензій цього не вимагають.
+- Сімейство ліцензій Creative Commons дозволяє авторам гнучко комбінувати вимоги та обмеження щодо зазначення авторства, створення похідних творів, подальшого поширення та комерціалізації.
+- Люди, які не є юристами, не повинні намагатися писати ліцензії з нуля.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
