@@ -113,11 +113,11 @@ Git тепер знає, що він повинен стежити за файл
 Щоб зробити це, нам потрібно виконати ще одну команду:
 
 ```bash
-$ git commit -m "Create a template for recipe"
+$ git commit -m "Create initial structure for a Guacamole recipe"
 ```
 
 ```output
-[main (root-commit) f22b25e] Create a template for recipe
+[main (root-commit) f22b25e] Create initial structure for a Guacamole recipe
  1 file changed, 1 insertion(+)
  create mode 100644 guacamole.md
 ```
@@ -155,7 +155,7 @@ commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Create a template for recipe
+    Create initial structure for a Guacamole recipe
 ```
 
 `git log` виводить перелік усіх комітів, які були внесені до репозиторію, у зворотному хронологічному порядку.
@@ -234,13 +234,12 @@ index df0654a..315bf3a 100644
 2. Другий рядок повідомляє які саме версії файлу Git порівнює; `df0654a` та `315bf3a` є унікальними ідентифікаторами цих версій.
 3. Третій та четвертий рядки ще раз показують назву файлу, що змінюється.
 4. Решта рядків найцікавіші, вони показують нам фактичні відмінності і рядки, у яких вони відбуваються.
-   Зокрема, значок `+` в першому стовпці вказує де ми додали рядок.
+  Зокрема, значок `+` в першому стовпці вказує де ми додали рядок.
 
 Після того, як ми переглянули наші зміни, прийшов час зберегти їх:
 
 ```bash
-$ git commit -m "Add basic guacamole's ingredients"
-$ git status
+$ git commit -m "Add ingredients for basic guacamole"
 ```
 
 ```output
@@ -259,11 +258,11 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ```bash
 $ git add guacamole.md
-$ git commit -m "Add basic guacamole's ingredients"
+$ git commit -m "Add ingredients for basic guacamole"
 ```
 
 ```output
-[main 34961b1] Add basic guacamole's ingredient
+[main 34961b1] Add ingredients for basic guacamole
  1 file changed, 3 insertions(+)
 ```
 
@@ -392,13 +391,13 @@ commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add basic guacamole's ingredients
+    Add ingredients for basic guacamole
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Alfredo Linguini <a.linguini@ratatouille.fr>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Create a template for recipe
+    Create initial structure for a Guacamole recipe
 ```
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -449,8 +448,8 @@ $ git log --oneline
 
 ```output
 005937f (HEAD -> main) Modify guacamole to the traditional recipe
-34961b1 Add basic guacamole's ingredients
-f22b25e Create a template for recipe
+34961b1 Add ingredients for basic guacamole
+f22b25e Create initial structure for a Guacamole recipe
 ```
 
 Ви також можете комбінувати опцію `--oneline` з іншими опціями. Наступна корисна комбінація використовує опцію `--graph` для графічного зображення історії комітів за допомогою псевдографіки, вказуючи при цьому які коміти пов'язані з поточним `HEAD`, поточною гілкою `main`, або [іншими обʼєктами у репозиторії][git-references]':
@@ -461,8 +460,8 @@ $ git log --oneline --graph
 
 ```output
 * 005937f (HEAD -> main) Modify guacamole to the traditional recipe
-* 34961b1 Add basic guacamole's ingredients
-* f22b25e Create a template for recipe
+* 34961b1 Add ingredients for basic guacamole
+* f22b25e Create initial structure for a Guacamole recipe
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -474,7 +473,7 @@ $ git log --oneline --graph
 Дві важливі речі, які ви повинні знати про каталоги в Git.
 
 1. Git не відстежує каталоги самостійно, тільки файли всередині них.
-   Спробуйте власноруч:
+  Спробуйте власноруч:
 
 ```bash
 $ mkdir cakes
@@ -485,13 +484,7 @@ $ git status
 
 Зауважте, наш новостворений порожній каталог `cakes` не зʼявляється в переліку невідстежуваних файлів, навіть якщо ми конкретно додали його (_через_ `git add`) до нашого репозиторію. Ось чому ви іноді бачите файли `.gitkeep` в інших порожніх каталогах. На відміну від `.gitignore`, ці файли не є особливими і їх єдиною метою є заповнити каталог, щоб Git додав його до репозиторію. Насправді ви можете назвати такі файли до вашої вподоби.
 
-2. Якщо ви створюєте каталог у вашому репозиторії Git і заповнюєте його файлами, ви можете додати всі файли в каталозі одразу:
-
-```bash
-$ git add <directory-with-files>
-```
-
-Спробуйте власноруч:
+2. Якщо ви створюєте каталог у вашому репозиторії Git і заповнюєте його файлами, ви можете відразу додати до репозиторію всі файли в каталозі, посилаючись на нього в команді `git add`. Спробуйте власноруч:
 
 ```bash
 $ touch cakes/brownie_cakes/lemon_drizzle
@@ -508,7 +501,7 @@ $ git commit -m "Add some initial cakes"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Для повторення: коли ми хочемо додати зміни до нашого репозиторію, спочатку нам потрібно додати змінені файли в зону стейджингу (`git add`) а потім зберегти заплановані зміни до репозиторію (`git commit`):
+Підсумовуючи: коли ми хочемо додати зміни до нашого репозиторію, спочатку нам потрібно додати змінені файли в зону стейджингу (`git add`) а потім зберегти заплановані зміни за допомогою `git commit`:
 
 ![](fig/git-committing.svg){alt='Два документи окремо додаються до зони стейджингу за допомогою git add, а потім об'єднуються в один коміт за допомогою git commit'}
 
@@ -524,7 +517,7 @@ $ git commit -m "Add some initial cakes"
 
 :::::::::::::::  solution
 
-## Рішення
+## Відповідь
 
 Відповідь 1 є недостатньо детальною, а мета коміту неясна; відповідь 2 дублює результат команди "git diff" яка покаже зміни, зроблені у цьому коміті; відповідь 3 - оптимальна: коротка, інформативна, та імперативна.
 
@@ -539,23 +532,23 @@ $ git commit -m "Add some initial cakes"
 Яка(які) з наведених нижче команд збережуть зміни у файлі `myfile.txt` до мого локального Git репозиторію?
 
 1. ```bash
-   $ git commit -m "my recent changes"
-   ```
+  $ git commit -m "my recent changes"
+  ```
 2. ```bash
-   $ git init myfile.txt
-   $ git commit -m "my recent changes"
-   ```
+  $ git init myfile.txt
+  $ git commit -m "my recent changes"
+  ```
 3. ```bash
-   $ git add myfile.txt
-   $ git commit -m "my recent changes"
-   ```
+  $ git add myfile.txt
+  $ git commit -m "my recent changes"
+  ```
 4. ```bash
-   $ git commit -m myfile.txt "my recent changes"
-   ```
+  $ git commit -m myfile.txt "my recent changes"
+  ```
 
 :::::::::::::::  solution
 
-## Рішення
+## Відповідь
 
 1. Створить коміт, лише якщо файли вже були у зоні стейджінгу.
 
@@ -573,7 +566,7 @@ $ git commit -m "Add some initial cakes"
 
 ## Коміт декількох файлів
 
-Зона стейджингу може зберігати зміни в будь-якій кількості файлів, які ви хочете записати в один коміт.
+Зона стейджингу може зберігати зміни в будь-якій кількості файлів, які ви хочете помістити в один коміт.
 
 1. Додайте до `guacamole.md` текст про приблизну ціну інгредієнтів.
 2. Створіть новий файл `groceries.md` зі списком товарів та їх цінами на різних ринках.
@@ -581,7 +574,7 @@ $ git commit -m "Add some initial cakes"
 
 :::::::::::::::  solution
 
-## Рішення
+## Відповідь
 
 Спочатку ми оновимо файли `guacamole.md` та `groceries.md`:
 

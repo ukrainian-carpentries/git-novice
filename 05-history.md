@@ -59,8 +59,7 @@ index b36abfd..0848c8d 100644
 +An ill-considered change
 ```
 
-Це те саме, що ви отримаєте, якщо пропустите `HEAD` (спробуйте це).\
-Але справжня користь полягає у тому, що ви таким чином можете посилатися на попередні коміти.  Наприклад, додаючи `~1` (де "~" - це тільда), ми посилаємось на коміт зроблений безпосередньо перед `HEAD`.
+Зауважте, що `git diff` використовує `HEAD` за замовчуванням, і тому ви отримаєте те ж саме, якщо пропустите `HEAD` (спробуйте це). Але справжня користь `git diff` полягає у тому, що з його допомогою ви здатні посилатися на попередні коміти. Наприклад, додаючи `~1` (де "~" - це тільда), ми посилаємось на коміт зроблений безпосередньо перед `HEAD`.
 
 ```bash
 $ git diff HEAD~1 guacamole.md
@@ -258,7 +257,7 @@ $ cat guacamole.md
 
 Отже, якщо скласти це все разом, то Git працює як зображено у цьому коміксі:
 
-![https://figshare.com/articles/How\_Git\_works\_a\_cartoon/1328266](fig/git_staging.svg){alt='Як працює git: зміни додаються до зони стейджингу (git add), зберігаються у репозиторії (git commit), та можуть бути відновлені з репозиторію (git checkout)'}
+![https://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg){alt='Як працює git: зміни додаються до зони стейджингу (git add), зберігаються у репозиторії (git commit), та можуть бути відновлені з репозиторію (git checkout)'}
 
 Той факт, що файли можна відновлювати окремо, сприяє змінам в організації роботи.
 Якщо все знаходиться в одному величезному документі, буде важко (але не неможливо) скасувати зміни у вступі без скасування також змін, внесених пізніше до висновку.
@@ -348,18 +347,18 @@ $ cat ketchup.md # this will print the content of ketchup.md on screen
 ```
 
 1. ```output
-   ketchup enhances pasta dishes
-   ```
+  ketchup enhances pasta dishes
+  ```
 2. ```output
-   I like tomatoes, therefore I like ketchup
-   ```
+  I like tomatoes, therefore I like ketchup
+  ```
 3. ```output
-   I like tomatoes, therefore I like ketchup
-   ketchup enhances pasta dishes
-   ```
+  I like tomatoes, therefore I like ketchup
+  ketchup enhances pasta dishes
+  ```
 4. ```output
-   Помилка, оскільки ви змінили ketchup.md, але не виконали коміт
-   ```
+  Помилка, оскільки ви змінили ketchup.md, але не виконали коміт
+  ```
 
 :::::::::::::::  solution
 
@@ -372,9 +371,7 @@ $ cat ketchup.md # this will print the content of ketchup.md on screen
 
 Тож, коли виконується команда `git commit -m "My opinions about the red sauce"`, зафіксованою версією `ketchup.md` є та, яка знаходиться в зони стейджингу та буде мати тільки один рядок.
 
-На цьому етапі робоча копія все ще містить другий рядок (та
-
-`git status` покаже, що файл змінено). Однак `git restore ketchup.md` замінить робочу копію останньою збереженою версією `ketchup.md`.
+На цей час робоча копія файлу ще має другий рядок (і тому `git status` покаже, що файл змінено). Однак `git restore ketchup.md` замінить робочу копію останньою збереженою версією `ketchup.md`.
 В результаті, `cat ketchup.md` покаже:
 
 ```output
@@ -406,7 +403,7 @@ I like tomatoes, therefore I like ketchup
 
 ## Відповідь
 
-Після додавання зміни за допомогою `git restore`, команду `git checkout` не можна використовувати безпосередньо.
+Після додавання змін, команду `git restore` не можна використовувати безпосередньо.
 Подивіться на результат `git status`:
 
 ```output
@@ -485,7 +482,7 @@ $ git log guacamole.md
 $ git log --patch guacamole.md
 ```
 
-Ви повинні отримати довгий список, у якому ви побачите як повідомлення коміту, так і зроблені зміни.
+Ви отримаєте довгий список, у якому ви побачите як повідомлення коміту, так і зроблені зміни.
 
 Питання: Що робить наступна команда?
 
