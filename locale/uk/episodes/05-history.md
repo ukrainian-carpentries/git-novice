@@ -59,7 +59,7 @@ index b36abfd..0848c8d 100644
 +An ill-considered change
 ```
 
-Note that `HEAD` is the default option for `git diff`, so omitting it will not change the command's output at all (give it a try). However, the real power of `git diff` lies in its ability to compare with previous commits. Наприклад, додаючи `~1` (де "~" - це тільда), ми посилаємось на коміт зроблений безпосередньо перед `HEAD`.
+Зауважте, що `git diff` використовує `HEAD` за замовчуванням, і тому ви отримаєте те ж саме, якщо пропустите `HEAD` (спробуйте це). Але справжня користь `git diff` полягає у тому, що з його допомогою ви здатні посилатися на попередні коміти. Наприклад, додаючи `~1` (де "~" - це тільда), ми посилаємось на коміт зроблений безпосередньо перед `HEAD`.
 
 ```bash
 $ git diff HEAD~1 guacamole.md
@@ -403,7 +403,7 @@ I like tomatoes, therefore I like ketchup
 
 ## Відповідь
 
-After adding a change, `git restore` can not be used directly.
+Після додавання змін, команду `git restore` не можна використовувати безпосередньо.
 Подивіться на результат `git status`:
 
 ```output
@@ -482,8 +482,7 @@ $ git log guacamole.md
 $ git log --patch guacamole.md
 ```
 
-You should get a long list of output, and you should be able to see both commit messages and
-the difference between each commit.
+Ви отримаєте довгий список, у якому ви побачите як повідомлення коміту, так і зроблені зміни.
 
 Питання: Що робить наступна команда?
 
