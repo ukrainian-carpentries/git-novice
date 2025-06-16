@@ -49,7 +49,7 @@ exercises: 0
 Більш сучасні системи, такі як [Git](https://en.wikipedia.org/wiki/Git) та [Mercurial](https://swcarpentry.github.io/hg-novice/), є _розподіленими_, що означає, що їм не потрібен централізований сервер для розміщення репозиторію.
 Ці сучасні системи також включають потужні інструменти для злиття змін (merging), які дозволяють багатьом авторам працювати над одними й тими ж файлами одночасно.
 
-For those interested, The Carpentries has a [Version Control with Mercurial](https://swcarpentry.github.io/hg-novice/) lesson (2013-2018), which provides additional context and historical perspective.
+Для тих, хто зацікавлений, The Carpentries має урок [Version Control with Mercurial](https://swcarpentry.github.io/hg-novice/) (2013-2018), який надає додатковий контекст та історичну перспективу.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
