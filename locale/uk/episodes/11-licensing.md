@@ -18,7 +18,7 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-As an open source project, Software Carpentry relies on volunteers to create our lessons and includes a file named `LICENSE` or `LICENSE.txt` file in all public lesson repositories. This file is used to specify that all materials are freely available under the Creative Commons Attribution license. Without a file that clearly states under which license any public source code, manuscript or other creative works is being made available, the default copyright laws apply. To learn more about licensing and open source, you can read more about [Github's description of licenses] and the [legal grounds for open source licensing].
+Як проєкт з відкритим кодом, Software Carpentry покладається на волонтерів для створення навчальних матеріалів. Кожен публічний репозиторій із навчальними матеріалами містить файл з назвою `LICENSE` або `LICENSE.txt`. Цей файл використовується для зазначення того, що всі матеріали є у вільному доступі за ліцензією Creative Commons Attribution. За відсутності файлу, в якому чітко зазначено, за якою ліцензією доступний будь-який публічний вихідний код, рукопис чи інші твори, застосовуються стандартні закони про авторське право. Щоб дізнатися більше про ліцензування та відкритий вихідний код, ви можете прочитати більше про [опис ліцензій][Github's description of licenses] на GitHub та [правові підстави ліцензування з відкритим кодом][legal grounds for open source licensing].
 
 Ліцензія вирішує цю проблему, надаючи іншим особам (ліцензіатам) права, яких вони в іншому випадку не мали б. Те, які права надаються, і за яких умов, може відрізнятися, але часто не дуже, у різних ліцензіях. На практиці, деякі ліцензії на сьогодні є найпопулярнішими, і [choosealicense.com](https://choosealicense.com/) може допомогти вам знайти поширену ліцензію, яка відповідає вашим потребам.  Важливими міркуваннями є:
 
@@ -64,7 +64,7 @@ As an open source project, Software Carpentry relies on volunteers to create our
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- The `LICENSE`, `LICENSE.md`, or `LICENSE.txt` file is often used in a repository to indicate how the contents of the repo may be used by others.
+- Файли з імʼям `LICENSE`, `LICENSE.md`, або `LICENSE.txt` часто використовуються у репозиторіях, щоб вказати, як їх вміст може застосовуватися іншими.
 - Розробники, які інтегрують програмне забезпечення з ліцензією General Public License (GPL) у своє власне, також повинні зробити своє програмне забезпечення відкритим під ліцензією GPL. Більшість інших відкритих ліцензій цього не вимагають.
 - Сімейство ліцензій Creative Commons дозволяє авторам гнучко комбінувати вимоги та обмеження щодо зазначення авторства, створення похідних творів, подальшого поширення та комерціалізації.
 - Люди, які не є юристами, не повинні намагатися писати ліцензії з нуля.
