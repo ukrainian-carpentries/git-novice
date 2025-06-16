@@ -60,9 +60,9 @@ $ nano .gitignore
 receipts/
 ```
 
-Save the file and exit your editor.
+Збережіть файл і вийдіть з редактора.
 
-Verify that the file contains the files to ignore.
+Переконайтеся, що цей файл містить перелік файлів, які слід ігнорувати.
 
 ```bash
 $ cat .gitignore
@@ -244,7 +244,7 @@ receipts/data/market_position/gps/info.txt
 receipts/plots
 ```
 
-Яке найкоротше правило ви можете додати до `.gitignore`, щоб ігнорувати всі файли з розширенням `.dat` у каталозі `receipts/data/market_position/gps`? Do not ignore the `info.txt`.
+Яке найкоротше правило ви можете додати до `.gitignore`, щоб ігнорувати всі файли з розширенням `.dat` у каталозі `receipts/data/market_position/gps`? При цьому, не можна ігнорувати файл `info.txt`.
 
 :::::::::::::::  solution
 
