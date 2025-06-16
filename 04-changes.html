@@ -381,7 +381,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Відстеження змін</h1>
-        <p>Останнє оновлення 2025-01-24 |
+        <p>Останнє оновлення 2025-06-16 |
 
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/04-changes.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -531,12 +531,12 @@ Changes to be committed:
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Create a template for recipe"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Create initial structure for a Guacamole recipe"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[main (root-commit) f22b25e] Create a template for recipe
+<pre class="output" tabindex="0"><code>[main (root-commit) f22b25e] Create initial structure for a Guacamole recipe
  1 file changed, 1 insertion(+)
  create mode 100644 guacamole.md</code></pre>
 </div>
@@ -588,7 +588,7 @@ nothing to commit, working tree clean</code></pre>
 Author: Alfredo Linguini &lt;a.linguini@ratatouille.fr&gt;
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Create a template for recipe</code></pre>
+    Create initial structure for a Guacamole recipe</code></pre>
 </div>
 <p><code>git log</code> виводить перелік усіх комітів, які були внесені
 до репозиторію, у зворотному хронологічному порядку. Для кожного коміту
@@ -700,8 +700,7 @@ index df0654a..315bf3a 100644
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add basic guacamole's ingredients"</span></span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add ingredients for basic guacamole"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -721,12 +720,12 @@ no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> git add guacamole.md</span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add basic guacamole's ingredients"</span></span></code></pre>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add ingredients for basic guacamole"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[main 34961b1] Add basic guacamole's ingredient
+<pre class="output" tabindex="0"><code>[main 34961b1] Add ingredients for basic guacamole
  1 file changed, 3 insertions(+)</code></pre>
 </div>
 <p>Git наполягає, щоб ми додали файли до набору змін, які ми хочемо
@@ -882,13 +881,13 @@ commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Alfredo Linguini &lt;a.linguini@ratatouille.fr&gt;
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add basic guacamole's ingredients
+    Add ingredients for basic guacamole
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Alfredo Linguini &lt;a.linguini@ratatouille.fr&gt;
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Create a template for recipe</code></pre>
+    Create initial structure for a Guacamole recipe</code></pre>
 </div>
 <div id="порівняння-з-підсвіткою-змінених-слів-у-рядках" class="callout">
 <div class="callout-square">
@@ -961,8 +960,8 @@ Date:   Thu Aug 22 10:14:07 2013 -0400
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>005937f (HEAD -&gt; main) Modify guacamole to the traditional recipe
-34961b1 Add basic guacamole's ingredients
-f22b25e Create a template for recipe</code></pre>
+34961b1 Add ingredients for basic guacamole
+f22b25e Create initial structure for a Guacamole recipe</code></pre>
 </div>
 <p>Ви також можете комбінувати опцію <code>--oneline</code> з іншими
 опціями. Наступна корисна комбінація використовує опцію
@@ -979,8 +978,8 @@ f22b25e Create a template for recipe</code></pre>
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>* 005937f (HEAD -&gt; main) Modify guacamole to the traditional recipe
-* 34961b1 Add basic guacamole's ingredients
-* f22b25e Create a template for recipe</code></pre>
+* 34961b1 Add ingredients for basic guacamole
+* f22b25e Create initial structure for a Guacamole recipe</code></pre>
 </div>
 </div>
 </div>
@@ -1012,34 +1011,30 @@ f22b25e Create a template for recipe</code></pre>
 репозиторію. Насправді ви можете назвати такі файли до вашої
 вподоби.</p>
 <ol start="2" style="list-style-type: decimal"><li>Якщо ви створюєте каталог у вашому репозиторії Git і заповнюєте його
-файлами, ви можете додати всі файли в каталозі одразу:</li>
+файлами, ви можете відразу додати до репозиторію всі файли в каталозі,
+посилаючись на нього в команді <code>git add</code>. Спробуйте
+власноруч:</li>
 </ol><div class="codewrapper sourceCode" id="cb49">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a><span class="ex">$</span> git add <span class="op">&lt;</span>directory-with-files<span class="op">&gt;</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a><span class="ex">$</span> touch cakes/brownie_cakes/lemon_drizzle</span>
+<span id="cb49-2"><a href="#cb49-2" tabindex="-1"></a><span class="ex">$</span> git status</span>
+<span id="cb49-3"><a href="#cb49-3" tabindex="-1"></a><span class="ex">$</span> git add cakes</span>
+<span id="cb49-4"><a href="#cb49-4" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
-<p>Спробуйте власноруч:</p>
+<p>Перш ніж рухатися далі, ми збережемо ці зміни.</p>
 <div class="codewrapper sourceCode" id="cb50">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" tabindex="-1"></a><span class="ex">$</span> touch cakes/brownie_cakes/lemon_drizzle</span>
-<span id="cb50-2"><a href="#cb50-2" tabindex="-1"></a><span class="ex">$</span> git status</span>
-<span id="cb50-3"><a href="#cb50-3" tabindex="-1"></a><span class="ex">$</span> git add cakes</span>
-<span id="cb50-4"><a href="#cb50-4" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
-</div>
-<p>Перш ніж рухатися далі, ми збережемо ці зміни.</p>
-<div class="codewrapper sourceCode" id="cb51">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add some initial cakes"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add some initial cakes"</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
-<p>Для повторення: коли ми хочемо додати зміни до нашого репозиторію,
+<p>Підсумовуючи: коли ми хочемо додати зміни до нашого репозиторію,
 спочатку нам потрібно додати змінені файли в зону стейджингу
-(<code>git add</code>) а потім зберегти заплановані зміни до репозиторію
-(<code>git commit</code>):</p>
+(<code>git add</code>) а потім зберегти заплановані зміни за допомогою
+<code>git commit</code>:</p>
 <p><img src="fig/git-committing.svg" class="figure">{alt=‘Два документи окремо
 додаються до зони стейджингу за допомогою git add, а потім об’єднуються
 в один коміт за допомогою git commit’}</p>
@@ -1062,10 +1057,10 @@ f22b25e Create a template for recipe</code></pre>
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">
-  Рішення
+  Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Відповідь 1 є недостатньо детальною, а мета коміту неясна; відповідь
 2 дублює результат команди “git diff” яка покаже зміни, зроблені у цьому
@@ -1084,27 +1079,27 @@ f22b25e Create a template for recipe</code></pre>
 <div class="callout-content">
 <p>Яка(які) з наведених нижче команд збережуть зміни у файлі
 <code>myfile.txt</code> до мого локального Git репозиторію?</p>
-<ol style="list-style-type: decimal"><li><div class="codewrapper sourceCode" id="cb52">
+<ol style="list-style-type: decimal"><li><div class="codewrapper sourceCode" id="cb51">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" tabindex="-1"></a>   <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" tabindex="-1"></a>  <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
+</div></li>
+<li><div class="codewrapper sourceCode" id="cb52">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" tabindex="-1"></a>  <span class="ex">$</span> git init myfile.txt</span>
+<span id="cb52-2"><a href="#cb52-2" tabindex="-1"></a>  <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
 </div></li>
 <li><div class="codewrapper sourceCode" id="cb53">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1" tabindex="-1"></a>   <span class="ex">$</span> git init myfile.txt</span>
-<span id="cb53-2"><a href="#cb53-2" tabindex="-1"></a>   <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1" tabindex="-1"></a>  <span class="ex">$</span> git add myfile.txt</span>
+<span id="cb53-2"><a href="#cb53-2" tabindex="-1"></a>  <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
 </div></li>
 <li><div class="codewrapper sourceCode" id="cb54">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb54-1"><a href="#cb54-1" tabindex="-1"></a>   <span class="ex">$</span> git add myfile.txt</span>
-<span id="cb54-2"><a href="#cb54-2" tabindex="-1"></a>   <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
-</div></li>
-<li><div class="codewrapper sourceCode" id="cb55">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" tabindex="-1"></a>   <span class="ex">$</span> git commit <span class="at">-m</span> myfile.txt <span class="st">"my recent changes"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb54-1"><a href="#cb54-1" tabindex="-1"></a>  <span class="ex">$</span> git commit <span class="at">-m</span> myfile.txt <span class="st">"my recent changes"</span></span></code></pre>
 </div></li>
 </ol></div>
 </div>
@@ -1113,10 +1108,10 @@ f22b25e Create a template for recipe</code></pre>
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">
-  Рішення
+  Відповідь
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Створить коміт, лише якщо файли вже були у зоні
 стейджінгу.</p></li>
@@ -1137,7 +1132,7 @@ f22b25e Create a template for recipe</code></pre>
 <h3 class="callout-title">Коміт декількох файлів</h3>
 <div class="callout-content">
 <p>Зона стейджингу може зберігати зміни в будь-якій кількості файлів,
-які ви хочете записати в один коміт.</p>
+які ви хочете помістити в один коміт.</p>
 <ol style="list-style-type: decimal"><li>Додайте до <code>guacamole.md</code> текст про приблизну ціну
 інгредієнтів.</li>
 <li>Створіть новий файл <code>groceries.md</code> зі списком товарів та
@@ -1151,18 +1146,18 @@ f22b25e Create a template for recipe</code></pre>
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">
-  Рішення
+  Відповідь
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Спочатку ми оновимо файли <code>guacamole.md</code> та
 <code>groceries.md</code>:</p>
-<div class="codewrapper sourceCode" id="cb56">
+<div class="codewrapper sourceCode" id="cb55">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb56-1"><a href="#cb56-1" tabindex="-1"></a><span class="ex">$</span> nano guacamole.md</span>
-<span id="cb56-2"><a href="#cb56-2" tabindex="-1"></a><span class="ex">$</span> cat guacamole.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" tabindex="-1"></a><span class="ex">$</span> nano guacamole.md</span>
+<span id="cb55-2"><a href="#cb55-2" tabindex="-1"></a><span class="ex">$</span> cat guacamole.md</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1173,11 +1168,11 @@ f22b25e Create a template for recipe</code></pre>
 * lime (0.64)
 * salt (2)</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb58">
+<div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1" tabindex="-1"></a><span class="ex">$</span> nano groceries.md</span>
-<span id="cb58-2"><a href="#cb58-2" tabindex="-1"></a><span class="ex">$</span> cat groceries.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb57-1"><a href="#cb57-1" tabindex="-1"></a><span class="ex">$</span> nano groceries.md</span>
+<span id="cb57-2"><a href="#cb57-2" tabindex="-1"></a><span class="ex">$</span> cat groceries.md</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1189,24 +1184,24 @@ f22b25e Create a template for recipe</code></pre>
 </div>
 <p>Тепер ви можете додати обидва файли до зони стейджингу. Ми можемо
 зробити це однією командою:</p>
+<div class="codewrapper sourceCode" id="cb59">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1" tabindex="-1"></a><span class="ex">$</span> git add guacamole.md groceries.md</span></code></pre>
+</div>
+<p>Або кількома:</p>
 <div class="codewrapper sourceCode" id="cb60">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb60-1"><a href="#cb60-1" tabindex="-1"></a><span class="ex">$</span> git add guacamole.md groceries.md</span></code></pre>
-</div>
-<p>Або кількома:</p>
-<div class="codewrapper sourceCode" id="cb61">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb61-1"><a href="#cb61-1" tabindex="-1"></a><span class="ex">$</span> git add guacamole.md</span>
-<span id="cb61-2"><a href="#cb61-2" tabindex="-1"></a><span class="ex">$</span> git add groceries.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb60-1"><a href="#cb60-1" tabindex="-1"></a><span class="ex">$</span> git add guacamole.md</span>
+<span id="cb60-2"><a href="#cb60-2" tabindex="-1"></a><span class="ex">$</span> git add groceries.md</span></code></pre>
 </div>
 <p>Тепер файли готові до коміту. Ви можете перевірити це за допомогою
 <code>git status</code>. Якщо ви готові зробити коміт, використайте:</p>
-<div class="codewrapper sourceCode" id="cb62">
+<div class="codewrapper sourceCode" id="cb61">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb62-1"><a href="#cb62-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Write prices for ingredients and their source"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb61-1"><a href="#cb61-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Write prices for ingredients and their source"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1244,43 +1239,43 @@ f22b25e Create a template for recipe</code></pre>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>За потреби вийдіть з каталогу <code>recipes</code>:</p>
+<div class="codewrapper sourceCode" id="cb63">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb63-1"><a href="#cb63-1" tabindex="-1"></a><span class="ex">$</span> cd ..</span></code></pre>
+</div>
+<p>Створіть новий каталог <code>bio</code> та перейдіть до нього:</p>
 <div class="codewrapper sourceCode" id="cb64">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb64-1"><a href="#cb64-1" tabindex="-1"></a><span class="ex">$</span> cd ..</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb64-1"><a href="#cb64-1" tabindex="-1"></a><span class="ex">$</span> mkdir bio</span>
+<span id="cb64-2"><a href="#cb64-2" tabindex="-1"></a><span class="ex">$</span> cd bio</span></code></pre>
 </div>
-<p>Створіть новий каталог <code>bio</code> та перейдіть до нього:</p>
+<p>Ініціалізуйте репозиторій Git:</p>
 <div class="codewrapper sourceCode" id="cb65">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb65-1"><a href="#cb65-1" tabindex="-1"></a><span class="ex">$</span> mkdir bio</span>
-<span id="cb65-2"><a href="#cb65-2" tabindex="-1"></a><span class="ex">$</span> cd bio</span></code></pre>
-</div>
-<p>Ініціалізуйте репозиторій Git:</p>
-<div class="codewrapper sourceCode" id="cb66">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb66-1"><a href="#cb66-1" tabindex="-1"></a><span class="ex">$</span> git init</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb65-1"><a href="#cb65-1" tabindex="-1"></a><span class="ex">$</span> git init</span></code></pre>
 </div>
 <p>Створіть файл <code>me.txt</code> з вашою біографією, використовуючи
 <code>nano</code> або інший текстовий редактор. Коли будете готові,
 додайте його до зони стейджингу та запишіть коміт до репозиторію:</p>
-<div class="codewrapper sourceCode" id="cb67">
+<div class="codewrapper sourceCode" id="cb66">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb67-1"><a href="#cb67-1" tabindex="-1"></a><span class="ex">$</span> git add me.txt</span>
-<span id="cb67-2"><a href="#cb67-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add biography file"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb66-1"><a href="#cb66-1" tabindex="-1"></a><span class="ex">$</span> git add me.txt</span>
+<span id="cb66-2"><a href="#cb66-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add biography file"</span></span></code></pre>
 </div>
 <p>Змініть файл як вказано (змініть один рядок, додайте четвертий
 рядок). Для того, щоб показати зміни між оновленим файлом та його
 попередньою версією, використайте <code>git diff</code>:</p>
-<div class="codewrapper sourceCode" id="cb68">
+<div class="codewrapper sourceCode" id="cb67">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb68-1"><a href="#cb68-1" tabindex="-1"></a><span class="ex">$</span> git diff me.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb67-1"><a href="#cb67-1" tabindex="-1"></a><span class="ex">$</span> git diff me.txt</span></code></pre>
 </div>
 </div>
 </div>
@@ -1369,8 +1364,8 @@ f22b25e Create a template for recipe</code></pre>
   "url": "https://ukrainian-carpentries.github.io/git-novice/04-changes.html",
   "identifier": "https://ukrainian-carpentries.github.io/git-novice/04-changes.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2025-01-24",
-  "datePublished": "2025-06-10"
+  "dateModified": "2025-06-16",
+  "datePublished": "2025-06-16"
 }
 
   </script><script>
