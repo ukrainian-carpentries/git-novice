@@ -482,10 +482,9 @@ $ git add cakes
 $ git status
 ```
 
-Зауважте, наш новостворений порожній каталог `cakes` не зʼявляється в переліку невідстежуваних файлів, навіть якщо ми конкретно додали його (_через_ `git add`) до нашого репозиторію. Ось чому ви іноді бачите файли `.gitkeep` в інших порожніх каталогах. The sole purpose of `.gitkeep` files is to populate a directory so that Git adds it to the repository. The name `.gitkeep` is just a convention, and in fact, you can name these files anything you like.
+Зауважте, наш новостворений порожній каталог `cakes` не зʼявляється в переліку невідстежуваних файлів, навіть якщо ми конкретно додали його (_через_ `git add`) до нашого репозиторію. Ось чому ви іноді бачите файли `.gitkeep` в інших порожніх каталогах. На відміну від `.gitignore`, ці файли не є особливими і їх єдиною метою є заповнити каталог, щоб Git додав його до репозиторію. Насправді ви можете назвати такі файли до вашої вподоби.
 
-2. If you create a directory in your Git repository and populate it with files,
-  you can add all the files in the directory at once by referring to the directory in your `git add` command. Спробуйте власноруч:
+2. Якщо ви створюєте каталог у вашому репозиторії Git і заповнюєте його файлами, ви можете відразу додати до репозиторію всі файли в каталозі, посилаючись на нього в команді `git add`. Спробуйте власноруч:
 
 ```bash
 $ touch cakes/brownie_cakes/lemon_drizzle
@@ -502,12 +501,9 @@ $ git commit -m "Add some initial cakes"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-To recap, when we want to add changes to our repository,
-we first need to add the changed files to the staging area
-(`git add`) and then commit the staged changes to the
-repository (`git commit`):
+Підсумовуючи: коли ми хочемо додати зміни до нашого репозиторію, спочатку нам потрібно додати змінені файли в зону стейджингу (`git add`) а потім зберегти заплановані зміни за допомогою `git commit`:
 
-![](fig/git-committing.svg){alt='A diagram showing two documents being separately staged using git add, before being combined into one commit using git commit'}
+![](fig/git-committing.svg){alt='Два документи окремо додаються до зони стейджингу за допомогою git add, а потім об'єднуються в один коміт за допомогою git commit'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -570,8 +566,7 @@ repository (`git commit`):
 
 ## Коміт декількох файлів
 
-The staging area can hold changes from any number of files
-that you want to commit as a single snapshot.
+Зона стейджингу може зберігати зміни в будь-якій кількості файлів, які ви хочете помістити в один коміт.
 
 1. Додайте до `guacamole.md` текст про приблизну ціну інгредієнтів.
 2. Створіть новий файл `groceries.md` зі списком товарів та їх цінами на різних ринках.
@@ -640,7 +635,7 @@ $ git commit -m "Write prices for ingredients and their source"
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## `bio` Repository
+## Вправа: репозиторій з вашою автобіографією
 
 - Створіть новий репозиторій Git на вашому компʼютері під назвою `bio`.
 - Напишіть три рядки своєї біографії у файлі під назвою `me.txt`, та зробіть коміт цих змін.
