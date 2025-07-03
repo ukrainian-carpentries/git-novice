@@ -1,10 +1,10 @@
 ---
-title: Ліцензії
+title: "Ліцензії"
 ---
 
 ## Навчальні матеріали
 
-Усі навчальні матеріали Software Carpentry, Data Carpentry та Library Carpentry доступні на умовах [Creative Commons Attribution ліцензії][cc-by-human]. Нижче наведено придатний для читання людиною короткий виклад (а не заміна) [повного юридичного тексту ліцензії CC BY 4.0][cc-by-legal].
+Усі навчальні матеріали Software Carpentry, Data Carpentry та Library Carpentry доступні на умовах [ліцензії Creative Commons Attribution][cc-by-human]. Нижче наведено придатний для читання людиною короткий виклад (а не заміна) [повного юридичного тексту ліцензії CC BY 4.0][cc-by-legal].
 
 Ви вільні:
 
