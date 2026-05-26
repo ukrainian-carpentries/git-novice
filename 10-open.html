@@ -28,7 +28,7 @@
     </div>
     <div class="selector-container">
       <menu class="theme-selector" id="theme-selector-menu"><li class="nav-item dropdown theme-button-list" id="theme-button-list-menu">
-          <button class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (auto)">
+          <button class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Переключити тему (автоматично)">
             <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg><i data-feather="chevron-down"></i>
           </button>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text"><li>
@@ -58,7 +58,7 @@
         </ul></div>
     </div>
   </div>
-  <hr></header><nav class="navbar navbar-expand-xl bottom-nav software" aria-label="Головна навігація"><div class="container-fluid nav-container">
+</header><nav class="navbar navbar-expand-xl bottom-nav software" aria-label="Головна навігація"><div class="container-fluid nav-container">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключити навігацію">
       <span class="navbar-toggler-icon"></span>
       <span class="menu-title">Меню</span>
@@ -70,7 +70,7 @@
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
-        <i role="img" aria-label="Пошук на сторінці «All In One»." data-feather="search"></i>
+        <i role="img" aria-label="Все в одній сторінці" data-feather="search"></i>
       -->
     </div>
     <div class="desktop-nav">
@@ -86,7 +86,7 @@
           <a class="nav-link" href="reference.html#glossary">Глосарій</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="profiles.html">Профілі учнів</a>
+          <a class="nav-link" href="profiles.html">Профілі слухачів</a>
         </li>
         <li class="nav-item dropdown">
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -100,19 +100,15 @@
       <fieldset disabled>
       <input class="form-control me-2 searchbox" type="search" placeholder="" aria-label="">
         <button class="btn btn-outline-success tablet-search-button"  type="submit">
-          <i class="search-icon" data-feather="search" role="img" aria-label="Пошук на сторінці «All In One»."></i>
+          <i class="search-icon" data-feather="search" role="img" aria-label="Все в одній сторінці"></i>
         </button>
       </fieldset>
     </form>
     -->
-    <a id="search-button" class="btn btn-primary" href="aio.html" role="button" aria-label="Пошук на сторінці «All In One».">Пошук на сторінці «All In One».</a>
+    <a id="search-button" class="btn btn-primary" href="aio.html" role="button" aria-label="Все в одній сторінці">Все в одній сторінці</a>
   </div><!--/div.container-fluid -->
-</nav><aside class="col-md-12 lesson-progress"><div style="width: 81%" class="percentage">
-    81%
-  </div>
-  <div class="progress software">
-    <div class="progress-bar software" role="progressbar" aria-label="Хід уроку" aria-valuemin="0" aria-valuemax="100" aria-valuenow="81" style="width: 81%">
-    </div>
+</nav><aside class="col-md-12 lesson-progress"><div class="progress software">
+    <div class="progress-bar software" role="progressbar" style="width: 81%" aria-valuenow="81" aria-valuemin="0" aria-valuemax="100" aria-label="Хід уроку">81%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -168,7 +164,7 @@
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
 
-            <hr></div><!--/div.mobile-row -->
+          </div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordion-chapters-toggle">
             <div class="accordion-item">
@@ -340,7 +336,7 @@
                         <a href="reference.html#glossary">Глосарій</a>
                       </li>
                       <li>
-                        <a href="profiles.html">Профілі учнів</a>
+                        <a href="profiles.html">Профілі слухачів</a>
                       </li>
                       <li><a href="discuss.html">Обговорення</a></li><li><a href="reference.html">Шпаргалки з Git для швидкого ознайомлення</a></li>
                     </ul></div>
@@ -361,9 +357,9 @@
 
         <!-- START: inst/pkgdown/templates/content-instructor.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
-    <nav class="lesson-content mx-md-4" aria-label="Попередній і наступний розділ Top"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="09-conflict.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Попередній</a>
-        <a class="chapter-link float-end" href="11-licensing.html">Далі<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+    <nav class="lesson-content mx-md-4" aria-label="Попередній і наступний розділи Top"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
+        <a class="chapter-link" href="09-conflict.html" rel="prev"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Попередній</a>
+        <a class="chapter-link float-end" href="11-licensing.html" rel="next">Далі<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -376,7 +372,7 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
-      <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
+    </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Відкрита наука</h1>
         <p>Останнє оновлення 2025-01-24 |
 
@@ -483,7 +479,7 @@
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<span class="callout-header">Виноска</span>
+<span class="callout-header">Примітка</span>
 <div id="робіть-код-можливим-для-цитування" class="callout-inner">
 <h3 class="callout-title">Робіть код можливим для цитування</h3>
 <div class="callout-content">
@@ -566,7 +562,7 @@ Storage, а потім додати великий файл до репозит�
 
 
       </div> <!-- / div.lesson-content -->
-    </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Попередній і наступний розділ Bottom"><div class="d-block d-sm-block d-md-none">
+    </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Попередній і наступний розділи Bottom"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="09-conflict.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Попередній</a>
         <a class="chapter-link float-end" href="11-licensing.html">Далі<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
@@ -592,7 +588,7 @@ Storage, а потім додати великий файл до репозит�
         <a href="https://github.com/ukrainian-carpentries/git-novice/edit/main/episodes/10-open.md" class="external-link">Редагувати на GitHub</a>
 
 	
-        | <a href="https://github.com/ukrainian-carpentries/git-novice/blob/main/CONTRIBUTING.md" class="external-link">Як допомогти?</a>
+        | <a href="https://github.com/ukrainian-carpentries/git-novice/blob/main/CONTRIBUTING.md" class="external-link">Як долучитися до проєкту?</a>
         | <a href="https://github.com/ukrainian-carpentries/git-novice/" class="external-link">Вихідні файли уроку</a></p>
         <p>
         <a href="https://github.com/ukrainian-carpentries/git-novice/blob/main/" class="external-link">Цитувати</a>
@@ -602,13 +598,13 @@ Storage, а потім додати великий файл до репозит�
 
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
-        <p>Шаблон ліцензовано за <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a>. Автори шаблону: <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Створено за допомогою <a href="https://github.com/carpentries/sandpaper/tree/main" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a> та <a href="https://github.com/carpentries/varnish/tree/1.1.0" class="external-link">varnish (1.1.0)</a></p>
+        <p>Шаблон ліцензовано згідно з <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a>. Автори шаблону: <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
+        <p>Створено за допомогою <a href="https://github.com/carpentries/sandpaper/tree/main" class="external-link">sandpaper (0.20.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/7dc6acfdd6233c0d124a0ecf288325edc40dd96d" class="external-link">pegboard (0.7.9)</a> та <a href="https://github.com/carpentries/varnish/tree/1.1.1" class="external-link">varnish (1.1.1)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
 		<a href="#top">
-      <i class="search-icon" data-feather="arrow-up" role="img" aria-label="Догори"></i><br><!-- <span class="d-none d-sm-none d-md-none d-lg-none d-xl-block">Back</span> To Top --><span class="d-none d-sm-none d-md-none d-lg-none d-xl-block">Назад</span> Догори
+      <i class="search-icon" data-feather="arrow-up" role="img" aria-label="Вгору"></i><br><!-- <span class="d-none d-sm-none d-md-none d-lg-none d-xl-block">Back</span> To Top --><span class="d-none d-sm-none d-md-none d-lg-none d-xl-block">Назад</span> вгору
 		</a>
 	</div>
   <script type="application/ld+json">
@@ -626,7 +622,7 @@ Storage, а потім додати великий файл до репозит�
   "identifier": "https://ukrainian-carpentries.github.io/git-novice/10-open.html",
   "dateCreated": "2014-12-04",
   "dateModified": "2025-01-24",
-  "datePublished": "2026-05-19"
+  "datePublished": "2026-05-26"
 }
 
   </script><script>
