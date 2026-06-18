@@ -1,302 +1,193 @@
 ---
-title: Instructor Notes
+title: Нотатки для інструктора
 ---
 
-Using a software tool to handle the versions of your project files
-lets you focus on the more interesting/innovative aspects of your project.
+Використання програмного інструменту для обробки версій файлів вашого проєкту дозволяє зосередитися на більш цікавих/інноваційних аспектах вашого проєкту.
 
-- Version control's advantages
-  - It's easy to set up
-  - Every copy of a Git repository is a full backup of a project and its history
-  - A few easy-to-remember commands are all you need for most day-to-day version control tasks
-  - The [GitHub][github] hosting service provides a web-based collaboration service
-- Two main concepts
-  - *commit*: a recorded set of changes in your project's files
-  - *repository*: the history of all your project's commits
-- Why use GitHub?
-  - No need for a server: easy to set up
-  - GitHub's strong community: your colleagues are probably already there
+- Переваги контролю версій
+  - Його легко встановити
+  - Кожна копія репозиторію Git є повною резервною копією проєкту та його історії
+  - Кілька простих для запам'ятовування команд - це все, що потрібно для більшості повсякденних завдань з контролю версій
+  - Послуга хостингу від [GitHub][github] надає вебплатформу для спільної роботи
+- Два основних поняття
+  - _commit_: збережений набір змін у файлах вашого проєкту
+  - _repository_: історія всіх комітів вашого проєкту
+- Навіщо використовувати GitHub?
+  - Нема потреби в сервері: легко налаштувати
+  - Численна спільнота GitHub: ваші колеги, напевно, вже там
 
-## Overall
+## Загалом
 
-Version control might be the most important topic we teach, but Git is
-definitely the most complicated tool.  However, GitHub presently dominates the
-open software repository landscape, so the time and effort required to teach
-fundamental Git is justified and worthwhile.
+Контроль версій може бути найважливішою темою, яку ми викладаємо, але Git, безумовно, є найскладнішим інструментом.  Однак, GitHub наразі домінує у сфері репозиторіїв відкритого програмного забезпечення, що робить час і зусилля для вивчення основ користування Git виправданими та цінними.
 
-Because of this complexity, we don't teach novice learners about many
-interesting topics, such as branching, hashes, and commit objects.
+Через ці складнощі, ми не вчимо початківців багатьом цікавим темам, таким як гілки, хеші та об'єкти комітів.
 
-Instead we try to convince them that version control is useful for researchers
-working in teams or not, because it is
+Замість цього ми намагаємося переконати їх у тому, що контроль версій корисний для дослідників, які працюють в командах чи самостійно, бо це
 
-- a better way to "undo" changes,
-- a better way to collaborate than mailing files back and forth, and
-- a better way to share your code and other scientific work with the world.
+- ліпший спосіб "скасувати" зміни,
+- ліпший спосіб для співпраці, ніж розсилка файлів у різних напрямках, та
+- ліпший спосіб поділитися своїм кодом та іншими науковими роботами зі світом.
 
-## Teaching Notes
+## Нотатки щодо викладання
 
-- You can "split" your shell so that recent commands remain in view using [this](https://github.com/rgaiacs/swc-shell-split-window) script.
+- Ви можете "розділити" ваш термінал так, щоб останні команди залишалися в полі зору за допомогою [цього](https://github.com/rgaiacs/swc-shell-split-window) скрипту.
 
-- Make sure the network is working *before* starting this lesson.
+- Переконайтеся, що мережа працює _до_ початку цього уроку.
 
-- Drawings are particularly useful in this lesson: if you have a whiteboard,
-  [use it][drawings]!
+- Малюнки особливо корисні у цьому уроці: якщо у вас є дошка, [користуйтеся нею][drawings]!
 
-- Version control is usually not the first subject in a workshop,
-  so get learners to create a GitHub account after the session before.
-  Remind learners that the username and email they use for GitHub (and setup
-  during Git configuration) will be viewable to the public by default.
-  However, there are many reasons why a learner may not want their personal
-  information viewable, and GitHub has [resources for keeping an email address
-  private][github-privacy].
+- Контроль версій, зазвичай, не перша тема, яка розглядається на семінарі, тому заохочуйте учнів створити обліковий запис GitHub заздалегідь, наприклад після попередньої сесії.
+  Нагадайте слухачам, що ім\`я користувача та адреса електронної пошти, яку вони використовують для GitHub (та налаштовують під час конфігурації Git), за замовчуванням будуть наявні для загального перегляду.
+  Однак є багато причин, чому слухач може віддати перевагу зберіганню конфіденційності своєї особистої інформації, для чого GitHub надає [наступні ресурси][github-privacy].
 
-- If some learners are using Windows, there will inevitably be issues
-  merging files with different line endings.  (Even if everyone's on
-  some flavor of Unix, different editors may or may not add a
-  newline to the last line of a file.) Take a moment to explain
-  these issues, since learners will almost certainly trip over them
-  again.  If learners are running into line ending problems, GitHub
-  has a [page][github-line-endings] that helps with troubleshooting.
-  Specifically, the [section on refreshing a repository][github-line-endings-refresh]
-  may be helpful if learners need to change the `core.autocrlf` setting
-  after already having made one or more commits.
+- Якщо деякі слухачі використовують Windows, неминуче виникнуть проблеми з об`єднанням файлів із різними закінченнями рядків.  (Навіть якщо всі слухачі використовують Linux або  macOS, різні редактори можуть автоматично додавати або не додавати новий рядок до останнього рядка файлу.) Знайдіть момент, щоб пояснити ці питання, оскільки слухачі майже напевно зіткнуться з ними знову.  Якщо учні стикаються з проблемами закінчення рядків, GitHub має корисну [сторінку][github-line-endings].
+    Зокрема, [розділ про оновлення репозиторію][github-line-endings-refresh] може бути корисним, якщо учням потрібно змінити налаштування `core.autocrlf\` після того, як вже зробили один або кілька комітів.
 
-- We don't use a Git GUI in these notes because we haven't found one that
-  installs easily and runs reliably on the three major operating systems, and
-  because we want learners to understand what commands are being run.  That
-  said, instructors should demo a GUI on their desktop at some point during
-  this lesson and point learners at [this page][github-gui].
+- Ми не використовуємо Git GUI в цих нотатках, бо не знайшли графічний інтерфейс, який плавно встановлюється та надійно працює у трьох основних операційних системах. Крім того, нам треба, щоб учні розуміли основні команди, які виконуються.  Проте, інструкторам треба продемонструвати графічний інтерфейс на своєму комп'ютері в деякий момент цього уроку та вказати учням на [цю сторінку][github-gui].
 
-- Instructors should show learners graphical diff/merge tools like
-  [DiffMerge][diffmerge].
+- Інструктори повинні продемонструвати слухачам графічні інструменти для аналізу і злиття змін, такі як [DiffMerge][diffmerge].
 
-- When appropriate, explain that we teach Git rather than CVS, Subversion, or
-  Mercurial primarily because of GitHub's growing popularity: CVS and
-  Subversion are now seen as legacy systems, and Mercurial isn't nearly as
-  widely used in the sciences right now.
+- При необхідності поясніть, що ми перш за все навчаємо використовувати Git, а не CVS, Subversion, або Mercurial насамперед через зростання популярності GitHub. CVS та Subversion тепер вважаються застарілими системами, а Mercurial наразі не так широко використовується у наукових галузях.
 
-- Further resources:
-  
-  - [git-it] is a self-paced command-line Git demo,
-    with [git-it-electron] its GitHub Desktop successor.
-  - [Code School][code-school] has a free interactive course, [Try Git][try-git].
-  - for instructors, [the Git parable][git-parable] is useful background reading
+- Додаткові ресурси:
 
-## [Automated Version Control](../episodes/01-basics.md)
+  - [git-it] — це навчальна програма з Git, яка працює у терміналі, а [git-it-electron] — це її наступна версія, яка має графічний інтерфейс користувача.
+  - [Code School][code-school] пропонує безкоштовний інтерактивний курс [Try Git][try-git].
+  - для викладачів корисною довідковою літературою є [Git parable][git-parable].
 
-- Ask, "Who uses 'undo' in their editor?" All say "Me". 'Undo' is the simplest
-  form of version control.
+## [Автоматизований контроль версії](../episodes/01-basics.md)
 
-- Give learners a five-minute overview of what version control does for them
-  before diving into the watch-and-do practicals.  Most of them will have
-  tried to co-author papers by emailing files back and forth, or will have
-  biked into the office only to realize that the USB key with last night's
-  work is still on the kitchen table.  Instructors can also make jokes about
-  directories with names like "final version", "final version revised",
-  "final version with reviewer three's corrections", "really final version",
-  and, "come on this really has to be the last version" to motivate version
-  control as a better way to collaborate and as a better way to back work up.
+- Запитайте, "Хто використовує функцію скасування (undo) у своєму редакторі?" Всі скажуть: "Я". Скасування - це найпростіша форма контролю версій.
 
-## [Setting Up Git](../episodes/02-setup.md)
+- Надайте слухачам п'ятихвилинний огляд того, що для них може зробити система контролю версій, перш ніж перейти до практичних "повторюйте за мною" вправ.  Більшість з них натрапили на труднощі зі співавторством, надсилаючи файли електронною поштою. Дехто буде знайом із такою ситуацією: приїжджаєш до офісу лише для того, щоб зрозуміти, що USB-ключ із роботою минулої ночі все ще вдома.  Інструктори також можуть жартувати про каталоги з назвами на кшталт "остаточна версія", "переглянута остаточна версія", "остаточна версія з трьома виправленнями", "дійсно остаточна версія", та "це вже дійсно має бути остання версія", щоб заохочувати контроль версій як ліпший спосіб для співпраці та резервного копіювання роботи.
 
-- We suggest instructors and students use `nano` as the text editor for this
-  lessons because
-  
-  - it runs in all three major operating systems,
-  - it runs inside the shell (switching windows can be confusing to students), and
-  - it has shortcut help at the bottom of the window.
-  
-  Please point out to students during setup that they can and should use
-  another text editor if they're already familiar with it.
+## [Налаштування Git](../episodes/02-setup.md)
 
-- When setting up Git, be very clear what learners have to enter: it is
-  common for them to edit the instructor's details (e.g. email).  Check at
-  the end using `git config --list`.
+- Ми радимо інструкторам та слухачам використовувати `nano` як текстовий редактор для цих уроків, тому що
 
-- When setting up the default branch name, if learners have a Git version
-  older than 2.28, the default branch name can be changed for the lesson
-  using `git branch -M main` if there are currently commits in the repository,
-  or `git checkout -b main` if there are no commits/the repository is completely empty.
+  - він працює у всіх трьох основних операційних системах
+  - він працює всередині терміналу (перемикання вікон може заплутати учнів), та
+  - він містить у нижній частині вікна довідку з клавіатурними скороченнями.
 
-## [Creating a Repository](../episodes/03-create.md)
+  Будь ласка, нагадайте слухачам під час налаштування, що вони можуть (і навіть мають) використовувати інший текстовий редактор, якщо вони вже з ним знайомі.
 
-- When you do `git status`, Mac users may see a `.DS_Store` file showing as
-  untracked. This a file that Mac OS creates in each directory.
+- Під час налаштування Git чітко вказуйте, що слухачі мають вводити: зазвичай вони редагують деталі викладача (наприклад, електронну пошту).  Зрештою, перевірте це за допомогою `git config --list`.
 
-- The challenge "Places to create repositories" tries to reinforce the idea
-  that the `.git` folder contains the whole Git repo and deleting this folder
-  undoes a `git init`. It also gives the learner the way to fix the common
-  mistake of putting unwanted folders (like `Desktop`) under version control.
-  
-  Instead of removing the `.git` folder directly, you can choose to move it
-  first to a safer directory and remove it from there:
-  
+- При встановленні типової назви гілки, якщо слухачі мають версію Git старішу за 2.28, назву гілки для уроку можна змінити за замовчуванням за допомогою 'git branch -M main' - коли в репозиторії є коміти, або 'git checkout -b main' - коли комітів немає/репозиторій повністю порожній.
+
+## [Створення репозиторію](../episodes/03-create.md)
+
+- Коли ви вводите 'git status', користувачі Mac можуть побачити файл '.DS_Store', який відображується як не відстежуваний. Це файл, який Mac OS створює в кожному каталозі.
+
+- Завдання "Місця для створення репозиторіїв" намагається посилити ідею, що каталог `.git` містить весь репозиторій Git і видалення цього каталогу скасовує `git init`. Це також дає слухачеві можливість виправити поширену помилку, пов'язану з додаванням небажаних каталогів (наприклад, `Робочий стіл`) до контролю версій.
+
+  Замість безпосереднього видалення каталогу `.git`, ви можете спочатку перемістити його в більш безпечну директорію і видалити його звідти:
+
   ```bash
   $ mv .git temp_git
   $ rm -rf  temp_git
   ```
-  
-  The challenge suggests that it is a bad idea to create a Git repo inside another repo.
-  For more discussion on this topic, please see [this issue][repos-in-repos].
 
-## [Tracking Changes](../episodes/04-changes.md)
+  Завдання натякає на те, що створення репозиторію Git всередині іншого є поганою ідеєю.
+  Для додаткової дискусії на цю тему, будь ласка, дивіться [це питання][repos-in-repos].
 
-- It's important that learners do a full commit cycle by themselves (make
-  changes, `git diff`, `git add`, and `git commit`). The "`bio` repository"
-  challenge does that.
+## [Відстеження змін](../episodes/04-changes.md)
 
-- This is a good moment to show a diff with a graphical diff tool. If you
-  skip it because you're short on time, show it once in GitHub.
+- Важливо, щоб слухачі самостійно зробили повний цикл коміту (внесли зміни та виконали `git diff`, `git add`, та `git commit`). Завдання "репозиторій `bio`" допоможе з цим.
 
-- One thing may cause confusion is recovering old versions.  If, instead of
-  doing `$ git checkout f22b25e guacamole.md`, someone does `$ git checkout f22b25e`, they wind up in the "detached HEAD" state and confusion abounds.
-  It's then possible to keep on committing, but things like `git push origin main` a bit later will not give easily comprehensible results.  It also
-  makes it look like commits can be lost.  To "re-attach" HEAD, use
-  `git checkout main`.
+- Це слушний момент, щоб показати diff за допомогою графічного інструмента. Якщо ви пропустите це через брак часу, пізніше продемонструйте його лише у GitHub.
 
-- This is a good moment to show a log within a Git GUI. If you skip it
-  because you're short on time, show it once in GitHub.
+- Одна річ, яка може викликати плутанину - це відновлення старих версій.  Якщо замість команди `$ git checkout f22b25e mars.txt`, хтось введе `$ git checkout f22b25e`, то вони опиняться у стані "detached HEAD", що призведе до непорозуміння.
+  Після цього можна продовжувати робити коміти, але такі команди, як `git push origin main` вже не надаватимуть зрозумілих результатів.  Це також створює враження, що коміти можуть бути втрачені.  Щоб "повторно прикріпити" HEAD, використовуйте `git checkout main`.
 
-## [Ignoring Things](../episodes/06-ignore.md)
+- Це слушний момент, щоб показати журнал у графічному інтерфейсі Git. Якщо ви пропустите це через брак часу, пізніше продемонструйте його лише у GitHub.
 
-Just remember that you can use wildcards and regular expressions to ignore a
-particular set of files in `.gitignore`.
+## [Ігнорування файлів](../episodes/06-ignore.md)
 
-## [Remotes in GitHub](../episodes/07-github.md)
+Просто пам'ятайте, що ви можете використовувати шаблони та регулярні вирази, щоб ігнорувати певний набір файлів в `.gitignore`.
 
-- Make it clear that Git and GitHub are not the same thing: Git is an open
-  source version control tool, GitHub is a company that hosts Git
-  repositories in the web and provides a web interface to interact with repos
-  they host.
+## [Віддалені репозиторії у GitHub](../episodes/07-github.md)
 
-- It is very useful to draw a diagram showing the different repositories
-  involved.
+- Поясніть, що Git і GitHub - це не одне і те ж саме: Git - це інструмент контролю версій з відкритим кодом, GitHub - це компанія, яка розміщує Git репозиторії в Інтернеті та надає вебінтерфейс для взаємодії з репозиторіями, які вони розміщують.
 
-- When pushing to a remote, the output from Git can vary slightly depending on
-  what leaners execute. The lesson displays the output from git if a learner
-  executes `git push origin main`. However, some learners might use syntax
-  suggested by GitHub for pushing to a remote with an existing repository,
-  which is `git push -u origin main`. Learners using syntax from GitHub,
-  `git push -u origin main`, will have slightly different output, including
-  the line `Branch main set up to track remote branch main from origin by rebasing.`
+- Дуже корисно намалювати діаграму, що показує різні залучені репозиторії.
 
-## [Collaborating](../episodes/08-collab.md)
+- При надсиланні змін до віддаленого репозиторію, вихідні дані з Git можуть дещо відрізнятися в залежності від того, що виконують слухачі. Урок відображує результат з git, якщо слухач виконує `git push origin main`. Однак, деякі слухачі можуть використовувати синтаксис `git push -u origin main`, що може запропонувати GitHub, для відправлення на наявний віддалений репозиторій. Слухачі, які використовують синтаксис від GitHub,
+  `git push -u origin main`, матимуть дещо інший результат, в тому числі
+  рядок `Branch main set up to track remote branch main from origin by rebasing.`
 
-- Decide in advance whether all the learners will work in one shared
-  repository, or whether they will work in pairs (or other small groups) in
-  separate repositories.  The former is easier to set up; the latter runs
-  more smoothly.
+## [Співпраця](../episodes/08-collab.md)
 
-- Role playing between two instructors can be effective when teaching the
-  collaboration and conflict sections of the lesson.  One instructor can play
-  the role of the repository owner, while the second instructor can play the
-  role of the collaborator.  If it is possible, try to use two projectors so
-  that the computer screens of both instructors can be seen.  This makes for
-  a very clear illustration to the students as to who does what.
+- Вирішіть заздалегідь, чи всі учні працюватимуть в одному спільному репозиторії, або у парах (або інших невеликих групах) в окремих репозиторіях.  Перший варіант легше налаштувати; а другий працює більш плавно.
 
-- It is also effective to pair up students during this lesson and assign one
-  member of the pair to take the role of the owner and the other the role of
-  the collaborator.  In this setup, challenges can include asking the
-  collaborator to make a change, commit it, and push the change to the remote
-  repository so that the owner can then retrieve it, and vice-versa.  The
-  role playing between the instructors can get a bit "dramatic" in the
-  conflicts part of the lesson if the instructors want to inject some humor
-  into the room.
+- Рольова гра між двома інструкторами може бути ефективним методом навчання співпраці та розв’язанню конфліктів.  Один інструктор може грати роль власника репозиторію, а другий інструктор може грати роль співавтора.  Якщо є можливість, спробуйте використовувати два проєктори, щоб було видно компʼютерні екрани обох інструкторів.  Це чітко покаже слухачам хто що робить.
 
-- If you don't have two projectors, have two instructors at the front of the
-  room.  Each instructor does their piece of the collaboration demonstration
-  on their own computer and then passes the projector cord back and forth
-  with the other instructor when it's time for them to do the other part of
-  the collaborative workflow.  It takes less than 10 seconds for each
-  switchover, so it doesn't interrupt the flow of the lesson.
-  And of course it helps to give each of the instructors a different-colored
-  hat, or put different-colored sticky notes on their foreheads.
+- Також ефективно під час цього уроку поєднувати учнів у пари та призначати їм ролі власника та співавтора.  У цьому сценарії, завдання можуть містити прохання до співавтора внести зміни, зробити коміт і відправити його до віддаленого репозиторію, так що власник може потім його отримати, і навпаки.  Рольова гра між викладачами може стати досить "драматичною" під час частини уроку, присвяченої розв’язанню конфліктів, особливо якщо викладачі вирішать додати трохи гумору до уроку.
 
-- If you're the only instructor, the best way to create is clone the two
-  repos in your Desktop, but under different names, e.g., pretend one is your
-  computer at work:
-  
+- Якщо у вас немає двох проєкторів, подібний ефект можна досягти за допомогою двох інструкторів.  Кожен інструктор розповідає про свою частину на власному компʼютері, а потім передає шнур проєктора іншому коли настає його черга.  Кожне перемикання проєктора займає менше ніж 10 секунд, тому це не порушить хід уроку.
+  Для покращення гри корисно дати кожному з інструкторів кольорові капелюхи або наліпки на лоба.
+
+- Якщо ви єдиний інструктор, найкращим підходом буде клонувати два репозиторії на робочому столі, але під різними назвами. Наприклад, уявіть, що один з них є вашим робочим комп'ютером:
+
   ```bash
-  $ git clone https://github.com/alflin/recipes.git recipes-at-work
+  $ git clone https://github.com/vlad/planets.git planets-at-work
   ```
 
-- It's very common that learners mistype the remote alias or the remote URL
-  when adding a remote, so they cannot `push`. You can diagnose this with
-  `git remote -v` and checking carefully for typos.
-  
-  - To fix a wrong alias, you can do `git remote rename <old> <new>`.
-  - To fix a wrong URL, you can do `git remote set-url <alias> <newurl> `.
+- Під час додавання віддаленого репозиторію, поширеною помилкою є неправильне введення псевдоніму або URL-адреси, що може завадити їм виконати `git push`. Ви можете уникнути цього за допомогою виконання `git remote -v` і ретельної перевірки результату.
 
-- Before cloning the repo, be sure that nobody is inside another repo. The
-  best way to achieve this is moving to the `Desktop` before cloning: `cd && cd Desktop`.
+  - Щоб виправити помилковий псевдонім, скористайтеся командою `git remote rename <old> <new>`.
+  - Щоб виправити помилковий URL, ви можете виконати `git remote set-url <alias> <newurl>`.
 
-- If both repos are in the `Desktop`, have them to clone their collaborator
-  repo under a given directory using a second argument:
-  
+- Перш ніж клонувати репозиторій, переконайтеся, що ніхто зі слухачів не знаходиться всередині іншого репозиторію. Найкращий спосіб досягти цього - перейти на робочий стіл перед клонуванням: `cd && cd Desktop`.
+
+- Якщо обидва репозиторії знаходяться на робочому столі, у такому разі слухачам треба клонувати репозиторій свого співавтора в певний каталог за допомогою додаткового аргументу:
+
   ```bash
-  $ git clone https://github.com/alflin/recipes.git alflin-recipes
+  $ git clone https://github.com/vlad/planets.git vlad-planet
   ```
 
-- The most common mistake is that learners `push` before `pull`ing. If they
-  `pull` afterward, they may get a conflict.
+- Найпоширенішою помилкою є те, що слухачі відправляють свої зміни (`git push`) перед тим, як отримати інші зміни з віддаленого репозиторію (`git pull`). Якщо вони виконують `pull` після `push`, може виникнути конфлікт.
 
-- Conflicts, sometimes weird, will start to arise. Stay tight: conflicts are
-  next.
+- Іноді можуть виникнути дивні конфлікти. Зберігайте спокій: конфлікти розглядаються у наступному епізоді.
 
-- Learners may have slightly different output from `git push` and `git pull`
-  depending on the version of git, and if upstream (`-u`) is used.
+- Слухачі іноді матимуть дещо інші результати від команд `git push` та `git pull`, залежно від версії git і того, чи використовується опція `-u` (upstream).
 
-## [Conflicts](../episodes/09-conflict.md)
+## [Конфлікти](../episodes/09-conflict.md)
 
-- Expect the learners to make mistakes. Expect *yourself* to make mistakes.
-  This happens because it is late in the lesson and everyone is tired.
+- Очікуйте, що учні зроблять помилки. Очікуйте, що ви можете зробити помилки.
+  Це відбувається тому, що урок триває вже достатньо довго і всі втомилися.
 
-- If you're the only instructor, the best way to create a conflict is:
-  
-  - Clone your repo in a different directory, pretending is your computer at
-    work: `git clone https://github.com/alflin/recipes.git recipes-at-work`.
-  - At the office, you make a change, commit and push.
-  - At your laptop repo, you (forget to pull and) make a change, commit and
-    try to push.
-  - `git pull` now and show the conflict.
+- Якщо ви єдиний інструктор, найкращий спосіб створити конфлікт є наступним:
 
-- Learners usually forget to `git add` the file after fixing the conflict and
-  just (try to) commit. You can diagnose this with `git status`.
+  - Клонуйте свій репозиторій в інший каталог, вдаючи, що це ваш комп’ютер на роботі: `git clone https://github.com/alflin/recipes.git recipes-at-work`.
+  - В "офісі" внесіть зміни, збережіть їх у коміті та відправляєте їх до GitHub.
+  - Потім, без отримання останніх змін, внесіть свої власні у репозиторій на вашому компʼютері, збережіть їх у коміті, та спробуйте надіслати їх до GitHub.
+  - Тепер введіть `git pull` та покажіть як виглядає конфлікт.
 
-- Remember that you can discard one of the two parents of the merge:
-  
-  - discard the remote file, `git checkout --ours conflicted_file.txt`
-  - discard the local file, `git checkout --theirs conflicted_file.txt`
-  
-  You still have to `git add` and `git commit` after this. This is
-  particularly useful when working with binary files.
+- Учні зазвичай забувають `git add` файл після виправлення конфлікту та просто (намагаються) зробити коміт. Ви можете це продіагностувати за допомогою `git status`.
 
-- Keep in mind that depending on the Git version used, the outputs for
-  `git push` and `git pull` can vary slightly.
+- Памʼятайте, що можливо скасувати зміни в одній з двох версій, що зливаються:
 
-## [Open Science](../episodes/10-open.md)
+  - скасувати зміни у віддаленому файлі, `git checkout --ours conflicted_file.txt`
+  - скасувати зміни у локальному файлі, `git checkout --theirs conflicted_file.txt`
 
-## [Licensing](../episodes/11-licensing.md)
+  Після цього вам все одно потрібно зробити `git add` та `git commit`. Це особливо має відношення до роботи з бінарними файлами.
 
-We teach about licensing because questions about who owns what, or can use
-what, arise naturally once we start talking about using public services like
-GitHub to store files. Also, the discussion gives learners a chance to catch
-their breath after what is often a frustrating couple of hours.
+- Майте на увазі, що в залежності від версії Git, яку ви використовуєте, результати для `git push` та `git pull` можуть дещо відрізнятися.
 
-The Creative Commons family of licenses is recommended for many types of
-works (including software documentation and images used in software) but not
-software itself. Creative Commons [recommends][cc-faq-software] a
-software-specific license instead.
+## [Відкрита наука](../episodes/10-open.md)
 
-## [Citation](../episodes/12-citation.md)
+## [Ліцензування](../episodes/11-licensing.md)
 
-## [Hosting](../episodes/13-hosting.md)
+Ми розповідаємо про ліцензування, тому що завжди виникатимуть питання про права володіння: хто володіє чим, або що можна використовувати. Ці питання з'являються як тільки ми починаємо говорити про використання публічних послуг як GitHub для зберігання файлів. Крім того, обговорення дає учням можливість перевести подих після тривалого навантаження.
 
-A common concern for learners is having their work publicly available on
-GitHub.  While we encourage open science, sometimes private repos are the
-only choice. It's always interesting to mention the options to have
-web-hosted private repositories.
+Ліцензії Creative Commons рекомендуються для багатьох типів робіт (зокрема для програмної документації та зображень, які використовуються в програмному забезпеченні), але не для програмного забезпечення. Creative Commons [рекомендує][cc-faq-software] обирати одну зі спеціалізованих ліцензій для програмного забезпечення.
+
+## [Цитування](../episodes/12-citation.md)
+
+## [Хостинг](../episodes/13-hosting.md)
+
+Спільним занепокоєнням серед слухачів є те, що їхня робота буде загальнодоступною на GitHub.  Хоча ми заохочуємо відкриту науку, іноді приватні репозиторії є єдиним варіантом. Завжди цікаво згадати варіанти розміщення приватних репозиторіїв.
 
 [github]: https://github.com/
 [drawings]: https://marklodato.github.io/visual-git-guide/index-en.html
@@ -312,6 +203,3 @@ web-hosted private repositories.
 [git-parable]: https://tom.preston-werner.com/2009/05/19/the-git-parable.html
 [repos-in-repos]: https://github.com/swcarpentry/git-novice/issues/272
 [cc-faq-software]: https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software
-
-
-

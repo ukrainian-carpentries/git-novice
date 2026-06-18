@@ -1,28 +1,27 @@
 ---
-title: Creating a Repository
+title: Створення репозиторію
 teaching: 10
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Create a local Git repository.
-- Describe the purpose of the `.git` directory.
+- Створити локальний репозиторій Git.
+- Пояснити призначення каталогу `.git`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- Where does Git store information?
+- Де Git зберігає інформацію?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Once Git is configured,
-we can start using it.
+Після налаштування Git ми можемо почати його використання.
 
-We will help Alfredo with his new project, create a repository with all his recipes.
+Ми будемо допомагати Альфредо з його проєктом створення репозиторію з усіма його рецептами.
 
-First, let's create a new directory in the `Desktop` folder for our work and then change the current working directory to the newly created one:
+Перш за все, створімо у каталозі `Desktop` новий підкаталог для нашої роботи, а потім змінимо поточний робочий каталог на новостворений:
 
 ```bash
 $ cd ~/Desktop
@@ -30,29 +29,22 @@ $ mkdir recipes
 $ cd recipes
 ```
 
-Then we tell Git to make `recipes` a [repository](../learners/reference.md#repository)
-\-- a place where Git can store versions of our files:
+Далі ми кажемо Git зробити `recipes` [репозиторієм](../learners/reference.md#repository)
+\-- місцем, де Git може зберігати версії наших файлів:
 
 ```bash
 $ git init
 ```
 
-It is important to note that `git init` will create a repository that
-can include subdirectories and their files---there is no need to create
-separate repositories nested within the `recipes` repository, whether
-subdirectories are present from the beginning or added later. Also, note
-that the creation of the `recipes` directory and its initialization as a
-repository are completely separate processes.
+Майте на увазі, що `git init` створює репозиторій, до якого можна додавати підкаталоги та їх файли. Немає потреби створювати окремі репозиторії вкладені в репозиторій `recipes`, незалежно від того чи були підкаталоги присутні від початку або були додані пізніше. Крім того, зверніть увагу, що створення каталогу `recipes` та його ініціалізація як репозиторію є повністю окремими процесами.
 
-If we use `ls` to show the directory's contents,
-it appears that nothing has changed:
+Якщо ми використаємо `ls`, щоб передивитись зміст каталогу, то здається, що нічого не змінилося:
 
 ```bash
 $ ls
 ```
 
-But if we add the `-a` flag to show everything,
-we can see that Git has created a hidden directory within `recipes` called `.git`:
+Але якщо ми додамо опцію `-a`, щоб показати всі файли, то побачимо, що Git створив у каталозі `recipes` прихований каталог під назвою `.git`:
 
 ```bash
 $ ls -a
@@ -62,12 +54,10 @@ $ ls -a
 .	..	.git
 ```
 
-Git uses this special subdirectory to store all the information about the project,
-including the tracked files and sub-directories located within the project's directory.
-If we ever delete the `.git` subdirectory,
-we will lose the project's history.
+Git використовує цей спеціальний підкаталог для зберігання всієї інформації про проєкт, у тому числі відстежувані файли і підкаталоги, що розташовані в каталозі проєкту.
+Якщо ми коли-небудь видалимо підкаталог `.git`, то ми втратимо усю історію проєкту.
 
-We can now start using one of the most important git commands, which is particularly helpful to beginners. `git status` tells us the status of our project, and better, a list of changes in the project and options on what to do with those changes. We can use it as often as we want, whenever we want to understand what is going on.
+Тепер ми можемо почати використовувати одну з найважливіших команд git, яка особливо корисна для початківців. `git status` друкує інформацію про поточний стан нашого проєкту, та перелік зроблених змін у проєкті з варіантами щодо подальших дій. Ми можемо використовувати цю команду необмежену кількість разів, як тільки ми хочемо зрозуміти, що відбувається.
 
 ```bash
 $ git status
@@ -81,48 +71,35 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-If you are using a different version of `git`, the exact
-wording of the output might be slightly different.
+Якщо ви користуєтеся іншою версією `git`, вигляд результату цієї команди може дещо відрізнятися.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Places to Create Git Repositories
+## Де створювати репозиторії Git
 
-Along with tracking information about recipes (the project we have already created),
-Alfredo would also like to track information about desserts specifically.
-Alfredo creates a `desserts` project inside his `recipes`
-project with the following sequence of commands:
+Відстежуючи інформацію про рецепти (проєкт, який ми вже створили), Альфредо також хотів би особливо відстежувати інформацію, пов’язану саме з десертами.
+Альфредо створює проєкт `desserts` всередині свого проєкту `recipes`
+за допомогою наступної послідовності команд:
 
 ```bash
-$ cd ~/Desktop    # return to Desktop directory
-$ cd recipes      # go into recipes directory, which is already a Git repository
-$ ls -a           # ensure the .git subdirectory is still present in the recipes directory
-$ mkdir desserts # make a sub-directory recipes/desserts
-$ cd desserts    # go into desserts subdirectory
-$ git init        # make the desserts subdirectory a Git repository
-$ ls -a           # ensure the .git subdirectory is present indicating we have created a new Git repository
+$ cd ~/Desktop   # повернутися до каталогу Desktop
+$ cd recipes     # перейти до каталогу recipes, який вже є репозиторієм Git
+$ ls -a          # перевірити, що підкаталог .git все ще присутній у каталозі recipes
+$ mkdir desserts # створити підкаталог recipes/desserts
+$ cd desserts    # перейти у підкаталог desserts
+$ git init       # створити репозиторій Git у підкаталозі desserts
+$ ls -a          # перевірити наявність підкаталогу .git, що підтверджує створення нового репозиторію
 ```
 
-Is the `git init` command, run inside the `desserts` subdirectory, required for
-tracking files stored in the `desserts` subdirectory?
+Чи потрібно запускати команду `git init` у підкаталозі `desserts` для відстеження файлів, розташованих у підкаталозі `desserts`?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-No. Alfredo does not need to make the `desserts` subdirectory a Git repository
-because the `recipes` repository will track all files, sub-directories, and
-subdirectory files under the `recipes` directory.  Thus, in order to track
-all information about desserts, Alfredo only needed to add the `desserts` subdirectory
-to the `recipes` directory.
+Ні. Альфредо не потрібно робити окремий підкаталог `desserts` репозиторієм Git, оскільки репозиторій `recipes` відстежуватиме будь-які файли, підкаталоги, та файли у підкаталогах в ньому.  Таким чином, щоб відстежувати всю інформацію про десерти, Альфредо повинен був лише додати підкаталог `desserts` до каталогу `recipes`.
 
-Additionally, Git repositories can interfere with each other if they are "nested":
-the outer repository will try to version-control
-the inner repository. Therefore, it's best to create each new Git
-repository in a separate directory. To be sure that there is no conflicting
-repository in the directory, check the output of `git status`. If it looks
-like the following, you are good to go to create a new repository as shown
-above:
+Крім того, репозиторії Git можуть заважати один одному, якщо вони "вкладені": зовнішній репозиторій намагатиметься відстежувати зміни у внутрішньому репозиторії. Тому найкраще кожного разу створювати новий репозиторій Git в окремому каталозі. Щоб переконатися, що каталог не є репозиторієм, перевірте результат команди `git status`. Якщо він виглядає як показано нижче, ви можете створити новий репозиторій, як було показано вище:
 
 ```bash
 $ git status
@@ -134,46 +111,37 @@ fatal: Not a git repository (or any of the parent directories): .git
 
 :::::::::::::::::::::::::
 
-## Correcting `git init` Mistakes
+## Виправлення помилок `git init`
 
-Jimmy explains to Alfredo how a nested repository is redundant and may cause confusion
-down the road. Alfredo would like to go back to a single git repository. How can Alfredo undo
-his last `git init` in the `desserts` subdirectory?
+Джиммі пояснив Альфредо, що вкладений репозиторій є зайвим і може призвести до плутанини у майбутньому. Альфредо бажав би повернутися до попередньої організації проєкту де необхідний тільки один репозиторій Git. Як Альфредо може скасувати свою останню команду `git init` виконану у підкаталозі `desserts`?
 
 :::::::::::::::  solution
 
-## Solution -- USE WITH CAUTION!
+## Відповідь (ВИКОРИСТОВУЙТЕ ОБЕРЕЖНО!)
 
-### Background
+### Контекст
 
-Removing files from a Git repository needs to be done with caution. But we have not learned
-yet how to tell Git to track a particular file; we will learn this in the next episode. Files
-that are not tracked by Git can easily be removed like any other "ordinary" files with
+Видаляти файли з репозиторію Git треба обережно. Проте, ми ще не навчилися вказувати Git як відстежувати певний файл; про це ми дізнаємося в наступному епізоді. Файли, які не відстежуються Git, можна легко видалити, як і будь-які інші "звичайні" файли:
 
 ```bash
 $ rm filename
 ```
 
-Similarly a directory can be removed using `rm -r dirname`.
-If the files or folder being removed in this fashion are tracked by Git, then their removal
-becomes another change that we will need to track, as we will see in the next episode.
+Подібним чином можна видалити каталог за допомогою команди `rm -r dirname`.
+Якщо файли чи каталоги, які видаляються таким чином, вже відстежуються Git, тоді їх видалення стає ще однією зміною, яку нам потрібно буде відстежувати (ми побачимо як це робити в наступному епізоді).
 
-### Solution
+### Відповідь
 
-Git keeps all of its files in the `.git` directory.
-To recover from this little mistake, Alfredo can remove the `.git`
-folder in the desserts subdirectory by running the following command from inside the `recipes` directory:
+Git зберігає всі свої файли в каталозі `.git`.
+Щоб виправити цю маленьку помилку, Альфредо може просто видалити каталог `.git` у підкаталозі `desserts`, виконавши наступну команду всередині каталогу `recipes`:
 
 ```bash
 $ rm -rf desserts/.git
 ```
 
-But be careful! Running this command in the wrong directory will remove
-the entire Git history of a project you might want to keep.
-In general, deleting files and directories using `rm` from the command line cannot be reversed.
-Therefore, always check your current directory using the command `pwd`.
-
-
+Проте, будьте обережні! Виконання цієї команди у неправильному каталозі призведе до видалення всієї історії змін проєкту, яку ви хотіли б зберегти.
+Загалом, видалення файлів і каталогів за допомогою `rm` з командного рядка не можна скасувати.
+Тому завжди перевіряйте свій поточний каталог за допомогою команди `pwd`.
 
 :::::::::::::::::::::::::
 
@@ -181,7 +149,7 @@ Therefore, always check your current directory using the command `pwd`.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git init` initializes a repository.
-- Git stores all of its repository data in the `.git` directory.
+- `git init` ініціалізує репозиторій.
+- Git зберігає всі дані репозиторію в каталозі `.git`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
